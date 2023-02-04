@@ -1,31 +1,29 @@
 ---
 import BlogLayout from '../../../layouts/BlogLayout.astro';
-import { contentfulClient, renderOptions } from '../../../lib/contentful.js';
-import type { Post } from '../../../lib/contentful.js';
+import { contentfulClient, renderOptions } from '../../../lib/contentful';
+import type { Post } from '../../../lib/contentful';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<Post>({
     content_type: 'post'
   });
-  const pages = entries.items.map((item) => ({
+  return entries.items.map((item) => ({
     params: { slug: item.fields.slug },
     props: {
       title: item.fields.title,
-      body: documentToHtmlString(item.fields.body),
-      date: new Date(item.fields.publishedDate).toLocaleDateString()
+      body: documentToHtmlString(item.fields.body, renderOptions),
+      date: new Date(item.fields.published).toLocaleDateString('de-DE')
     }
   }));
-  return pages;
 }
 
-const { body, title, date } = Astro.props;
+const { title, date, body } = Astro.props;
 ---
 
-<BlogLayout {{title}}>
-  <p>{date}</p>
+<BlogLayout title={title} date={date}>
   <article
     class="wrapper-content-blog"
-    set:html={documentToHtmlString(body, renderOptions)}
+    set:html={body}
   />
 </BlogLayout>
