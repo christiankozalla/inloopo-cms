@@ -1,0 +1,21 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { contentfulClient } from '../../lib/contentful.js';
+import type { Post } from '../../lib/contentful.js';
+
+const entries = await contentfulClient.getEntries<Post>({
+  content_type: 'post'
+});
+---
+
+<BlogLayout title="Alle Blogartikel im Überblick">
+  {
+    entries.items.map((item) => (
+      <section>
+        <h2>{item.fields.title}</h2>
+        <p>{item.fields.description}</p>
+        <a href={`/de/finanzwissen/${item.fields.slug}`}>Zum Artikel</a>
+      </section>
+    ))
+  }
+</BlogLayout>

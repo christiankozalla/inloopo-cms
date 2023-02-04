@@ -1,12 +1,7 @@
 ---
 import BlogLayout from '../../../layouts/BlogLayout.astro';
-import {
-  contentfulClient,
-  renderOptions
-} from '../../../lib/contentful-client.js';
+import { contentfulClient, renderOptions } from '../../../lib/contentful.js';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import '../../../styles/styles.css';
-import '../../../styles/blog.css';
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries();

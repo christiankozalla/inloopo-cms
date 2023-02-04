@@ -1,5 +1,6 @@
 import * as contentful from "contentful";
 import { BLOCKS } from "@contentful/rich-text-types";
+import type { Document } from "@contentful/rich-text-types";
 
 const contentfulClient = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE_ID,
@@ -23,4 +24,13 @@ const renderOptions = {
   },
 };
 
+interface Post {
+  title: string;
+  slug: string;
+  publishedDate: string;
+  description: string;
+  body: Document;
+}
+
 export { contentfulClient, renderOptions };
+export type { Post };
