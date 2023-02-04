@@ -10,11 +10,11 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18",
+    "@types/node": "18.11.18",
     "astro": "2.0.6"
   },
   "dependencies": {
-    "@contentful/rich-text-html-renderer": "^16.0.2",
-    "contentful": "^10.0.0-beta-v10.11"
+    "@contentful/rich-text-html-renderer": "16.0.2",
+    "contentful": "10.0.0-beta-v10.11"
   }
 }

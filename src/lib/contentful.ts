@@ -1,4 +1,4 @@
-import * as contentful from "contentful";
+import contentful from "contentful";
 import { BLOCKS } from "@contentful/rich-text-types";
 import type { Document } from "@contentful/rich-text-types";
 
@@ -9,7 +9,7 @@ const contentfulClient = contentful.createClient({
 
 const renderOptions = {
   renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: (node, _children) => {
+    [BLOCKS.EMBEDDED_ASSET]: (node: any, _children: any) => {
       // render the EMBEDDED_ASSET as you need
       return `
       <figure class='article__figure'>

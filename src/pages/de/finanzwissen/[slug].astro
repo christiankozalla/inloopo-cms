@@ -1,29 +1,31 @@
 ---
 import BlogLayout from '../../../layouts/BlogLayout.astro';
 import { contentfulClient, renderOptions } from '../../../lib/contentful.js';
+import type { Post } from '../../../lib/contentful.js';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 export async function getStaticPaths() {
-  const entries = await contentfulClient.getEntries();
-  return entries.items.map((entry) => ({
-    params: { slug: entry.fields.slug }
+  const entries = await contentfulClient.getEntries<Post>({
+    content_type: 'post'
+  });
+  const pages = entries.items.map((item) => ({
+    params: { slug: item.fields.slug },
+    props: {
+      title: item.fields.title,
+      body: documentToHtmlString(item.fields.body),
+      date: new Date(item.fields.publishedDate).toLocaleDateString()
+    }
   }));
+  return pages;
 }
 
-const { slug } = Astro.params;
-const post = await contentfulClient.getEntries({
-  content_type: 'post',
-  'fields.slug': slug
-});
-
-const postEntry = post.items.find(
-  (item) => item.sys.contentType.sys.id === 'post'
-);
+const { body, title, date } = Astro.props;
 ---
 
-<BlogLayout title={postEntry.fields.title}>
+<BlogLayout {{title}}>
+  <p>{date}</p>
   <article
     class="wrapper-content-blog"
-    set:html={documentToHtmlString(postEntry.fields.body, renderOptions)}
+    set:html={documentToHtmlString(body, renderOptions)}
   />
 </BlogLayout>
