@@ -1,0 +1,97 @@
+# Sample workflow for building and deploying an Astro site to GitHub Pages
+#
+# To get started with Astro see: https://docs.astro.build/en/getting-started/
+#
+name: VPS Deploy Astro site
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["master"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+env:
+  BUILD_PATH: "." # default value when not using subfolders
+  SITE_URL: "https://inloopo.com"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/package.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB_OUTPUT
+            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "Unable to determine packager manager"
+            exit 1
+          fi
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Build with Astro
+        run: |
+          CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }} CONTENTFUL_API_KEY=${{ secrets.CONTENTFUL_API_KEY }} \
+          ${{ steps.detect-package-manager.outputs.runner }} astro build \
+            --site "${{ env.SITE_URL }}"
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-dist
+          path: ${{ env.BUILD_PATH }}/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy to VPS
+    steps:
+      - name: Download from Build
+        uses: actions/download-artifact@v3
+        with:
+          name: my-dist
+          path: ${{ env.BUILD_PATH }}/dist
+      - name: Deploy to VPS
+        id: deployment
+        # directory in the server /var/www/sites/<GH_USER_NAME>/<REPO_NAME>/production
+        working-directory: ${{ env.BUILD_PATH }}
+        shell: bash
+        run: |
+          which ssh-agent || ( apt-get install -qq openssh-client )
+          eval $(ssh-agent -s)
+          mkdir -p ~/.ssh
+          ssh-add <(echo "${{ secrets.GH_DEPLOY_KEY }}")
+          echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+          echo "${{ env.BUILD_PATH }}/dist/"
+          rsync --recursive --delete --verbose ${{ env.BUILD_PATH }}/dist/ ${{ secrets.VPS_HOST }}:/var/www/sites/${{ github.repository }}/production
