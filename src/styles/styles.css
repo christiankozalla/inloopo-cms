@@ -174,38 +174,35 @@ section {
 
 
 /* Cera Pro */
+/* 
 @font-face {
   font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Light.otf) format('opentype'), url(/fonts/Cera\ Pro\ Light.ttf) format('truetype');
+  src: url("/fonts/Cera Pro Light.otf") format('opentype'), url("/fonts/Cera Pro Light.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Cera Pro';
+  src: url("/fonts/Cera Pro Regular Italic.otf") format('opentype'), url("/fonts/Cera Pro Regular Italic.ttf") format('truetype');
 }
 
 @font-face {
   font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Regular\ Italic.otf) format('opentype'), url(../fonts/Cera\ Pro\ Regular\ Italic.ttf) format('truetype');
+  src: url("/fonts/Cera Pro Bold.otf") format('opentype'), url("/fonts/Cera Pro Bold.ttf") format('truetype');
 }
 
 @font-face {
   font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Medium.otf) format('opentype') url(/fonts/Cera\ Pro\ Medium.ttf) format('truetype');
+  src: url("/fonts/Cera Pro Black.otf") format('opentype'), url("/fonts/Cera Pro Black.ttf") format('truetype');
 }
+
+*/
 
 @font-face {
   font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Medium.otf) format('opentype'), url(/fonts/Cera\ Pro\ Medium.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Bold.otf) format('opentype'), url(/fonts/Cera\ Pro\ Bold.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Black.otf) format('opentype'), url(/fonts/Cera\ Pro\ Black.ttf) format('truetype');
+  src: url("/fonts/Cera Pro Medium.otf") format('opentype') url("/fonts/Cera Pro Medium.ttf") format('truetype');
 }
 
 /* Quattrocento */
-@font-face {
+/* @font-face {
   font-family: 'Quattrocento Sans';
   src: url(/fonts/QuattrocentoSans-Bold.ttf) format('truetype');
 }
@@ -218,11 +215,11 @@ section {
 @font-face {
   font-family: 'Quattrocento Sans';
   src: url(/fonts/QuattrocentoSans-Italic.ttf) format('truetype');
-}
+} */
 
 @font-face {
   font-family: 'Quattrocento Sans';
-  src: url(/fonts/QuattrocentoSans-Regular.ttf) format('truetype');
+  src: url("/fonts/QuattrocentoSans-Regular.ttf") format('truetype');
 }
 
 
@@ -634,26 +631,26 @@ nav input[type="checkbox"] {
 /* #Teaser #Background Image */
 
 .main-teaser__homepage {
-  background-image: url("../images/image-teaser-01.svg");
+  background-image: url("/images/image-teaser-01.svg");
   background-position: center;
   padding-top: 1%;
   margin-bottom: 120px;
 }
 
 .main-teaser__page-investieren {
-  background-image: url('../images/image-teaser-investieren.svg');
+  background-image: url("/images/image-teaser-investieren.svg");
   background-position: center;
   padding-top: 1%;
 }
 
 .main-teaser__page-wikifolio {
-  background-image: url('../images/image-teaser-wikifolio.jpg');
+  background-image: url('/images/image-teaser-wikifolio.jpg');
   background-position: right;
   padding-top: 1%;
 }
 
 .main-teaser__page-wer-wir-sind {
-  background-image: url('../images/image-teaser-ueber-mich.jpg');
+  background-image: url('/images/image-teaser-ueber-mich.jpg');
   background-position: center;
   padding-top: 1%;
   margin-bottom: 120px;
@@ -900,21 +897,21 @@ nav input[type="checkbox"] {
 }
 
 .secondary-teaser__image--philipp {
-  background-image: url('../images/image-teaser-philipp.jpg');
+  background-image: url('/images/image-teaser-philipp.jpg');
   background-position: center;
   padding-bottom: 2%;
   padding-top: 2%;
 }
 
 .secondary-teaser__image--philipp-wikifolio {
-  background-image: url('../images/philipp-wikifolio.jpg');
+  background-image: url('/images/philipp-wikifolio.jpg');
   background-position: center;
   padding-bottom: 8%;
   padding-top: 2%;
 }
 
 .secondary-teaser__image-at-work {
-  background-image: url('../images/image-at-work.jpg');
+  background-image: url('/images/image-at-work.jpg');
   color: var(--text-color);
   padding: 30px 0;
 }
@@ -2665,7 +2662,7 @@ textarea[type=text]:focus {
   }
 
   .main-teaser__homepage {
-    background-image: url("../images/image-teaser-inloopo-mobil.svg")
+    background-image: url("/images/image-teaser-inloopo-mobil.svg")
   }
 
   .main-teaser__heading-one--mobile {
@@ -2918,7 +2915,7 @@ textarea[type=text]:focus {
   }
 
   .secondary-teaser__image-at-work {
-    background-image: url(../images/teaser-image-at-work-mobile.jpg);
+    background-image: url("/images/teaser-image-at-work-mobile.jpg");
     background-position: center;
   }
 

@@ -138,38 +138,35 @@ section {
 
 
 /* Cera Pro */
+/* 
 @font-face {
   font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Light.otf) format('opentype'), url(/fonts/Cera\ Pro\ Light.ttf) format('truetype');
+  src: url("/fonts/Cera Pro Light.otf") format('opentype'), url("/fonts/Cera Pro Light.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Cera Pro';
+  src: url("/fonts/Cera Pro Regular Italic.otf") format('opentype'), url("/fonts/Cera Pro Regular Italic.ttf") format('truetype');
 }
 
 @font-face {
   font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Regular\ Italic.otf) format('opentype'), url(../fonts/Cera\ Pro\ Regular\ Italic.ttf) format('truetype');
+  src: url("/fonts/Cera Pro Bold.otf") format('opentype'), url("/fonts/Cera Pro Bold.ttf") format('truetype');
 }
 
 @font-face {
   font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Medium.otf) format('opentype') url(/fonts/Cera\ Pro\ Medium.ttf) format('truetype');
+  src: url("/fonts/Cera Pro Black.otf") format('opentype'), url("/fonts/Cera Pro Black.ttf") format('truetype');
 }
+
+*/
 
 @font-face {
   font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Medium.otf) format('opentype'), url(/fonts/Cera\ Pro\ Medium.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Bold.otf) format('opentype'), url(/fonts/Cera\ Pro\ Bold.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Cera Pro';
-  src: url(/fonts/Cera\ Pro\ Black.otf) format('opentype'), url(/fonts/Cera\ Pro\ Black.ttf) format('truetype');
+  src: url("/fonts/Cera Pro Medium.otf") format('opentype') url("/fonts/Cera Pro Medium.ttf") format('truetype');
 }
 
 /* Quattrocento */
-@font-face {
+/* @font-face {
   font-family: 'Quattrocento Sans';
   src: url(/fonts/QuattrocentoSans-Bold.ttf) format('truetype');
 }
@@ -182,13 +179,12 @@ section {
 @font-face {
   font-family: 'Quattrocento Sans';
   src: url(/fonts/QuattrocentoSans-Italic.ttf) format('truetype');
-}
+} */
 
 @font-face {
   font-family: 'Quattrocento Sans';
-  src: url(/fonts/QuattrocentoSans-Regular.ttf) format('truetype');
+  src: url("/fonts/QuattrocentoSans-Regular.ttf") format('truetype');
 }
-
 
 
 /* ---------------------------------*\
@@ -491,7 +487,7 @@ nav input[type="checkbox"] {
 /* #Teaser #Background Image */
 
 .main-teaser__homepage {
-  background-image: url("../images/image-teaser-01.svg");
+  background-image: url("/images/image-teaser-01.svg");
   background-position: center;
   padding-top: 1%;
   margin-bottom: 120px;
@@ -642,7 +638,7 @@ nav input[type="checkbox"] {
 }
 
 .secondary-teaser__image--philipp {
-  background-image: url('../images/image-teaser-philipp.jpg');
+  background-image: url('/images/image-teaser-philipp.jpg');
   background-position: center;
   padding-bottom: 2%;
   padding-top: 2%;
@@ -1189,7 +1185,7 @@ nav input[type="checkbox"] {
   }
 
   .main-teaser__homepage {
-    background-image: url("../images/image-teaser-inloopo-mobil.svg")
+    background-image: url("/images/image-teaser-inloopo-mobil.svg")
   }
 
 
