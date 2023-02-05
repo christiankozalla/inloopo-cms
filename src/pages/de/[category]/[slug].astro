@@ -9,7 +9,7 @@ export async function getStaticPaths() {
     content_type: 'post'
   });
   return entries.items.map((item) => ({
-    params: { slug: item.fields.slug },
+    params: { category: item.fields.category, slug: item.fields.slug },
     props: {
       title: item.fields.title,
       body: documentToHtmlString(item.fields.body, renderOptions),
