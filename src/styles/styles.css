@@ -166,17 +166,18 @@ section {
   src: url("/fonts/Cera Pro Bold.otf") format('opentype'), url("/fonts/Cera Pro Bold.ttf") format('truetype');
 }
 
-@font-face {
-  font-family: 'Cera Pro';
-  src: url("/fonts/Cera Pro Black.otf") format('opentype'), url("/fonts/Cera Pro Black.ttf") format('truetype');
-}
-
 */
 
 @font-face {
+  font-family: 'Cera Pro Black';
+  src: url("/fonts/CeraProBlack.otf") format('opentype'), url("/fonts/CeraProBlack.ttf") format('truetype');
+}
+
+
+/* @font-face {
   font-family: 'Cera Pro';
   src: url('/fonts/CeraProMedium.otf') format('opentype'), url('/fonts/CeraProMedium.ttf') format('truetype');
-}
+} */
 
 /* Quattrocento */
 /* @font-face {
@@ -210,8 +211,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Cera Pro', Arial, Helvetica, sans-serif;
-  font-weight: 900;
+  font-family: 'Cera Pro Black', Arial, Helvetica, sans-serif;
+  font-weight: 300;
 }
 
 h1 {
