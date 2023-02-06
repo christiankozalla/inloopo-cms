@@ -14,25 +14,17 @@
 * COMPONENTS
 */
 
-
-
-
-
-
 /* ---------------------------------*\
     #VARIABLES
 \* ---------------------------------*/
 
 :root {
   --background-color: #fff;
-  --dark-background-color: #253C78;
+  --dark-background-color: #253c78;
   --accent-color: #ff6b35;
   --text-color: #171614;
   --navbar-height: 80px;
 }
-
-
-
 
 /* ---------------------------------*\
     #CONFIGORATION
@@ -45,12 +37,10 @@ html {
   scroll-padding-top: 80px;
 }
 
-
 img {
   max-width: 100%;
   /*images responsive*/
 }
-
 
 * {
   margin: 0;
@@ -59,8 +49,6 @@ img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-
 
 /* ---------------------------------*\
     #LAYOUT
@@ -74,20 +62,16 @@ body {
   overflow-x: hidden;
 }
 
-
 header {
   padding: 10px 3%;
   background: #fff;
   margin-bottom: 0;
 }
 
-
 section {
   padding: 0;
   display: block;
 }
-
-
 
 /* #Raster */
 
@@ -110,10 +94,6 @@ section {
   width: 33%;
 }
 
-
-
-
-
 /* ---------------------------------*\
     #WRAPPER
 \* ---------------------------------*/
@@ -130,12 +110,9 @@ section {
   overflow: hidden;
 }
 
-
-
 /* ---------------------------------*\
     #FONTS
 \* ---------------------------------*/
-
 
 /* Cera Pro */
 /* 
@@ -162,7 +139,8 @@ section {
 
 @font-face {
   font-family: 'Cera Pro';
-  src: url("/fonts/Cera Pro Medium.otf") format('opentype') url("/fonts/Cera Pro Medium.ttf") format('truetype');
+  src: url('/fonts/Cera Pro Medium.otf') format('opentype')
+    url('/fonts/Cera Pro Medium.ttf') format('truetype');
 }
 
 /* Quattrocento */
@@ -183,9 +161,8 @@ section {
 
 @font-face {
   font-family: 'Quattrocento Sans';
-  src: url("/fonts/QuattrocentoSans-Regular.ttf") format('truetype');
+  src: url('/fonts/QuattrocentoSans-Regular.ttf') format('truetype');
 }
-
 
 /* ---------------------------------*\
     #BASE ELEMENTS
@@ -254,11 +231,6 @@ p {
   line-height: 1.5;
 }
 
-
-
-
-
-
 /* ---------------------------------*\
     #NAVIGATION
 \* ---------------------------------*/
@@ -299,12 +271,10 @@ nav li {
   font-size: 1.375rem;
   font-family: 'Quattrocento', Arial, Helvetica, sans-serif;
   padding: 20px;
-
 }
 
 nav a:hover {
   color: #ff6b35;
-
 }
 
 nav ul a {
@@ -337,7 +307,7 @@ nav ul a {
   border-radius: 4px;
 }
 
-nav input[type="checkbox"] {
+nav input[type='checkbox'] {
   display: none;
 }
 
@@ -353,7 +323,6 @@ nav input[type="checkbox"] {
   cursor: pointer;
   color: #fff;
 }
-
 
 .toggle-button span.bar {
   transition: transform 200ms linear, opacity 100ms linear;
@@ -371,28 +340,21 @@ nav input[type="checkbox"] {
   transform: translateY() rotate(0deg);
 }
 
-#toggle-button:checked~.toggle-button span.bar:nth-child(1) {
+#toggle-button:checked ~ .toggle-button span.bar:nth-child(1) {
   transform: translateY(10.5px) rotate(135deg);
 }
 
-#toggle-button:checked~.toggle-button span.bar:nth-child(2) {
+#toggle-button:checked ~ .toggle-button span.bar:nth-child(2) {
   opacity: 0;
 }
 
-#toggle-button:checked~.toggle-button span.bar:nth-child(3) {
+#toggle-button:checked ~ .toggle-button span.bar:nth-child(3) {
   transform: translateY(-10.5px) rotate(-135deg);
 }
-
-
-
-
-
 
 /* ---------------------------------*\
     #BREADCRUMBS
 \* ---------------------------------*/
-
-
 
 /* ---------------------------------*\
     #COMPONENTS
@@ -423,10 +385,6 @@ nav input[type="checkbox"] {
   border: 2px solid #ff6b35;
 }
 
-
-
-
-
 /* #Links */
 
 .link {
@@ -448,10 +406,6 @@ nav input[type="checkbox"] {
   cursor: pointer;
 }
 
-
-
-
-
 /* #Teaser */
 
 .main-teaser {
@@ -468,7 +422,6 @@ nav input[type="checkbox"] {
   margin-top: 160px;
 }
 
-
 .main-teaser__text {
   color: #fff;
   width: 40%;
@@ -481,32 +434,18 @@ nav input[type="checkbox"] {
   display: none;
 }
 
-
-
-
 /* #Teaser #Background Image */
 
 .main-teaser__homepage {
-  background-image: url("/images/image-teaser-01.svg");
+  background-image: url('/images/image-teaser-01.svg');
   background-position: center;
   padding-top: 1%;
   margin-bottom: 120px;
 }
 
-
-
-
-
-
-
-
 /* #Colored Box #Box #Values */
 
-
-
-
 /* #Circle */
-
 
 .circle {
   border: 6px solid var(--accent-color);
@@ -524,10 +463,6 @@ nav input[type="checkbox"] {
 .circle__heading {
   text-align: center;
 }
-
-
-
-
 
 /* #Animations Icons Clock */
 
@@ -555,7 +490,6 @@ nav input[type="checkbox"] {
 
 */
 
-
 .icon__circle {
   border: 6px solid var(--accent-color);
   border-radius: 50%;
@@ -573,9 +507,6 @@ nav input[type="checkbox"] {
 .icon__circle img {
   margin: auto;
 }
-
-
-
 
 /* #Columns */
 
@@ -599,19 +530,11 @@ nav input[type="checkbox"] {
   margin: auto;
 }
 
-
-
-
-
 /* #Columns mit Foto und Text */
-
-
-
 
 /* #Icons Animation */
 
 .icon__circle {
-
   animation: draw 3s ease-in-out 4ms forwards;
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
@@ -622,9 +545,6 @@ nav input[type="checkbox"] {
     stroke-dashoffset: 0;
   }
 }
-
-
-
 
 /* #Secondary Teaser */
 
@@ -655,43 +575,17 @@ nav input[type="checkbox"] {
   width: 40%;
 }
 
-
-
-
 /* #Box #Problems-Solutions */
-
-
 
 /* #Blockqoute #Quote */
 
-
-
-
 /* #Box #Card #Prices & Plans */
-
-
-
-
 
 /* #Table */
 
-
-
-
-
-
 /* #Lists Mobile */
 
-
-
-
-
-
-
 /* #Lists */
-
-
-
 
 /* #FAQ */
 
@@ -710,13 +604,9 @@ nav input[type="checkbox"] {
   padding: 8%;
 }
 
-
 /* #Feedback */
 
-
 /* #Article */
-
-
 
 /* #Slider */
 
@@ -730,16 +620,9 @@ nav input[type="checkbox"] {
   }
 }
 
-
-
-
-
-
 /* #TOC */
 
-
 @keyframes fadeEffect {
-
   /* from 0 to full opacity */
   from {
     opacity: 0;
@@ -750,34 +633,15 @@ nav input[type="checkbox"] {
   }
 }
 
-
-
-
-
-
-
 /* #Reading Progress Bar */
-
-
-
 
 /* #Icon */
 
-
-
-
-
-
 /* #Share Buttons */
-
 
 /* ---------------------------------*\
     #RIGHTS for English Website
 \* ---------------------------------*/
-
-
-
-
 
 /* ---------------------------------*\
         #FOOTER
@@ -827,14 +691,11 @@ nav input[type="checkbox"] {
   margin-bottom: 5px;
 }
 
-
-
-
 /* Media Queries * * * * * * * * */
-@media only screen and (min-width:1200px) and (max-width:1920px) {}
+@media only screen and (min-width: 1200px) and (max-width: 1920px) {
+}
 
-@media only screen and (min-width:760px) and (max-width:979px) {
-
+@media only screen and (min-width: 760px) and (max-width: 979px) {
   /* ---------------------------------*\
         #LAYOUT
     \* ---------------------------------*/
@@ -854,14 +715,9 @@ nav input[type="checkbox"] {
     margin-top: 10px;
   }
 
-
-
-
   /* ---------------------------------*\
         #NAVIGATION
     \* ---------------------------------*/
-
-
 
   .toggle-button {
     display: flex;
@@ -894,10 +750,9 @@ nav input[type="checkbox"] {
     margin-left: 0;
   }
 
-  #toggle-button:checked~ul {
+  #toggle-button:checked ~ ul {
     display: block;
   }
-
 
   /* ---------------------------------*\
         #HEADINGS 
@@ -924,23 +779,13 @@ nav input[type="checkbox"] {
     font-size: 48px;
   }
 
-
-
-
   /* ---------------------------------*\
         #BUTTON #LINKS
     \* ---------------------------------*/
 
-
-
-
-
   /* ---------------------------------*\
         #PROBLEMS-SOLUTIONS #BOX
     \* ---------------------------------*/
-
-
-
 
   /* ---------------------------------*\
         #TEASER-HOMEPAGE
@@ -960,7 +805,6 @@ nav input[type="checkbox"] {
     margin-right: auto;
   }
 
-
   /* ---------------------------------*\
         #SECONDARY #TEASER
     \* ---------------------------------*/
@@ -974,24 +818,17 @@ nav input[type="checkbox"] {
         #TEASER BLOG
     \* ---------------------------------*/
 
-
-
   /* ---------------------------------*\
         #FAQ
     \* ---------------------------------*/
-
 
   /* ---------------------------------*\
         #VALUES
     \* ---------------------------------*/
 
-
-
   /* ---------------------------------*\
             #BLOG #ARTICLE
     \* ---------------------------------*/
-
-
 
   /* ---------------------------------*\
         #TOC
@@ -1001,26 +838,19 @@ nav input[type="checkbox"] {
         #TABLE
     \* ---------------------------------*/
 
-
   /* ---------------------------------*\
         #COLUMNS
     \* ---------------------------------*/
 
-
-
-
-
   /* ---------------------------------*\
         #RASTER
     \* ---------------------------------*/
-
 
   .row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 0 30px;
   }
-
 
   .half {
     width: 100%;
@@ -1030,37 +860,22 @@ nav input[type="checkbox"] {
     width: 100%;
   }
 
-
-
-
-
   /* ---------------------------------*\
         #TEXT-LEGAL
     \* ---------------------------------*/
-
-
-
-
 
   /* ---------------------------------*\
         #TOOLS
     \* ---------------------------------*/
 }
 
-
-
-
-
-@media only screen and (max-width:759px) {
-
+@media only screen and (max-width: 759px) {
   /* ---------------------------------*\
         #LAYOUT
     \* ---------------------------------*/
   html {
     scroll-padding-top: 160px;
   }
-
-
 
   header {
     padding: 0;
@@ -1109,14 +924,9 @@ nav input[type="checkbox"] {
     margin-left: 0;
   }
 
-  #toggle-button:checked~ul {
+  #toggle-button:checked ~ ul {
     display: block;
   }
-
-
-
-
-
 
   /* ---------------------------------*\
         #HEADINGS
@@ -1159,8 +969,6 @@ nav input[type="checkbox"] {
     font-size: 18px;
   }
 
-
-
   /* ---------------------------------*\
         #BUTTONS #LINKS
     \* ---------------------------------*/
@@ -1169,14 +977,9 @@ nav input[type="checkbox"] {
     margin-bottom: 30px;
   }
 
-
-
-
-
   /* ---------------------------------*\
         #TEASER-HOMEPAGE
     \* ---------------------------------*/
-
 
   .main-teaser {
     margin-top: 80px;
@@ -1185,9 +988,8 @@ nav input[type="checkbox"] {
   }
 
   .main-teaser__homepage {
-    background-image: url("/images/image-teaser-inloopo-mobil.svg")
+    background-image: url('/images/image-teaser-inloopo-mobil.svg');
   }
-
 
   .desktop__below-header {
     display: none;
@@ -1210,16 +1012,12 @@ nav input[type="checkbox"] {
     height: 200px;
   }
 
-
-
-
   /* ---------------------------------*\
         #TEASER-SUBPAGES
     \* ---------------------------------*/
 
   .main-teaser__text {
     width: 80%;
-
   }
 
   .main-teaser__heading {
@@ -1233,36 +1031,23 @@ nav input[type="checkbox"] {
     width: 100%;
   }
 
-
-
   /* #FAQ */
-
-
 
   /* ---------------------------------*\
         #TABLE
     \* ---------------------------------*/
 
-
   /* ---------------------------------*\
         #VALUES
     \* ---------------------------------*/
-
 
   /* ---------------------------------*\
         #CONTENT #BOX PROBLEMS-SOLUTIONS
     \* ---------------------------------*/
 
-
-
-
-
   /* ---------------------------------*\
         #LIST
     \* ---------------------------------*/
-
-
-
 
   /* ---------------------------------*\
         #COLUMN
@@ -1271,11 +1056,6 @@ nav input[type="checkbox"] {
   .column__col {
     padding: 25px;
   }
-
-
-
-
-
 
   /* ---------------------------------*\
         #SECONDARY TEASER 
@@ -1291,23 +1071,13 @@ nav input[type="checkbox"] {
     width: 60%;
   }
 
-
-
-
-
   /* ---------------------------------*\
         #LEGAL 
     \* ---------------------------------*/
 
-
-
   /* ---------------------------------*\
         #QUOTE 
     \* ---------------------------------*/
-
-
-
-
 
   /* ---------------------------------*\
         #LIST #TOOLS 
@@ -1317,7 +1087,6 @@ nav input[type="checkbox"] {
             #BREADCRUMBS
     \* ---------------------------------*/
 
-
   /* ---------------------------------*\
         #BLOG #ARTICLE
     \* ---------------------------------*/
@@ -1325,9 +1094,6 @@ nav input[type="checkbox"] {
   /* ---------------------------------*\
         #FEEDBACK
     \* ---------------------------------*/
-
-
-
 
   /* ---------------------------------*\
     #TOC
@@ -1373,8 +1139,6 @@ nav input[type="checkbox"] {
 
 */
 
-
-
   /* ---------------------------------*\
         #SHARE BUTTON 
 \* ---------------------------------*/
@@ -1398,7 +1162,6 @@ nav input[type="checkbox"] {
     width: 100%;
   }
 }
-
 
 /* ---------------------------------*\
     # Utility Classes

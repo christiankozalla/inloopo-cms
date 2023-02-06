@@ -14,25 +14,17 @@
 * COMPONENTS
 */
 
-
-
-
-
-
 /* ---------------------------------*\
     #VARIABLES
 \* ---------------------------------*/
 
 :root {
   --background-color: #fff;
-  --dark-background-color: #253C78;
+  --dark-background-color: #253c78;
   --accent-color: #ff6b35;
   --text-color: #171614;
   --navbar-height: 80px;
 }
-
-
-
 
 /* ---------------------------------*\
     #CONFIGORATION
@@ -45,12 +37,10 @@ html {
   scroll-padding-top: 80px;
 }
 
-
 img {
   max-width: 100%;
   /*images responsive*/
 }
-
 
 * {
   margin: 0;
@@ -59,8 +49,6 @@ img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-
 
 /* ---------------------------------*\
     #LAYOUT
@@ -74,20 +62,16 @@ body {
   overflow-x: hidden;
 }
 
-
 header {
   padding: 10px 3%;
   background: #fff;
   margin-bottom: 0;
 }
 
-
 section {
   padding: 0;
   display: block;
 }
-
-
 
 /* #Raster */
 
@@ -126,10 +110,6 @@ section {
   width: 25%;
 }
 
-
-
-
-
 /* ---------------------------------*\
     #WRAPPER
 \* ---------------------------------*/
@@ -166,12 +146,9 @@ section {
   overflow: hidden;
 }
 
-
-
 /* ---------------------------------*\
     #FONTS
 \* ---------------------------------*/
-
 
 /* Cera Pro */
 /* 
@@ -198,7 +175,8 @@ section {
 
 @font-face {
   font-family: 'Cera Pro';
-  src: url("/fonts/Cera Pro Medium.otf") format('opentype') url("/fonts/Cera Pro Medium.ttf") format('truetype');
+  src: url('/fonts/Cera Pro Medium.otf') format('opentype')
+    url('/fonts/Cera Pro Medium.ttf') format('truetype');
 }
 
 /* Quattrocento */
@@ -219,10 +197,8 @@ section {
 
 @font-face {
   font-family: 'Quattrocento Sans';
-  src: url("/fonts/QuattrocentoSans-Regular.ttf") format('truetype');
+  src: url('/fonts/QuattrocentoSans-Regular.ttf') format('truetype');
 }
-
-
 
 /* ---------------------------------*\
     #BASE ELEMENTS
@@ -298,11 +274,6 @@ p {
   line-height: 1.5;
 }
 
-
-
-
-
-
 /* ---------------------------------*\
     #NAVIGATION
 \* ---------------------------------*/
@@ -343,12 +314,10 @@ nav li {
   font-size: 1.375rem;
   font-family: 'Quattrocento', Arial, Helvetica, sans-serif;
   padding: 20px;
-
 }
 
 nav a:hover {
   color: #ff6b35;
-
 }
 
 nav ul a {
@@ -381,7 +350,7 @@ nav ul a {
   border-radius: 4px;
 }
 
-nav input[type="checkbox"] {
+nav input[type='checkbox'] {
   display: none;
 }
 
@@ -402,7 +371,6 @@ nav input[type="checkbox"] {
   color: #fff;
 }
 
-
 .toggle-button span.bar {
   transition: transform 200ms linear, opacity 100ms linear;
 }
@@ -419,22 +387,17 @@ nav input[type="checkbox"] {
   transform: translateY() rotate(0deg);
 }
 
-#toggle-button:checked~.toggle-button span.bar:nth-child(1) {
+#toggle-button:checked ~ .toggle-button span.bar:nth-child(1) {
   transform: translateY(10.5px) rotate(135deg);
 }
 
-#toggle-button:checked~.toggle-button span.bar:nth-child(2) {
+#toggle-button:checked ~ .toggle-button span.bar:nth-child(2) {
   opacity: 0;
 }
 
-#toggle-button:checked~.toggle-button span.bar:nth-child(3) {
+#toggle-button:checked ~ .toggle-button span.bar:nth-child(3) {
   transform: translateY(-10.5px) rotate(-135deg);
 }
-
-
-
-
-
 
 /* ---------------------------------*\
     #BREADCRUMBS
@@ -459,8 +422,8 @@ nav input[type="checkbox"] {
   font-size: 16px;
 }
 
-.breadcrumbs__li+.breadcrumbs__li:before {
-  content: ">";
+.breadcrumbs__li + .breadcrumbs__li:before {
+  content: '>';
   padding: 8px;
   width: 20%;
   height: 20%;
@@ -479,8 +442,6 @@ nav input[type="checkbox"] {
   color: var(--accent-color);
   text-decoration: none;
 }
-
-
 
 /* ---------------------------------*\
     #COMPONENTS
@@ -505,13 +466,11 @@ nav input[type="checkbox"] {
   margin-right: 10px;
 }
 
-
 .button-table {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 60px;
-
 }
 
 .button--final {
@@ -526,10 +485,6 @@ nav input[type="checkbox"] {
   color: #ff6b35;
   border: 2px solid #ff6b35;
 }
-
-
-
-
 
 /* #Links */
 
@@ -564,10 +519,6 @@ nav input[type="checkbox"] {
   cursor: pointer;
 }
 
-
-
-
-
 /* #Teaser */
 
 .main-teaser {
@@ -585,7 +536,6 @@ nav input[type="checkbox"] {
   margin-top: 160px;
 }
 
-
 .main-teaser__heading--center {
   text-align: center;
   color: #fff;
@@ -594,7 +544,6 @@ nav input[type="checkbox"] {
 .main-teaser__heading--page-wikifolio {
   font-size: 58px;
 }
-
 
 .main-teaser__text {
   color: #fff;
@@ -615,7 +564,6 @@ nav input[type="checkbox"] {
   font-size: 36px;
 }
 
-
 .main-teaser__icon {
   display: flex;
   margin: 20px 0 20px 80px;
@@ -625,20 +573,17 @@ nav input[type="checkbox"] {
   display: none;
 }
 
-
-
-
 /* #Teaser #Background Image */
 
 .main-teaser__homepage {
-  background-image: url("/images/image-teaser-01.svg");
+  background-image: url('/images/image-teaser-01.svg');
   background-position: center;
   padding-top: 1%;
   margin-bottom: 120px;
 }
 
 .main-teaser__page-investieren {
-  background-image: url("/images/image-teaser-investieren.svg");
+  background-image: url('/images/image-teaser-investieren.svg');
   background-position: center;
   padding-top: 1%;
 }
@@ -669,13 +614,6 @@ nav input[type="checkbox"] {
   margin-top: 60px;
 }
 
-
-
-
-
-
-
-
 /* #Colored Box #Box #Values */
 
 .column__col--color {
@@ -685,7 +623,6 @@ nav input[type="checkbox"] {
 .column__col--blue {
   background: var(--dark-background-color);
 }
-
 
 .box__heading-four--white {
   color: #fff;
@@ -703,11 +640,7 @@ nav input[type="checkbox"] {
   display: none;
 }
 
-
-
-
 /* #Circle */
-
 
 .circle {
   border: 6px solid var(--accent-color);
@@ -725,10 +658,6 @@ nav input[type="checkbox"] {
 .circle__heading {
   text-align: center;
 }
-
-
-
-
 
 /* #Animations Icons Clock */
 
@@ -762,7 +691,6 @@ nav input[type="checkbox"] {
   margin-right: auto;
 }
 
-
 .icon__circle {
   border: 6px solid var(--accent-color);
   border-radius: 50%;
@@ -780,9 +708,6 @@ nav input[type="checkbox"] {
 .icon__circle img {
   margin: auto;
 }
-
-
-
 
 /* #Columns */
 
@@ -822,10 +747,6 @@ nav input[type="checkbox"] {
   margin: auto;
 }
 
-
-
-
-
 /* #Columns mit Foto und Text */
 .column--blue {
   background-color: var(--dark-background-color);
@@ -846,7 +767,6 @@ nav input[type="checkbox"] {
   padding: 30px 0;
 }
 
-
 .box__heading--white-left {
   text-align: left;
   width: 100%;
@@ -864,13 +784,9 @@ nav input[type="checkbox"] {
   margin: 0;
 }
 
-
-
-
 /* #Icons Animation */
 
 .icon__circle {
-
   animation: draw 3s ease-in-out 4ms forwards;
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
@@ -881,9 +797,6 @@ nav input[type="checkbox"] {
     stroke-dashoffset: 0;
   }
 }
-
-
-
 
 /* #Secondary Teaser */
 
@@ -926,9 +839,6 @@ nav input[type="checkbox"] {
   font-size: 24px;
   width: 40%;
 }
-
-
-
 
 /* #Box #Problems-Solutions */
 
@@ -1016,7 +926,6 @@ nav input[type="checkbox"] {
 .box__ul {
   list-style: none;
   margin-bottom: 20px;
-
 }
 
 .box__li {
@@ -1028,8 +937,6 @@ nav input[type="checkbox"] {
   padding-top: 15px;
   display: inline;
 }
-
-
 
 /* #Blockqoute #Quote */
 
@@ -1057,24 +964,24 @@ nav input[type="checkbox"] {
 }
 
 .quote__page-seo::after {
-  content: "Nina Baumann";
+  content: 'Nina Baumann';
 }
 
 .quote__page-sp500-strategie:after {
-  content: "André Kostolany";
+  content: 'André Kostolany';
 }
 
 .quote__page-copy-trading:after {
-  content: "Albert Einstein";
+  content: 'Albert Einstein';
   font-size: 16px;
 }
 
 .quote__page-webdesign:after {
-  content: "Jakob Nielsen";
+  content: 'Jakob Nielsen';
 }
 
 .quote__page-wer-wir-sind:after {
-  content: "Neale Donald Walsch";
+  content: 'Neale Donald Walsch';
 }
 
 .quote__page-wer-wir-sind {
@@ -1082,9 +989,6 @@ nav input[type="checkbox"] {
   margin-top: 30px;
   margin-bottom: 90px;
 }
-
-
-
 
 /* #Box #Card #Prices & Plans */
 
@@ -1204,7 +1108,7 @@ nav input[type="checkbox"] {
 }
 
 .text--grey {
-  color: #DCDCDC;
+  color: #dcdcdc;
 }
 
 .box__table {
@@ -1218,10 +1122,6 @@ nav input[type="checkbox"] {
   justify-items: center;
 }
 
-
-
-
-
 /* #Table */
 
 .responsive-table {
@@ -1232,7 +1132,6 @@ nav input[type="checkbox"] {
   overflow-x: auto;
   padding: 0 7%;
 }
-
 
 table,
 thead,
@@ -1257,15 +1156,9 @@ th {
 }
 
 td {
-  border-bottom: 1px solid #DCDCDC;
+  border-bottom: 1px solid #dcdcdc;
   padding: 25px 10px;
-
 }
-
-
-
-
-
 
 /* #Lists Mobile */
 
@@ -1282,12 +1175,6 @@ td {
   list-style: none;
   margin-top: 10px;
 }
-
-
-
-
-
-
 
 /* #Lists */
 
@@ -1322,9 +1209,6 @@ td {
 .box__link {
   margin-left: 42px;
 }
-
-
-
 
 /* #FAQ */
 
@@ -1441,7 +1325,7 @@ td {
 .blog__article {
   margin-right: 2%;
   width: 30.5%;
-  border: 1px solid #DCDCDC;
+  border: 1px solid #dcdcdc;
   padding: 0;
   margin-bottom: 25px;
   height: 672px;
@@ -1475,9 +1359,7 @@ td {
   margin-top: 50px;
 }
 
-
 /* #Feedback */
-
 
 .rating {
   width: 100%;
@@ -1515,21 +1397,19 @@ td {
   content: '☆';
 }
 
-.rating__stars input:checked~label {
+.rating__stars input:checked ~ label {
   color: var(--accent-color);
 }
 
-.rating__stars:not(:checked)>label:hover,
-.rating__stars:not(:checked)>label:hover~label {
+.rating__stars:not(:checked) > label:hover,
+.rating__stars:not(:checked) > label:hover ~ label {
   color: var(--accent-color);
 }
 
-.rating__stars input:checked>label:hover,
-.rating__stars input:checked>label:hover~label {
+.rating__stars input:checked > label:hover,
+.rating__stars input:checked > label:hover ~ label {
   color: var(--accent-color);
 }
-
-
 
 .rating__result:before {
   text-align: center;
@@ -1545,29 +1425,29 @@ td {
   width: 100%;
 }
 
-.rating__stars input:checked~.rating__result:before {
+.rating__stars input:checked ~ .rating__result:before {
   display: block;
   margin: 0 auto;
 }
 
-.rating__stars #five:checked~.rating__result:before {
+.rating__stars #five:checked ~ .rating__result:before {
   content: 'Es ist großartig!';
 }
 
-.rating__stars #four:checked~.rating__result:before {
+.rating__stars #four:checked ~ .rating__result:before {
   content: 'Gefällt mir';
 }
 
-.rating__stars #three:checked~.rating__result:before {
-  content: 'Ist ganz ok.'
+.rating__stars #three:checked ~ .rating__result:before {
+  content: 'Ist ganz ok.';
 }
 
-.rating__stars #two:checked~.rating__result:before {
+.rating__stars #two:checked ~ .rating__result:before {
   content: 'Ich finds eher schlecht.';
 }
 
-.rating__stars #one:checked~.rating__result:before {
-  content: 'Geht gar nicht.'
+.rating__stars #one:checked ~ .rating__result:before {
+  content: 'Geht gar nicht.';
 }
 
 .rating__submit-btn {
@@ -1589,7 +1469,6 @@ td {
   color: #ff6b35;
   border: 2px solid #ff6b35;
 }
-
 
 .rating__feedback-heading {
   font-size: 24px;
@@ -1613,14 +1492,13 @@ td {
   border: 1px solid var(--accent-color);
 }
 
-textarea[type=text] {
+textarea[type='text'] {
   border: 1px solid var(--text-color);
 }
 
-textarea[type=text]:focus {
+textarea[type='text']:focus {
   border: 2px solid var(--accent-color);
 }
-
 
 /* #Article */
 
@@ -1695,7 +1573,6 @@ textarea[type=text]:focus {
 .article__box--info {
   color: #fff;
   text-align: center;
-
 }
 
 .article__box--info-item {
@@ -1763,8 +1640,6 @@ textarea[type=text]:focus {
   margin-top: 28px;
 }
 
-
-
 /* #Slider */
 
 .slider__container {
@@ -1795,7 +1670,6 @@ textarea[type=text]:focus {
   object-position: top;
 }
 
-
 .slides {
   overflow: hidden;
   width: 75vmin;
@@ -1814,7 +1688,6 @@ textarea[type=text]:focus {
   object-fit: cover;
   object-position: top;
 }
-
 
 .slides li:target {
   z-index: 3;
@@ -1835,11 +1708,6 @@ textarea[type=text]:focus {
   }
 }
 
-
-
-
-
-
 /* #TOC */
 
 .toc {
@@ -1858,9 +1726,7 @@ textarea[type=text]:focus {
   /* fading effect takes 3s */
 }
 
-
 @keyframes fadeEffect {
-
   /* from 0 to full opacity */
   from {
     opacity: 0;
@@ -1871,14 +1737,13 @@ textarea[type=text]:focus {
   }
 }
 
-
 .toc__link {
   text-decoration: none;
   list-style: none;
   display: block;
   padding: 6px 0;
   color: #171614;
-  transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .toc__link:hover,
@@ -1894,8 +1759,7 @@ textarea[type=text]:focus {
   border-left: 3px solid #ff6b35;
 }
 
-
-.toc input[type="checkbox"] {
+.toc input[type='checkbox'] {
   display: none;
 }
 
@@ -1911,11 +1775,6 @@ textarea[type=text]:focus {
   display: block;
   margin-bottom: 12px;
 }
-
-
-
-
-
 
 /* #Share Buttons */
 
@@ -1933,7 +1792,6 @@ textarea[type=text]:focus {
 }
 
 .animated_share_btn {
-
   cursor: pointer;
   border: 1px solid #ff6b35;
   position: relative;
@@ -1944,7 +1802,7 @@ textarea[type=text]:focus {
 }
 
 .animated_share_btn:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -1955,7 +1813,7 @@ textarea[type=text]:focus {
 }
 
 .animated_share_btn:after {
-  content: "Share";
+  content: 'Share';
   position: absolute;
   left: 0;
   top: 0;
@@ -1973,7 +1831,6 @@ textarea[type=text]:focus {
 .animated_share_btn:hover:after {
   left: -100%;
 }
-
 
 /* ---------------------------------*\
     #RIGHTS for English Website
@@ -2001,10 +1858,6 @@ textarea[type=text]:focus {
   font-size: 18px;
   font-size: 1.125rem;
 }
-
-
-
-
 
 /* ---------------------------------*\
         #FOOTER
@@ -2054,14 +1907,11 @@ textarea[type=text]:focus {
   margin-bottom: 5px;
 }
 
-
-
-
 /* Media Queries * * * * * * * * */
-@media only screen and (min-width:1200px) and (max-width:1920px) {}
+@media only screen and (min-width: 1200px) and (max-width: 1920px) {
+}
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
   .wrapper-content-blog {
     width: 600px;
   }
@@ -2070,11 +1920,9 @@ textarea[type=text]:focus {
     width: 185px;
     overflow-y: auto;
   }
-
 }
 
-@media only screen and (min-width:760px) and (max-width:979px) {
-
+@media only screen and (min-width: 760px) and (max-width: 979px) {
   /* ---------------------------------*\
         #LAYOUT
     \* ---------------------------------*/
@@ -2086,7 +1934,6 @@ textarea[type=text]:focus {
   .main-teaser__page-wikifolio {
     background-position: center;
   }
-
 
   .main-teaser__heading--page-wikifolio {
     width: 70%;
@@ -2103,14 +1950,9 @@ textarea[type=text]:focus {
     margin-top: 10px;
   }
 
-
-
-
   /* ---------------------------------*\
         #NAVIGATION
     \* ---------------------------------*/
-
-
 
   .toggle-button {
     display: flex;
@@ -2152,7 +1994,7 @@ textarea[type=text]:focus {
     display: none;
   }
 
-  .expandable-li input[type="checkbox"]:checked~.dropdown {
+  .expandable-li input[type='checkbox']:checked ~ .dropdown {
     display: block;
   }
 
@@ -2174,10 +2016,9 @@ textarea[type=text]:focus {
     justify-content: center;
   }
 
-  #toggle-button:checked~ul {
+  #toggle-button:checked ~ ul {
     display: block;
   }
-
 
   /* ---------------------------------*\
         #HEADINGS 
@@ -2204,9 +2045,6 @@ textarea[type=text]:focus {
     font-size: 48px;
   }
 
-
-
-
   /* ---------------------------------*\
         #BUTTON #LINKS
     \* ---------------------------------*/
@@ -2217,10 +2055,6 @@ textarea[type=text]:focus {
     align-items: center;
     margin: 35%;
   }
-
-
-
-
 
   /* ---------------------------------*\
         #PROBLEMS-SOLUTIONS #BOX
@@ -2241,9 +2075,6 @@ textarea[type=text]:focus {
   .box__container:first-child {
     margin-bottom: 50px;
   }
-
-
-
 
   /* ---------------------------------*\
         #TEASER-HOMEPAGE
@@ -2271,7 +2102,6 @@ textarea[type=text]:focus {
     margin-right: auto;
   }
 
-
   /* ---------------------------------*\
         #SECONDARY #TEASER
     \* ---------------------------------*/
@@ -2294,8 +2124,6 @@ textarea[type=text]:focus {
     margin-bottom: 90px;
   }
 
-
-
   /* ---------------------------------*\
         #FAQ
     \* ---------------------------------*/
@@ -2303,7 +2131,6 @@ textarea[type=text]:focus {
   .faq__container {
     width: 100%;
   }
-
 
   /* ---------------------------------*\
         #VALUES
@@ -2319,8 +2146,6 @@ textarea[type=text]:focus {
     margin: auto;
   }
 
-
-
   /* ---------------------------------*\
             #BLOG #ARTICLE
     \* ---------------------------------*/
@@ -2330,12 +2155,9 @@ textarea[type=text]:focus {
     width: 100%;
   }
 
-
   .blog__article {
     height: 730px;
   }
-
-
 
   /* ---------------------------------*\
         #TOC
@@ -2355,13 +2177,9 @@ textarea[type=text]:focus {
     overflow: auto;
   }
 
-
   /* ---------------------------------*\
         #COLUMNS
     \* ---------------------------------*/
-
-
-
 
   .column__foto-text {
     width: 100%;
@@ -2384,21 +2202,15 @@ textarea[type=text]:focus {
     padding-top: 0;
   }
 
-
-
-
-
   /* ---------------------------------*\
         #RASTER
     \* ---------------------------------*/
-
 
   .row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 0 30px;
   }
-
 
   .half {
     width: 100%;
@@ -2420,10 +2232,6 @@ textarea[type=text]:focus {
     width: 50%;
   }
 
-
-
-
-
   /* ---------------------------------*\
         #TEXT-LEGAL
     \* ---------------------------------*/
@@ -2436,10 +2244,6 @@ textarea[type=text]:focus {
   .colored-background h1 {
     padding: 90px 0 0;
   }
-
-
-
-
 
   /* ---------------------------------*\
         #TOOLS
@@ -2454,12 +2258,7 @@ textarea[type=text]:focus {
   }
 }
 
-
-
-
-
-@media only screen and (max-width:759px) {
-
+@media only screen and (max-width: 759px) {
   /* ---------------------------------*\
         #LAYOUT
     \* ---------------------------------*/
@@ -2472,8 +2271,6 @@ textarea[type=text]:focus {
     padding-left: 25px;
     padding-right: 25px;
   }
-
-
 
   header {
     padding: 0;
@@ -2531,7 +2328,7 @@ textarea[type=text]:focus {
     display: none;
   }
 
-  .expandable-li input[type="checkbox"]:checked~.dropdown {
+  .expandable-li input[type='checkbox']:checked ~ .dropdown {
     display: block;
   }
 
@@ -2553,14 +2350,9 @@ textarea[type=text]:focus {
     justify-content: center;
   }
 
-  #toggle-button:checked~ul {
+  #toggle-button:checked ~ ul {
     display: block;
   }
-
-
-
-
-
 
   /* ---------------------------------*\
         #HEADINGS
@@ -2609,8 +2401,6 @@ textarea[type=text]:focus {
     font-size: 18px;
   }
 
-
-
   /* ---------------------------------*\
         #BUTTONS #LINKS
     \* ---------------------------------*/
@@ -2626,14 +2416,9 @@ textarea[type=text]:focus {
     margin: 0 20% 90px;
   }
 
-
-
-
-
   /* ---------------------------------*\
         #TEASER-HOMEPAGE
     \* ---------------------------------*/
-
 
   .main-teaser {
     margin-top: 80px;
@@ -2642,13 +2427,12 @@ textarea[type=text]:focus {
   }
 
   .main-teaser__homepage {
-    background-image: url("/images/image-teaser-inloopo-mobil.svg")
+    background-image: url('/images/image-teaser-inloopo-mobil.svg');
   }
 
   .main-teaser__heading-one--mobile {
     padding-top: 90px;
   }
-
 
   .desktop__below-header {
     display: none;
@@ -2671,16 +2455,12 @@ textarea[type=text]:focus {
     height: 200px;
   }
 
-
-
-
   /* ---------------------------------*\
         #TEASER-SUBPAGES
     \* ---------------------------------*/
 
   .main-teaser__text {
     width: 80%;
-
   }
 
   .main-teaser__heading {
@@ -2697,7 +2477,6 @@ textarea[type=text]:focus {
     margin-bottom: 0;
   }
 
-
   .box__column--full {
     width: 100%;
     margin-left: 0;
@@ -2707,7 +2486,6 @@ textarea[type=text]:focus {
   .box__column {
     padding: 40px 25px;
   }
-
 
   .main-teaser__page-investieren {
     margin-bottom: 0;
@@ -2727,14 +2505,10 @@ textarea[type=text]:focus {
     width: 100%;
   }
 
-
-
   /* #FAQ */
   .faq__container {
     width: 100%;
   }
-
-
 
   /* ---------------------------------*\
         #TABLE
@@ -2748,7 +2522,6 @@ textarea[type=text]:focus {
     padding: 0 2%;
   }
 
-
   /* ---------------------------------*\
         #VALUES
     \* ---------------------------------*/
@@ -2761,11 +2534,9 @@ textarea[type=text]:focus {
     display: block;
   }
 
-
   /* ---------------------------------*\
         #CONTENT #BOX PROBLEMS-SOLUTIONS
     \* ---------------------------------*/
-
 
   .row.box--grey-background {
     padding-left: 25px;
@@ -2784,13 +2555,11 @@ textarea[type=text]:focus {
     margin-bottom: 50px;
   }
 
-
   .box__icon,
   .box__heading {
     display: block;
     text-align: center;
   }
-
 
   .box__text--center {
     width: 100%;
@@ -2817,14 +2586,9 @@ textarea[type=text]:focus {
     width: 80%;
   }
 
-
   .box--blue-background {
     padding-bottom: 160px;
   }
-
-
-
-
 
   /* ---------------------------------*\
         #LIST
@@ -2833,9 +2597,6 @@ textarea[type=text]:focus {
   .list__heading {
     padding: 0 25px;
   }
-
-
-
 
   /* ---------------------------------*\
         #COLUMN
@@ -2859,7 +2620,6 @@ textarea[type=text]:focus {
     margin-top: 30px;
   }
 
-
   .column__foto-text {
     width: 100%;
     display: flex;
@@ -2874,11 +2634,6 @@ textarea[type=text]:focus {
   .column--blue {
     width: 100%;
   }
-
-
-
-
-
 
   /* ---------------------------------*\
         #SECONDARY TEASER 
@@ -2895,13 +2650,9 @@ textarea[type=text]:focus {
   }
 
   .secondary-teaser__image-at-work {
-    background-image: url("/images/teaser-image-at-work-mobile.jpg");
+    background-image: url('/images/teaser-image-at-work-mobile.jpg');
     background-position: center;
   }
-
-
-
-
 
   /* ---------------------------------*\
         #LEGAL 
@@ -2910,8 +2661,6 @@ textarea[type=text]:focus {
   .wrapper-content-rights {
     padding: 0 24px;
   }
-
-
 
   /* ---------------------------------*\
         #QUOTE 
@@ -2927,10 +2676,6 @@ textarea[type=text]:focus {
     margin-top: 60px;
   }
 
-
-
-
-
   /* ---------------------------------*\
         #LIST #TOOLS 
     \* ---------------------------------*/
@@ -2943,7 +2688,6 @@ textarea[type=text]:focus {
     display: none;
   }
 
-
   /* ---------------------------------*\
         #BLOG #ARTICLE
     \* ---------------------------------*/
@@ -2955,7 +2699,6 @@ textarea[type=text]:focus {
   .box__main-heading {
     margin-top: 120px;
   }
-
 
   .blog__article {
     width: 100%;
@@ -2970,7 +2713,6 @@ textarea[type=text]:focus {
   .blog__heading {
     margin-top: 30px;
   }
-
 
   .article__main-heading {
     margin-top: 120px;
@@ -2998,9 +2740,6 @@ textarea[type=text]:focus {
     font-size: 50px;
     padding: 5px;
   }
-
-
-
 
   /* ---------------------------------*\
     #TOC
@@ -3046,8 +2785,6 @@ textarea[type=text]:focus {
 
 */
 
-
-
   /* ---------------------------------*\
         #SHARE BUTTON 
 \* ---------------------------------*/
@@ -3087,7 +2824,6 @@ textarea[type=text]:focus {
     width: 100%;
   }
 }
-
 
 /* ---------------------------------*\
     # Utility Classes

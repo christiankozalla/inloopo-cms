@@ -22,8 +22,5 @@ const { title, date, body } = Astro.props;
 ---
 
 <BlogLayout title={title} date={date}>
-  <article
-    class="wrapper-content-blog"
-    set:html={body}
-  />
+  <article class="wrapper-content-blog" set:html={body} />
 </BlogLayout>

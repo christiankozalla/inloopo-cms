@@ -11,7 +11,7 @@ export function debounce(handler: (event: Event) => void, delay = 500) {
 
 export function throttle(
   handler: (event: Event) => void,
-  { maxCalls = 50, duration = 500 },
+  { maxCalls = 50, duration = 500 }
 ) {
   let calls = 0;
   let lastCallTime = Date.now();

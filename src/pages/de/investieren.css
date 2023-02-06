@@ -14,25 +14,17 @@
 * COMPONENTS
 */
 
-
-
-
-
-
 /* ---------------------------------*\
     #VARIABLES
 \* ---------------------------------*/
 
 :root {
   --background-color: #fff;
-  --dark-background-color: #253C78;
+  --dark-background-color: #253c78;
   --accent-color: #ff6b35;
   --text-color: #171614;
   --navbar-height: 80px;
 }
-
-
-
 
 /* ---------------------------------*\
     #CONFIGORATION
@@ -45,12 +37,10 @@ html {
   scroll-padding-top: 80px;
 }
 
-
 img {
   max-width: 100%;
   /*images responsive*/
 }
-
 
 * {
   margin: 0;
@@ -59,8 +49,6 @@ img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-
 
 /* ---------------------------------*\
     #LAYOUT
@@ -74,20 +62,16 @@ body {
   overflow-x: hidden;
 }
 
-
 header {
   padding: 10px 3%;
   background: #fff;
   margin-bottom: 0;
 }
 
-
 section {
   padding: 0;
   display: block;
 }
-
-
 
 /* #Raster */
 
@@ -114,10 +98,6 @@ section {
   width: 25%;
 }
 
-
-
-
-
 /* ---------------------------------*\
     #WRAPPER
 \* ---------------------------------*/
@@ -134,11 +114,9 @@ section {
   overflow: hidden;
 }
 
-
 /* ---------------------------------*\
     #FONTS
 \* ---------------------------------*/
-
 
 /* Cera Pro */
 /* 
@@ -165,7 +143,8 @@ section {
 
 @font-face {
   font-family: 'Cera Pro';
-  src: url("/fonts/Cera Pro Medium.otf") format('opentype') url("/fonts/Cera Pro Medium.ttf") format('truetype');
+  src: url('/fonts/Cera Pro Medium.otf') format('opentype')
+    url('/fonts/Cera Pro Medium.ttf') format('truetype');
 }
 
 /* Quattrocento */
@@ -186,10 +165,8 @@ section {
 
 @font-face {
   font-family: 'Quattrocento Sans';
-  src: url("/fonts/QuattrocentoSans-Regular.ttf") format('truetype');
+  src: url('/fonts/QuattrocentoSans-Regular.ttf') format('truetype');
 }
-
-
 
 /* ---------------------------------*\
     #BASE ELEMENTS
@@ -238,11 +215,6 @@ p {
   line-height: 1.5;
 }
 
-
-
-
-
-
 /* ---------------------------------*\
     #NAVIGATION
 \* ---------------------------------*/
@@ -283,12 +255,10 @@ nav li {
   font-size: 1.375rem;
   font-family: 'Quattrocento', Arial, Helvetica, sans-serif;
   padding: 20px;
-
 }
 
 nav a:hover {
   color: #ff6b35;
-
 }
 
 nav ul a {
@@ -321,7 +291,7 @@ nav ul a {
   border-radius: 4px;
 }
 
-nav input[type="checkbox"] {
+nav input[type='checkbox'] {
   display: none;
 }
 
@@ -342,7 +312,6 @@ nav input[type="checkbox"] {
   color: #fff;
 }
 
-
 .toggle-button span.bar {
   transition: transform 200ms linear, opacity 100ms linear;
 }
@@ -359,28 +328,21 @@ nav input[type="checkbox"] {
   transform: translateY() rotate(0deg);
 }
 
-#toggle-button:checked~.toggle-button span.bar:nth-child(1) {
+#toggle-button:checked ~ .toggle-button span.bar:nth-child(1) {
   transform: translateY(10.5px) rotate(135deg);
 }
 
-#toggle-button:checked~.toggle-button span.bar:nth-child(2) {
+#toggle-button:checked ~ .toggle-button span.bar:nth-child(2) {
   opacity: 0;
 }
 
-#toggle-button:checked~.toggle-button span.bar:nth-child(3) {
+#toggle-button:checked ~ .toggle-button span.bar:nth-child(3) {
   transform: translateY(-10.5px) rotate(-135deg);
 }
-
-
-
-
-
 
 /* ---------------------------------*\
     #BREADCRUMBS
 \* ---------------------------------*/
-
-
 
 /* ---------------------------------*\
     #COMPONENTS
@@ -401,13 +363,11 @@ nav input[type="checkbox"] {
   font-weight: bold;
 }
 
-
 .button-table {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 60px;
-
 }
 
 .button:hover {
@@ -415,10 +375,6 @@ nav input[type="checkbox"] {
   color: #ff6b35;
   border: 2px solid #ff6b35;
 }
-
-
-
-
 
 /* #Links */
 
@@ -431,10 +387,6 @@ nav input[type="checkbox"] {
   border-bottom: 1px solid #ff6b35;
   padding-bottom: 4px;
 }
-
-
-
-
 
 /* #Teaser */
 
@@ -452,7 +404,6 @@ nav input[type="checkbox"] {
   margin-top: 160px;
 }
 
-
 .main-teaser__text {
   color: #fff;
   width: 40%;
@@ -460,9 +411,6 @@ nav input[type="checkbox"] {
   padding-bottom: 10%;
   margin-bottom: 0;
 }
-
-
-
 
 /* #Teaser #Background Image */
 
@@ -472,23 +420,9 @@ nav input[type="checkbox"] {
   padding-top: 1%;
 }
 
-
-
-
-
-
-
-
 /* #Colored Box #Box #Values */
 
-
-
-
 /* #Circle */
-
-
-
-
 
 /* #Animations Icons Clock */
 
@@ -515,9 +449,6 @@ nav input[type="checkbox"] {
 }
 
 */
-
-
-
 
 /* #Columns */
 
@@ -553,14 +484,7 @@ nav input[type="checkbox"] {
   margin: auto;
 }
 
-
-
-
-
 /* #Columns mit Foto und Text */
-
-
-
 
 /* #Icons Animation */
 
@@ -569,9 +493,6 @@ nav input[type="checkbox"] {
     stroke-dashoffset: 0;
   }
 }
-
-
-
 
 /* #Secondary Teaser */
 
@@ -600,9 +521,6 @@ nav input[type="checkbox"] {
   font-size: 24px;
   width: 40%;
 }
-
-
-
 
 /* #Box #Problems-Solutions */
 
@@ -643,7 +561,6 @@ nav input[type="checkbox"] {
 .box__ul {
   list-style: none;
   margin-bottom: 20px;
-
 }
 
 .box__li {
@@ -655,8 +572,6 @@ nav input[type="checkbox"] {
   padding-top: 15px;
   display: inline;
 }
-
-
 
 /* #Blockqoute #Quote */
 
@@ -684,14 +599,10 @@ nav input[type="checkbox"] {
 }
 
 .quote__page-sp500-strategie:after {
-  content: "André Kostolany";
+  content: 'André Kostolany';
 }
 
-
-
-
 /* #Box #Card #Prices & Plans */
-
 
 .box__subheading--center {
   text-align: center;
@@ -746,16 +657,11 @@ nav input[type="checkbox"] {
   justify-items: center;
 }
 
-
-
-
-
 /* #Table */
 
 .responsive-table {
   overflow-x: auto;
 }
-
 
 table,
 thead,
@@ -780,28 +686,13 @@ th {
 }
 
 td {
-  border-bottom: 1px solid #DCDCDC;
+  border-bottom: 1px solid #dcdcdc;
   padding: 25px 10px;
-
 }
-
-
-
-
-
 
 /* #Lists Mobile */
 
-
-
-
-
-
-
 /* #Lists */
-
-
-
 
 /* #FAQ */
 
@@ -906,20 +797,15 @@ td {
 
 /* #Blog */
 
-
 /* #Feedback */
-
 
 /* #Article */
 
 @media screen and (max-width: 979px) {
-
   .box__container:first-child {
     margin-right: 0;
   }
 }
-
-
 
 /* #Slider */
 
@@ -933,16 +819,9 @@ td {
   }
 }
 
-
-
-
-
-
 /* #TOC */
 
-
 @keyframes fadeEffect {
-
   /* from 0 to full opacity */
   from {
     opacity: 0;
@@ -953,16 +832,7 @@ td {
   }
 }
 
-
-
-
-
-
-
 /* #Reading Progress Bar */
-
-
-
 
 /* #Icon */
 
@@ -973,21 +843,11 @@ td {
   margin-bottom: 12px;
 }
 
-
-
-
-
-
 /* #Share Buttons */
-
 
 /* ---------------------------------*\
     #RIGHTS for English Website
 \* ---------------------------------*/
-
-
-
-
 
 /* ---------------------------------*\
         #FOOTER
@@ -1037,14 +897,11 @@ td {
   margin-bottom: 5px;
 }
 
-
-
-
 /* Media Queries * * * * * * * * */
-@media only screen and (min-width:1200px) and (max-width:1920px) {}
+@media only screen and (min-width: 1200px) and (max-width: 1920px) {
+}
 
-@media only screen and (min-width:760px) and (max-width:979px) {
-
+@media only screen and (min-width: 760px) and (max-width: 979px) {
   /* ---------------------------------*\
         #LAYOUT
     \* ---------------------------------*/
@@ -1064,14 +921,9 @@ td {
     margin-top: 10px;
   }
 
-
-
-
   /* ---------------------------------*\
         #NAVIGATION
     \* ---------------------------------*/
-
-
 
   .toggle-button {
     display: flex;
@@ -1104,10 +956,9 @@ td {
     margin-left: 0;
   }
 
-  #toggle-button:checked~ul {
+  #toggle-button:checked ~ ul {
     display: block;
   }
-
 
   /* ---------------------------------*\
         #HEADINGS 
@@ -1126,16 +977,9 @@ td {
     font-size: 28px;
   }
 
-
-
-
   /* ---------------------------------*\
         #BUTTON #LINKS
     \* ---------------------------------*/
-
-
-
-
 
   /* ---------------------------------*\
         #PROBLEMS-SOLUTIONS #BOX
@@ -1157,9 +1001,6 @@ td {
     margin-bottom: 50px;
   }
 
-
-
-
   /* ---------------------------------*\
         #TEASER-HOMEPAGE
     \* ---------------------------------*/
@@ -1168,7 +1009,6 @@ td {
   .main-teaser__heading {
     width: 70%;
   }
-
 
   /* ---------------------------------*\
         #SECONDARY #TEASER
@@ -1187,8 +1027,6 @@ td {
         #TEASER BLOG
     \* ---------------------------------*/
 
-
-
   /* ---------------------------------*\
         #FAQ
     \* ---------------------------------*/
@@ -1197,18 +1035,13 @@ td {
     width: 100%;
   }
 
-
   /* ---------------------------------*\
         #VALUES
     \* ---------------------------------*/
 
-
-
   /* ---------------------------------*\
             #BLOG #ARTICLE
     \* ---------------------------------*/
-
-
 
   /* ---------------------------------*\
         #TOC
@@ -1218,26 +1051,19 @@ td {
         #TABLE
     \* ---------------------------------*/
 
-
   /* ---------------------------------*\
         #COLUMNS
     \* ---------------------------------*/
 
-
-
-
-
   /* ---------------------------------*\
         #RASTER
     \* ---------------------------------*/
-
 
   .row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 0 30px;
   }
-
 
   .half {
     width: 100%;
@@ -1251,37 +1077,22 @@ td {
     width: 50%;
   }
 
-
-
-
-
   /* ---------------------------------*\
         #TEXT-LEGAL
     \* ---------------------------------*/
-
-
-
-
 
   /* ---------------------------------*\
         #TOOLS
     \* ---------------------------------*/
 }
 
-
-
-
-
-@media only screen and (max-width:759px) {
-
+@media only screen and (max-width: 759px) {
   /* ---------------------------------*\
         #LAYOUT
     \* ---------------------------------*/
   html {
     scroll-padding-top: 160px;
   }
-
-
 
   header {
     padding: 0;
@@ -1330,14 +1141,9 @@ td {
     margin-left: 0;
   }
 
-  #toggle-button:checked~ul {
+  #toggle-button:checked ~ ul {
     display: block;
   }
-
-
-
-
-
 
   /* ---------------------------------*\
         #HEADINGS
@@ -1356,8 +1162,6 @@ td {
     font-size: 24px;
   }
 
-
-
   /* ---------------------------------*\
         #BUTTONS #LINKS
     \* ---------------------------------*/
@@ -1366,14 +1170,9 @@ td {
     margin-bottom: 30px;
   }
 
-
-
-
-
   /* ---------------------------------*\
         #TEASER-HOMEPAGE
     \* ---------------------------------*/
-
 
   .main-teaser {
     margin-top: 80px;
@@ -1381,16 +1180,12 @@ td {
     margin-bottom: 30px;
   }
 
-
-
-
   /* ---------------------------------*\
         #TEASER-SUBPAGES
     \* ---------------------------------*/
 
   .main-teaser__text {
     width: 80%;
-
   }
 
   .main-teaser__heading {
@@ -1404,7 +1199,6 @@ td {
     padding: 40px 25px;
   }
 
-
   .main-teaser__page-investieren {
     margin-bottom: 0;
     background-position: center;
@@ -1414,14 +1208,10 @@ td {
     width: 100%;
   }
 
-
-
   /* #FAQ */
   .faq__container {
     width: 100%;
   }
-
-
 
   /* ---------------------------------*\
         #TABLE
@@ -1431,16 +1221,13 @@ td {
     font-size: 16px;
   }
 
-
   /* ---------------------------------*\
         #VALUES
     \* ---------------------------------*/
 
-
   /* ---------------------------------*\
         #CONTENT #BOX PROBLEMS-SOLUTIONS
     \* ---------------------------------*/
-
 
   .row.box--grey-background {
     padding-left: 25px;
@@ -1459,7 +1246,6 @@ td {
     margin-bottom: 50px;
   }
 
-
   .box__icon,
   .box__heading {
     display: block;
@@ -1470,21 +1256,13 @@ td {
     width: 80%;
   }
 
-
   .box--blue-background {
     padding-bottom: 160px;
   }
 
-
-
-
-
   /* ---------------------------------*\
         #LIST
     \* ---------------------------------*/
-
-
-
 
   /* ---------------------------------*\
         #COLUMN
@@ -1498,11 +1276,6 @@ td {
     margin-bottom: 0;
     margin-top: 30px;
   }
-
-
-
-
-
 
   /* ---------------------------------*\
         #SECONDARY TEASER 
@@ -1519,19 +1292,13 @@ td {
   }
 
   .secondary-teaser__image-at-work {
-    background-image: url("/images/teaser-image-at-work-mobile.jpg");
+    background-image: url('/images/teaser-image-at-work-mobile.jpg');
     background-position: center;
   }
-
-
-
-
 
   /* ---------------------------------*\
         #LEGAL 
     \* ---------------------------------*/
-
-
 
   /* ---------------------------------*\
         #QUOTE 
@@ -1543,10 +1310,6 @@ td {
     font-size: 24px;
   }
 
-
-
-
-
   /* ---------------------------------*\
         #LIST #TOOLS 
     \* ---------------------------------*/
@@ -1555,7 +1318,6 @@ td {
             #BREADCRUMBS
     \* ---------------------------------*/
 
-
   /* ---------------------------------*\
         #BLOG #ARTICLE
     \* ---------------------------------*/
@@ -1563,9 +1325,6 @@ td {
   /* ---------------------------------*\
         #FEEDBACK
     \* ---------------------------------*/
-
-
-
 
   /* ---------------------------------*\
     #TOC
@@ -1611,8 +1370,6 @@ td {
 
 */
 
-
-
   /* ---------------------------------*\
         #SHARE BUTTON 
 \* ---------------------------------*/
@@ -1640,7 +1397,6 @@ td {
     width: 100%;
   }
 }
-
 
 /* ---------------------------------*\
     # Utility Classes

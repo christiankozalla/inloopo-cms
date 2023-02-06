@@ -1,9 +1,9 @@
 // Code for FAQ
-const items = document.querySelectorAll(".accordion a");
+const items = document.querySelectorAll('.accordion a');
 
-function toggleAccordion(){
+function toggleAccordion() {
   this.classList.toggle('active');
   this.nextElementSibling.classList.toggle('active');
 }
 
-items.forEach(item => item.addEventListener('click', toggleAccordion));
+items.forEach((item) => item.addEventListener('click', toggleAccordion));

@@ -7,11 +7,14 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@types/node": "18.11.18",
-    "astro": "2.0.6"
+    "astro": "2.0.6",
+    "prettier": "^2.8.3",
+    "prettier-plugin-astro": "^0.8.0"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "16.0.2",
