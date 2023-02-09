@@ -1,4 +1,5 @@
 ---
+import Navbar from '../../components/Navbar.astro';
 import '../../styles/styles.css';
 ---
 
@@ -105,34 +106,7 @@ import '../../styles/styles.css';
   </head>
 
   <body>
-    <!-- Kopfleiste -->
-
-    <header>
-      <nav>
-        <a href="/de" class="logo"
-          ><img
-            src="/images/logo.svg"
-            width="150"
-            height=""
-            alt="Logo Inloopo"
-          />
-        </a>
-        <input type="checkbox" id="toggle-button" />
-        <label for="toggle-button" class="toggle-button">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </label>
-        <ul>
-          <li><a href="investieren">Investieren</a></li>
-          <li><a href="wikifolio">Wikifolio</a></li>
-          <li><a href="blog">Blog</a></li>
-          <li><a href="ueber-mich">Über</a></li>
-          <li><a href="kontakt">Kontakt</a></li>
-          <li><a class="nav__lang" href="/">EN</a></li>
-        </ul>
-      </nav>
-    </header>
+    <Navbar lang="de" />
 
     <!-- Teaser -->
 

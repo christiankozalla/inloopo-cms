@@ -1,10 +1,10 @@
-import contentful from 'contentful';
-import { BLOCKS } from '@contentful/rich-text-types';
-import type { Document } from '@contentful/rich-text-types';
+import contentful from "contentful";
+import { BLOCKS } from "@contentful/rich-text-types";
+import type { Document } from "@contentful/rich-text-types";
 
 const contentfulClient = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE_ID,
-  accessToken: import.meta.env.CONTENTFUL_API_KEY
+  accessToken: import.meta.env.CONTENTFUL_API_KEY,
 });
 
 const renderOptions = {
@@ -16,28 +16,30 @@ const renderOptions = {
         <img
             src='https:${node.data.target.fields.file.url}'
             alt='${
-              node.data.target.fields.description?.replace('[caption]', '') ||
-              ''
-            }'
+        node.data.target.fields.description?.replace("[caption]", "") ||
+        ""
+      }'
             loading='lazy'>
         ${
-          node.data.target.fields.description?.startsWith('[caption]')
-            ? figcaptionWithParsedMarkdownLink(
-                node.data.target.fields.description?.replace('[caption]', '')
-              )
-            : ''
-        }
+        node.data.target.fields.description?.startsWith("[caption]")
+          ? figcaptionWithParsedMarkdownLink(
+            node.data.target.fields.description?.replace("[caption]", ""),
+          )
+          : ""
+      }
         </figure>
       `;
-    }
-  }
+    },
+  },
 };
 
 function figcaptionWithParsedMarkdownLink(text: string) {
   const regex = /(.*?)\[(.*?)\]\((.*?)\)(.*)/g;
   const match = regex.exec(text);
   if (match) {
-    return `<figcaption>${match[1]}<a href='${match[3]}'>${match[2]}</a>${match[4]}</figcaption>`;
+    return `<figcaption>${match[1]}<a href='${match[3]}'>${match[2]}</a>${
+      match[4]
+    }</figcaption>`;
   } else {
     return `<figcaption>${text}</figcaption>`;
   }
@@ -46,8 +48,9 @@ function figcaptionWithParsedMarkdownLink(text: string) {
 interface Post {
   title: string;
   slug: string;
-  publishedDate: string;
-  description: string;
+  category: string;
+  published?: string;
+  description?: string;
   body: Document;
 }
 

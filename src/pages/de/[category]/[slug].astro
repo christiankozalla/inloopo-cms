@@ -13,7 +13,9 @@ export async function getStaticPaths() {
     props: {
       title: item.fields.title,
       body: documentToHtmlString(item.fields.body, renderOptions),
-      date: new Date(item.fields.published).toLocaleDateString('de-DE')
+      date: item.fields.published
+        ? new Date(item.fields.published).toLocaleDateString('de-DE')
+        : null
     }
   }));
 }
