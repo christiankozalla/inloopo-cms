@@ -1,8 +1,8 @@
 ---
-import NavbarLink from './NavbarLink.astro';
+import NavbarLink from "./NavbarLink.astro";
 const { lang } = Astro.props;
 
-type Langs = 'de' | 'en';
+type Langs = "de" | "en";
 interface Props {
   lang: Langs;
 }
@@ -15,6 +15,7 @@ interface SubNav {
 interface Link {
   name: string;
   href: string;
+  classes?: string;
 }
 
 type NavbarData = SubNav | Link;
@@ -26,94 +27,96 @@ interface LinkInfo {
 
 const links: Record<Langs, LinkInfo> = {
   de: {
-    home: '/de',
+    home: "/de",
     data: [
       {
-        name: 'Produkte',
+        name: "Produkte",
         links: [
           {
-            name: 'Signaldienst',
-            href: '/de/investieren'
+            name: "Signaldienst",
+            href: "/de/investieren",
           },
           {
-            name: 'Managed Account',
-            href: '/de/wikifolio'
-          }
-        ]
+            name: "Managed Account",
+            href: "/de/wikifolio",
+          },
+        ],
       },
       {
-        name: 'Tools',
+        name: "Tools",
         links: [
           {
-            name: 'Börsenampel',
-            href: '/de/boersenampel'
+            name: "Börsenampel",
+            href: "/de/boersenampel",
           },
           {
-            name: 'Sektorrotation',
-            href: '/de/sektorrotation'
-          }
-        ]
+            name: "Sektorrotation",
+            href: "/de/sektorrotation",
+          },
+        ],
       },
       {
-        name: 'Blog',
-        href: '/de/blog'
+        name: "Blog",
+        href: "/de/blog",
       },
       {
-        name: 'Über',
-        href: '/de/ueber-mich'
+        name: "Über",
+        href: "/de/ueber-mich",
       },
       {
-        name: 'Kontakt',
-        href: '/de/kontakt'
+        name: "Kontakt",
+        href: "/de/kontakt",
       },
       {
-        name: 'Freies E-Book',
-        href: '/de/e-book-kommt-bald'
+        name: "Freies E-Book",
+        href: "/de/e-book-kommt-bald",
+        classes: "navbar__button",
       },
       {
-        name: 'EN',
-        href: '/'
-      }
-    ]
+        name: "EN",
+        href: "/",
+      },
+    ],
   },
   en: {
-    home: '/',
+    home: "/",
     data: [
       {
-        name: 'Products',
+        name: "Products",
         links: [
           {
-            name: 'Signal Service',
-            href: '/investment'
+            name: "Signal Service",
+            href: "/investment",
           },
           {
-            name: 'Managed Account',
-            href: '/wikifolio'
-          }
-        ]
+            name: "Managed Account",
+            href: "/wikifolio",
+          },
+        ],
       },
       {
-        name: 'About',
-        href: '/about'
+        name: "About",
+        href: "/about",
       },
       {
-        name: 'Contact',
-        href: '/contact'
+        name: "Contact",
+        href: "/contact",
       },
       {
-        name: 'Free E-Book',
-        href: 'e-book-coming-soon'
+        name: "Free E-Book",
+        href: "e-book-coming-soon",
+        classes: "navbar__button",
       },
       {
-        name: 'DE',
-        href: '/de'
-      }
-    ]
-  }
+        name: "DE",
+        href: "/de",
+      },
+    ],
+  },
 };
 
 function isSubnavLink(navData: NavbarData): navData is SubNav {
-  return navData.hasOwnProperty('links');
+  return navData.hasOwnProperty("links");
 }
 ---
 
@@ -182,6 +185,10 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     align-items: center;
     list-style: none;
     position: relative;
+    font-family: "Quattrocento", Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-size: 1.375rem;
+    margin-right: 40px;
   }
 
   .navbar__lang {
@@ -192,20 +199,12 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     position: relative;
     font-size: 22px;
     font-size: 1.375rem;
-    font-family: 'Quattrocento', Arial, Helvetica, sans-serif;
+    font-family: "Quattrocento", Arial, Helvetica, sans-serif;
     padding: 20px;
     margin-right: 40px;
   }
 
-  .navbar__link {
-    text-decoration: none;
-    color: var(--text-color);
-  }
-  .navbar__link:hover {
-    color: #ff6b35;
-  }
-
-  .navbar input[type='checkbox'] {
+  .navbar input[type="checkbox"] {
     display: none;
   }
 
@@ -226,10 +225,6 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     color: #fff;
   }
 
-  .sub-navbar__icon {
-    cursor: pointer;
-  }
-
   .sub-navbar {
     list-style: none;
     position: absolute;
@@ -240,7 +235,8 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     background-color: #fff;
     opacity: 0.98;
     display: none;
-    margin-left: 60px;
+    margin-left: 80px;
+    padding: 20px;
   }
 
   .sub-navbar__dropdown {
@@ -261,26 +257,6 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
   .sub-navbar li a {
     justify-content: flex-start;
     font-size: 1.25rem;
-  }
-
-  .navbar__button {
-    margin-right: 40px;
-  }
-
-  .navbar__button a {
-    text-decoration: none;
-    color: #fff;
-    background: #ff6b35;
-    padding: 10px 15px;
-    font-size: 18px;
-    font-size: 1.25rem;
-    font-weight: bold;
-    border: 1px solid #ff6b35;
-  }
-
-  .navbar__button a:hover {
-    color: #ff6b35;
-    background: #fff;
   }
 
   .toggle-button {
@@ -350,7 +326,7 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
       display: none;
     }
 
-    .expandable-li input[type='checkbox']:checked ~ .dropdown {
+    .expandable-li input[type="checkbox"]:checked ~ .dropdown {
       display: block;
     }
 
@@ -424,7 +400,7 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
       display: none;
     }
 
-    .sub-navbar__dropdown input[type='checkbox']:checked ~ .sub-navbar {
+    .sub-navbar__dropdown input[type="checkbox"]:checked ~ .sub-navbar {
       display: block;
     }
 
@@ -507,7 +483,7 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
       display: none;
     }
 
-    .sub-navbar__dropdown input[type='checkbox']:checked ~ .sub-navbar {
+    .sub-navbar__dropdown input[type="checkbox"]:checked ~ .sub-navbar {
       display: block;
     }
 
