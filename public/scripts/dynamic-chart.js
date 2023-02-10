@@ -1,7 +1,7 @@
 class DynamicChart extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: "open" });
     const markup = `
     <section id="interactive-chart-section">
     <h2 class="chart__heading">Meine ETF Strategie schlägt den Markt</h2>
@@ -12,9 +12,7 @@ class DynamicChart extends HTMLElement {
         <label class="chart__p" style="position: relative" for="start-year">Startjahr
             <input id="start-year" class="chart__input" type="number" min="1998" max="2021" value="1998">
             <ul id="year-picker">
-                ${[...Array(24).keys()]
-                  .map((n) => `<li data-value=${n + 1998}>${n + 1998}</li>`)
-                  .join('')}
+                ${[...Array(24).keys()].map((n) => `<li data-value=${n + 1998}>${n + 1998}</li>`).join("")}
             </ul>
         </label>
       </form>
@@ -176,7 +174,7 @@ class DynamicChart extends HTMLElement {
     const observer = new IntersectionObserver((entries, observerRef) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const style = document.createElement('style');
+          const style = document.createElement("style");
           style.textContent = styles;
           this.shadowRoot.innerHTML = markup;
           this.shadowRoot.appendChild(style);
@@ -202,4 +200,4 @@ class DynamicChart extends HTMLElement {
   }
 }
 
-customElements.define('dynamic-chart', DynamicChart);
+customElements.define("dynamic-chart", DynamicChart);

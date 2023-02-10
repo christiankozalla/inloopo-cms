@@ -55,7 +55,7 @@ img {
 \* ---------------------------------*/
 
 body {
-  font-family: 'Quattrocento Sans', Helvetica, Arial, sans-serif;
+  font-family: "Quattrocento Sans", Helvetica, Arial, sans-serif;
   line-height: 1.5;
   color: var(--text-color);
   background: #fff;
@@ -169,10 +169,9 @@ section {
 */
 
 @font-face {
-  font-family: 'Cera Pro Black';
-  src: url("/fonts/CeraProBlack.otf") format('opentype'), url("/fonts/CeraProBlack.ttf") format('truetype');
+  font-family: "Cera Pro Black";
+  src: url("/fonts/CeraProBlack.otf") format("opentype"), url("/fonts/CeraProBlack.ttf") format("truetype");
 }
-
 
 /* @font-face {
   font-family: 'Cera Pro';
@@ -196,8 +195,8 @@ section {
 } */
 
 @font-face {
-  font-family: 'Quattrocento Sans';
-  src: url('/fonts/QuattrocentoSans-Regular.ttf') format('truetype');
+  font-family: "Quattrocento Sans";
+  src: url("/fonts/QuattrocentoSans-Regular.ttf") format("truetype");
 }
 
 /* ---------------------------------*\
@@ -211,7 +210,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Cera Pro Black', Arial, Helvetica, sans-serif;
+  font-family: "Cera Pro Black", Arial, Helvetica, sans-serif;
   font-weight: 300;
 }
 
@@ -250,7 +249,7 @@ h6 {
 }
 
 p {
-  font-family: 'Quattrocento Sans', Helvetica, Arial, sans-serif;
+  font-family: "Quattrocento Sans", Helvetica, Arial, sans-serif;
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-bottom: 12px;
@@ -290,8 +289,8 @@ p {
   font-size: 16px;
 }
 
-.breadcrumbs__li+.breadcrumbs__li:before {
-  content: '>';
+.breadcrumbs__li + .breadcrumbs__li:before {
+  content: ">";
   padding: 8px;
   width: 20%;
   height: 20%;
@@ -444,26 +443,26 @@ p {
 /* #Teaser #Background Image */
 
 .main-teaser__homepage {
-  background-image: url('/images/image-teaser-01.svg');
+  background-image: url("/images/image-teaser-01.svg");
   background-position: center;
   padding-top: 1%;
   margin-bottom: 120px;
 }
 
 .main-teaser__page-investieren {
-  background-image: url('/images/image-teaser-investieren.svg');
+  background-image: url("/images/image-teaser-investieren.svg");
   background-position: center;
   padding-top: 1%;
 }
 
 .main-teaser__page-wikifolio {
-  background-image: url('/images/image-teaser-wikifolio.jpg');
+  background-image: url("/images/image-teaser-wikifolio.jpg");
   background-position: right;
   padding-top: 1%;
 }
 
 .main-teaser__page-wer-wir-sind {
-  background-image: url('/images/image-teaser-ueber-mich.jpg');
+  background-image: url("/images/image-teaser-ueber-mich.jpg");
   background-position: center;
   padding-top: 1%;
   margin-bottom: 120px;
@@ -678,21 +677,21 @@ p {
 }
 
 .secondary-teaser__image--philipp {
-  background-image: url('/images/image-teaser-philipp.jpg');
+  background-image: url("/images/image-teaser-philipp.jpg");
   background-position: center;
   padding-bottom: 2%;
   padding-top: 2%;
 }
 
 .secondary-teaser__image--philipp-wikifolio {
-  background-image: url('/images/philipp-wikifolio.jpg');
+  background-image: url("/images/philipp-wikifolio.jpg");
   background-position: center;
   padding-bottom: 8%;
   padding-top: 2%;
 }
 
 .secondary-teaser__image-at-work {
-  background-image: url('/images/image-at-work.jpg');
+  background-image: url("/images/image-at-work.jpg");
   color: var(--text-color);
   padding: 30px 0;
 }
@@ -832,24 +831,24 @@ p {
 }
 
 .quote__page-seo::after {
-  content: 'Nina Baumann';
+  content: "Nina Baumann";
 }
 
 .quote__page-sp500-strategie:after {
-  content: 'André Kostolany';
+  content: "André Kostolany";
 }
 
 .quote__page-copy-trading:after {
-  content: 'Albert Einstein';
+  content: "Albert Einstein";
   font-size: 16px;
 }
 
 .quote__page-webdesign:after {
-  content: 'Jakob Nielsen';
+  content: "Jakob Nielsen";
 }
 
 .quote__page-wer-wir-sind:after {
-  content: 'Neale Donald Walsch';
+  content: "Neale Donald Walsch";
 }
 
 .quote__page-wer-wir-sind {
@@ -872,7 +871,7 @@ p {
 
 .box__text--bigger {
   font-size: 24px;
-  font-family: 'Quattroento Sans', Arial, Helvetica, sans-serif;
+  font-family: "Quattroento Sans", Arial, Helvetica, sans-serif;
   font-weight: normal;
   text-align: center;
   padding: 8px 0;
@@ -905,7 +904,7 @@ p {
   color: #ff6b35;
   font-size: 42px;
   font-weight: bold;
-  font-family: 'Cera Pro', Arial, Helvetica, sans-serif;
+  font-family: "Cera Pro", Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -1117,8 +1116,8 @@ td {
 }
 
 .accordion a::after {
-  font-family: 'Ionicons';
-  content: '\f218';
+  font-family: "Ionicons";
+  content: "\f218";
   position: absolute;
   float: right;
   right: 10px;
@@ -1128,8 +1127,8 @@ td {
 }
 
 .accordion a.active::after {
-  font-family: 'Ionicons';
-  content: '\f209';
+  font-family: "Ionicons";
+  content: "\f209";
   color: #ff6b35;
 }
 
@@ -1262,27 +1261,27 @@ td {
 }
 
 .rating__stars label:before {
-  content: '☆';
+  content: "☆";
 }
 
-.rating__stars input:checked~label {
+.rating__stars input:checked ~ label {
   color: var(--accent-color);
 }
 
-.rating__stars:not(:checked)>label:hover,
-.rating__stars:not(:checked)>label:hover~label {
+.rating__stars:not(:checked) > label:hover,
+.rating__stars:not(:checked) > label:hover ~ label {
   color: var(--accent-color);
 }
 
-.rating__stars input:checked>label:hover,
-.rating__stars input:checked>label:hover~label {
+.rating__stars input:checked > label:hover,
+.rating__stars input:checked > label:hover ~ label {
   color: var(--accent-color);
 }
 
 .rating__result:before {
   text-align: center;
   margin-bottom: 20px;
-  content: '';
+  content: "";
   font-size: 18px;
   font-weight: bold;
   color: var(--accent-color);
@@ -1293,29 +1292,29 @@ td {
   width: 100%;
 }
 
-.rating__stars input:checked~.rating__result:before {
+.rating__stars input:checked ~ .rating__result:before {
   display: block;
   margin: 0 auto;
 }
 
-.rating__stars #five:checked~.rating__result:before {
-  content: 'Es ist großartig!';
+.rating__stars #five:checked ~ .rating__result:before {
+  content: "Es ist großartig!";
 }
 
-.rating__stars #four:checked~.rating__result:before {
-  content: 'Gefällt mir';
+.rating__stars #four:checked ~ .rating__result:before {
+  content: "Gefällt mir";
 }
 
-.rating__stars #three:checked~.rating__result:before {
-  content: 'Ist ganz ok.';
+.rating__stars #three:checked ~ .rating__result:before {
+  content: "Ist ganz ok.";
 }
 
-.rating__stars #two:checked~.rating__result:before {
-  content: 'Ich finds eher schlecht.';
+.rating__stars #two:checked ~ .rating__result:before {
+  content: "Ich finds eher schlecht.";
 }
 
-.rating__stars #one:checked~.rating__result:before {
-  content: 'Geht gar nicht.';
+.rating__stars #one:checked ~ .rating__result:before {
+  content: "Geht gar nicht.";
 }
 
 .rating__submit-btn {
@@ -1328,7 +1327,7 @@ td {
   margin-bottom: 20px;
   font-size: 18px;
   font-size: 1.25rem;
-  font-family: 'QuattrocentoSans', Arial, Helvetica, sans-serif;
+  font-family: "QuattrocentoSans", Arial, Helvetica, sans-serif;
   width: 100%;
 }
 
@@ -1342,14 +1341,14 @@ td {
   font-size: 24px;
   margin-top: 28px;
   margin-bottom: 20px;
-  font-family: 'Cera Pro', Arial, Helvetica, sans-serif;
+  font-family: "Cera Pro", Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
 .rating__feedback-text {
   padding: 8px;
   font-size: 16px;
-  font-family: 'QuattrocentoSans', Arial, Helvetica, sans-serif;
+  font-family: "QuattrocentoSans", Arial, Helvetica, sans-serif;
   font-weight: normal;
   height: 200px;
   width: 100%;
@@ -1360,11 +1359,11 @@ td {
   border: 1px solid var(--accent-color);
 }
 
-textarea[type='text'] {
+textarea[type="text"] {
   border: 1px solid var(--text-color);
 }
 
-textarea[type='text']:focus {
+textarea[type="text"]:focus {
   border: 2px solid var(--accent-color);
 }
 
@@ -1595,7 +1594,6 @@ textarea[type='text']:focus {
 }
 
 @keyframes fadeEffect {
-
   /* from 0 to full opacity */
   from {
     opacity: 0;
@@ -1628,7 +1626,7 @@ textarea[type='text']:focus {
   border-left: 3px solid #ff6b35;
 }
 
-.toc input[type='checkbox'] {
+.toc input[type="checkbox"] {
   display: none;
 }
 
@@ -1671,7 +1669,7 @@ textarea[type='text']:focus {
 }
 
 .animated_share_btn:before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -1682,7 +1680,7 @@ textarea[type='text']:focus {
 }
 
 .animated_share_btn:after {
-  content: 'Share';
+  content: "Share";
   position: absolute;
   left: 0;
   top: 0;
@@ -1759,7 +1757,6 @@ textarea[type='text']:focus {
   .wrapper-content {
     padding: 0 24px;
   }
-
 
   /* ---------------------------------*\
         #HEADINGS 
@@ -2000,7 +1997,6 @@ textarea[type='text']:focus {
 }
 
 @media only screen and (max-width: 759px) {
-
   /* ---------------------------------*\
         #LAYOUT
     \* ---------------------------------*/
@@ -2070,7 +2066,7 @@ textarea[type='text']:focus {
     display: none;
   }
 
-  .expandable-li input[type='checkbox']:checked~.dropdown {
+  .expandable-li input[type="checkbox"]:checked ~ .dropdown {
     display: block;
   }
 
@@ -2092,7 +2088,7 @@ textarea[type='text']:focus {
     justify-content: center;
   }
 
-  #toggle-button:checked~ul {
+  #toggle-button:checked ~ ul {
     display: block;
   }
 
@@ -2169,7 +2165,7 @@ textarea[type='text']:focus {
   }
 
   .main-teaser__homepage {
-    background-image: url('/images/image-teaser-inloopo-mobil.svg');
+    background-image: url("/images/image-teaser-inloopo-mobil.svg");
   }
 
   .main-teaser__heading-one--mobile {
@@ -2392,7 +2388,7 @@ textarea[type='text']:focus {
   }
 
   .secondary-teaser__image-at-work {
-    background-image: url('/images/teaser-image-at-work-mobile.jpg');
+    background-image: url("/images/teaser-image-at-work-mobile.jpg");
     background-position: center;
   }
 

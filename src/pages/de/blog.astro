@@ -1,10 +1,10 @@
 ---
-import BlogLayout from '../../layouts/BlogLayout.astro';
-import { contentfulClient } from '../../lib/contentful.js';
-import type { Post } from '../../lib/contentful.js';
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import { contentfulClient } from "../../lib/contentful.js";
+import type { Post } from "../../lib/contentful.js";
 
 const entries = await contentfulClient.getEntries<Post>({
-  content_type: 'post'
+  content_type: "post",
 });
 ---
 
