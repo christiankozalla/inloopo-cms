@@ -4,14 +4,26 @@ const { author, published, url } = Astro.props;
 
 <div class="article__info-box">
   <div class="article__info">
-      <img class="article__info--img" src={author.avatar.fields.file.url} alt={author.avatar.fields.file.description} width="80" height="80">
-      <p class="article__info--details">{author.name}<br>{published}</p>
+    <img
+      class="article__info--img"
+      src={author.avatar.fields.file.url}
+      alt={author.avatar.fields.file.description}
+      width="80"
+      height="80"
+    />
+    <p class="article__info--details">{author.name}<br />{published}</p>
   </div>
   <div class="animated_share">
-      <div class="animated_share_btn">
-          <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} target="_blank"><img class="article__social-media-icon" src="/images/icon-facebook.svg" width="20" alt="Facebook Icon"></a>
-          <a href={`https://www.linkedin.com/shareArticle?mini=true&amp;url=${url}`} target="_blank"><img class="article__social-media-icon" src="/images/icon-linkedin.svg" width="20" alt="LinkedIn Icon"></a>
-          <a href={`https://twitter.com/share?url=${url}`} target="_blank"><img class="article__social-media-icon" src="/images/icon-twitter.svg" width="20" alt="Twitter Icon"></a>
-      </div>
+    <div class="animated_share_btn">
+      <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} target="_blank"
+        ><img class="article__social-media-icon" src="/images/icon-facebook.svg" width="20" alt="Facebook Icon" /></a
+      >
+      <a href={`https://www.linkedin.com/shareArticle?mini=true&amp;url=${url}`} target="_blank"
+        ><img class="article__social-media-icon" src="/images/icon-linkedin.svg" width="20" alt="LinkedIn Icon" /></a
+      >
+      <a href={`https://twitter.com/share?url=${url}`} target="_blank"
+        ><img class="article__social-media-icon" src="/images/icon-twitter.svg" width="20" alt="Twitter Icon" /></a
+      >
+    </div>
   </div>
 </div>

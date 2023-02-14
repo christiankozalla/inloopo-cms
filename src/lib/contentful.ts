@@ -46,7 +46,7 @@ interface Post {
   description?: string;
   seoDescription?: string;
   body: Document;
-  author: { fields: { name: string; avatar?: object, bio?: string }},
+  author: { fields: { name: string; avatar?: object; bio?: string } };
   heroImage?: object;
 }
 

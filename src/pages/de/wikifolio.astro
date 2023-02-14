@@ -1,18 +1,17 @@
 ---
 //styles import
-import '../../styles/styles.css';
+import "../../styles/styles.css";
 
 //layout import
 import MainLayout from "../../layouts/MainLayout.astro";
 import HeroShot from "../../components/HeroShot.astro";
-import ProblemCard from '../../components/ProblemCard.astro';
-import DetailCard from '../../components/DetailCard.astro';
-import BackgroundImage from '../../components/BackgroundImage.astro';
-import QualiCard from '../../components/QualiCard.astro';
+import ProblemCard from "../../components/ProblemCard.astro";
+import DetailCard from "../../components/DetailCard.astro";
+import BackgroundImage from "../../components/BackgroundImage.astro";
+import QualiCard from "../../components/QualiCard.astro";
 ---
 
-  <!-- Open Graph -->
-
+<!-- Open Graph -->
 <MainLayout
   title="Wikifolio"
   description="Du möchtest dein Geld sicher, ohne Zeitaufwand aber dennoch profitabel anlegen. Aber nicht selbst. Ich mache das für dich."
@@ -23,7 +22,6 @@ import QualiCard from '../../components/QualiCard.astro';
     description: "Du brauchst jemand, der dein Geld profitabel anlegt. Guck dir mein Wikifolio an.",
     locale: "de",
   }}>
-  
   <!-- MAIN TEASER -->
 
   <div class="main-teaser main-teaser__page-wikifolio">
@@ -37,7 +35,6 @@ import QualiCard from '../../components/QualiCard.astro';
       </p>
     </div>
   </div>
-
 
   <section>
     <div class="row box--grey-background box--desktop">
@@ -81,51 +78,68 @@ import QualiCard from '../../components/QualiCard.astro';
     </div>
   </section>
 
- <!-- MAIN TEASER -->
- <div class="wrapper">
- <HeroShot title="Keine Lust auf das Thema Finanzen" description="Ich manage dein Geld und lege es profitabel an. Mit geringerem Risiko als der allgemeine Aktienmarkt. Mit besserer Performance als Buy and Hold." button={{href:"https://www.wikifolio.com/en/int/w/wfinloopo1", text:"Wikifolio vormerken"}} backgroundImageClass="main-teaser__page-wikifolio" />
-</div>
+  <!-- MAIN TEASER -->
+  <div class="wrapper">
+    <HeroShot
+      title="Keine Lust auf das Thema Finanzen"
+      description="Ich manage dein Geld und lege es profitabel an. Mit geringerem Risiko als der allgemeine Aktienmarkt. Mit besserer Performance als Buy and Hold."
+      button={{ href: "https://www.wikifolio.com/en/int/w/wfinloopo1", text: "Wikifolio vormerken" }}
+      backgroundImageClass="main-teaser__page-wikifolio"
+    />
+  </div>
 
+  <!-- CONTENT PROBLEMS-SOLUTIONS -->
 
+  <section>
+    <div class="row box--grey-background box--desktop">
+      <div class="wrapper-content">
+        <ProblemCard
+          icon={{ src: "/images/sad.svg", alt: "Trauriges Gesicht" }}
+          title="Du hast keine Lust..."
+          listItems={[
+            "dich um dein Geld zu kümmern.",
+            "dein Geld sinnlos auszugeben, weil du nicht weißt, was du damit machen sollst.",
+            "einer Bank dein Geld zu geben aber selbst machen ist auch nicht dein Ding.",
+          ]}
+        />
 
-
-
-<!-- CONTENT PROBLEMS-SOLUTIONS -->
-
-<section>
-<div class="row  box--grey-background  box--desktop">
-    <div class="wrapper-content">
-        <ProblemCard icon={{src:'/images/sad.svg', alt:'Trauriges Gesicht'}} title="Du hast keine Lust..." listItems={["dich um dein Geld zu kümmern.", "dein Geld sinnlos auszugeben, weil du nicht weißt, was du damit machen sollst.", "einer Bank dein Geld zu geben aber selbst machen ist auch nicht dein Ding."]}/>
-
-        <ProblemCard icon={{src:'/images/happy.svg', alt:'Fröhliches Gesicht'}} title="Du möchtest..." listItems={["dein Geld anlegen.", "dich Null mit einer Strategie für Geldanlagen beschäftigen.", "etwas sinnvolles mit deinem Geld für deine Zukunft machen."]}/>
+        <ProblemCard
+          icon={{ src: "/images/happy.svg", alt: "Fröhliches Gesicht" }}
+          title="Du möchtest..."
+          listItems={[
+            "dein Geld anlegen.",
+            "dich Null mit einer Strategie für Geldanlagen beschäftigen.",
+            "etwas sinnvolles mit deinem Geld für deine Zukunft machen.",
+          ]}
+        />
+      </div>
     </div>
-</div>
-</section>
+  </section>
 
-<!-- HOW IT WORKS -->
-<section>
+  <!-- HOW IT WORKS -->
+  <section>
     <h2 class="column__heading">Wie es funktioniert</h2>
     <div class="wrapper">
-    <div class="row">
-        <div class="column  fourth  column__col">
-            <span class="box__circle--center">1</span>
-                <p class="text--center">Online Broker Konto eröffnen</p>
+      <div class="row">
+        <div class="column fourth column__col">
+          <span class="box__circle--center">1</span>
+          <p class="text--center">Online Broker Konto eröffnen</p>
         </div>
-        <div class="column  fourth  column__col">
-                <span class="box__circle--center">2</span>
-                <p class="text--center">Geld auf dein Konto einzahlen</p>
+        <div class="column fourth column__col">
+          <span class="box__circle--center">2</span>
+          <p class="text--center">Geld auf dein Konto einzahlen</p>
         </div>
-        <div class="column  fourth  column__col">
-            <span class="box__circle--center">3</span>
-            <p class="text--center">Wikifolio Zertifikat kaufen</p>
+        <div class="column fourth column__col">
+          <span class="box__circle--center">3</span>
+          <p class="text--center">Wikifolio Zertifikat kaufen</p>
         </div>
-        <div class="column  fourth  column__col">
-            <span class="box__circle--center">4</span>
-            <p class="text--center">Leben genießen</p>
+        <div class="column fourth column__col">
+          <span class="box__circle--center">4</span>
+          <p class="text--center">Leben genießen</p>
         </div>
+      </div>
     </div>
-    </div>
-</section>
+  </section>
 
   <!-- BENEFITS -->
 
@@ -152,86 +166,111 @@ import QualiCard from '../../components/QualiCard.astro';
         <div class="column__foto">
           <img src="../images/sportler.jpg" alt="Junger Profi Sportler mit Rucksack" />
         </div>
+      </div>
     </div>
-</div>
-</section>
+  </section>
 
-<!-- BENEFITS -->
+  <!-- BENEFITS -->
 
-<section>
-<div>
-<div class="wrapper  column__foto-text">
-    <div class="column  column--blue">
-<h2 class="box__heading--white-left">Sorgloses Leben</h2>
-<p class="box__p--white">Deine Sorgen, was du mit deinem Geld anstellen sollst, kannst du beiseitelegen. 
-    Mit meinem Wikifolio wird dein Geld sicher, risikoarm und gewinnbringend angelegt.
-</p>
-<h2 class="box__heading--white-left">Geld investieren ohne dein Zutun</h2>
-<p class="box__p--white">Du lässt dein Geld anlegen. Nicht von einer Bank. Nein. Du folgst einem Wikifolio, 
-    was dein Geld investiert. Nach einer Strategie, die funktioniert.
-</p>
-<h2 class="box__heading--white-left">Dein Geld ist in deinen Händen</h2>
-<p class="box__p--white">Dein Geld ist auf deinem Konto. Du kannst deine Investition jederzeit 
-    rückgängig machen, nicht wie beim Abschluss einer Rentenversicherung.
-</p>
-</div>
-    <div class="column__foto">
-        <img src="../images/sportler.jpg" alt="Junger Profi Sportler mit Rucksack">
+  <section>
+    <div>
+      <div class="wrapper column__foto-text">
+        <div class="column column--blue">
+          <h2 class="box__heading--white-left">Sorgloses Leben</h2>
+          <p class="box__p--white">
+            Deine Sorgen, was du mit deinem Geld anstellen sollst, kannst du beiseitelegen. Mit meinem Wikifolio wird
+            dein Geld sicher, risikoarm und gewinnbringend angelegt.
+          </p>
+          <h2 class="box__heading--white-left">Geld investieren ohne dein Zutun</h2>
+          <p class="box__p--white">
+            Du lässt dein Geld anlegen. Nicht von einer Bank. Nein. Du folgst einem Wikifolio, was dein Geld investiert.
+            Nach einer Strategie, die funktioniert.
+          </p>
+          <h2 class="box__heading--white-left">Dein Geld ist in deinen Händen</h2>
+          <p class="box__p--white">
+            Dein Geld ist auf deinem Konto. Du kannst deine Investition jederzeit rückgängig machen, nicht wie beim
+            Abschluss einer Rentenversicherung.
+          </p>
+        </div>
+        <div class="column__foto">
+          <img src="../images/sportler.jpg" alt="Junger Profi Sportler mit Rucksack" />
+        </div>
+      </div>
     </div>
-</div>
-</div>
-</section>
+  </section>
 
-<!-- PRODUCT DETAILS -->
+  <!-- PRODUCT DETAILS -->
 
-<section>
+  <section>
     <h2 class="column__heading">Gewinne machen mit geringem Risiko</h2>
     <div class="wrapper-content">
-        <div class="row row--no-background">
-<DetailCard icon={{src:'/images/tools.svg', alt:'Tools Icon'}} title="Strategie mit Regelwerk" description="Ich handel nach einer Trendfolgestrategie auf Basis der inloopo Börsenampel. Die Strategie ermöglicht eine optimale Performance mit minimalen Verlustphasen." />
+      <div class="row row--no-background">
+        <DetailCard
+          icon={{ src: "/images/tools.svg", alt: "Tools Icon" }}
+          title="Strategie mit Regelwerk"
+          description="Ich handel nach einer Trendfolgestrategie auf Basis der inloopo Börsenampel. Die Strategie ermöglicht eine optimale Performance mit minimalen Verlustphasen."
+        />
 
-<DetailCard icon={{src:'/images/key.svg', alt:'Schlüssel Icon'}} title="Risiko Money Management" description="Ich folge einem robusten Risiko- und Moneymanagement. Ich investiere nach klaren Regeln und in Trendmärkte." />
+        <DetailCard
+          icon={{ src: "/images/key.svg", alt: "Schlüssel Icon" }}
+          title="Risiko Money Management"
+          description="Ich folge einem robusten Risiko- und Moneymanagement. Ich investiere nach klaren Regeln und in Trendmärkte."
+        />
 
-<DetailCard icon={{src:'/images/list.svg', alt:'Liste Icon'}} title="Fundamentale Marktauswahl" description="Ich bin nur investiert, wenn die fundamentalen Daten dafür sprechen. Dabei werte ich COT Daten, Momentum, Trend, Volatilität, Volumen und Open Interest aus. Saisonalität und Sentiment analysiere ich ebenfalls." />
+        <DetailCard
+          icon={{ src: "/images/list.svg", alt: "Liste Icon" }}
+          title="Fundamentale Marktauswahl"
+          description="Ich bin nur investiert, wenn die fundamentalen Daten dafür sprechen. Dabei werte ich COT Daten, Momentum, Trend, Volatilität, Volumen und Open Interest aus. Saisonalität und Sentiment analysiere ich ebenfalls."
+        />
 
-<DetailCard icon={{src:'/images/bullseye.svg', alt:'Auge Icon'}} title="Richtiges Timing und Einstieg" description="Der Einstieg erfolgt nach klaren Regeln. Sobald, es erste Anzeichen für fallende Kurse gibt, wird das Risiko reduziert." />
-        </div>
+        <DetailCard
+          icon={{ src: "/images/bullseye.svg", alt: "Auge Icon" }}
+          title="Richtiges Timing und Einstieg"
+          description="Der Einstieg erfolgt nach klaren Regeln. Sobald, es erste Anzeichen für fallende Kurse gibt, wird das Risiko reduziert."
+        />
+      </div>
     </div>
-</section>
+  </section>
 
+  <!-- CONTENT WHY US -->
 
+  <section>
+    <BackgroundImage
+      title="Ich lege dein Geld für dich an."
+      description="Wie ich das mache? Mit einer Strategie, die ich seit 2008 erprobe. Ich bin damit erfolgreich. Also, wirst auch du mit mir erfolgreich sein, weil ich mich jede Woche um dein Geld kümmer. Mit Freude und Leidenschaft."
+      backgroundImageClass="secondary-teaser__image--philipp-wikifolio"
+      button={{ target: "_blank", href: "ueber-mich", text: "Erfahre mehr über mich" }}
+    />
+  </section>
 
-
-<!-- CONTENT WHY US -->
-
-<section>
-<BackgroundImage title="Ich lege dein Geld für dich an." description="Wie ich das mache? Mit einer Strategie, die ich seit 2008 erprobe. Ich bin damit erfolgreich. Also, wirst auch du mit mir erfolgreich sein, weil ich mich jede Woche um dein Geld kümmer. Mit Freude und Leidenschaft." backgroundImageClass="secondary-teaser__image--philipp-wikifolio" button={{target:'_blank', href:'ueber-mich', text:'Erfahre mehr über mich'}}/>
-</section>
-
-
-
-<!-- QUALIFICATIONS -->
-<section>
+  <!-- QUALIFICATIONS -->
+  <section>
     <div class="wrapper-content">
+      <div class="row row--no-background">
         <div class="row row--no-background">
-            <div class="row row--no-background">
-                <QualiCard icon={{src:"/images/books.svg", alt:"Buch Icon" }} title="Börsenerfahrung" description="Du suchst nach einem erfahrenen Trader. Ich bin seit 2008 aktiv an der Börse und habe anfangs CFD's, später Aktien, Optionsscheine auf Trendaktien und Optionen gehandelt. Heute handel ich Futures nach COT Daten, Saisonalität und Wetteranalyse und investiere strategisch auf Basis der Börsenampel mit der S&amp;P 500 ETF Strategie." />
+          <QualiCard
+            icon={{ src: "/images/books.svg", alt: "Buch Icon" }}
+            title="Börsenerfahrung"
+            description="Du suchst nach einem erfahrenen Trader. Ich bin seit 2008 aktiv an der Börse und habe anfangs CFD's, später Aktien, Optionsscheine auf Trendaktien und Optionen gehandelt. Heute handel ich Futures nach COT Daten, Saisonalität und Wetteranalyse und investiere strategisch auf Basis der Börsenampel mit der S&P 500 ETF Strategie."
+          />
 
-                <QualiCard icon={{src:"/images/hat.svg", alt:"Hut Icon" }} title="Nachweisbarer Erfolg" description="Du brauchst Sicherheit. Ich habe mit meiner Futures Trading Strategie an der Trading Weltmeisterschaft teilgenommen. Mit 64,1 % Rendite pro Jahr den 5. Platz belegt. Dieses Jahr nehme ich erneut teil." />
+          <QualiCard
+            icon={{ src: "/images/hat.svg", alt: "Hut Icon" }}
+            title="Nachweisbarer Erfolg"
+            description="Du brauchst Sicherheit. Ich habe mit meiner Futures Trading Strategie an der Trading Weltmeisterschaft teilgenommen. Mit 64,1 % Rendite pro Jahr den 5. Platz belegt. Dieses Jahr nehme ich erneut teil."
+          />
 
-                <QualiCard icon={{src:"/images/data.svg", alt:"Daten und Charts Icon" }} title="Analytische Denkweise" description="Du möchtest einem strategisch denkenden Menschen folgen. Ich mache meine Analysen präzise und sorfältig. Meine Entscheidungen treffe ich rational und auf Basis von Daten." />
-            </div>
+          <QualiCard
+            icon={{ src: "/images/data.svg", alt: "Daten und Charts Icon" }}
+            title="Analytische Denkweise"
+            description="Du möchtest einem strategisch denkenden Menschen folgen. Ich mache meine Analysen präzise und sorfältig. Meine Entscheidungen treffe ich rational und auf Basis von Daten."
+          />
         </div>
+      </div>
     </div>
-</section>
-
-
-
-
+  </section>
 
   <section>
     <a href="https://www.wikifolio.com/en/int/w/wfinloopo1" class="button button--final">Wikifolio vormerken</a>
   </section>
 </MainLayout>
-
-       
