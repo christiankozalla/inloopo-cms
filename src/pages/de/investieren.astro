@@ -1,122 +1,68 @@
 ---
+//import styles
 import "../../styles/styles.css";
 
 //import layout and component
+import HeroShot from "../../components/HeroShot.astro";
 import Quote from "../../components/Quote.astro";
 import DetailCard from "../../components/DetailCard.astro";
 import ProblemCard from "../../components/ProblemCard.astro";
-
+import BackgroundImage from "../../components/BackgroundImage.astro";
+import QualiCard from "../../components/QualiCard.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 ---
 
 <MainLayout
   title="S&P 500 ETF Strategie mit Börsenampel"
-  description="Du willst dein Geld investieren. Ohne viel Aufwand. Ohne Bank. Mit der inloopo Börsenampel für den S&P 500 ETF geht das."
->
+  description="Du willst dein Geld investieren. Ohne viel Aufwand. Ohne Bank. Mit der inloopo Börsenampel für den S&P 500 ETF geht das." opengraph={{title:"S&P500 ETF Strategie mit Börsenampel", description:"Du willst dein Geld investieren. Nutze die inloopo Börsenampel für den S&P 500 ETF.", url:"https://www.inloopo.com/de/investieren", image:"https://www.inloopo.com/de/blog/images/boersenampel-og.jpg", type:"website", locale:"de"}}>
+
+
   <!-- MAIN TEASER -->
+  <HeroShot title="Geld auf dem Konto. Und nun?" description="Ich zeige dir wie du mit ca. zwei Trades pro Jahr dein Geld
+  gewinnbringend mit Hilfe einer Börsenampel investierst." button={{href:"https://www.copecart.com/products/d4619143/checkout", target:"_blank", text:"Signaldienst kaufen"}} backgroundImageClass="main-teaser__page-investieren"/>
 
-  <div class="main-teaser main-teaser__page-investieren">
-    <div class="wrapper">
-      <h1 class="main-teaser__heading">Geld auf dem Konto. Und nun?</h1>
-      <p class="main-teaser__text p--bigger">
-        Ich zeige dir wie du mit ca. zwei Trades pro Jahr dein Geld
-        gewinnbringend mit Hilfe einer Börsenampel investierst.<br /><br />
-        <a
-          href="https://www.copecart.com/products/d4619143/checkout"
-          target="_blank"
-          class="button">Signaldienst kaufen</a
-        >
-      </p>
-    </div>
-  </div>
 
-  <!-- CONTENT PROBLEMS-SOLUTIONS
-
-  <ProblemCard icon={{src:"/images/sad.svg" alt:"Trauriges Gesicht"}} title="Du hast keine Lust mehr..." list=""></ProblemCard>
-  -->
-
+  <!-- PROBLEMS -->
   <section>
     <div class="row box--grey-background box--desktop">
       <div class="wrapper-content">
-        
-<ProblemCard title="Du hast keine Lust mehr..." icon={{src: "/images/sad.svg", alt:"Trauriges Gesicht"}} listItems={["dich durch die Medienlandschaft nach aktuellen Börsentipps zu wühlen.", "den Ausstiegszeitpunkt vor einem Crash zu verpassen.", "unsicher und verwirrt darüber zu sein wann die Rally wieder beginnt."]}></ProblemCard>
+        <ProblemCard title="Du hast keine Lust mehr..." icon={{src: "/images/sad.svg", alt:"Trauriges Gesicht"}} listItems={["dich durch die Medienlandschaft nach aktuellen Börsentipps zu wühlen.", "den Ausstiegszeitpunkt vor einem Crash zu verpassen.", "unsicher und verwirrt darüber zu sein wann die Rally wieder beginnt."]}></ProblemCard>
 
-<ProblemCard title="Du möchtest lieber..." icon={{src: "/images/happy.svg", alt:"Fröhliches Gesicht"}} listItems={["vor einem Börsencrash informiert werden und nicht danach wenn es vorüber ist.", "wissen, wann du wirklich einsteigen und aussteigen solltest.", "weniger Suchen und Interpretieren."]}></ProblemCard>
-
+        <ProblemCard title="Du möchtest lieber..." icon={{src: "/images/happy.svg", alt:"Fröhliches Gesicht"}} listItems={["vor einem Börsencrash informiert werden und nicht danach wenn es vorüber ist.", "wissen, wann du wirklich einsteigen und aussteigen solltest.", "weniger Suchen und Interpretieren."]}></ProblemCard>
       </div>
     </div>
   </section>
 
-  <!-- CONTENT QUOTE -->
 
-  <Quote text='Spekulieren kann jeder. Es zur <strong>richtigen Zeit</strong> zu tun - das
-    ist die Kunst.'></Quote>
+  <!-- QUOTE -->
+  <Quote text='Spekulieren kann jeder. Es zur <strong>richtigen Zeit</strong> zu tun - das ist die Kunst.'>
+  <p class="quote__autor">André Kostolany</p>
+  </Quote>
   
 
   <!-- grafik sp500 strategie vs buy and hold -->
   <dynamic-chart msci-emerging nasdaq dow dax></dynamic-chart>
 
-  <!-- PRODUCT DETAILS -->
 
+  <!-- PRODUCT DETAILS -->
   <section>
     <h2 class="column__heading">Im Alltag eins-zu-eins umsetzen</h2>   
     <div class="wrapper-content">
       <div class="row column--no-background">
-        <DetailCard icon={{src:"/images/eye-open.svg", alt:"Offenes Auge Icon"}} heading="Einfach und klar" description="Die Ampelfarben sind verständlich und du kannst sie in vielen
-    Strategien nutzen."></DetailCard>
-        
+        <DetailCard icon={{src:"/images/eye-open.svg", alt:"Offenes Auge Icon"}} heading="Einfach und klar" description="Die Ampelfarben sind verständlich und du kannst sie in vielen Strategien nutzen." />
+            
+            
+        <DetailCard icon={{src:"/images/clock-time.svg", alt:"Uhr Icon"}} heading="Wenig Zeit" description="Du kannst die Strategie eins-zu-eins mit durchschnittlich zwei Transaktionen pro Jahr umsetzen und damit den Markt schlagen." />
 
-        <div class="column fourth column__col">
-          <img
-            src="/images/clock-time.svg"
-            class="column__icon"
-            width="70"
-            height="70"
-            alt="Uhr Icon"
-          />
-          <h3 class="column__subheading">Wenig Zeit</h3>
-          <p class="column__text">
-            Du kannst die Strategie eins-zu-eins mit durchschnittlich zwei
-            Transaktionen pro Jahr umsetzen und damit den Markt schlagen.
-          </p>
-        </div>
-
-        <div class="column fourth column__col">
-          <img
-            src="/images/chart.svg"
-            class="column__icon"
-            width="70"
-            height="70"
-            alt="Geldschein"
-          />
-          <h3 class="column__subheading">Outperformance</h3>
-          <p class="column__text">
-            Du schlägst den Markt. Mit meiner ETF Strategie für den S&amp;P 500
-            bist du bei steigenden Märkten investiert und bei fallenden Märkten
-            an der Seitenlinie.
-          </p>
-        </div>
-
-        <div class="column fourth column__col">
-          <img
-            src="/images/gears.svg"
-            class="column__icon"
-            width="70"
-            height="70"
-            alt="Einstellungen Icon"
-          />
-          <h3 class="column__subheading">Vielseitig</h3>
-          <p class="column__text">
-            Die Börsenampel kannst du mit verschiedenen Trading Strategien auf
-            Finanzprodukte wie ETF's, Aktien, Optionen und Futures umsetzen.
-          </p>
-        </div>
+        <DetailCard icon={{src:"/images/chart.svg", alt:"Geldschein Icon"}} heading="Outperformance" description="Du schlägst den Markt. Mit meiner ETF Strategie für den S&amp;P 500 bist du bei steigenden Märkten investiert und bei fallenden Märkten an der Seitenlinie." />
+            
+        <DetailCard icon={{src:"/images/gears.svg", alt:"Einstellungen Icon"}} heading="Vielseitig" description="Die Börsenampel kannst du mit verschiedenen Trading Strategien auf Finanzprodukte wie ETF's, Aktien, Optionen und Futures umsetzen." />
       </div>
     </div>
   </section>
 
-  <!-- PRICES & PLANS -->
 
+  <!-- PRICES & PLANS -->
   <section>
     <div class="box--blue-background">
       <div class="wrapper-content">
@@ -182,77 +128,22 @@ import MainLayout from "../../layouts/MainLayout.astro";
     </div>
   </section>
 
-  <!-- CONTENT HWY US -->
 
+  <!-- WHY ME -->
   <section>
-    <div class="secondary-teaser secondary-teaser__image-at-work">
-      <h2 class="secondary-teaser__heading">
-        Eine Börsenampel, die in dein Leben passt
-      </h2>
-      <blockquote class="secondary-teaser__quote">
-        Ich habe eine eigene Börsenampel entwickelt, weil mir andere
-        Börsenampeln nicht das geboten haben, was ich brauchte.<br /><br />
-        <p>
-          <a href="anlagestrategien/inloopo-boersenampel" class="button"
-            >Erfahre mehr</a
-          >
-        </p>
-      </blockquote>
-    </div>
+    <BackgroundImage title="Eine Börsenampel, die in dein Leben passt" description="Ich habe eine eigene Börsenampel entwickelt, weil mir andere Börsenampeln nicht das geboten haben, was ich brauchte." backgroundImageClass="secondary-teaser__image-at-work" button={{text:"Erfahre mehr", href:"anlagestrategien/inloopo-boersenampel"}}/>
+  </section>
 
-    <div class="wrapper-content">
-      <div class="row row--no-background">
-        <div class="column third column__col">
-          <img
-            src="/images/books.svg"
-            class="column__icon"
-            width="70"
-            height="70"
-            alt="Buch Icon"
-          />
-          <h3 class="column__subheading">Börsenerfahrung</h3>
-          <p class="column__text">
-            Du suchst nach einem erfahrenen Trader. Ich bin seit 2008 aktiv an
-            der Börse und habe anfangs CFD's, später Aktien, Optionsscheine auf
-            Trendaktien und Optionen gehandelt. Heute handel ich Futures nach
-            COT Daten, Saisonalität und Wetteranalyse und investiere strategisch
-            auf Basis der Börsenampel mit der S&amp;P 500 ETF Strategie³.
-          </p>
-        </div>
 
-        <div class="column third column__col">
-          <img
-            src="/images/hat.svg"
-            class="column__icon"
-            width="70"
-            height="70"
-            alt="Hut Icon"
-          />
-          <h3 class="column__subheading">Nachweisbarer Erfolg</h3>
-          <p class="column__text">
-            Du brauchst Sicherheit. Ich habe mit meiner Futures Trading
-            Strategie an der Trading Weltmeisterschaft teilgenommen. Mit 64,1 %
-            Rendite pro Jahr den 5. Platz belegt. Dieses Jahr nehme ich erneut
-            teil.
-          </p>
-        </div>
+  <!-- QUALIFICATIONS -->
+  <section>
+    <div class="row row--no-background">
+      <QualiCard icon={{src:"/images/books.svg", alt:"Buch Icon" }} title="Börsenerfahrung" description="Du suchst nach einem erfahrenen Trader. Ich bin seit 2008 aktiv an der Börse und habe anfangs CFD's, später Aktien, Optionsscheine auf Trendaktien und Optionen gehandelt. Heute handel ich Futures nach COT Daten, Saisonalität und Wetteranalyse und investiere strategisch auf Basis der Börsenampel mit der S&amp;P 500 ETF Strategie." />
 
-        <div class="column third column__col">
-          <img
-            src="/images/data.svg"
-            class="column__icon"
-            width="70"
-            height="70"
-            alt="Datan und Charts"
-          />
-          <h3 class="column__subheading">Analytische Denkweise</h3>
-          <p class="column__text">
-            Du möchtest einem strategisch denkenden Menschen folgen. Ich mache
-            meine Analysen präzise und sorfältig. Meine Entscheidungen treffe
-            ich rational und auf Basis von Daten.
-          </p>
-        </div>
-      </div>
+      <QualiCard icon={{src:"/images/hat.svg", alt:"Hut Icon" }} title="Nachweisbarer Erfolg" description="Du brauchst Sicherheit. Ich habe mit meiner Futures Trading Strategie an der Trading Weltmeisterschaft teilgenommen. Mit 64,1 %
+      Rendite pro Jahr den 5. Platz belegt. Dieses Jahr nehme ich erneut teil." />
+
+      <QualiCard icon={{src:"/images/data.svg", alt:"Daten und Charts Icon" }} title="Analytische Denkweise" description="Du möchtest einem strategisch denkenden Menschen folgen. Ich mache meine Analysen präzise und sorfältig. Meine Entscheidungen treffe ich rational und auf Basis von Daten." />
     </div>
   </section>
 
@@ -769,20 +660,5 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
   <!-- JavaScript -->
   <script is:inline src="/scripts/faq.js"></script>
-</MainLayout>
 
-<!-- Open Graph -->
-<meta property="og:title" content="S&P500 ETF Strategie mit Börsenampel" />
-<meta property="og:url" content="https://www.inloopo.com/de/investieren" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta
-  property="og:image"
-  content="https://www.inloopo.com/de/blog/images/boersenampel-og.jpg"
-/>
-<meta property="og:type" content="website" />
-<meta
-  property="og:description"
-  content="Du willst dein Geld investieren. Nutze die inloopo Börsenampel für den S&P 500 ETF."
-/>
-<meta property="og:locale" content="de" />
+</MainLayout>
