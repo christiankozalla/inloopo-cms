@@ -1,8 +1,5 @@
 ---
-//import styles
 import "../../styles/styles.css";
-
-//import layout and component
 import HeroShot from "../../components/HeroShot.astro";
 import Quote from "../../components/Quote.astro";
 import DetailCard from "../../components/DetailCard.astro";
@@ -14,112 +11,119 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
 <MainLayout
   title="S&P 500 ETF Strategie mit Börsenampel"
-  description="Du willst dein Geld investieren. Ohne viel Aufwand. Ohne Bank. Mit der inloopo Börsenampel für den S&P 500 ETF geht das." opengraph={{title:"S&P500 ETF Strategie mit Börsenampel", description:"Du willst dein Geld investieren. Nutze die inloopo Börsenampel für den S&P 500 ETF.", url:"https://www.inloopo.com/de/investieren", image:"https://www.inloopo.com/de/blog/images/boersenampel-og.jpg", type:"website", locale:"de"}}>
-
-
+  description="Du willst dein Geld investieren. Ohne viel Aufwand. Ohne Bank. Mit der inloopo Börsenampel für den S&P 500 ETF geht das."
+  opengraph={{
+    title: "S&P500 ETF Strategie mit Börsenampel",
+    description: "Du willst dein Geld investieren. Nutze die inloopo Börsenampel für den S&P 500 ETF.",
+    url: "https://www.inloopo.com/de/investieren",
+    image: "https://www.inloopo.com/de/blog/images/boersenampel-og.jpg",
+    type: "website",
+    locale: "de",
+  }}>
   <!-- MAIN TEASER -->
-  <HeroShot title="Geld auf dem Konto. Und nun?" description="Ich zeige dir wie du mit ca. zwei Trades pro Jahr dein Geld
-  gewinnbringend mit Hilfe einer Börsenampel investierst." button={{href:"https://www.copecart.com/products/d4619143/checkout", target:"_blank", text:"Signaldienst kaufen"}} backgroundImageClass="main-teaser__page-investieren"/>
-
-
+  <HeroShot
+    title="Geld auf dem Konto. Und nun?"
+    description="Ich zeige dir wie du mit ca. zwei Trades pro Jahr dein Geld  gewinnbringend mit Hilfe einer Börsenampel investierst."
+    button={{
+      href: "https://www.copecart.com/products/d4619143/checkout",
+      target: "_blank",
+      text: "Signaldienst kaufen",
+    }}
+    backgroundImageClass="main-teaser__page-investieren"
+  />
   <!-- PROBLEMS -->
   <section>
     <div class="row box--grey-background box--desktop">
       <div class="wrapper-content">
-        <ProblemCard title="Du hast keine Lust mehr..." icon={{src: "/images/sad.svg", alt:"Trauriges Gesicht"}} listItems={["dich durch die Medienlandschaft nach aktuellen Börsentipps zu wühlen.", "den Ausstiegszeitpunkt vor einem Crash zu verpassen.", "unsicher und verwirrt darüber zu sein wann die Rally wieder beginnt."]}></ProblemCard>
-
-        <ProblemCard title="Du möchtest lieber..." icon={{src: "/images/happy.svg", alt:"Fröhliches Gesicht"}} listItems={["vor einem Börsencrash informiert werden und nicht danach wenn es vorüber ist.", "wissen, wann du wirklich einsteigen und aussteigen solltest.", "weniger Suchen und Interpretieren."]}></ProblemCard>
+        <ProblemCard
+          title="Du hast keine Lust mehr..."
+          icon={{ src: "/images/sad.svg", alt: "Trauriges Gesicht" }}
+          listItems={[
+            "dich durch die Medienlandschaft nach aktuellen Börsentipps zu wühlen.",
+            "den Ausstiegszeitpunkt vor einem Crash zu verpassen.",
+            "unsicher und verwirrt darüber zu sein wann die Rally wieder beginnt.",
+          ]}
+        />
+        <ProblemCard
+          title="Du möchtest lieber..."
+          icon={{ src: "/images/happy.svg", alt: "Fröhliches Gesicht" }}
+          listItems={[
+            "vor einem Börsencrash informiert werden und nicht danach wenn es vorüber ist.",
+            "wissen, wann du wirklich einsteigen und aussteigen solltest.",
+            "weniger Suchen und Interpretieren.",
+          ]}
+        />
       </div>
     </div>
   </section>
-
-
   <!-- QUOTE -->
-  <Quote text='Spekulieren kann jeder. Es zur <strong>richtigen Zeit</strong> zu tun - das ist die Kunst.'>
-  <p class="quote__autor">André Kostolany</p>
+  <Quote text="Spekulieren kann jeder. Es zur <strong>richtigen Zeit</strong> zu tun - das ist die Kunst.">
+    <p class="quote__autor">André Kostolany</p>
   </Quote>
-  
-
   <!-- grafik sp500 strategie vs buy and hold -->
   <dynamic-chart msci-emerging nasdaq dow dax></dynamic-chart>
-
-
   <!-- PRODUCT DETAILS -->
   <section>
-    <h2 class="column__heading">Im Alltag eins-zu-eins umsetzen</h2>   
+    <h2 class="column__heading">Im Alltag eins-zu-eins umsetzen</h2>
     <div class="wrapper-content">
       <div class="row column--no-background">
-        <DetailCard icon={{src:"/images/eye-open.svg", alt:"Offenes Auge Icon"}} heading="Einfach und klar" description="Die Ampelfarben sind verständlich und du kannst sie in vielen Strategien nutzen." />
-            
-            
-        <DetailCard icon={{src:"/images/clock-time.svg", alt:"Uhr Icon"}} heading="Wenig Zeit" description="Du kannst die Strategie eins-zu-eins mit durchschnittlich zwei Transaktionen pro Jahr umsetzen und damit den Markt schlagen." />
-
-        <DetailCard icon={{src:"/images/chart.svg", alt:"Geldschein Icon"}} heading="Outperformance" description="Du schlägst den Markt. Mit meiner ETF Strategie für den S&amp;P 500 bist du bei steigenden Märkten investiert und bei fallenden Märkten an der Seitenlinie." />
-            
-        <DetailCard icon={{src:"/images/gears.svg", alt:"Einstellungen Icon"}} heading="Vielseitig" description="Die Börsenampel kannst du mit verschiedenen Trading Strategien auf Finanzprodukte wie ETF's, Aktien, Optionen und Futures umsetzen." />
+        <DetailCard
+          icon={{ src: "/images/eye-open.svg", alt: "Offenes Auge Icon" }}
+          heading="Einfach und klar"
+          description="Die Ampelfarben sind verständlich und du kannst sie in vielen Strategien nutzen."
+        />
+        <DetailCard
+          icon={{ src: "/images/clock-time.svg", alt: "Uhr Icon" }}
+          heading="Wenig Zeit"
+          description="Du kannst die Strategie eins-zu-eins mit durchschnittlich zwei Transaktionen pro Jahr umsetzen und damit den Markt schlagen."
+        />
+        <DetailCard
+          icon={{ src: "/images/chart.svg", alt: "Geldschein Icon" }}
+          heading="Outperformance"
+          description="Du schlägst den Markt. Mit meiner ETF Strategie für den S&P 500 bist du bei steigenden Märkten investiert und bei fallenden Märkten an der Seitenlinie."
+        />
+        <DetailCard
+          icon={{ src: "/images/gears.svg", alt: "Einstellungen Icon" }}
+          heading="Vielseitig"
+          description="Die Börsenampel kannst du mit verschiedenen Trading Strategien auf Finanzprodukte wie ETF's, Aktien, Optionen und Futures umsetzen."
+        />
       </div>
     </div>
   </section>
-
-
   <!-- PRICES & PLANS -->
   <section>
     <div class="box--blue-background">
       <div class="wrapper-content">
         <div class="row">
-          <h2 class="box__heading--white">
-            Mit dem Telegram Channel auf dem neusten Stand bleiben
-          </h2>
+          <h2 class="box__heading--white">Mit dem Telegram Channel auf dem neusten Stand bleiben</h2>
           <div class="column half box__column">
             <h3 class="box__subheading--center">Börsenampel</h3>
             <p class="box__text--bigger">kostenlos</p>
             <p>
-              Im Telegram Channel "Investieren mit S&amp;P 500 Strategie" siehst
-              du jeden Sonntag die aktuelle Börsenampel. Dazu gibt es einen
-              kurzen Kommentar zum Markt und Details zu den Börsenampel
-              Indikatoren.
+              Im Telegram Channel "Investieren mit S&amp;P 500 Strategie" siehst du jeden Sonntag die aktuelle
+              Börsenampel. Dazu gibt es einen kurzen Kommentar zum Markt und Details zu den Börsenampel Indikatoren.
             </p>
-
             <p class="box__cta">
-              <a
-                href="https://t.me/+Km1-SZkNz-s2ZWRi"
-                target="_blank"
-                class="button button-table">Ja, ich möchte beitreten.</a
+              <a href="https://t.me/+Km1-SZkNz-s2ZWRi" target="_blank" class="button button-table"
+                >Ja, ich möchte beitreten.</a
               >
             </p>
           </div>
-
           <div class="column half box__column">
             <h3 class="box__subheading--center">Signaldienst</h3>
             <p>
-              Über den Telegram Channel "Signaldienst S&amp;P 500 Strategie"
-              erhältst du jeden Sonntag konkrete Handelssignale, die du selbst
-              mit deinem Geld umsetzen kannst.
+              Über den Telegram Channel "Signaldienst S&amp;P 500 Strategie" erhältst du jeden Sonntag konkrete
+              Handelssignale, die du selbst mit deinem Geld umsetzen kannst.
             </p>
             <div class="responsive-table box__table">
               <table>
-                <thead>
-                  <tr>
-                    <th>monatlich</th>
-                    <th>jährlich</th>
-                    <th>einmalig</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>20 €</td>
-                    <td>149 €</td>
-                    <td>399 €</td>
-                  </tr>
-                </tbody>
+                <thead> <tr> <th>monatlich</th> <th>jährlich</th> <th>einmalig</th></tr></thead>
+                <tbody> <tr> <td>20 €</td> <td>149 €</td> <td>399 €</td></tr></tbody>
               </table>
             </div>
-
             <p class="box__cta">
-              <a
-                class="button button-table"
-                href="https://www.copecart.com/products/d4619143/checkout"
-                target="_blank">Jetzt kaufen</a
+              <a class="button button-table" href="https://www.copecart.com/products/d4619143/checkout" target="_blank"
+                >Jetzt kaufen</a
               >
             </p>
           </div>
@@ -127,26 +131,35 @@ import MainLayout from "../../layouts/MainLayout.astro";
       </div>
     </div>
   </section>
-
-
   <!-- WHY ME -->
   <section>
-    <BackgroundImage title="Eine Börsenampel, die in dein Leben passt" description="Ich habe eine eigene Börsenampel entwickelt, weil mir andere Börsenampeln nicht das geboten haben, was ich brauchte." backgroundImageClass="secondary-teaser__image-at-work" button={{text:"Erfahre mehr", href:"anlagestrategien/inloopo-boersenampel"}}/>
+    <BackgroundImage
+      title="Eine Börsenampel, die in dein Leben passt"
+      description="Ich habe eine eigene Börsenampel entwickelt, weil mir andere Börsenampeln nicht das geboten haben, was ich brauchte."
+      backgroundImageClass="secondary-teaser__image-at-work"
+      button={{ text: "Erfahre mehr", href: "anlagestrategien/inloopo-boersenampel" }}
+    />
   </section>
-
-
   <!-- QUALIFICATIONS -->
   <section>
     <div class="row row--no-background">
-      <QualiCard icon={{src:"/images/books.svg", alt:"Buch Icon" }} title="Börsenerfahrung" description="Du suchst nach einem erfahrenen Trader. Ich bin seit 2008 aktiv an der Börse und habe anfangs CFD's, später Aktien, Optionsscheine auf Trendaktien und Optionen gehandelt. Heute handel ich Futures nach COT Daten, Saisonalität und Wetteranalyse und investiere strategisch auf Basis der Börsenampel mit der S&amp;P 500 ETF Strategie." />
-
-      <QualiCard icon={{src:"/images/hat.svg", alt:"Hut Icon" }} title="Nachweisbarer Erfolg" description="Du brauchst Sicherheit. Ich habe mit meiner Futures Trading Strategie an der Trading Weltmeisterschaft teilgenommen. Mit 64,1 %
-      Rendite pro Jahr den 5. Platz belegt. Dieses Jahr nehme ich erneut teil." />
-
-      <QualiCard icon={{src:"/images/data.svg", alt:"Daten und Charts Icon" }} title="Analytische Denkweise" description="Du möchtest einem strategisch denkenden Menschen folgen. Ich mache meine Analysen präzise und sorfältig. Meine Entscheidungen treffe ich rational und auf Basis von Daten." />
+      <QualiCard
+        icon={{ src: "/images/books.svg", alt: "Buch Icon" }}
+        title="Börsenerfahrung"
+        description="Du suchst nach einem erfahrenen Trader. Ich bin seit 2008 aktiv an der Börse und habe anfangs CFD's, später Aktien, Optionsscheine auf Trendaktien und Optionen gehandelt. Heute handel ich Futures nach COT Daten, Saisonalität und Wetteranalyse und investiere strategisch auf Basis der Börsenampel mit der S&P 500 ETF Strategie."
+      />
+      <QualiCard
+        icon={{ src: "/images/hat.svg", alt: "Hut Icon" }}
+        title="Nachweisbarer Erfolg"
+        description="Du brauchst Sicherheit. Ich habe mit meiner Futures Trading Strategie an der Trading Weltmeisterschaft teilgenommen. Mit 64,1 %      Rendite pro Jahr den 5. Platz belegt. Dieses Jahr nehme ich erneut teil."
+      />
+      <QualiCard
+        icon={{ src: "/images/data.svg", alt: "Daten und Charts Icon" }}
+        title="Analytische Denkweise"
+        description="Du möchtest einem strategisch denkenden Menschen folgen. Ich mache meine Analysen präzise und sorfältig. Meine Entscheidungen treffe ich rational und auf Basis von Daten."
+      />
     </div>
   </section>
-
   <!-- CONTENT FAQ SECTION -->
   <div class="wrapper-content">
     <section>
@@ -157,9 +170,8 @@ import MainLayout from "../../layouts/MainLayout.astro";
             <a>Wie viele Transaktionen gibt es pro Jahr?</a>
             <div class="content">
               <p>
-                Vom Jahr 1998 bis 2022 gab es 36 Transaktionen. Das sind im
-                Schnitt 1,5 Transaktionen pro Jahr. Hier siehst du eine Liste
-                aller Transaktionen mit Datum, Tage in Position und Performance.
+                Vom Jahr 1998 bis 2022 gab es 36 Transaktionen. Das sind im Schnitt 1,5 Transaktionen pro Jahr. Hier
+                siehst du eine Liste aller Transaktionen mit Datum, Tage in Position und Performance.
               </p>
               <div class="faq__table responsive-table">
                 <table>
@@ -462,21 +474,13 @@ import MainLayout from "../../layouts/MainLayout.astro";
                       <td>58</td>
                       <td>-1,4</td>
                     </tr>
-                    <tr>
-                      <td>27.07.2022</td>
-                      <td>4016,25</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
+                    <tr> <td>27.07.2022</td> <td>4016,25</td> <td></td> <td></td> <td></td> <td></td></tr>
                   </tbody>
                 </table>
               </div>
               <p class="faq__table--notation">
-                (*) Die Trades werden mit den Daten des S&P 500 Futures geplant.
-                Der hier angegebene Kurs entspricht daher dem Kurs des Futures
-                und nicht dem des gehandeltem ETF.
+                (*) Die Trades werden mit den Daten des S&P 500 Futures geplant. Der hier angegebene Kurs entspricht
+                daher dem Kurs des Futures und nicht dem des gehandeltem ETF.
               </p>
             </div>
           </div>
@@ -484,120 +488,40 @@ import MainLayout from "../../layouts/MainLayout.astro";
             <a>Wie hoch ist die jährlich Rendite oder Performance?</a>
             <div class="content">
               <p>
-                Die jährliche Performance orientiert sich an dem des S&P 500
-                Index und ist auf Basis der geschlossenen Trades berechnet. In
-                den Jahren, in denen es keine geschlossenen Trades gegeben hat,
-                wurden 0 % eingetragen. Genau wie in den Jahren, in denen
-                überhaupt keine offenen Positionen bestanden. Es gibt seit 1998
-                nur zwei Jahre mit leicht negativer Performance (2000 und 2008).
-                Zum Vergleich: Im S&P 500 gab es 6 Jahre mit einer negativen
-                Jahresperformance.
+                Die jährliche Performance orientiert sich an dem des S&P 500 Index und ist auf Basis der geschlossenen
+                Trades berechnet. In den Jahren, in denen es keine geschlossenen Trades gegeben hat, wurden 0 %
+                eingetragen. Genau wie in den Jahren, in denen überhaupt keine offenen Positionen bestanden. Es gibt
+                seit 1998 nur zwei Jahre mit leicht negativer Performance (2000 und 2008). Zum Vergleich: Im S&P 500 gab
+                es 6 Jahre mit einer negativen Jahresperformance.
               </p>
               <div class="faq__table responsive-table">
                 <table>
-                  <thead>
-                    <tr>
-                      <th>Jahr</th>
-                      <th>Performance pro Jahr**</th>
-                    </tr>
-                  </thead>
+                  <thead> <tr> <th>Jahr</th> <th>Performance pro Jahr**</th></tr></thead>
                   <tbody>
-                    <tr>
-                      <td>1998</td>
-                      <td>8,8</td>
-                    </tr>
-                    <tr>
-                      <td>1999</td>
-                      <td>12,9</td>
-                    </tr>
-                    <tr>
-                      <td>2000</td>
-                      <td>-1,6</td>
-                    </tr>
-                    <tr>
-                      <td>2001</td>
-                      <td>0,0</td>
-                    </tr>
-                    <tr>
-                      <td>2002</td>
-                      <td>0,0</td>
-                    </tr>
-                    <tr>
-                      <td>2003</td>
-                      <td>2,7</td>
-                    </tr>
-                    <tr>
-                      <td>2004</td>
-                      <td>12,6</td>
-                    </tr>
-                    <tr>
-                      <td>2005</td>
-                      <td>1,4</td>
-                    </tr>
-                    <tr>
-                      <td>2006</td>
-                      <td>2,4</td>
-                    </tr>
-                    <tr>
-                      <td>2007</td>
-                      <td>10,6</td>
-                    </tr>
-                    <tr>
-                      <td>2008</td>
-                      <td>-0,7</td>
-                    </tr>
-                    <tr>
-                      <td>2009</td>
-                      <td>18,6</td>
-                    </tr>
-                    <tr>
-                      <td>2010</td>
-                      <td>15,0</td>
-                    </tr>
-                    <tr>
-                      <td>2011</td>
-                      <td>21,4</td>
-                    </tr>
-                    <tr>
-                      <td>2012</td>
-                      <td>14,3</td>
-                    </tr>
-                    <tr>
-                      <td>2013</td>
-                      <td>20,3</td>
-                    </tr>
-                    <tr>
-                      <td>2014</td>
-                      <td>6,6</td>
-                    </tr>
-                    <tr>
-                      <td>2015</td>
-                      <td>0,0</td>
-                    </tr>
-                    <tr>
-                      <td>2016</td>
-                      <td>2,8</td>
-                    </tr>
-                    <tr>
-                      <td>2017</td>
-                      <td>0,0</td>
-                    </tr>
-                    <tr>
-                      <td>2018</td>
-                      <td>27,0</td>
-                    </tr>
-                    <tr>
-                      <td>2019</td>
-                      <td>7,8</td>
-                    </tr>
-                    <tr>
-                      <td>2020</td>
-                      <td>6,9</td>
-                    </tr>
-                    <tr>
-                      <td>2021</td>
-                      <td>41,9</td>
-                    </tr>
+                    <tr> <td>1998</td> <td>8,8</td></tr>
+                    <tr> <td>1999</td> <td>12,9</td></tr>
+                    <tr> <td>2000</td> <td>-1,6</td></tr>
+                    <tr> <td>2001</td> <td>0,0</td></tr>
+                    <tr> <td>2002</td> <td>0,0</td></tr>
+                    <tr> <td>2003</td> <td>2,7</td></tr>
+                    <tr> <td>2004</td> <td>12,6</td></tr>
+                    <tr> <td>2005</td> <td>1,4</td></tr>
+                    <tr> <td>2006</td> <td>2,4</td></tr>
+                    <tr> <td>2007</td> <td>10,6</td></tr>
+                    <tr> <td>2008</td> <td>-0,7</td></tr>
+                    <tr> <td>2009</td> <td>18,6</td></tr>
+                    <tr> <td>2010</td> <td>15,0</td></tr>
+                    <tr> <td>2011</td> <td>21,4</td></tr>
+                    <tr> <td>2012</td> <td>14,3</td></tr>
+                    <tr> <td>2013</td> <td>20,3</td></tr>
+                    <tr> <td>2014</td> <td>6,6</td></tr>
+                    <tr> <td>2015</td> <td>0,0</td></tr>
+                    <tr> <td>2016</td> <td>2,8</td></tr>
+                    <tr> <td>2017</td> <td>0,0</td></tr>
+                    <tr> <td>2018</td> <td>27,0</td></tr>
+                    <tr> <td>2019</td> <td>7,8</td></tr>
+                    <tr> <td>2020</td> <td>6,9</td></tr>
+                    <tr> <td>2021</td> <td>41,9</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -607,13 +531,11 @@ import MainLayout from "../../layouts/MainLayout.astro";
             <a>Mit welchem ETF setze ich die Strategie um?</a>
             <div class="content">
               <p>
-                Ich setze die Strategie mit dem SPDR S&P 500 EUR Hedged UCITS
-                ETF (ISIN: IE00BYYW2V44, WKN: A2AGXP) um.
+                Ich setze die Strategie mit dem SPDR S&P 500 EUR Hedged UCITS ETF (ISIN: IE00BYYW2V44, WKN: A2AGXP) um.
               </p>
               <p>
-                Wenn du einen anderen ETF nutzen möchtest, achte unbedingt
-                darauf, ob die Währungsrisiken zum US-Dollar abgesichert werden.
-                Das erkennst du an dem ETF Namenszusatz "EUR Hedged".
+                Wenn du einen anderen ETF nutzen möchtest, achte unbedingt darauf, ob die Währungsrisiken zum US-Dollar
+                abgesichert werden. Das erkennst du an dem ETF Namenszusatz "EUR Hedged".
               </p>
             </div>
           </div>
@@ -621,31 +543,25 @@ import MainLayout from "../../layouts/MainLayout.astro";
             <a>Für wen habe ich die S&P 500 Strategie entwickelt?</a>
             <div class="content">
               <p>
-                Ich habe im Jahr 2013 angefangen, mithilfe einer Börsenampel in
-                Aktien zu investieren. Diese Börsenampel hat in den Jahren 2013
-                bis 2016 nicht das gehalten, was sie versprochen hat und somit
-                habe ich mein damaliges Abo gekündigt.
+                Ich habe im Jahr 2013 angefangen, mithilfe einer Börsenampel in Aktien zu investieren. Diese Börsenampel
+                hat in den Jahren 2013 bis 2016 nicht das gehalten, was sie versprochen hat und somit habe ich mein
+                damaliges Abo gekündigt.
               </p>
               <p>
-                Im Jahr 2020 bin ich auf eine andere Börsenampel gestoßen und
-                habe diese ebenfalls abonniert. Doch die Einstiegssignale waren
-                mir vor allem in der ersten Jahreshälfte 2022 zu spontan und
-                stimmten nicht mit meiner Analyse überein. Somit habe ich ab Mai
-                2022 an einer eigenen Börsenampel gearbeitet.
+                Im Jahr 2020 bin ich auf eine andere Börsenampel gestoßen und habe diese ebenfalls abonniert. Doch die
+                Einstiegssignale waren mir vor allem in der ersten Jahreshälfte 2022 zu spontan und stimmten nicht mit
+                meiner Analyse überein. Somit habe ich ab Mai 2022 an einer eigenen Börsenampel gearbeitet.
               </p>
               <p>
-                Über die Jahre haben mich viele Freunde und Bekannte nach meiner
-                Meinung zu den Aktienmärkten gefragt. Alle hatten eins
-                gemeinsam: Sie wollten sich nicht so intensiv mit der Börse
-                beschäftigen, wie ich es tue.
+                Über die Jahre haben mich viele Freunde und Bekannte nach meiner Meinung zu den Aktienmärkten gefragt.
+                Alle hatten eins gemeinsam: Sie wollten sich nicht so intensiv mit der Börse beschäftigen, wie ich es
+                tue.
               </p>
               <p>
-                Daher habe ich eine Börsenampel entwickelt, die zu dir passt:
-                Wenn du wenig Zeit hast, du dein Geld mit einer hohen Rendite
-                und geringen Verlusten selbst anlegen möchtest, aber keine Lust
-                hast, dir das Wissen dafür anzueignen, und dein Geld nicht einer
-                Bank anvertrauen willst. Die Signale der Börsenampel setze ich
-                ebenfalls mit meinem privaten Geld um.
+                Daher habe ich eine Börsenampel entwickelt, die zu dir passt: Wenn du wenig Zeit hast, du dein Geld mit
+                einer hohen Rendite und geringen Verlusten selbst anlegen möchtest, aber keine Lust hast, dir das Wissen
+                dafür anzueignen, und dein Geld nicht einer Bank anvertrauen willst. Die Signale der Börsenampel setze
+                ich ebenfalls mit meinem privaten Geld um.
               </p>
             </div>
           </div>
@@ -653,12 +569,9 @@ import MainLayout from "../../layouts/MainLayout.astro";
       </div>
     </section>
   </div>
-
   <!-- Register Custom Elements -->
   <!-- Load Dynamic Chart Skript -->
   <script is:inline src="/scripts/dynamic-chart.js"></script>
-
   <!-- JavaScript -->
   <script is:inline src="/scripts/faq.js"></script>
-
 </MainLayout>

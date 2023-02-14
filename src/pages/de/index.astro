@@ -1,136 +1,139 @@
 ---
-//import layout and components
 import MainLayout from "../../layouts/MainLayout.astro";
 import HeroShot from "../../components/HeroShot.astro";
 import QualiCard from "../../components/QualiCard.astro";
 import BenefitCard from "../../components/BenefitCard.astro";
 import BackgroundImage from "../../components/BackgroundImage.astro";
 import ProductCard from "../../components/ProductCard.astro";
-
-//import styles
 import "../../styles/styles.css";
-
 ---
 
-<MainLayout title="Mit wenig Aufwand Geld vermehren" description="Du möchtest dein Geld anlegen: Selbst und ohne Bank. Nur weißt du nicht, wie. Ich helfe dir dabei, im richtigen Moment investiert zu sein." opengraph={{url:"https://www.inloopo.com/de/", image:"https://www.inloopo.com/images/index-og.jpg", type:"website", description:"Du weißt nicht wann du investieren sollst. Ich helfe dir dabei, die richtige Entscheidung zu treffen.", locale:"de"}}>
-
-    <!-- Teaser -->
-
-    <HeroShot title="Geld investieren. Aber wie?" description=" Ich helfe dir dabei, dein Geld mit Strategien zu vermehren, die auch ohne viel Zeitaufwand und Wissen funktionieren. Tritt meinem Telegram Channel bei." button="Kostenlos beitreten" backgroundImageClass="main-teaser__homepage" />
-
-
-    <!-- CONTENT PROBLEMS-SOLUTIONS -->
-            <BenefitCard title="Vermehre dein Geld ohne viel Aufwand" description="Mit meinem Angebot brauchst du nur wenig Zeit, um dein Geld erfolgreich anzulegen und den Markt zu schlagen." icon={{ src:"/images/clock.svg", alt:"Uhr Icon"}} />   
-       
-
-            <BenefitCard title="Investiere erfolgreich ohne Vorkenntnisse" description="Ich habe Lösungen für dich, die du nutzen kannst, ohne dir viel neues Wissen anzueignen." icon={{ src:"/images/light-bulb.svg", alt:"Glühbirne Icon"}} />  
-    
-
-   
-      <BackgroundImage title="Ich bin Philipp." description="Seit 2008 beschäftige ich mich damit, wie ich mein Geld mit wenig Zeitaufwand sicher und gewinnbringend an den Börsen anlegen kann. Was mich antreibt? Es gibt Strategien, die dich vor großen Crashs schützen. Nur wissen das viele nicht." button="Mehr über mich"></BackgroundImage>
-    
-
-  
-          <QualiCard title="Börsenerfahrung" description="Du suchst nach einem erfahrenen Trader. Ich habe anfangs CFD's,
-          später Aktien, Optionsscheine auf Trendaktien und Optionen
-          gehandelt. Heute handel ich Futures nach COT Daten, Saisonalität
-          und Wetteranalyse und investiere strategisch auf Basis der
-          Börsenampel mit der S&P 500 ETF Strategie." icon={{src:'/images/books.svg', alt:'Buch Icon'}}></QualiCard>
-
-          <QualiCard title="Nachweisbarer Erfolg" description="Du brauchst Sicherheit. Ich habe mit der Futures Trading Strategie
-          von
-          <a class='link' href='https://insider-week.com/de/'>InsiderWeek</a
-          >
-          am Global Cup Championship of Futures Trading™ 2021-2022 teilgenommen.
-          Mit 64,1 % Rendite pro Jahr den 5. Platz belegt. Dieses Jahr nehme
-          ich erneut teil." icon={{src:'/images/hat.svg', alt:'Hut Icon'}}></QualiCard>
-
-          <QualiCard title="Analytische Denkweise" description="Du möchtest einem strategisch denkenden Menschen folgen. Ich mache
-          meine Analysen präzise und sorgfältig. Meine Entscheidungen treffe
-          ich rational und auf Basis von Daten." icon={{src:'/images/data.svg', alt:'Daten und Charts Icon'}}></QualiCard>
-    
-          <section>
-            <div class="row">
-              <ProductCard title="Mit Börsenampel investieren" description="Die Börsenampel zeigt dir, wann du investierst und wann nicht." link={{href:"investieren", text:"Geh zur Börsenampel"}}></ProductCard>
-
-              <ProductCard title="Meinem Wikifolio folgen" description="Du investierst in ein aktiv gemanagten Account." link={{href:"wikifolio", text:"Geh zum Wikifolio"}}></ProductCard>
-            </div>
-          </section>
-
-  
-    <div class="wrapper-content">
-      <section class="blog-section">
-        <div class="row">
-          <div class="column third">
-            <a class="link__blog" href="anlagestrategien/welche-etf-strategie"
-              ><img
-                class="blog__image"
-                src="/images/etf-strategie-liste-thumbnail.svg"
-                alt="Frustrierter Mensch sitzt vor dem Computer"
-              />
+<MainLayout
+  title="Mit wenig Aufwand Geld vermehren"
+  description="Du möchtest dein Geld anlegen: Selbst und ohne Bank. Nur weißt du nicht, wie. Ich helfe dir dabei, im richtigen Moment investiert zu sein."
+  opengraph={{
+    url: "https://www.inloopo.com/de/",
+    image: "https://www.inloopo.com/images/index-og.jpg",
+    type: "website",
+    description:
+      "Du weißt nicht wann du investieren sollst. Ich helfe dir dabei, die richtige Entscheidung zu treffen.",
+    locale: "de",
+  }}>
+  <!-- Teaser -->
+  <HeroShot
+    title="Geld investieren. Aber wie?"
+    description=" Ich helfe dir dabei, dein Geld mit Strategien zu vermehren, die auch ohne viel Zeitaufwand und Wissen funktionieren. Tritt meinem Telegram Channel bei."
+    button="Kostenlos beitreten"
+    backgroundImageClass="main-teaser__homepage"
+  />
+  <!-- CONTENT PROBLEMS-SOLUTIONS -->
+  <BenefitCard
+    title="Vermehre dein Geld ohne viel Aufwand"
+    description="Mit meinem Angebot brauchst du nur wenig Zeit, um dein Geld erfolgreich anzulegen und den Markt zu schlagen."
+    icon={{ src: "/images/clock.svg", alt: "Uhr Icon" }}
+  />
+  <BenefitCard
+    title="Investiere erfolgreich ohne Vorkenntnisse"
+    description="Ich habe Lösungen für dich, die du nutzen kannst, ohne dir viel neues Wissen anzueignen."
+    icon={{ src: "/images/light-bulb.svg", alt: "Glühbirne Icon" }}
+  />
+  <BackgroundImage
+    title="Ich bin Philipp."
+    description="Seit 2008 beschäftige ich mich damit, wie ich mein Geld mit wenig Zeitaufwand sicher und gewinnbringend an den Börsen anlegen kann. Was mich antreibt? Es gibt Strategien, die dich vor großen Crashs schützen. Nur wissen das viele nicht."
+    button="Mehr über mich"
+  />
+  <QualiCard
+    title="Börsenerfahrung"
+    description="Du suchst nach einem erfahrenen Trader. Ich habe anfangs CFD's,          später Aktien, Optionsscheine auf Trendaktien und Optionen          gehandelt. Heute handel ich Futures nach COT Daten, Saisonalität          und Wetteranalyse und investiere strategisch auf Basis der          Börsenampel mit der S&P 500 ETF Strategie."
+    icon={{ src: "/images/books.svg", alt: "Buch Icon" }}
+  />
+  <QualiCard
+    title="Nachweisbarer Erfolg"
+    description="Du brauchst Sicherheit. Ich habe mit der Futures Trading Strategie          von          <a class='link' href='https://insider-week.com/de/'>InsiderWeek</a          >          am Global Cup Championship of Futures Trading™ 2021-2022 teilgenommen.          Mit 64,1 % Rendite pro Jahr den 5. Platz belegt. Dieses Jahr nehme          ich erneut teil."
+    icon={{ src: "/images/hat.svg", alt: "Hut Icon" }}
+  />
+  <QualiCard
+    title="Analytische Denkweise"
+    description="Du möchtest einem strategisch denkenden Menschen folgen. Ich mache          meine Analysen präzise und sorgfältig. Meine Entscheidungen treffe          ich rational und auf Basis von Daten."
+    icon={{ src: "/images/data.svg", alt: "Daten und Charts Icon" }}
+  />
+  <section>
+    <div class="row">
+      <ProductCard
+        title="Mit Börsenampel investieren"
+        description="Die Börsenampel zeigt dir, wann du investierst und wann nicht."
+        link={{ href: "investieren", text: "Geh zur Börsenampel" }}
+      />
+      <ProductCard
+        title="Meinem Wikifolio folgen"
+        description="Du investierst in ein aktiv gemanagten Account."
+        link={{ href: "wikifolio", text: "Geh zum Wikifolio" }}
+      />
+    </div>
+  </section>
+  <div class="wrapper-content">
+    <section class="blog-section">
+      <div class="row">
+        <div class="column third">
+          <a class="link__blog" href="anlagestrategien/welche-etf-strategie"
+            ><img
+              class="blog__image"
+              src="/images/etf-strategie-liste-thumbnail.svg"
+              alt="Frustrierter Mensch sitzt vor dem Computer"
+            />
+          </a>
+          <div class="blog__details">
+            <h6 class="blog__date">28.11.2022</h6>
+            <a class="link__blog" href="anlagestrategien/welche-etf-strategie">
+              <h4>8 ETF Strategien und nur 3, die wirklich funktionieren</h4>
             </a>
-            <div class="blog__details">
-              <h6 class="blog__date">28.11.2022</h6>
-              <a class="link__blog" href="anlagestrategien/welche-etf-strategie">
-                <h4>8 ETF Strategien und nur 3, die wirklich funktionieren</h4>
-              </a>
-              <p>
-                Du interessiert dich für eine ETF Strategie. Aber du hast Kopfschmerzen, weil du nicht die richtigen
-                Information für dich findest. Check diese Liste. Sie wird deine Kopfschmerzen lindern und dich
-                weiterbringen.
-              </p>
-              <a class="link" href="anlagestrategien/welche-etf-strategie">Artikel lesen</a>
-            </div>
-          </div>
-
-          <div class="column third">
-            <a class="link__blog" href="finanzwissen/ordertypen"
-              ><img
-                class="blog__image"
-                src="/images/ordertypen-thumbnail.svg"
-                alt="Ordertypen als Grafik visualisiert"
-              />
-            </a>
-            <div class="blog__details">
-              <h6 class="blog__date">08.11.2022</h6>
-              <a class="link__blog" href="finanzwissen/ordertypen">
-                <h4>Was sind Ordertypen und wie du die richtige Order wählst</h4>
-              </a>
-              <p>
-                Du möchtest dein Geld selbst anlegen, denn du weißt, dass du es besser kannst, als dein Bankberater.
-                Bevor du anfängst die ersten Aktien oder ETF's zu handeln, solltest du diese Ordertypen kennen.
-              </p>
-              <a class="link" href="finanzwissen/ordertypen">Artikel lesen</a>
-            </div>
-          </div>
-
-          <div class="column third">
-            <a class="link__blog" href="finanzwissen/limit-order"
-              ><img
-                class="blog__image"
-                src="/images/limit-order-thumbnail.svg"
-                alt="Limit Order als Grafik visualisiert"
-              />
-            </a>
-            <div class="blog__details">
-              <h6 class="blog__date">24.10.2022</h6>
-              <a class="link__blog" href="finanzwissen/limit-order">
-                <h4>Die Limit Order – Erklärung mit 6 Tipps und Beispielen</h4>
-              </a>
-              <p>
-                Du möchtest deine Trades mit einer Limit Order ausführen, weil du gehört hast, dass du damit deine
-                Gewinne über dem aktuellen Kurs realisieren kannst. Aber was bedeutet Limit Order? Wie funktioniert eine
-                Order Limit?
-              </p>
-              <a class="link" href="finanzwissen/limit-order">Artikel lesen</a>
-            </div>
+            <p>
+              Du interessiert dich für eine ETF Strategie. Aber du hast Kopfschmerzen, weil du nicht die richtigen
+              Information für dich findest. Check diese Liste. Sie wird deine Kopfschmerzen lindern und dich
+              weiterbringen.
+            </p>
+            <a class="link" href="anlagestrategien/welche-etf-strategie">Artikel lesen</a>
           </div>
         </div>
-        <p><a href="blog" class="button">Ließ mehr im Blog</a></p>
-      </section>
-    </div>
+        <div class="column third">
+          <a class="link__blog" href="finanzwissen/ordertypen"
+            ><img class="blog__image" src="/images/ordertypen-thumbnail.svg" alt="Ordertypen als Grafik visualisiert" />
+          </a>
+          <div class="blog__details">
+            <h6 class="blog__date">08.11.2022</h6>
+            <a class="link__blog" href="finanzwissen/ordertypen">
+              <h4>Was sind Ordertypen und wie du die richtige Order wählst</h4>
+            </a>
+            <p>
+              Du möchtest dein Geld selbst anlegen, denn du weißt, dass du es besser kannst, als dein Bankberater. Bevor
+              du anfängst die ersten Aktien oder ETF's zu handeln, solltest du diese Ordertypen kennen.
+            </p>
+            <a class="link" href="finanzwissen/ordertypen">Artikel lesen</a>
+          </div>
+        </div>
+        <div class="column third">
+          <a class="link__blog" href="finanzwissen/limit-order"
+            ><img
+              class="blog__image"
+              src="/images/limit-order-thumbnail.svg"
+              alt="Limit Order als Grafik visualisiert"
+            />
+          </a>
+          <div class="blog__details">
+            <h6 class="blog__date">24.10.2022</h6>
+            <a class="link__blog" href="finanzwissen/limit-order">
+              <h4>Die Limit Order – Erklärung mit 6 Tipps und Beispielen</h4>
+            </a>
+            <p>
+              Du möchtest deine Trades mit einer Limit Order ausführen, weil du gehört hast, dass du damit deine Gewinne
+              über dem aktuellen Kurs realisieren kannst. Aber was bedeutet Limit Order? Wie funktioniert eine Order
+              Limit?
+            </p>
+            <a class="link" href="finanzwissen/limit-order">Artikel lesen</a>
+          </div>
+        </div>
+      </div>
+      <p><a href="blog" class="button">Ließ mehr im Blog</a></p>
+    </section>
+  </div>
 </MainLayout>
-  
-
-  
-

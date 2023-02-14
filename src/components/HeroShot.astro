@@ -2,34 +2,27 @@
 const { title, description, button, backgroundImageClass = "" } = Astro.props;
 ---
 
-<div class={`
+<div
+  class={`
 main-teaser ${backgroundImageClass}
 `}>
-    <div class="wrapper">
-      <h1 class="main-teaser__heading">{ title }</h1>
-      <p class="main-teaser__text p--bigger">
-        { description }<br /><br />
-        {
-
-        button &&
-        (<a
-          href= { button.href }
-          target={ button.target }
-          class="button"
-          >
-          <img
-            class="button__img"
-            src="/images/telegram.svg"
-            width="20"
-            alt="Telegram Icon"
-          />{ button.text }
-          </a><br />)
+  <div class="wrapper">
+    <h1 class="main-teaser__heading">{title}</h1>
+    <p class="main-teaser__text p--bigger">
+      {description}<br /><br />
+      {
+        button && (
+          <>
+            <a href={button.href} target={button.target} class="button">
+              <img class="button__img" src="/images/telegram.svg" width="20" alt="Telegram Icon" />
+              {button.text}
+            </a>
+            <br />
+          </>
+        )
       }
-      </p>
-    </div>
+    </p>
   </div>
+</div>
 
-  <style>
-    
-
-  </style>
+<style></style>
