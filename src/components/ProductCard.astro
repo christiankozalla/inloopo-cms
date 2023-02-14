@@ -3,12 +3,19 @@ const { title, description, link } = Astro.props;
 ---
 
 <div class="column half">
-    <div class="circle">
-      <h2 class="circle__heading">{ title }</h2>
-      <p class="p--bigger circle__text">
-        { description }
-      </p>
-        {link && 
-        (<p><a class="link" href={ link.href }>{ link.text }</a></p>)}
-    </div>
+  <div class="circle">
+    <h2 class="circle__heading">{title}</h2>
+    <p class="p--bigger circle__text">
+      {description}
+    </p>
+    {
+      link && (
+        <p>
+          <a class="link" href={link.href}>
+            {link.text}
+          </a>
+        </p>
+      )
+    }
+  </div>
 </div>

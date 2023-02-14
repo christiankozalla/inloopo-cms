@@ -1,34 +1,23 @@
 ---
 const { title, icon, listItems } = Astro.props;
 interface Props {
-    title: string; 
-    icon: {src: string; alt: string};
-    listItems: string[];
+  title: string;
+  icon: { src: string; alt: string };
+  listItems: string[];
 }
-
 ---
 
 <div class="column half box__container">
-    <img
-      class="box__icon"
-      src={ icon.src }
-      width="70"
-      height="70"
-      alt={ icon.alt }
-    />
-    <h3 class="box__heading">{ title }</h3>
-    <ul class="box__ul">
-        {listItems.map((item) => (
-    <li class="box__li">
-        <img
-          src="/images/icon-arrow.svg"
-          width="35"
-          height="35"
-          alt="Pfeil Icon"
-        />{ item }
-      </li>
-        ))}
-      
-     
-    </ul>
-  </div>
+  <img class="box__icon" src={icon.src} width="70" height="70" alt={icon.alt} />
+  <h3 class="box__heading">{title}</h3>
+  <ul class="box__ul">
+    {
+      listItems.map((item) => (
+        <li class="box__li">
+          <img src="/images/icon-arrow.svg" width="35" height="35" alt="Pfeil Icon" />
+          {item}
+        </li>
+      ))
+    }
+  </ul>
+</div>

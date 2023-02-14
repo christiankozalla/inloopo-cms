@@ -13,10 +13,73 @@ import QualiCard from '../../components/QualiCard.astro';
 
   <!-- Open Graph -->
 
+<MainLayout
+  title="Wikifolio"
+  description="Du möchtest dein Geld sicher, ohne Zeitaufwand aber dennoch profitabel anlegen. Aber nicht selbst. Ich mache das für dich."
+  opengraph={{
+    url: "https://www.inloopo.com/de/wikifolio",
+    image: "https://www.inloopo.com/images/wikifolio-og.jpg",
+    type: "website",
+    description: "Du brauchst jemand, der dein Geld profitabel anlegt. Guck dir mein Wikifolio an.",
+    locale: "de",
+  }}>
+  
+  <!-- MAIN TEASER -->
+
+  <div class="main-teaser main-teaser__page-wikifolio">
+    <div class="wrapper">
+      <h1 class="main-teaser__heading main-teaser__heading--page-wikifolio">Keine Lust auf das Thema Finanzen</h1>
+      <p class="main-teaser__text">
+        Ich manage dein Geld und lege es profitabel an. Mit geringerem Risiko als der allgemeine Aktienmarkt. Mit
+        besserer Performance als Buy and Hold.
+        <br />
+        <a href="https://www.wikifolio.com/en/int/w/wfinloopo1" class="button">Wikifolio vormerken</a>
+      </p>
+    </div>
+  </div>
 
 
-<MainLayout title="Wikifolio" description="Du möchtest dein Geld sicher, ohne Zeitaufwand aber dennoch profitabel anlegen. Aber nicht selbst. Ich mache das für dich." opengraph={{url:'https://www.inloopo.com/de/wikifolio', image:'https://www.inloopo.com/images/wikifolio-og.jpg', type:'website', description:'Du brauchst jemand, der dein Geld profitabel anlegt. Guck dir mein Wikifolio an.', locale:'de'}}>
+  <section>
+    <div class="row box--grey-background box--desktop">
+      <div class="wrapper-content">
+        <div class="column half box__container">
+          <img class="box__icon" src="/images/sad.svg" width="70" height="70" alt="Trauriges Gesicht" />
+          <h3 class="box__heading">Du hast keine Lust...</h3>
+          <ul class="box__ul">
+            <li class="box__li">
+              <img src="/images/icon-arrow.svg" width="35" height="35" alt="Pfeil Icon" />dich um dein Geld zu kümmern.
+            </li>
+            <li class="box__li">
+              <img src="/images/icon-arrow.svg" width="35" height="35" alt="Pfeil Icon" />dein Geld sinnlos auszugeben,
+              weil du nicht weißt, was du damit machen sollst.
+            </li>
+            <li class="box__li">
+              <img src="/images/icon-arrow.svg" width="35" height="35" alt="Pfeil Icon" />einer Bank dein Geld zu geben
+              aber selbst machen ist auch nicht dein Ding.
+            </li>
+          </ul>
+        </div>
 
+        <div class="column half box__container">
+          <img class="box__icon" src="/images/happy.svg" width="70" height="70" alt="Fröhliches Gesicht" />
+          <h3 class="box__heading">Du möchtest...</h3>
+          <ul class="box__ul">
+            <li class="box__li">
+              <img src="/images/icon-arrow.svg" width="35" height="35" alt="Pfeil Icon" />dein Geld anlegen.
+            </li>
+            <li class="box__li">
+              <img src="/images/icon-arrow.svg" width="35" height="35" alt="Pfeil Icon" />dich Null mit einer Strategie
+              für Geldanlagen beschäftigen.
+            </li>
+            <li class="box__li">
+              <img src="/images/icon-arrow.svg" width="35" height="35" alt="Pfeil Icon" />etwas sinnvolles mit deinem
+              Geld für deine Zukunft machen.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
  <!-- MAIN TEASER -->
  <div class="wrapper">
@@ -59,6 +122,35 @@ import QualiCard from '../../components/QualiCard.astro';
         <div class="column  fourth  column__col">
             <span class="box__circle--center">4</span>
             <p class="text--center">Leben genießen</p>
+        </div>
+    </div>
+    </div>
+</section>
+
+  <!-- BENEFITS -->
+
+  <section>
+    <div>
+      <div class="wrapper column__foto-text">
+        <div class="column column--blue">
+          <h2 class="box__heading--white-left">Sorgloses Leben</h2>
+          <p class="box__p--white">
+            Deine Sorgen, was du mit deinem Geld anstellen sollst, kannst du beiseitelegen. Mit meinem Wikifolio wird
+            dein Geld sicher, risikoarm und gewinnbringend angelegt.
+          </p>
+          <h2 class="box__heading--white-left">Geld investieren ohne dein Zutun</h2>
+          <p class="box__p--white">
+            Du lässt dein Geld anlegen. Nicht von einer Bank. Nein. Du folgst einem Wikifolio, was dein Geld investiert.
+            Nach einer Strategie, die funktioniert.
+          </p>
+          <h2 class="box__heading--white-left">Dein Geld ist in deinen Händen</h2>
+          <p class="box__p--white">
+            Dein Geld ist auf deinem Konto. Du kannst deine Investition jederzeit rückgängig machen, nicht wie beim
+            Abschluss einer Rentenversicherung.
+          </p>
+        </div>
+        <div class="column__foto">
+          <img src="../images/sportler.jpg" alt="Junger Profi Sportler mit Rucksack" />
         </div>
     </div>
 </div>
@@ -137,12 +229,9 @@ import QualiCard from '../../components/QualiCard.astro';
 
 
 
-<!-- last call to action -->
-
-<section>
-<a href="https://www.wikifolio.com/en/int/w/wfinloopo1" class="button  button--final">Wikifolio vormerken</a>
-</section>
-
+  <section>
+    <a href="https://www.wikifolio.com/en/int/w/wfinloopo1" class="button button--final">Wikifolio vormerken</a>
+  </section>
 </MainLayout>
 
        
