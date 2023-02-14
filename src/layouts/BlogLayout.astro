@@ -1,8 +1,9 @@
 ---
+import Navbar from "../components/Navbar.astro";
 import ReadingProgress from "../components/ReadingProgress.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/styles.css";
-const { title, date } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -14,10 +15,10 @@ const { title, date } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <ReadingProgress />
     <div class="wrapper">
-      <main>
-        <ReadingProgress />
-        <p>{date}</p>
+      <Navbar lang="de" />
+      <main class="wrapper-content-blog">
         <slot />
       </main>
     </div>

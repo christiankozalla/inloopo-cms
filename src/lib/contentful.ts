@@ -44,7 +44,10 @@ interface Post {
   category: string;
   published?: string;
   description?: string;
+  seoDescription?: string;
   body: Document;
+  author: { fields: { name: string; avatar?: object, bio?: string }},
+  heroImage?: object;
 }
 
 export { contentfulClient, renderOptions };

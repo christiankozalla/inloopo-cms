@@ -1,5 +1,7 @@
 ---
 import BlogLayout from "../../../layouts/BlogLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import Author from "../../../components/Author.astro";
 import { contentfulClient, renderOptions } from "../../../lib/contentful";
 import type { Post } from "../../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
@@ -14,13 +16,19 @@ export async function getStaticPaths() {
       title: item.fields.title,
       body: documentToHtmlString(item.fields.body, renderOptions),
       date: item.fields.published ? new Date(item.fields.published).toLocaleDateString("de-DE") : null,
+      author: item.fields.author.fields,
     },
   }));
 }
 
-const { title, date, body } = Astro.props;
+const { title, date, body, author } = Astro.props;
+const { category, slug } = Astro.params as { category: string; slug: string; };
+const url = Astro.url.toString();
 ---
 
-<BlogLayout title={title} date={date}>
-  <article class="wrapper-content-blog" set:html={body} />
+<BlogLayout title={title}>
+  <Breadcrumbs title={title} category={category} slug={slug} />
+  <h1 class="article__main-heading">{title}</h1>
+  <Author author={author} published={date} url={url} />
+  <article set:html={body} />
 </BlogLayout>
