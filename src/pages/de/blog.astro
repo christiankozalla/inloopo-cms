@@ -14,7 +14,7 @@ const entries = await contentfulClient.getEntries<Post>({
       <section>
         <h2>{item.fields.title}</h2>
         <p>{item.fields.description}</p>
-        <a href={`/de/finanzwissen/${item.fields.slug}`}>Zum Artikel</a>
+        <a href={`/de/${item.fields.category}/${item.fields.slug}`}>Zum Artikel</a>
       </section>
     ))
   }
