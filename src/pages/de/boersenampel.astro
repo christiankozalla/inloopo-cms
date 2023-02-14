@@ -1,0 +1,39 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+---
+
+<MainLayout
+  title="Börsenampel als Tool"
+  description="Überprüfe den aktuellen Stand der inloopo Börsenampel."
+>
+  <!-- TEASER -->
+  <div>
+    <div class="wrapper-content">
+      <h1 class="main-teaser__heading--dark">Börsenampel</h1>
+      <p class="main-teaser__text">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+        ultricies nec, pellentesque eu, pretium quis, sem. <br />
+        <a href="https://t.me/+Km1-SZkNz-s2ZWRi" target="_blank" class="button"
+          ><img
+            class="button__img"
+            src="../images/telegram.svg"
+            width="20"
+            alt="Telegram Icon"
+          />Kostenlos beitreten</a
+        ><br />
+      </p>
+      <div class="wrapper-content-blog">
+        <h2>Aktuelle Börsenampel</h2>
+        <boersenampel-status></boersenampel-status>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+<script type="module" src="/scripts/boersenampel-status.js"></script>
+</MainLayout>
+
+
+

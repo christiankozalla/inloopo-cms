@@ -1,0 +1,57 @@
+---
+const { title, description } = Astro.props;
+---
+
+<div class="wrapper-content">
+  <section>
+    <div class="row row--no-background">
+      <div class="column third column__col animate">
+        <img
+          src="{image.src}"
+          class="column__icon"
+          width="70"
+          height="70"
+          alt="{image.alt}"
+        />
+        <h3 class="column__subheading">{title}</h3>
+        <p class="column__text">
+          {description}
+        </p>
+      </div>
+
+      <div class="column third column__col animate">
+        <img
+          src="/images/hat.svg"
+          class="column__icon"
+          width="70"
+          height="70"
+          alt="Hut Icon"
+        />
+        <h3 class="column__subheading">Nachweisbarer Erfolg</h3>
+        <p class="column__text">
+          Du brauchst Sicherheit. Ich habe mit der Futures Trading Strategie von
+          <a class="link" href="https://insider-week.com/de/">InsiderWeek</a>
+          am Global Cup Championship of Futures Trading™ 2021-2022 teilgenommen.
+          Mit 64,1 % Rendite pro Jahr den 5. Platz belegt. Dieses Jahr nehme ich
+          erneut teil.
+        </p>
+      </div>
+
+      <div class="column third column__col animate">
+        <img
+          src="/images/data.svg"
+          class="column__icon"
+          width="70"
+          height="70"
+          alt="Daten und Charts"
+        />
+        <h3 class="column__subheading">Analytische Denkweise</h3>
+        <p class="column__text">
+          Du möchtest einem strategisch denkenden Menschen folgen. Ich mache
+          meine Analysen präzise und sorgfältig. Meine Entscheidungen treffe ich
+          rational und auf Basis von Daten.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>

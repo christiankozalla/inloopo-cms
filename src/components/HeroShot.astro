@@ -1,0 +1,23 @@
+---
+const { title, description, button } = Astro.props;
+---
+
+<div class="main-teaser main-teaser__homepage">
+    <div class="wrapper">
+      <h1 class="main-teaser__heading">{ title }</h1>
+      <p class="main-teaser__text p--bigger">
+        { description }<br /><br />
+        <a
+          href="https://t.me/+Km1-SZkNz-s2ZWRi"
+          target="_blank"
+          class="button"
+          ><img
+            class="button__img"
+            src="/images/telegram.svg"
+            width="20"
+            alt="Telegram Icon"
+          />{ button }</a
+        ><br />
+      </p>
+    </div>
+  </div>

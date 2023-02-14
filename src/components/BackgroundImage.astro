@@ -1,0 +1,16 @@
+---
+const { title, description, button } = Astro.props;
+---
+
+<section>
+    <div class="secondary-teaser secondary-teaser__image--philipp">
+      <div class="wrapper">
+        <h2 class="secondary-teaser__heading">{ title }</h2>
+        <blockquote class="secondary-teaser__quote">
+         { description }<br /><br />
+          <p><a href="ueber-mich" class="button">{ button }</a></p>
+        </blockquote>
+      </div>
+    </div>
+</section>
+ 

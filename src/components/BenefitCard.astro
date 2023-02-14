@@ -1,0 +1,27 @@
+---
+const { title, description, icon } = Astro.props;
+---
+<div class="wrapper-content">
+    <section>
+        <div class="row">
+            <div class="column half">
+                <h2 class="heading-two--bigger">
+                { title}
+                </h2>
+                <p class="p--bigger">
+                { description }
+                </p>
+            </div>
+            <div class="column half">
+                <div class="icon__circle">
+                <img
+                    src={ icon.src }
+                    width="250"
+                    height="250"
+                    alt={ icon.alt }
+                />
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
