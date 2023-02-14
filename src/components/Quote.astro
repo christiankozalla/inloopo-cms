@@ -4,5 +4,6 @@ const { text } = Astro.props;
 
 <div>
     <blockquote set:html={ text } class="quote quote__page-sp500-strategie">
+      <slot />
     </blockquote>
   </div>
