@@ -9,6 +9,12 @@ const contentfulClient = contentful.createClient({
 
 const renderOptions = {
   renderNode: {
+    [BLOCKS.HEADING_2]: (node: any, _children: any) => {
+      const text = node.content.find((data: any) => data.nodeType === "text").value;
+      return `
+        <h2 class="article__heading-two" id=${"point-" + encodeURIComponent(text.replace(" ", "-"))}>${text}</h2>
+      `;
+    },
     [BLOCKS.EMBEDDED_ASSET]: (node: any, _children: any) => {
       // render the EMBEDDED_ASSET as you need
       return `

@@ -1,5 +1,6 @@
 ---
 import BlogLayout from "../../../layouts/BlogLayout.astro";
+import BlogTableOfContents from "../../../components/BlogTableOfContents.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import Author from "../../../components/Author.astro";
 import { contentfulClient, renderOptions } from "../../../lib/contentful";
@@ -27,6 +28,7 @@ const url = Astro.url.toString();
 ---
 
 <BlogLayout title={title}>
+  <BlogTableOfContents document={body} />
   <Breadcrumbs title={title} category={category} slug={slug} />
   <h1 class="article__main-heading">{title}</h1>
   <Author author={author} published={date} url={url} />
