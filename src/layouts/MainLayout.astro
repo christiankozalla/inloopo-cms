@@ -10,6 +10,8 @@ import Navbar from "../components/Navbar.astro";
 const { title, description, opengraph } = Astro.props;
 ---
 
+<!DOCTYPE html>
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -45,7 +47,7 @@ const { title, description, opengraph } = Astro.props;
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
-  <link rel="manifest" href="images/manifest.json" />
+  <link rel="manifest" href="/images/manifest.json" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff" />
@@ -58,3 +60,4 @@ const { title, description, opengraph } = Astro.props;
 
   <Footer />
 </body>
+</html>

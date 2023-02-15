@@ -47,7 +47,7 @@ interface Post {
   seoDescription?: string;
   body: Document;
   author: { fields: { name: string; avatar?: object; bio?: string } };
-  heroImage?: object;
+  heroImage?: Record<string, any>;
 }
 
 export { contentfulClient, renderOptions };
