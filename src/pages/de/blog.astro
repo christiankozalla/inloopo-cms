@@ -8,7 +8,17 @@ const entries = await contentfulClient.getEntries<Post>({
 });
 ---
 
-<MainLayout title="Alle Blogartikel im Überblick" description="Du willst wissen, wie du dein Geld anlegen kannst. Manche Ding verstehst du noch nicht. In meinem Blog erkläre ich es dir.">
+<MainLayout
+  title="Alle Blogartikel im Überblick"
+  description="Du willst wissen, wie du dein Geld anlegen kannst. Manche Ding verstehst du noch nicht. In meinem Blog erkläre ich es dir.">
+  <div class="box--orange-background">
+    <div class="wrapper-content">
+      <h1 class="main-teaser__heading--center main-teaser__heading-one--mobile">Investieren lernen. So gehts.</h1>
+      <p class="main-teaser__text--center p--bigger">
+        In meinem Blog findest du Antworten, Anleitungen, Wissen und Erfahrung.
+      </p>
+    </div>
+  </div>
   <div class="grid">
     {
       entries.items.map((item) => (
@@ -24,7 +34,9 @@ const entries = await contentfulClient.getEntries<Post>({
             </a>
           )}
           <div class="article-card__details">
-            {item.fields.published && <h6 class="blog__date">{new Date(item.fields.published).toLocaleDateString("de-DE")}</h6>}
+            {item.fields.published && (
+              <h6 class="blog__date">{new Date(item.fields.published).toLocaleDateString("de-DE")}</h6>
+            )}
             <a class="link__blog" href={`/de/${item.fields.category}/${item.fields.slug}`}>
               <h2>{item.fields.title}</h2>
             </a>
@@ -51,7 +63,7 @@ const entries = await contentfulClient.getEntries<Post>({
         grid-template-columns: 1fr;
       }
     }
-    @media screen and (min-width: 501px) and ( max-width: 979px) {
+    @media screen and (min-width: 501px) and (max-width: 979px) {
       .grid {
         grid-template-columns: 1fr 1fr;
       }
