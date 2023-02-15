@@ -5,7 +5,14 @@ import HeroShot from "../../components/HeroShot.astro";
 
 <MainLayout 
 title="Börsenampel als Tool" 
-description="Überprüfe den aktuellen Stand der inloopo Börsenampel.">
+description="Überprüfe den aktuellen Stand der inloopo Börsenampel."
+opengraph={{
+  description:'Sieh dir den aktuellen Stand der inloopo Börsenampel an.',
+  locale:'de',
+  type:'website',
+  url:'https://www.inloopo.com/de/boersenampel',
+  image:'https://www.inloopo.com/images/inloopo-boersenampel-stand-og.jpg'
+}}>
 
   <!-- TEASER -->
 <HeroShot 
