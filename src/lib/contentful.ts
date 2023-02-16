@@ -1,5 +1,6 @@
 import contentful from "contentful";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import type { Document } from "@contentful/rich-text-types";
 
 const contentfulClient = contentful.createClient({
@@ -9,6 +10,17 @@ const contentfulClient = contentful.createClient({
 
 const renderOptions = {
   renderNode: {
+    [INLINES.EMBEDDED_ENTRY]: (node: any, _children: any) => {
+      return `
+        <div class="article__box--info-item">
+          <h6 class="article__box--info">${node.data.target.fields.heading}</h6>
+        </div>
+        <div class="article__box">
+          ${node.data.target.fields.subHeading ? `<h4>${node.data.target.fields.subHeading}</h4>` : ""}
+          ${node.data.target.fields.paragraphs && documentToHtmlString(node.data.target.fields.paragraphs)}
+        </div>
+      `;
+    },
     [BLOCKS.HEADING_2]: (node: any, _children: any) => {
       const text = node.content.find((data: any) => data.nodeType === "text").value;
       return `
