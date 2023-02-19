@@ -19,16 +19,22 @@ export async function getStaticPaths() {
       body: documentToHtmlString(item.fields.body, renderOptions),
       date: item.fields.published ? new Date(item.fields.published).toLocaleDateString("de-DE") : null,
       author: item.fields.author.fields,
+      heroImage: {
+        url: item.fields.heroImage?.fields.file.url,
+        height: item.fields.heroImage?.fields.file.details.image.height,
+        width: item.fields.heroImage?.fields.file.details.image.width,
+      },
+      description: item.fields.description,
     },
   }));
 }
 
-const { title, date, body, author } = Astro.props;
+const { title, date, body, author, heroImage, description } = Astro.props;
 const { category, slug } = Astro.params as { category: string; slug: string };
 const url = Astro.url.toString();
 ---
 
-<BlogLayout title={title}>
+<BlogLayout title={title} opengraph={{ title, url, locale: "de", image: heroImage, description, type: "article" }}>
   <BlogTableOfContents />
   <Breadcrumbs title={title} category={category} slug={slug} />
   <h1 class="article__main-heading">{title}</h1>
