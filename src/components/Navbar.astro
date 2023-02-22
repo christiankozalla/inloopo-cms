@@ -259,6 +259,14 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     display: none;
   }
 
+  @media only screen and (min-width: 980px) {
+    .navbar__li {
+      height: min-content;
+      width: 80%;
+      margin-right: 40px;
+    }
+  }
+
   @media only screen and (max-width: 979px) {
     .logo {
       padding: 0;
@@ -409,6 +417,7 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     .navbar__li {
       height: min-content;
       width: 80%;
+      margin-right: 40px;
     }
 
     .navbar__button {
