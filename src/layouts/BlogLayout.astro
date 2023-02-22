@@ -4,21 +4,21 @@ import ReadingProgress from "../components/ReadingProgress.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/styles.css";
 
-// interface Props {
-//   title: string;
-//   opengraph?: {
-//     title: string;
-//     url: string;
-//     image: {
-//       url: string;
-//       width?: number;
-//       height?: number;
-//     };
-//     type: string;
-//     description: string;
-//     locale: string;
-//   };
-// }
+interface Props {
+  title: string;
+  opengraph?: {
+    title: string;
+    url: string;
+    image: {
+      url: string;
+      width?: number;
+      height?: number;
+    };
+    type: string;
+    description: string;
+    locale: string;
+  };
+}
 
 const { title, opengraph } = Astro.props;
 ---
@@ -32,6 +32,7 @@ const { title, opengraph } = Astro.props;
     <title>{title}</title>
 
     <meta name="robots" content="index,follow" />
+    {opengraph?.description ? <meta name="description" content={opengraph.description} /> : null}
 
     {
       opengraph && (

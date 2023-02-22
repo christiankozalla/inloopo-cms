@@ -1,8 +1,8 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
   category: string;
-  slug: string;
+  slug?: string;
 }
 const { title, category, slug } = Astro.props;
 ---
@@ -12,10 +12,18 @@ const { title, category, slug } = Astro.props;
     <li class="breadcrumbs__li"><a class="breadcrumbs__a" href="/de">Home</a></li>
     <li class="breadcrumbs__li"><a class="breadcrumbs__a" href="/de/blog">Blog</a></li>
     <li class="breadcrumbs__li">
-      <a class="breadcrumbs__a" href={`/de/${category}`}>
+      <a class={title && slug ? "breadcrumbs__a" : "breadcrumbs--active"} href={`/de/${category}`}>
         {category.slice(0, 1).toUpperCase() + category.slice(1)}
       </a>
     </li>
-    <li class="breadcrumbs__li"><a class="breadcrumbs--active" href={`/de/${category}/${slug}`}>{title}</a></li>
+    {
+      title && slug && (
+        <li class="breadcrumbs__li">
+          <a class="breadcrumbs--active" href={`/de/${category}/${slug}`}>
+            {title}
+          </a>
+        </li>
+      )
+    }
   </ul>
 </div>

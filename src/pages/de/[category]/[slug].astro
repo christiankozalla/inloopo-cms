@@ -24,17 +24,19 @@ export async function getStaticPaths() {
         height: item.fields.heroImage?.fields.file.details.image.height,
         width: item.fields.heroImage?.fields.file.details.image.width,
       },
-      description: item.fields.description,
+      seoDescription: item.fields.seoDescription,
     },
   }));
 }
 
-const { title, date, body, author, heroImage, description } = Astro.props;
+const { title, date, body, author, heroImage, seoDescription } = Astro.props;
 const { category, slug } = Astro.params as { category: string; slug: string };
 const url = Astro.url.toString();
 ---
 
-<BlogLayout title={title} opengraph={{ title, url, locale: "de", image: heroImage, description, type: "article" }}>
+<BlogLayout
+  title={title}
+  opengraph={{ title, url, locale: "de", image: heroImage, description: seoDescription, type: "article" }}>
   <BlogTableOfContents />
   <Breadcrumbs title={title} category={category} slug={slug} />
   <h1 class="article__main-heading">{title}</h1>
