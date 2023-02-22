@@ -2,6 +2,7 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import { contentfulClient } from "../../lib/contentful.js";
 import type { Post } from "../../lib/contentful.js";
+import { sortPostsByDate } from "../../lib/utils";
 
 const entries = await contentfulClient.getEntries<Post>({
   content_type: "post",
@@ -21,7 +22,7 @@ const entries = await contentfulClient.getEntries<Post>({
   </div>
   <div class="grid">
     {
-      entries.items.map((item) => (
+      entries.items.sort(sortPostsByDate).map((item) => (
         <article class="article-card">
           {item.fields.heroImage?.fields.file.url && (
             <a class="link__blog" href={`/de/${item.fields.category}/${item.fields.slug}`}>

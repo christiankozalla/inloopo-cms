@@ -1,9 +1,11 @@
 ---
+import type { EntryWithLinkResolutionAndWithUnresolvableLinks } from "contentful";
 import MainLayout from "../../../layouts/MainLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import { contentfulClient } from "../../../lib/contentful";
+import { sortPostsByDate } from "../../../lib/utils";
 import type { Post } from "../../../lib/contentful";
-import type { EntryWithLinkResolutionAndWithUnresolvableLinks } from "contentful";
+
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<Post>({
@@ -18,7 +20,7 @@ export async function getStaticPaths() {
           "Du willst dein Geld anlegen. Du weißt zu wenig wie du aktiv und strategisch investieren kannst. Dann hier lang.",
         headline: "Kernkompetenzen für erfolgreiches Investieren",
         copy: "Hier findest du essentielles Wissen.",
-        items: entries.items.filter((item) => item.fields.category === "finanzwissen"),
+        items: entries.items.filter((item) => item.fields.category === "finanzwissen").sort(sortPostsByDate),
       },
     },
     {
@@ -29,7 +31,7 @@ export async function getStaticPaths() {
           "Du willst wissen we du strategisch investierst. Du findest auf dieser Seite Beiträge genau zu diesem Thema.",
         headline: "Investieren mit Strategie",
         copy: "Alle Blogeinträge zum Thema strategisches Investieren findest du hier.",
-        items: entries.items.filter((item) => item.fields.category === "anlagestrategien"),
+        items: entries.items.filter((item) => item.fields.category === "anlagestrategien").sort(sortPostsByDate),
       },
     },
   ];
