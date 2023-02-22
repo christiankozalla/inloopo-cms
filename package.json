@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && ./scripts/after-build.sh",
     "preview": "astro preview",
     "format": "prettier --write ."
   },
@@ -17,6 +17,7 @@
     "prettier-plugin-astro": "^0.8.0"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^1.0.1",
     "@contentful/rich-text-html-renderer": "16.0.2",
     "contentful": "10.0.0-beta-v10.11"
   },
