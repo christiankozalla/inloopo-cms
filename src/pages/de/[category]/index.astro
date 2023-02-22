@@ -6,7 +6,6 @@ import { contentfulClient } from "../../../lib/contentful";
 import { sortPostsByDate } from "../../../lib/utils";
 import type { Post } from "../../../lib/contentful";
 
-
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<Post>({
     content_type: "post",
