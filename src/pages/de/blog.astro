@@ -1,22 +1,92 @@
 ---
-import BlogLayout from "../../layouts/BlogLayout.astro";
-import BlogCard from "../../components/BlogCard.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
 import { contentfulClient } from "../../lib/contentful.js";
 import type { Post } from "../../lib/contentful.js";
+import { sortPostsByDate } from "../../lib/utils";
 
 const entries = await contentfulClient.getEntries<Post>({
   content_type: "post",
 });
 ---
 
-<BlogLayout title="Alle Blogartikel im Überblick">
-  {
-    entries.items.map((item) => (
-      <section>
-        <h2>{item.fields.title}</h2>
-        <p>{item.fields.description}</p>
-        <a href={`/de/finanzwissen/${item.fields.slug}`}>Zum Artikel</a>
-      </section>
-    ))
-  }
-</BlogLayout>
+<MainLayout
+  title="Alle Blogartikel im Überblick"
+  description="Du willst wissen, wie du dein Geld anlegen kannst. Manche Ding verstehst du noch nicht. In meinem Blog erkläre ich es dir."
+  lang="de">
+  <div class="box--orange-background">
+    <div class="wrapper-content">
+      <h1 class="main-teaser__heading--center main-teaser__heading-one--mobile">Investieren lernen. So gehts.</h1>
+      <p class="main-teaser__text--center p--bigger">
+        In meinem Blog findest du Antworten, Anleitungen, Wissen und Erfahrung.
+      </p>
+    </div>
+  </div>
+  <div class="grid">
+    {
+      entries.items.sort(sortPostsByDate).map((item) => (
+        <article class="article-card">
+          {item.fields.heroImage?.fields.file.url && (
+            <a class="link__blog" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+              <img
+                src={item.fields.heroImage?.fields.file.url}
+                alt={item.fields.heroImage.fields.title}
+                height={item.fields.heroImage.fields.file.details.height}
+                loading="lazy"
+              />
+            </a>
+          )}
+          <div class="article-card__details">
+            {item.fields.published && (
+              <h6 class="blog__date">{new Date(item.fields.published).toLocaleDateString("de-DE")}</h6>
+            )}
+            <a class="link__blog" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+              <h2>{item.fields.title}</h2>
+            </a>
+            <p>{item.fields.description}</p>
+            <a class="link" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+              Zum Artikel
+            </a>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin: 24px 12px;
+    }
+
+    @media screen and (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media screen and (min-width: 501px) and (max-width: 979px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media screen and (min-width: 1200px) {
+      .grid {
+        margin: 24px auto;
+        max-width: 1200px;
+      }
+    }
+    .article-card {
+      border: 1px solid #dcdcdc;
+      padding: 0;
+    }
+    .article-card__details {
+      padding: 8%;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+  </style>
+</MainLayout>

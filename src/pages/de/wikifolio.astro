@@ -1,18 +1,17 @@
 ---
 //styles import
-import '../../styles/styles.css';
+import "../../styles/styles.css";
 
 //layout import
 import MainLayout from "../../layouts/MainLayout.astro";
 import HeroShot from "../../components/HeroShot.astro";
-import ProblemCard from '../../components/ProblemCard.astro';
-import DetailCard from '../../components/DetailCard.astro';
-import BackgroundImage from '../../components/BackgroundImage.astro';
-import QualiCard from '../../components/QualiCard.astro';
+import ProblemCard from "../../components/ProblemCard.astro";
+import DetailCard from "../../components/DetailCard.astro";
+import BackgroundImage from "../../components/BackgroundImage.astro";
+import QualiCard from "../../components/QualiCard.astro";
 ---
 
-  <!-- Open Graph -->
-
+<!-- Open Graph -->
 <MainLayout
   title="Wikifolio"
   description="Du möchtest dein Geld sicher, ohne Zeitaufwand aber dennoch profitabel anlegen. Aber nicht selbst. Ich mache das für dich."
@@ -22,8 +21,8 @@ import QualiCard from '../../components/QualiCard.astro';
     type: "website",
     description: "Du brauchst jemand, der dein Geld profitabel anlegt. Guck dir mein Wikifolio an.",
     locale: "de",
-  }}>
-
+  }}
+  lang="de">
   <!-- MAIN TEASER -->
 
   <HeroShot 
@@ -37,8 +36,6 @@ import QualiCard from '../../components/QualiCard.astro';
   }}/>
  
 
-
-  <!-- PROBLEMS -->
   <section>
     <div class="row box--grey-background box--desktop">
         <div class="wrapper-content">
@@ -78,49 +75,52 @@ import QualiCard from '../../components/QualiCard.astro';
             <span class="box__circle--center">1</span>
                 <p class="text--center">Online Broker Konto eröffnen</p>
         </div>
-        <div class="column  fourth  column__col">
-                <span class="box__circle--center">2</span>
-                <p class="text--center">Geld auf dein Konto einzahlen</p>
+        <div class="column fourth column__col">
+          <span class="box__circle--center">2</span>
+          <p class="text--center">Geld auf dein Konto einzahlen</p>
         </div>
-        <div class="column  fourth  column__col">
-            <span class="box__circle--center">3</span>
-            <p class="text--center">Wikifolio Zertifikat kaufen</p>
+        <div class="column fourth column__col">
+          <span class="box__circle--center">3</span>
+          <p class="text--center">Wikifolio Zertifikat kaufen</p>
         </div>
-        <div class="column  fourth  column__col">
-            <span class="box__circle--center">4</span>
-            <p class="text--center">Leben genießen</p>
+        <div class="column fourth column__col">
+          <span class="box__circle--center">4</span>
+          <p class="text--center">Leben genießen</p>
         </div>
+      </div>
     </div>
-    </div>
-</section>
+  </section>
 
 <!-- BENEFITS -->
 
-<section>
-<div>
-<div class="wrapper  column__foto-text">
-    <div class="column  column--blue">
-<h2 class="box__heading--white-left">Sorgloses Leben</h2>
-<p class="box__p--white">Deine Sorgen, was du mit deinem Geld anstellen sollst, kannst du beiseitelegen. 
-    Mit meinem Wikifolio wird dein Geld sicher, risikoarm und gewinnbringend angelegt.
-</p>
-<h2 class="box__heading--white-left">Geld investieren ohne dein Zutun</h2>
-<p class="box__p--white">Du lässt dein Geld anlegen. Nicht von einer Bank. Nein. Du folgst einem Wikifolio, 
-    was dein Geld investiert. Nach einer Strategie, die funktioniert.
-</p>
-<h2 class="box__heading--white-left">Dein Geld ist in deinen Händen</h2>
-<p class="box__p--white">Dein Geld ist auf deinem Konto. Du kannst deine Investition jederzeit 
-    rückgängig machen, nicht wie beim Abschluss einer Rentenversicherung.
-</p>
-</div>
-    <div class="column__foto">
-        <img src="../images/sportler.jpg" alt="Junger Profi Sportler mit Rucksack">
+  <section>
+    <div>
+      <div class="wrapper column__foto-text">
+        <div class="column column--blue">
+          <h2 class="box__heading--white-left">Sorgloses Leben</h2>
+          <p class="box__p--white">
+            Deine Sorgen, was du mit deinem Geld anstellen sollst, kannst du beiseitelegen. Mit meinem Wikifolio wird
+            dein Geld sicher, risikoarm und gewinnbringend angelegt.
+          </p>
+          <h2 class="box__heading--white-left">Geld investieren ohne dein Zutun</h2>
+          <p class="box__p--white">
+            Du lässt dein Geld anlegen. Nicht von einer Bank. Nein. Du folgst einem Wikifolio, was dein Geld investiert.
+            Nach einer Strategie, die funktioniert.
+          </p>
+          <h2 class="box__heading--white-left">Dein Geld ist in deinen Händen</h2>
+          <p class="box__p--white">
+            Dein Geld ist auf deinem Konto. Du kannst deine Investition jederzeit rückgängig machen, nicht wie beim
+            Abschluss einer Rentenversicherung.
+          </p>
+        </div>
+        <div class="column__foto">
+          <img src="../images/sportler.jpg" alt="Junger Profi Sportler mit Rucksack" />
+        </div>
+      </div>
     </div>
-</div>
-</div>
-</section>
+  </section>
 
-<!-- PRODUCT DETAILS -->
+  <!-- PRODUCT DETAILS -->
 
 <section>
 <h2 class="column__heading">Gewinne machen mit geringem Risiko</h2>
@@ -184,6 +184,7 @@ description="Der Einstieg erfolgt nach klaren Regeln. Sobald, es erste Anzeichen
 <!-- QUALIFICATIONS -->
 <section>
     <div class="wrapper-content">
+      <div class="row row--no-background">
         <div class="row row--no-background">
             <div class="row row--no-background">
                 <QualiCard 
@@ -212,6 +213,7 @@ description="Der Einstieg erfolgt nach klaren Regeln. Sobald, es erste Anzeichen
                 />
             </div>
         </div>
+      </div>
     </div>
 </section>
 
@@ -220,5 +222,3 @@ description="Der Einstieg erfolgt nach klaren Regeln. Sobald, es erste Anzeichen
     <a href="https://www.wikifolio.com/en/int/w/wfinloopo1" class="button button--final">Wikifolio vormerken</a>
   </section>
 </MainLayout>
-
-       

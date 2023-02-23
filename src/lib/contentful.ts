@@ -1,5 +1,6 @@
 import contentful from "contentful";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import type { Document } from "@contentful/rich-text-types";
 
 const contentfulClient = contentful.createClient({
@@ -9,6 +10,23 @@ const contentfulClient = contentful.createClient({
 
 const renderOptions = {
   renderNode: {
+    [INLINES.EMBEDDED_ENTRY]: (node: any, _children: any) => {
+      return `
+        <div class="article__box--info-item">
+          <h6 class="article__box--info">${node.data.target.fields.heading}</h6>
+        </div>
+        <div class="article__box">
+          ${node.data.target.fields.subHeading ? `<h4>${node.data.target.fields.subHeading}</h4>` : ""}
+          ${node.data.target.fields.paragraphs && documentToHtmlString(node.data.target.fields.paragraphs)}
+        </div>
+      `;
+    },
+    [BLOCKS.HEADING_2]: (node: any, _children: any) => {
+      const text = node.content.find((data: any) => data.nodeType === "text").value;
+      return `
+        <h2 class="article__heading-two" id=${"point-" + encodeURIComponent(text.replace(" ", "-"))}>${text}</h2>
+      `;
+    },
     [BLOCKS.EMBEDDED_ASSET]: (node: any, _children: any) => {
       // render the EMBEDDED_ASSET as you need
       return `
@@ -44,7 +62,10 @@ interface Post {
   category: string;
   published?: string;
   description?: string;
+  seoDescription?: string;
   body: Document;
+  author: { fields: { name: string; avatar?: object; bio?: string } };
+  heroImage?: Record<string, any>;
 }
 
 export { contentfulClient, renderOptions };
