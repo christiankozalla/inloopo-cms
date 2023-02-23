@@ -28,12 +28,12 @@ import QualiCard from '../../components/QualiCard.astro';
 
   <HeroShot 
   title="Keine Lust auf das Thema Finanzen"
-  description="Ich manage dein Geld und lege es profitabel an. Mit geringerem Risiko als der allgemeine Aktienmarkt. Mit
-  besserer Performance als Buy and Hold."
-  backgroundImageClass="main-teaser__heading--page-wikifolio"
+  description="Ich manage dein Geld und lege es profitabel an. Mit geringerem Risiko als der allgemeine Aktienmarkt. Mit besserer Performance als Buy and Hold."
+  backgroundImageClass="main-teaser__page-wikifolio"
   button={{
     href:'https://www.wikifolio.com/en/int/w/wfinloopo1',
-    text:'Wikifolio vormerken'
+    text:'Wikifolio vormerken',
+    target:'_blank'
   }}/>
  
 
@@ -41,10 +41,12 @@ import QualiCard from '../../components/QualiCard.astro';
   <!-- PROBLEMS -->
   <section>
     <div class="row box--grey-background box--desktop">
-      <div class="wrapper-content">
+        <div class="wrapper-content">
         <ProblemCard
           title="Du hast keine Lust..."
-          icon={{ src: "/images/sad.svg", alt: "Trauriges Gesicht" }}
+          icon={{ src: "/images/sad.svg", 
+          alt: "Trauriges Gesicht" 
+          }}
           listItems={[
             "dich um dein Geld zu kümmern.",
             "dein Geld sinnlos auszugeben, weil du nicht weißt, was du damit machen sollst.",
@@ -53,11 +55,14 @@ import QualiCard from '../../components/QualiCard.astro';
         />
         <ProblemCard
           title="Du möchtest..."
-          icon={{ src: "/images/happy.svg", alt: "Fröhliches Gesicht" }}
+          icon={{ 
+            src: "/images/happy.svg", 
+            alt: "Fröhliches Gesicht" 
+          }}
           listItems={[
             "dein Geld anlegen.",
             "dich Null mit einer Strategie für Geldanlagen beschäftigen.",
-            "einer Bank dein Geld zu geben aber selbst machen ist auch nicht dein Ding.",
+            "etwas sinnvolles mit deinem Geld für deine Zukunft machen.",
           ]}
         />
       </div>
@@ -67,7 +72,7 @@ import QualiCard from '../../components/QualiCard.astro';
 <!-- HOW IT WORKS -->
 <section>
     <h2 class="column__heading">Wie es funktioniert</h2>
-    <div class="wrapper">
+    <div class="wrapper-content">
     <div class="row">
         <div class="column  fourth  column__col">
             <span class="box__circle--center">1</span>

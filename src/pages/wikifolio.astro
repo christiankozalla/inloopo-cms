@@ -1,0 +1,225 @@
+---
+//styles import
+import '../../styles/styles.css';
+
+//layout import
+import MainLayoutEn from "../layouts/MainLayoutEn.astro";
+import HeroShot from "../components/HeroShot.astro";
+import ProblemCard from '../components/ProblemCard.astro';
+import DetailCard from '../components/DetailCard.astro';
+import BackgroundImage from '../components/BackgroundImage.astro';
+import QualiCard from '../components/QualiCard.astro';
+---
+
+<MainLayoutEn
+title="Social Trading"
+description="You want invest your money. Save. Less time consuming. Profitable. But you don't want to do it yourself. I do it for you."
+opengraph={{
+    url: "https://www.inloopo.com/wikifolio",
+    image: "https://www.inloopo.com/images/wikifolio-og.jpg",
+    type: "website",
+    description: "You need someone who invests your money. Look at my Wikifolio.",
+    locale: "en",
+  }}
+  >
+
+<!-- MAIN TEASER -->
+        <HeroShot 
+        title="No desire to think about your finance management?"
+        description="I manage your money and invest it profitably. With less risk than the general stock market and better performance than buy & hold."
+        button={{
+            href:'https://www.wikifolio.com/en/int/w/wfinloopo1',
+            target:'_blank',
+            text:'Bookmark Wikifolio'
+        }}
+        backgroundImageClass="main-teaser__page-wikifolio"
+        />
+
+
+        <!-- PROBLEMS -->
+        <section>
+            <div class="row  box--grey-background  box--desktop">
+                <div class="wrapper-content">
+                    <ProblemCard 
+                    title="You don't feel like..."
+                    icon={{
+                        src:'/images/sad.svg',
+                        alt:'Sad Face'
+                    }}
+                    listItems={[
+                        "to look after your money.",
+                        "spending your money uselessly because you don't know what to do with it.",
+                        "giving your money to a bank but doing it yourself is not your thing either."
+                    ]}
+                    />
+        
+                    <ProblemCard 
+                    title="You want to..."
+                    icon={{
+                        src:'/images/happy.svg',
+                        alt:'Happy Face'
+                    }}
+                    listItems={[
+                        "invest your money.",
+                        "bother with an investment strategy at all.",
+                        "do something meaningful with your money for your future."
+                    ]}
+                    />
+                </div>
+            </div>
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+
+        <section>
+                <h2 class="column__heading">How it works</h2>
+                <div class="wrapper-content">
+                <div class="row">
+                    <div class="column  fourth  column__col">
+                        <span class="box__circle--center">1</span>
+                            <p class="text--center">Open Online Broker Account</p>
+                    </div>
+                    <div class="column  fourth  column__col">
+                            <span class="box__circle--center">2</span>
+                            <p class="text--center">Deposit money into your account</p>
+                    </div>
+                    <div class="column  fourth  column__col">
+                        <span class="box__circle--center">3</span>
+                        <p class="text--center">Buy Wikifolio Certificate</p>
+                    </div>
+                    <div class="column  fourth  column__col">
+                        <span class="box__circle--center">4</span>
+                        <p class="text--center">Enjoy life</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+<!-- BENEFITS -->
+
+<section>
+    <div class="wrapper  column__foto-text">
+        <div class="column  column--blue">
+            <h2 class="box__heading--white-left">Carefree life</h2>
+            <p class="box__p--white">You can put aside your worries about what to do with your money. 
+                With my Wikifolio your money is invested profitably with low risk.
+            </p>
+            <h2 class="box__heading--white-left">Invest money without your involvement</h2>
+            <p class="box__p--white">You have your money invested but not with a bank. No,  
+                you follow a Wikifolio, which invests your money for you following a strategy that works.  
+            </p>
+            <h2 class="box__heading--white-left">Your money is in your hands</h2>
+            <p class="box__p--white">Your money is in your account. 
+                You can cancel your investment at any time, unlike when you buy an annuity.
+            </p>
+            </div>
+                <div class="column__foto">
+                    <img src="images/sportler.jpg" alt="Young professional athlete with backpack">
+                </div>
+            </div>
+</section>
+
+
+<!-- PRODUCT DETAILS -->
+
+<section>
+    <h2 class="column__heading">Make profits with low risk
+    </h2>
+        <div class="wrapper-content">
+            <div class="row  column--no-background">
+                <DetailCard 
+                icon={{
+                    src:'/images/tools.svg',
+                    alt:'Tools Icon'
+                }}
+                heading="Strategy with rulebook"
+                description="I trade according to a trend following strategy based on the inloopo market indicator. This strategy enables optimal performance with minimal loss phases."
+                />
+
+                <DetailCard 
+                icon={{
+                    src:'/images/key.svg',
+                    alt:'Key Icon'
+                }}
+                heading="Risk & Money Management"
+                description="I follow a robust risk and money management strategy. I invest according to clear rules and trend markets."
+                />
+
+                <DetailCard 
+                icon={{
+                    src:'/images/list.svg',
+                    alt:'List Icon'
+                }}
+                heading="Fundamental Stock Selection"
+                description="I only invested if the fundamental data speaks in favour of it. In doing so, I evaluate COT data, momentum, trend, volatility, volume and open interest. I also analyse seasonality and sentiment."
+                />
+
+                <DetailCard 
+                icon={{
+                    src:'/images/bullseye.svg',
+                    alt:'Bulls Eye Icon'
+                }}
+                heading="Correct Timing and Entry"
+                description="The entry is made according to clear rules. As soon as the first signs of falling prices are shown, the risk will be reduced."
+                />
+            </div>
+        </div>
+</section>
+
+
+    <!-- HWY US -->
+    <BackgroundImage 
+    title="I'll invest your money for you."
+    description="How do I do it? With a strategy that I have been successfully investing with since 2008. You will also be successful with me, because I will take care of your money every week with joy and passion."
+    button={{
+        text:'Read more about me',
+        href:'about'
+    }}
+    />
+
+
+   <!-- QUALIFICATIONS -->
+<section>
+    <div class="row row--no-background">
+        <div class="wrapper-content">
+            <QualiCard 
+            icon={{
+                src:'images/books.svg',
+                alt:'Book Icon'
+            }}
+            title="Stock market experience"
+            description="You are looking for an experianced trader? I started with CFD's, and later progressed onto stocks, US options on stocks and commodities. Today I trade futures according to a proper
+            fundamental analysis with COT data and seasonal trends, in line with successful timing, and risk & money management. The rest of my capital I invest strategically based on the stock market indicator with the inloopo strategy for the S&P 500 ETF."
+            />
+
+            <QualiCard 
+            icon={{
+                src:'images/hat.svg',
+                alt:'Hat Icon'
+            }}
+            title="Proven success"
+            description="You need confidence? I participated in the Global Cup Trading
+            Championship with my futures trading strategy. I made it to the 5th place with a profit of +64,1% per year."
+            />
+
+            <QualiCard 
+            icon={{
+                src:'images/data.svg',
+                alt:'Data and Charts Icon'
+            }}
+            title="Analytical thinking"
+            description="You want to follow a strategic person? I make my analyses precisely and carefully. My decisions are rationall and data based. The are the fundamentals for recurring success."
+            />
+        </div>
+    </div>
+</section>  
+
+    <!-- last call to action -->
+
+    <section>
+        <a href="https://www.wikifolio.com/en/int/w/wfinloopo1" class="button  button--final">Bookmark Wikifolio</a>
+    </section>
+</MainLayoutEn>

@@ -6,6 +6,7 @@ import DetailCard from "../../components/DetailCard.astro";
 import ProblemCard from "../../components/ProblemCard.astro";
 import BackgroundImage from "../../components/BackgroundImage.astro";
 import QualiCard from "../../components/QualiCard.astro";
+import PriceCard from "../../components/PriceCard.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 ---
 
@@ -20,6 +21,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
     type: "website",
     locale: "de",
   }}>
+
   <!-- MAIN TEASER -->
   <HeroShot
     title="Geld auf dem Konto. Und nun?"
@@ -31,13 +33,17 @@ import MainLayout from "../../layouts/MainLayout.astro";
     }}
     backgroundImageClass="main-teaser__page-investieren"
   />
+
   <!-- PROBLEMS -->
   <section>
     <div class="row box--grey-background box--desktop">
       <div class="wrapper-content">
         <ProblemCard
           title="Du hast keine Lust mehr..."
-          icon={{ src: "/images/sad.svg", alt: "Trauriges Gesicht" }}
+          icon={{ 
+            src: "/images/sad.svg", 
+            alt: "Trauriges Gesicht" 
+            }}
           listItems={[
             "dich durch die Medienlandschaft nach aktuellen Börsentipps zu wühlen.",
             "den Ausstiegszeitpunkt vor einem Crash zu verpassen.",
@@ -56,19 +62,25 @@ import MainLayout from "../../layouts/MainLayout.astro";
       </div>
     </div>
   </section>
+  
   <!-- QUOTE -->
-  <Quote text="Spekulieren kann jeder. Es zur <strong>richtigen Zeit</strong> zu tun - das ist die Kunst.">
+  <Quote 
+  text="Spekulieren kann jeder. Es zur <strong>richtigen Zeit</strong> zu tun - das ist die Kunst.">
     <p class="quote__autor">André Kostolany</p>
   </Quote>
-  <!-- grafik sp500 strategie vs buy and hold -->
+
+  <!-- GRAFIC INLOOPO STRATEGIE vs INDICES BUY AND HOLD -->
   <dynamic-chart msci-emerging nasdaq dow dax></dynamic-chart>
+
   <!-- PRODUCT DETAILS -->
   <section>
-    <h2 class="column__heading">Im Alltag eins-zu-eins umsetzen</h2>
+    <h2 class="product-details__heading">Im Alltag eins-zu-eins umsetzen</h2>
     <div class="wrapper-content">
       <div class="row column--no-background">
         <DetailCard
-          icon={{ src: "/images/eye-open.svg", alt: "Offenes Auge Icon" }}
+          icon={{ 
+            src: "/images/eye-open.svg", 
+            alt: "Offenes Auge Icon" }}
           heading="Einfach und klar"
           description="Die Ampelfarben sind verständlich und du kannst sie in vielen Strategien nutzen."
         />
@@ -90,61 +102,64 @@ import MainLayout from "../../layouts/MainLayout.astro";
       </div>
     </div>
   </section>
+
   <!-- PRICES & PLANS -->
   <section>
     <div class="box--blue-background">
       <div class="wrapper-content">
+        <h2 class="box__heading--white">Up-to-date bleiben und Investieren lernen</h2>
         <div class="row">
-          <h2 class="box__heading--white">Mit dem Telegram Channel auf dem neusten Stand bleiben</h2>
-          <div class="column half box__column">
-            <h3 class="box__subheading--center">Börsenampel</h3>
-            <p class="box__text--bigger">kostenlos</p>
-            <p>
-              Im Telegram Channel "Investieren mit S&amp;P 500 Strategie" siehst du jeden Sonntag die aktuelle
-              Börsenampel. Dazu gibt es einen kurzen Kommentar zum Markt und Details zu den Börsenampel Indikatoren.
-            </p>
-            <p class="box__cta">
-              <a href="https://t.me/+Km1-SZkNz-s2ZWRi" target="_blank" class="button button-table"
-                >Ja, ich möchte beitreten.</a
-              >
-            </p>
-          </div>
-          <div class="column half box__column">
-            <h3 class="box__subheading--center">Signaldienst</h3>
-            <p>
-              Über den Telegram Channel "Signaldienst S&amp;P 500 Strategie" erhältst du jeden Sonntag konkrete
-              Handelssignale, die du selbst mit deinem Geld umsetzen kannst.
-            </p>
-            <div class="responsive-table box__table">
-              <table>
-                <thead> <tr> <th>monatlich</th> <th>jährlich</th> <th>einmalig</th></tr></thead>
-                <tbody> <tr> <td>20 €</td> <td>149 €</td> <td>399 €</td></tr></tbody>
-              </table>
-            </div>
-            <p class="box__cta">
-              <a class="button button-table" href="https://www.copecart.com/products/d4619143/checkout" target="_blank"
-                >Jetzt kaufen</a
-              >
-            </p>
-          </div>
+          <PriceCard 
+          title="Börsenampel"
+          price="kostenlos"
+          description="Im Telegram Channel 'Investieren mit der inloopo Strategie' siehst du jeden Sonntag die aktuelle Börsenampel. Dazu gibt es einen kurzen Kommentar zum Markt und Details zu den Börsenampel Indikatoren."
+          button={{
+            text:'Ja, ich möchte beitreten',
+            href:'https://t.me/+Km1-SZkNz-s2ZWRi',
+            target:'_blank'
+          }}
+          />
+
+          <PriceCard 
+          title="Online Kurs 'Investieren lernen' kommt bald"
+          price="210 €"
+          description="Du lernst wie du mit 2 bis 3 Ein- und Ausstiegen im Jahr dein Geld sicher und höherer Performance als der Vergleichsmarkt investierst."
+          button={{
+            text:'Ja, ich möchte das lernen',
+            href:'#',
+            target:'_blank'
+          }}
+          />
         </div>
       </div>
     </div>
   </section>
+
+
   <!-- WHY ME -->
   <section>
     <BackgroundImage
       title="Eine Börsenampel, die in dein Leben passt"
       description="Ich habe eine eigene Börsenampel entwickelt, weil mir andere Börsenampeln nicht das geboten haben, was ich brauchte."
       backgroundImageClass="secondary-teaser__image-at-work"
-      button={{ text: "Erfahre mehr", href: "anlagestrategien/inloopo-boersenampel" }}
+      button={{ 
+        text: "Erfahre mehr", 
+        href: "anlagestrategien/inloopo-boersenampel" 
+        }}
+      textColorClass="dark"
     />
   </section>
+
+
   <!-- QUALIFICATIONS -->
   <section>
     <div class="row row--no-background">
+      <div class="wrapper-content">
       <QualiCard
-        icon={{ src: "/images/books.svg", alt: "Buch Icon" }}
+        icon={{ 
+          src: "/images/books.svg", 
+          alt: "Buch Icon" 
+          }}
         title="Börsenerfahrung"
         description="Du suchst nach einem erfahrenen Trader. Ich bin seit 2008 aktiv an der Börse und habe anfangs CFD's, später Aktien, Optionsscheine auf Trendaktien und Optionen gehandelt. Heute handel ich Futures nach COT Daten, Saisonalität und Wetteranalyse und investiere strategisch auf Basis der Börsenampel mit der S&P 500 ETF Strategie."
       />
@@ -159,7 +174,10 @@ import MainLayout from "../../layouts/MainLayout.astro";
         description="Du möchtest einem strategisch denkenden Menschen folgen. Ich mache meine Analysen präzise und sorfältig. Meine Entscheidungen treffe ich rational und auf Basis von Daten."
       />
     </div>
+  </div>
   </section>
+
+  
   <!-- CONTENT FAQ SECTION -->
   <div class="wrapper-content">
     <section>

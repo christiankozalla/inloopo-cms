@@ -25,4 +25,51 @@ main-teaser ${backgroundImageClass}
   </div>
 </div>
 
-<style></style>
+<style>
+  .main-teaser {
+    width: 100%;
+    color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main-teaser__heading,
+.main-teaser__text {
+  margin-left: 10%; 
+}
+
+.main-teaser__text {
+ width: 40%;
+ font-size: 1.25rem;
+ line-height: 1.5;
+}
+
+.main-teaser__heading {
+  margin-top: 160px;
+  width: 45%;
+}
+
+.button {
+  margin-bottom: 120px;
+}
+
+@media only screen and (max-width: 759px) {
+  .main-teaser__text {
+    width: 80%;
+  }
+
+  .main-teaser__heading {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+  }
+}
+
+  @media only screen and (min-width: 760px) and (max-width: 979px) {
+   .main-teaser__text,
+  .main-teaser__heading {
+    width: 70%;
+  }
+}
+</style>

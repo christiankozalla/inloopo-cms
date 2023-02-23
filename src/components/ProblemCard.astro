@@ -7,13 +7,13 @@ interface Props {
 }
 ---
 
-<div class="column half box__container">
-  <img class="box__icon" src={icon.src} width="70" height="70" alt={icon.alt} />
-  <h3 class="box__heading">{title}</h3>
-  <ul class="box__ul">
+<div class="problem-card__container">
+  <img class="problem-card__icon" src={icon.src} width="70" height="70" alt={icon.alt} />
+  <h3 class="problem-card__heading">{title}</h3>
+  <ul class="problem-card__ul">
     {
       listItems.map((item) => (
-        <li class="box__li">
+        <li class="problem-card__li">
           <img src="/images/icon-arrow.svg" width="35" height="35" alt="Pfeil Icon" />
           {item}
         </li>
@@ -21,3 +21,35 @@ interface Props {
     }
   </ul>
 </div>
+
+<style>
+  .problem-card__container {
+  padding: 25px;
+  float: left;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.problem-card__heading {
+  padding-left: 15px;
+  padding-top: 20px;
+}
+
+
+.problem-card__ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.problem-card__li {
+  margin-bottom: 5px;
+}
+
+.problem-card__li img {
+  padding-right: 10px;
+  padding-top: 15px;
+  display: inline;
+}
+</style>

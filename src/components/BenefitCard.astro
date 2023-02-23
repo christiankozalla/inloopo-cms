@@ -4,12 +4,12 @@ const { title, description, icon } = Astro.props;
 
 <div class="wrapper-content">
   <section>
-    <div class="row">
-      <div class="column half">
-        <h2 class="heading-two--bigger">
+    <div class="benefits__wrapper">
+      <div class="benefits__container">
+        <h2 class="benefits__heading">
           {title}
         </h2>
-        <p class="p--bigger">
+        <p class="benefits__text">
           {description}
         </p>
       </div>
@@ -21,3 +21,40 @@ const { title, description, icon } = Astro.props;
     </div>
   </section>
 </div>
+
+<style>
+    .benefits__wrapper {
+    width: 100%;
+    display: flex;
+    margin-bottom: 60px;
+    margin-top: 60px;
+   flex-direction: row;
+  }
+
+    .benefits__container {
+    padding: 25px;
+    width: 50%;
+  }
+
+   .benefits__heading {
+    font-size: 3.875rem;
+    line-height: 1.2;
+  }
+
+  .benefits__text {
+    font-size: 24px;
+    width: 80%;
+    line-height: 1.5;
+  }
+
+  @media only screen and (max-width: 759px) {
+    .benefits__heading {
+     font-size: 30px; 
+    }
+
+    .benefits__text {
+    font-size: 18px;
+    width: 100%;
+  }
+  }
+</style>

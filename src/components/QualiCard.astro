@@ -2,30 +2,37 @@
 const { title, description, icon } = Astro.props;
 ---
 
-<div class="wrapper-content">
-  <div class="row row--no-background">
     <div class="quali-card__container">
-      {icon && <img src={icon.src} class="column__icon" width="70" height="70" alt={icon.alt} />}
+      {icon && <img src={icon.src} class="quali-card__icon" width="70" height="70" alt={icon.alt} />}
       <h3 class="quali-card__heading">{title}</h3>
       <p set:html={description} class="quali-card__text" />
     </div>
-  </div>
-</div>
+ 
+
 
 <style>
+
   .quali-card__container {
     padding: 25px;
     width: 33%;
+    float: left;
+  }
+
+  .quali-card__icon {
+    text-align: left;
   }
 
   .quali-card__heading {
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
   }
 
   .quali-card__text {
-    text-align: center;
+    text-align: left;
+    width: 80%;
   }
+
+
 
   @media only screen and (min-width: 760px) and (max-width: 979px) {
     .quali-card__container {
@@ -37,5 +44,10 @@ const { title, description, icon } = Astro.props;
     .quali-card__container {
       width: 100%;
     }
+
+    .quali-card__text {
+    text-align: left;
+    width: 100%;
+  }
   }
 </style>

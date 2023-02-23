@@ -261,10 +261,6 @@ p {
   line-height: 1.2;
 }
 
-.p--bigger {
-  font-size: 24px;
-  line-height: 1.5;
-}
 
 /* ---------------------------------*\
     #BREADCRUMBS
@@ -377,48 +373,19 @@ p {
   padding-bottom: 4px;
 }
 
-.link__blog {
-  text-decoration: none;
-  color: #171614;
-}
 
-.link__blog:hover {
-  cursor: pointer;
-}
 
 /* #Teaser */
 
-.main-teaser {
-  width: 100%;
-  color: #fff;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
-.main-teaser__heading,
-.main-teaser__heading--page-wikifolio {
-  color: #fff;
-  width: 45%;
-  margin-left: 10%;
-  margin-top: 160px;
-}
+
+
 
 .main-teaser__heading--center {
   text-align: center;
   color: #fff;
 }
 
-.main-teaser__heading--page-wikifolio {
-  font-size: 58px;
-}
-
-.main-teaser__text {
-  color: #fff;
-  width: 40%;
-  margin-left: 10%;
-  padding-bottom: 10%;
-  margin-bottom: 0;
-}
 
 .main-teaser__text--center {
   width: 100%;
@@ -443,22 +410,10 @@ p {
 /* #Teaser #Background Image */
 
 .main-teaser__homepage {
-  background-image: url("/images/image-teaser-01.svg");
+  background-image: url("/images/teaser-image-homepage.jpg");
   background-position: center;
   padding-top: 1%;
   margin-bottom: 120px;
-}
-
-.main-teaser__page-investieren {
-  background-image: url("/images/image-teaser-investieren.svg");
-  background-position: center;
-  padding-top: 1%;
-}
-
-.main-teaser__page-wikifolio {
-  background-image: url("/images/image-teaser-wikifolio.jpg");
-  background-position: right;
-  padding-top: 1%;
 }
 
 .main-teaser__page-wer-wir-sind {
@@ -466,6 +421,32 @@ p {
   background-position: center;
   padding-top: 1%;
   margin-bottom: 120px;
+}
+
+.main-teaser__page-investieren {
+    margin-bottom: 0;
+    background-position: center;
+    background-image: url("/images/image-teaser-investieren.svg");
+  }
+
+.main-teaser__page-boersenampel {
+  background-image: url("/images/image-teaser-boersenampel.jpg");
+  background-position: center;
+  padding-top: 1%;
+  margin-bottom: 120px;
+}
+
+.main-teaser__page-sektorrotation {
+  background-image: url("/images/teaser-image-sektorrotation.jpg");
+  background-position: center;
+  padding-top: 1%;
+  margin-bottom: 120px;
+}
+
+.main-teaser__page-wikifolio {
+  background-image: url("/images/image-teaser-wikifolio.jpg");
+  background-position: center;
+  padding-top: 1%;
 }
 
 .main-teaser__heading--page-investieren {
@@ -509,48 +490,8 @@ p {
 
 /* #Circle */
 
-.circle {
-  border: 6px solid var(--accent-color);
-  border-radius: 50%;
-  width: 550px;
-  height: 550px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
-  padding: 0 60px;
-}
 
-.circle__heading {
-  text-align: center;
-}
 
-/* #Animations Icons Clock */
-
-/* TEST
-.animation--up {
-    animation: move-up 1s ease-in;
-}
-
-@keyframes move-up {
-0% {transform: translateY(100%)}
-100% {transform: translateY(0)}
-}
-
-.animation--draw {
-    stroke-dasharray: 800;
-    stroke-dashoffset: 800;
-    animation: draw 3s forwards;
-}
-
-@keyframes draw {
-    to {stroke-dashoffset: 0;}
-    0% {transform: rotate(0deg);}
-   100% {transform: rotate(360deg);}
-}
-
-*/
 
 .column__img--animated {
   display: flex;
@@ -594,6 +535,15 @@ p {
 .column__heading {
   text-align: center;
   margin-bottom: 30px;
+  margin-top: 90px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.product-details__heading {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 90px;
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -665,16 +615,7 @@ p {
   }
 }
 
-/* #Secondary Teaser */
-
-.secondary-teaser {
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  margin-bottom: 20px;
-  margin-top: 30px;
-  color: #fff;
-}
+/* #Secondary Teaser Background Images*/
 
 .secondary-teaser__image--philipp {
   background-image: url("/images/image-teaser-philipp.jpg");
@@ -693,19 +634,11 @@ p {
 .secondary-teaser__image-at-work {
   background-image: url("/images/image-at-work.jpg");
   color: var(--text-color);
-  padding: 30px 0;
+  padding: 30px 0 90px 0;
 }
 
-.secondary-teaser__heading {
-  width: 40%;
-  margin: 90px 0 10px 90px;
-}
 
-.secondary-teaser__quote {
-  margin: 40px 0 90px 90px;
-  font-size: 24px;
-  width: 40%;
-}
+
 
 /* #Box #Problems-Solutions */
 
@@ -721,12 +654,6 @@ p {
   background: #f5f5f5;
   margin-bottom: 120px;
   margin-top: 0;
-}
-
-.box__container {
-  display: flex;
-  flex-direction: column;
-  width: 45%;
 }
 
 .box__container:first-child {
@@ -748,19 +675,12 @@ p {
   padding-right: 40px;
 }
 
-.box__heading {
-  padding-left: 15px;
-  padding-top: 20px;
-}
 
 .box__heading-fourth--center {
   text-align: center;
 }
 
-.box__icon,
-.box__heading {
-  display: inline;
-}
+
 
 .box--grey-background .half {
   padding: 0;
@@ -790,72 +710,107 @@ p {
   display: none;
 }
 
-.box__ul {
-  list-style: none;
-  margin-bottom: 20px;
+
+/* Sektorrotation Table */
+/* #TOOL #SECTOR ROTATION */
+
+.sectorr {
+  display: flex;
+  justify-content: center;
+  margin: 0 25px;
 }
 
-.box__li {
-  margin-bottom: 5px;
+.sectorr td {
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  font-weight: bold;
+  font-size: 12px;
 }
 
-.box__li img {
-  padding-right: 10px;
-  padding-top: 15px;
-  display: inline;
+.sectorr__table-scnd {
+  margin-right: 50px;
+}
+
+.sectorr__p {
+  width: 30%;
+  margin-right: 25px;
+  margin-top: 45px;
+}
+
+.sectorr__table {
+  margin-bottom: 50px;
+}
+.sectorr__table-scnd td {
+  text-transform: none;
+  text-align: left;
+}
+
+.sectorr__table-scnd td:first-child {
+  text-transform: uppercase;
+}
+
+
+.cons {
+  background-color: #ffaa00;
+}
+
+.inft {
+  background-color: #253C78;
+}
+
+.real {
+  background-color: #124d00;
+}
+
+.util {
+  background-color: #ff2b00;
+}
+
+.finl {
+  background-color: #ff35c9;
+}
+
+.cond {
+  background-color: #ffd035;
+}
+
+.enrs {
+  background-color: #00c6b2;
+
+}
+
+.hlth {
+  background-color: #ff6040;
+}
+
+.matr {
+  background-color: #602578;
+}
+
+.tels {
+  background-color: #35c9ff;
+}
+
+.indu {
+  background-color: #6b35ff;
+}
+
+.sp {
+  background-color: #131e3c;
 }
 
 /* #Blockqoute #Quote */
 
-.quote {
-  font-size: 28px;
-  color: #242325;
-  text-align: center;
-  margin-bottom: 220px;
-  padding: 0 220px;
-}
 
-.quote:before {
-  content: '"';
-  color: #ff6b35;
-  font-size: 100px;
-  display: block;
-  margin-top: 0;
-}
-
-.quote:after {
+.quote__autor {
   font-size: 16px;
-  color: #242325;
-  display: block;
   margin-top: 12px;
+  color: #242325;
 }
 
-.quote__page-seo::after {
-  content: "Nina Baumann";
-}
-
-.quote__page-sp500-strategie:after {
-  content: "André Kostolany";
-}
-
-.quote__page-copy-trading:after {
-  content: "Albert Einstein";
-  font-size: 16px;
-}
-
-.quote__page-webdesign:after {
-  content: "Jakob Nielsen";
-}
-
-.quote__page-wer-wir-sind:after {
-  content: "Neale Donald Walsch";
-}
-
-.quote__page-wer-wir-sind {
-  padding: 0 24px;
-  margin-top: 30px;
-  margin-bottom: 90px;
-}
 
 /* #Box #Card #Prices & Plans */
 
@@ -1198,10 +1153,6 @@ td {
   height: 672px;
 }
 
-.blog__details {
-  padding: 8%;
-}
-
 .box--orange-background {
   background: #ff6b35;
   padding-bottom: 90px;
@@ -1491,7 +1442,7 @@ textarea[type="text"]:focus {
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 979px) {
+@media only screen and (max-width: 979px) {
   .article__row {
     flex-direction: column;
   }
@@ -1754,6 +1705,11 @@ textarea[type="text"]:focus {
     width: 70%;
   }
 
+  .main-teaser__heading--page-boersenampel {
+    width: 70%;
+  }
+
+
   .wrapper-content {
     padding: 0 24px;
   }
@@ -1779,9 +1735,7 @@ textarea[type="text"]:focus {
     font-size: 24px;
   }
 
-  .heading-two--bigger {
-    font-size: 48px;
-  }
+ 
 
   /* ---------------------------------*\
         #BUTTON #LINKS
@@ -1826,10 +1780,7 @@ textarea[type="text"]:focus {
     padding: 5%;
   }
 
-  .main-teaser__text,
-  .main-teaser__heading {
-    width: 70%;
-  }
+ 
 
   .mobile__below-header {
     display: none;
@@ -1844,10 +1795,6 @@ textarea[type="text"]:focus {
         #SECONDARY #TEASER
     \* ---------------------------------*/
 
-  .secondary-teaser__heading,
-  .secondary-teaser__quote {
-    width: 55%;
-  }
 
   .secondary-teaser__image-at-work {
     background-position: center;
@@ -2123,21 +2070,9 @@ textarea[type="text"]:focus {
     font-size: 30px;
   }
 
-  .circle {
-    margin-left: auto;
-    margin-right: auto;
-    width: 320px;
-    height: 320px;
-    padding: 0 20px;
-  }
+  
 
-  .circle__heading {
-    font-size: 24px;
-  }
-
-  .circle__text {
-    font-size: 18px;
-  }
+ 
 
   /* ---------------------------------*\
         #BUTTONS #LINKS
@@ -2197,16 +2132,7 @@ textarea[type="text"]:focus {
         #TEASER-SUBPAGES
     \* ---------------------------------*/
 
-  .main-teaser__text {
-    width: 80%;
-  }
-
-  .main-teaser__heading {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 20px;
-  }
+ 
 
   .main-teaser__heading--page-investieren,
   .main-teaser__heading--page-wikifolio {
@@ -2239,9 +2165,7 @@ textarea[type="text"]:focus {
     padding-bottom: 1%;
   }
 
-  .secondary-teaser__heading {
-    width: 100%;
-  }
+ 
 
   /* #FAQ */
   .faq__container {
@@ -2381,11 +2305,7 @@ textarea[type="text"]:focus {
     margin-top: 0;
   }
 
-  .secondary-teaser__heading,
-  .secondary-teaser__quote {
-    margin-left: 25px;
-    width: 60%;
-  }
+  
 
   .secondary-teaser__image-at-work {
     background-image: url("/images/teaser-image-at-work-mobile.jpg");

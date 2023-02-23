@@ -1,19 +1,34 @@
 ---
-//import layout
+//import layout and components
 import MainLayout from "../../layouts/MainLayout.astro";
+import HeroShot from "../../components/HeroShot.astro";
 
 //import
 import "../../styles/styles.css";
 ---
 
-<MainLayout title="Sektorenrotation als Tool" description="XXX">
-  <!-- TEASER -->
-  <div class="wrapper">
-    <div class="wrapper-content">
-      <section>
-        <h1 class="box__main-heading main-teaser__heading--dark">Sektorenrotation</h1>
-      </section>
-    </div>
+<MainLayout 
+title="Sektorenrotation als Tool" 
+description="XXX"
+opengraph={{
+  description:'XXX',
+  locale:'de',
+  type:'website',
+  url:'https://www.inloopo.com/de/sektorrotation',
+  image:'https://www.inloopo.com/images/sektorrotation-og.jpg'
+}}>
+
+<!-- TEASER -->
+<HeroShot 
+ title="Sektorrotation"
+ description="Entdecke die Vorteile der Sektorrotation und optimiere dein Portfolio! Erkunde die Chancen verschiedener Branchen und verbessere deinen langfristigen Erfolg an der Börse."
+ backgroundImageClass="main-teaser__page-sektorrotation"
+ button={{
+  target:'_blank',
+  href:'https://t.me/+Km1-SZkNz-s2ZWRi',
+  text:'Kostenlos beitreten'
+ }}
+/> 
 
     <section class="sectorr">
       <table class="sectorr__table">
@@ -402,5 +417,4 @@ import "../../styles/styles.css";
         </p>
       </div>
     </section>
-  </div>
 </MainLayout>

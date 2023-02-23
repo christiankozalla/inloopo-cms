@@ -1,6 +1,8 @@
 ---
 //import layout
 import MainLayout from "../../layouts/MainLayout.astro";
+import HeroShot from "../../components/HeroShot.astro";
+import Quote from "../../components/Quote.astro";
 
 //import
 import "../../styles/styles.css";
@@ -8,24 +10,24 @@ import "../../styles/styles.css";
 
 <MainLayout
   title="Mehr über Philipp Kozalla und Inloopo"
-  description="Ich bin Philipp und der Macher von Inloopo. Ich helfe dir Geld strategisch zu investieren. So, dass es in deinen Alltag passt.">
-  <!-- MAIN TEASER -->
+  description="Ich bin Philipp und der Macher von Inloopo. Ich helfe dir Geld strategisch zu investieren. So, dass es in deinen Alltag passt."
+  opengraph={{
+    description:'Erfahre mehr über inloopo und Philipp Kozalla.',
+    locale:'de',
+    url:'https://www.inloopo.com/de/ueber-mich',
+    image:'https://www.inloopo.com/images/ueber-mich-og.jpg',
+    type:'website'
+  }}>
 
-  <div class="main-teaser main-teaser__page-wer-wir-sind">
-    <h1 class="main-teaser__heading main-teaser__heading--page-investieren">Mit mir entspannt investieren.</h1>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-  </div>
+
+  <!-- MAIN TEASER -->
+<HeroShot 
+title="Mit mir entspannt investieren."
+description="XXX"
+backgroundImageClass="main-teaser__page-wer-wir-sind"
+/>
 
   <!-- CONTENT -->
-
   <div class="wrapper-content-blog">
     <section>
       <h2 class="blog__heading">Über mich</h2>
@@ -56,7 +58,10 @@ import "../../styles/styles.css";
         dieser Webseite vermitteln.
       </p>
 
-      <blockquote class="quote quote__page-wer-wir-sind">Das Leben beginnt am Ende deiner Komfortzone.</blockquote>
+      <Quote
+      text="Das Leben beginnt am Ende deiner Komfortzone.">
+        <p class="quote__autor">Neale Donald Walsch</p>
+      </Quote>
 
       <h2 class="blog__heading">Mein Weg zum professionellen Trader und Investor</h2>
       <ul class="box__ul">
@@ -294,12 +299,4 @@ import "../../styles/styles.css";
   </div>
 </MainLayout>
 
-<!-- Open Graph -->
-<meta property="og:title" content="Über mich" />
-<meta property="og:url" content="https://www.inloopo.com/de/ueber-mich" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image" content="https://www.inloopo.com/images/ueber-mich-og.jpg" />
-<meta property="og:type" content="website" />
-<meta property="og:description" content="Du möchtest mehr über mich erfahren. Dann schau dir diesen Beitrag an." />
-<meta property="og:locale" content="de" />
+
