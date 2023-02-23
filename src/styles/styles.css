@@ -262,7 +262,6 @@ p {
   line-height: 1.2;
 }
 
-
 /* ---------------------------------*\
     #BREADCRUMBS
 \* ---------------------------------*/
@@ -371,19 +370,12 @@ p {
   padding-bottom: 4px;
 }
 
-
-
 /* #Teaser */
-
-
-
-
 
 .main-teaser__heading--center {
   text-align: center;
   color: #fff;
 }
-
 
 .main-teaser__text--center {
   width: 100%;
@@ -422,10 +414,10 @@ p {
 }
 
 .main-teaser__page-investieren {
-    margin-bottom: 0;
-    background-position: center;
-    background-image: url("/images/image-teaser-investieren.svg");
-  }
+  margin-bottom: 0;
+  background-position: center;
+  background-image: url("/images/image-teaser-investieren.svg");
+}
 
 .main-teaser__page-boersenampel {
   background-image: url("/images/image-teaser-boersenampel.jpg");
@@ -487,9 +479,6 @@ p {
 }
 
 /* #Circle */
-
-
-
 
 .column__img--animated {
   display: flex;
@@ -635,9 +624,6 @@ p {
   padding: 30px 0 90px 0;
 }
 
-
-
-
 /* #Box #Problems-Solutions */
 
 .box--full-width {
@@ -673,12 +659,9 @@ p {
   padding-right: 40px;
 }
 
-
 .box__heading-fourth--center {
   text-align: center;
 }
-
-
 
 .box--grey-background .half {
   padding: 0;
@@ -707,7 +690,6 @@ p {
 .column--mobile {
   display: none;
 }
-
 
 /* Sektorrotation Table */
 /* #TOOL #SECTOR ROTATION */
@@ -750,13 +732,12 @@ p {
   text-transform: uppercase;
 }
 
-
 .cons {
   background-color: #ffaa00;
 }
 
 .inft {
-  background-color: #253C78;
+  background-color: #253c78;
 }
 
 .real {
@@ -777,7 +758,6 @@ p {
 
 .enrs {
   background-color: #00c6b2;
-
 }
 
 .hlth {
@@ -802,13 +782,11 @@ p {
 
 /* #Blockqoute #Quote */
 
-
 .quote__autor {
   font-size: 16px;
   margin-top: 12px;
   color: #242325;
 }
-
 
 /* #Box #Card #Prices & Plans */
 
@@ -1627,7 +1605,6 @@ textarea[type="text"]:focus {
     width: 70%;
   }
 
-
   .wrapper-content {
     padding: 0 24px;
   }
@@ -1652,8 +1629,6 @@ textarea[type="text"]:focus {
   h4 {
     font-size: 24px;
   }
-
- 
 
   /* ---------------------------------*\
         #BUTTON #LINKS
@@ -1698,8 +1673,6 @@ textarea[type="text"]:focus {
     padding: 5%;
   }
 
- 
-
   .mobile__below-header {
     display: none;
   }
@@ -1712,7 +1685,6 @@ textarea[type="text"]:focus {
   /* ---------------------------------*\
         #SECONDARY #TEASER
     \* ---------------------------------*/
-
 
   .secondary-teaser__image-at-work {
     background-position: center;
@@ -1988,10 +1960,6 @@ textarea[type="text"]:focus {
     font-size: 30px;
   }
 
-  
-
- 
-
   /* ---------------------------------*\
         #BUTTONS #LINKS
     \* ---------------------------------*/
@@ -2050,8 +2018,6 @@ textarea[type="text"]:focus {
         #TEASER-SUBPAGES
     \* ---------------------------------*/
 
- 
-
   .main-teaser__heading--page-investieren,
   .main-teaser__heading--page-wikifolio {
     width: 60%;
@@ -2082,8 +2048,6 @@ textarea[type="text"]:focus {
   .main-teaser__page-wer-wir-sind {
     padding-bottom: 1%;
   }
-
- 
 
   /* #FAQ */
   .faq__container {
@@ -2222,8 +2186,6 @@ textarea[type="text"]:focus {
   .secondary-teaser {
     margin-top: 0;
   }
-
-  
 
   .secondary-teaser__image-at-work {
     background-image: url("/images/teaser-image-at-work-mobile.jpg");

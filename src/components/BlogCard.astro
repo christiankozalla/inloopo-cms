@@ -3,63 +3,56 @@ const { title, description, link, image, date } = Astro.props;
 ---
 
 <div class="blog-card__container">
-    <a class="link__blog" href={ link }
-      ><img
-        class="blog__image"
-        src={ image.src }
-        alt={ image.alt }
-      />
+  <a class="link__blog" href={link}><img class="blog__image" src={image.src} alt={image.alt} /></a>
+  <div class="blog__details">
+    <h6 class="blog__date">{date}</h6>
+    <a class="link__blog" href={link}>
+      <h4>{title}</h4>
     </a>
-    <div class="blog__details">
-      <h6 class="blog__date">{ date }</h6>
-      <a class="link__blog" href={ link }>
-        <h4>{ title }</h4>
-      </a>
-      <p>
-        { description }
-      </p>
-      <a class="link" href={ link }>Artikel lesen</a>
-    </div>
+    <p>
+      {description}
+    </p>
+    <a class="link" href={link}>Artikel lesen</a>
   </div>
+</div>
 
-  <style>
-    .blog-card__container {
-        width: 33%;
-        border: 1px solid #d5d5d5;
-        margin-left: 30px;
-        box-shadow: 1px 1px 4px #d2d2d2;
-    }
+<style>
+  .blog-card__container {
+    width: 33%;
+    border: 1px solid #d5d5d5;
+    margin-left: 30px;
+    box-shadow: 1px 1px 4px #d2d2d2;
+  }
 
-    .blog-card__container:first-child {
-        margin-left: 0;
-    }
+  .blog-card__container:first-child {
+    margin-left: 0;
+  }
 
-    .blog__image {
-        padding: 0;
-    }
+  .blog__image {
+    padding: 0;
+  }
 
-    .link__blog {
-  text-decoration: none;
-  color: #171614;
-}
+  .link__blog {
+    text-decoration: none;
+    color: #171614;
+  }
 
-.link__blog:hover {
-  cursor: pointer;
-}
+  .link__blog:hover {
+    cursor: pointer;
+  }
 
-.link {
-  color: #ff6b35;
-  text-decoration: none;
-  font-weight: bold;
-}
+  .link {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-.link:hover {
-  border-bottom: 1px solid #ff6b35;
-  padding-bottom: 4px;
-}
+  .link:hover {
+    border-bottom: 1px solid #ff6b35;
+    padding-bottom: 4px;
+  }
 
-.blog__details {
-  padding: 8%;
-}
-
-  </style>
+  .blog__details {
+    padding: 8%;
+  }
+</style>
