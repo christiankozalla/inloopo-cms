@@ -3,7 +3,7 @@
 import "../styles/styles.css";
 
 //layout import
-import MainLayoutEn from "../layouts/MainLayoutEn.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import HeroShot from "../components/HeroShot.astro";
 import ProblemCard from "../components/ProblemCard.astro";
 import DetailCard from "../components/DetailCard.astro";
@@ -11,9 +11,10 @@ import BackgroundImage from "../components/BackgroundImage.astro";
 import QualiCard from "../components/QualiCard.astro";
 ---
 
-<MainLayoutEn
+<MainLayout
   title="Social Trading"
   description="You want invest your money. Save. Less time consuming. Profitable. But you don't want to do it yourself. I do it for you."
+  lang="en"
   opengraph={{
     url: "https://www.inloopo.com/wikifolio",
     image: "https://www.inloopo.com/images/wikifolio-og.jpg",
@@ -212,4 +213,4 @@ import QualiCard from "../components/QualiCard.astro";
   <section>
     <a href="https://www.wikifolio.com/en/int/w/wfinloopo1" class="button button--final">Bookmark Wikifolio</a>
   </section>
-</MainLayoutEn>
+</MainLayout>

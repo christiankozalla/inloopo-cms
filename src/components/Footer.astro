@@ -1,35 +1,80 @@
+---
+interface Props {
+  lang: "de" | "en";
+}
+
+type Content = {
+  headline: string;
+  copy: string;
+  copyright: string;
+  legalTexts: string[];
+  links: { text: string; href: string }[];
+};
+
+const { lang } = Astro.props;
+
+const de: Content = {
+  headline: "inloopo",
+  copy: "Dein Investment. Deine Freiheit.",
+  links: [
+    { text: "Datenschutz", href: "/de/datenschutz" },
+    { text: "Nutzungsbedingungen", href: "/de/nutzungsbedingungen" },
+    { text: "Risikohinweis", href: "/de/risikohinweis" },
+    { text: "Impressum", href: "/de/impressum" },
+  ],
+  copyright: "Copyright © 2022 KW³ Business Ltd",
+  legalTexts: [
+    "Risiko Offenlegung: Der Handel mit ETFs, Futures oder Aktien birgt ein hohes Risiko und ist nicht für jeden Investor geeignet. Ein Investor kann möglicherweise mehr als das eingezahlte Kapital verlieren. Für den Handel sollte nur Risikokapital verwendet werden, bzw. Teile des Risikokapitals. Risikokapital ist Geld, bei dessen Verlust sich keine Änderung der Finanzsituation ergibt bzw. keinen Einfluss auf das Leben mit sich bringt. Eine in der Vergangenheit erzielte Performance ist keine Garantie für zukünftige Gewinne.",
+    "Offenlegung der hypothetischen Performance: Hypothetische Performanceergebnisse haben viele inhärente Einschränkungen, von denen einige im Folgenden beschrieben werden. Die dargestellten Ergebnisse des Kontos können in den Gewinnen und Verlusten stark abweichen. Einer der Einschränkungen der hypothetischen Ergebnisse ist, dass Sie durch bekannte historische Daten entstanden sind. Darüber hinaus beinhaltet der hypothetische Handel kein finanzielles Risiko – kein hypothetischer Track Record kann die finanziellen Risiken des tatsächlichen Handels darstellen. Beispielsweise besteht die Möglichkeit, dass der Handel bei Verlusten ausgesetzt bzw. abgebrochen wird, dies kann die tatsächlichen Ergebnisse stark verändern. Des Weiteren gibt es zahlreiche weitere Faktoren die bei der Umsetzung eines Handelsprogramms nicht vollständig in der hypothetischen Performance berücksichtigt werden können und somit die tatsächlichen Ergebnisse beeinflussen können.",
+  ],
+};
+
+const en: Content = {
+  headline: "inloopo",
+  copy: "Your Investment. Your Freedom.",
+  links: [
+    { text: "Privacy Policy", href: "/privacy-policy" },
+    { text: "Terms and Conditions", href: "/terms-and-conditions" },
+    { text: "Risk Disclosure", href: "/risk-disclosure" },
+    { text: "Risk Disclaimer", href: "/risk-disclaimer" },
+    { text: "Impressum", href: "/impressum" },
+  ],
+  copyright: "Copyright © 2022 KW³ Business Ltd",
+  legalTexts: [
+    "Risk disclosure: ETF, stocks, futures, foreign currency and options trading contains substantial risk and is not for every investor. An investor could potentially lose all or more than the initial investment. Risk capital is money that can be lost without jeopardizing one's financial security or lifestyle. Only risk capital should be used for trading and only those with sufficient risk capital should consider trading. Past performance is not necessarily indicative of future results.",
+    "Disclosure of hypothetical performance: CFTC Rules 4.41 - Hypothetical or Simulated performance results have certain limitations, unlike an actual performance record, simulated results do not represent actual trading. Also, since the trades have not been executed, the results may have under-or-over compensated for the impact, if any, of certain market factors, such as lack of liquidity. Simulated trading programs in general are also subject to the fact that they are designed with the benefit of hindsight. No representation is being made that any account will or is likely to achieve profit or losses similar to those shown.",
+  ],
+};
+
+const t = <T extends keyof Content>(key: T) => {
+  return lang === "de" ? de[key] : en[key];
+};
+---
+
 <footer class="site-footer">
   <section>
-    <h2 class="site-footer__heading">inloopo</h2>
-    <p class="site-footer__text--center">Dein Investment. Deine Freiheit.</p>
+    <h2 class="site-footer__heading">{t("headline")}</h2>
+    <p class="site-footer__text--center">{t("copy")}</p>
     <p class="site-footer__text--center">
-      <a class="site-footer__link--center" href="../datenschutz">Datenschutz</a>
-      |
-      <a class="site-footer__link--center" href="../nutzungsbedingungen">Nutzungsbedingungen</a> |
-      <a class="site-footer__link--center" href="../risikohinweis">Risikohinweis</a> |
-      <a class="site-footer__link--center" href="../impressum">Impressum</a>
+      {
+        t("links").map(({ text, href }) => (
+          <>
+            <a class="site-footer__link--center" href={href}>
+              {text}
+            </a>{" "}
+            |
+          </>
+        ))
+      }
     </p>
-    <p class="site-footer__text--center">Copyright © 2022 KW³ Business Ltd</p>
+    <p class="site-footer__text--center">{t("copyright")}</p>
 
     <div class="wrapper-content site-footer__text--legal">
-      <p class="site-footer__text">
-        Risiko Offenlegung: Der Handel mit ETFs, Futures oder Aktien birgt ein hohes Risiko und ist nicht für jeden
-        Investor geeignet. Ein Investor kann möglicherweise mehr als das eingezahlte Kapital verlieren. Für den Handel
-        sollte nur Risikokapital verwendet werden, bzw. Teile des Risikokapitals. Risikokapital ist Geld, bei dessen
-        Verlust sich keine Änderung der Finanzsituation ergibt bzw. keinen Einfluss auf das Leben mit sich bringt. Eine
-        in der Vergangenheit erzielte Performance ist keine Garantie für zukünftige Gewinne.
-      </p>
-      <p class="site-footer__text">
-        Offenlegung der hypothetischen Performance: Hypothetische Performanceergebnisse haben viele inhärente
-        Einschränkungen, von denen einige im Folgenden beschrieben werden. Die dargestellten Ergebnisse des Kontos
-        können in den Gewinnen und Verlusten stark abweichen. Einer der Einschränkungen der hypothetischen Ergebnisse
-        ist, dass Sie durch bekannte historische Daten entstanden sind. Darüber hinaus beinhaltet der hypothetische
-        Handel kein finanzielles Risiko – kein hypothetischer Track Record kann die finanziellen Risiken des
-        tatsächlichen Handels darstellen. Beispielsweise besteht die Möglichkeit, dass der Handel bei Verlusten
-        ausgesetzt bzw. abgebrochen wird, dies kann die tatsächlichen Ergebnisse stark verändern. Des Weiteren gibt es
-        zahlreiche weitere Faktoren die bei der Umsetzung eines Handelsprogramms nicht vollständig in der hypothetischen
-        Performance berücksichtigt werden können und somit die tatsächlichen Ergebnisse beeinflussen können.
-      </p>
+      {
+        t("legalTexts").map((text) => {
+          return <p class="site-footer__text">{text}</p>;
+        })
+      }
     </div>
   </section>
 </footer>

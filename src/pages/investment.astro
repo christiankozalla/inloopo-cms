@@ -1,6 +1,6 @@
 ---
 //import components and layout
-import MainLayoutEn from "../layouts/MainLayoutEn.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import HeroShot from "../components/HeroShot.astro";
 import ProblemCard from "../components/ProblemCard.astro";
 import Quote from "../components/Quote.astro";
@@ -13,9 +13,10 @@ import BackgroundImage from "../components/BackgroundImage.astro";
 import "../styles/styles.css";
 ---
 
-<MainLayoutEn
+<MainLayout
   title="inloopo Strategy with Market Indicator"
   description="You want to invest money. Without a bank. Without effort. This can be done with the inloopo Stock Market Indicator for the S&P 500 ETF."
+  lang="en"
   opengraph={{
     url: "https://www.inloopo.com/investment",
     image: "https://www.inloopo.com/de/blog/images/boersenampel-og.jpg",
@@ -701,4 +702,4 @@ import "../styles/styles.css";
 
   <!-- SCRIPTS -->
   <script src="/scripts/dynamic-chart.js" defer></script>
-</MainLayoutEn>
+</MainLayout>

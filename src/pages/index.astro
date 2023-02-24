@@ -1,6 +1,6 @@
 ---
 //import component and layout
-import MainLayoutEn from "../layouts/MainLayoutEn.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import HeroShot from "../components/HeroShot.astro";
 import QualiCard from "../components/QualiCard.astro";
 import BenefitCard from "../components/BenefitCard.astro";
@@ -11,9 +11,10 @@ import ProductCard from "../components/ProductCard.astro";
 import "../styles/styles.css";
 ---
 
-<MainLayoutEn
+<MainLayout
   title="Invest money with little effort"
   description="You want to invest money: By yourself and without any bank. You just don't know how. I help you to invest in the right moment."
+  lang="en"
   opengraph={{
     url: "https://www.inloopo.com",
     image: "https://www.inloopo.com/de/images/index-og.jpg",
@@ -154,4 +155,4 @@ import "../styles/styles.css";
       </div>
     </div>
   </section>
-</MainLayoutEn>
+</MainLayout>
