@@ -1,5 +1,6 @@
 ---
 //import layout and components
+import HeroShot from "../../components/HeroShot.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 
 //import styles
@@ -10,10 +11,13 @@ import "../../styles/styles.css";
   title="E-Book zur S&P 500 Strategie"
   description="Das E-Book zur S&P 500 Strategie, auf der die inloopo Börsenampel und Signaldienst beruht, ist bald erhältlich."
   lang="de">
-  <div class="main-teaser main-teaser__page-copy-trading">
-    <h1 class="h-one-dark h-one-ctr main-teaser__heading--page-copytrading">Das E-Book zur Strategie kommt bald</h1>
-    <p class="main-teaser__text"></p>
-  </div>
+
+  <HeroShot
+  title="Das E-Book zur Strategie kommt bald"
+  description="Du lernst mehr über die inloopo Strategie."
+  backgroundImageClass="main-teaser__homepage"
+  />
+
 
   <div class="wrapper-content-blog">
     <section>

@@ -87,7 +87,7 @@ const { headline, copy, title, description } = Astro.props;
         display: grid;
         grid-template-rows: auto;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 8px;
+        gap: 2em;
         margin: 24px 12px;
       }
 
@@ -108,17 +108,37 @@ const { headline, copy, title, description } = Astro.props;
         }
       }
       .article-card {
-        border: 1px solid #dcdcdc;
-        padding: 0;
-      }
-      .article-card__details {
-        padding: 8%;
-      }
+      border: 1px solid #dcdcdc;
+      padding: 0;
+    }
+    .article-card__details {
+      padding: 8%;
+    }
 
-      h2 {
-        font-size: 24px;
-        margin-bottom: 12px;
-      }
+    .link__blog {
+      text-decoration: none;
+      color: #171614;
+    }
+
+    .link__blog:hover {
+    cursor: pointer;
+  }
+
+  .link {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .link:hover {
+    border-bottom: 1px solid #ff6b35;
+    padding-bottom: 4px;
+  }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
     </style>
   </main>
 </MainLayout>

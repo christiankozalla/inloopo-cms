@@ -410,6 +410,7 @@ p {
   background-image: url("/images/image-teaser-ueber-mich.jpg");
   background-position: center;
   padding-top: 1%;
+  padding-bottom: 10%;
   margin-bottom: 120px;
 }
 
@@ -474,9 +475,6 @@ p {
   line-height: 1.8;
 }
 
-.values--mobile {
-  display: none;
-}
 
 /* #Circle */
 
@@ -657,6 +655,14 @@ p {
 
 .box__list {
   padding-right: 40px;
+}
+
+.box__li {
+  padding: 1em;
+}
+
+.box__li img {
+  margin-right: 8px;
 }
 
 .box__heading-fourth--center {
