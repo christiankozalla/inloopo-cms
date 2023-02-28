@@ -1,0 +1,31 @@
+---
+const { text } = Astro.props;
+---
+
+<div class="quote__container">
+  <img src="/images/quote.svg" class="quote__img" alt="Anführungszeichen für Zitat" width="30" height="30" />
+  <blockquote set:html={text} class="quote">
+    <slot />
+  </blockquote>
+</div>
+
+<style>
+  .quote__container {
+    margin-bottom: 120px;
+    padding: 90px;
+  }
+
+  .quote__img {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .quote {
+    font-size: 28px;
+    color: #242325;
+    text-align: center;
+    padding: 0 24px;
+    margin-top: 30px;
+  }
+</style>

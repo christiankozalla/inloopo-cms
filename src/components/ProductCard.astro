@@ -1,0 +1,67 @@
+---
+const { title, description, link } = Astro.props;
+---
+
+<div class="product-card__container">
+  <div class="circle">
+    <h2 class="product-card__heading">{title}</h2>
+    <p class="product-card__text">
+      {description}
+    </p>
+    {
+      link && (
+        <p>
+          <a class="link" href={link.href}>
+            {link.text}
+          </a>
+        </p>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .product-card__container {
+    padding: 25px;
+    width: 50%;
+  }
+
+  .circle {
+    border: 6px solid var(--accent-color);
+    border-radius: 50%;
+    width: 550px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    padding: 0 60px;
+  }
+
+  .product-card__heading {
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 759px) {
+    .circle {
+      margin-left: auto;
+      margin-right: auto;
+      width: 320px;
+      height: 320px;
+      padding: 0 20px;
+    }
+
+    .product-card__heading {
+      font-size: 24px;
+    }
+
+    .product-card__text {
+      font-size: 18px;
+    }
+
+    .product-card__container {
+      width: 100%;
+    }
+  }
+</style>

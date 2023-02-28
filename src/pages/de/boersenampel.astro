@@ -1,0 +1,36 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import HeroShot from "../../components/HeroShot.astro";
+---
+
+<MainLayout
+  title="Börsenampel als Tool"
+  description="Überprüfe den aktuellen Stand der inloopo Börsenampel."
+  opengraph={{
+    description: "Sieh dir den aktuellen Stand der inloopo Börsenampel an.",
+    locale: "de",
+    type: "website",
+    url: "https://www.inloopo.com/de/boersenampel",
+    image: "https://www.inloopo.com/images/inloopo-boersenampel-stand-og.jpg",
+  }}
+  lang="de">
+  <!-- TEASER -->
+  <HeroShot
+    title="Börsenampel"
+    description="Jeden Sonntag um 18 Uhr veröffentliche ich den aktuellen Stand der inloopo Börsenampel. Komm in meinen Telegram-Kanal und erhalte die inloopo Börsenampel direkt auf dein Handy. Außerdem kannst du dort Fragen stellen und alle vergangenen Signale einsehen."
+    backgroundImageClass="main-teaser__page-boersenampel"
+    button={{
+      target: "_blank",
+      href: "https://t.me/+Km1-SZkNz-s2ZWRi",
+      text: "Kostenlos beitreten",
+    }}
+  />
+
+  <div class="wrapper-content-blog">
+    <h2>Aktuelle Börsenampel</h2>
+    <boersenampel-status></boersenampel-status>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="/scripts/boersenampel-status.js"></script>
+</MainLayout>
