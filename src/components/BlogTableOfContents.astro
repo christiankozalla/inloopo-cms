@@ -64,10 +64,21 @@
   .toc__toggle-button {
     display: none;
   }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .toc {
+      width: 185px;
+      overflow-y: auto;
+    }
+  }
 </style>
 
 <script is:inline>
   window.addEventListener("DOMContentLoaded", function () {
+    // inner width of the screen is above 979px, then execute tocHandler()
+    if (window.innerWidth > 979) tocHandler();
+  });
+
+  function tocHandler() {
     // Code for TOC Observer
     const headings = document.querySelectorAll("h2[id^=point]"); // all element whose id begins with "point"
     const links = Array.from(headings).map(
@@ -110,5 +121,5 @@
         isTocShown = true;
       }
     }
-  });
+  }
 </script>
