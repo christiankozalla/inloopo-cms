@@ -652,6 +652,10 @@ p {
   text-align: center;
 }
 
+.box__ul {
+  list-style: none;
+}
+
 .box__list {
   padding-right: 40px;
 }
