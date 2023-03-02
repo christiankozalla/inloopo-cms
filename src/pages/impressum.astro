@@ -1,0 +1,36 @@
+---
+//import components and layout
+import MainLayout from "../layouts/MainLayout.astro";
+
+//import styles
+import "../styles/styles.css";
+---
+
+<MainLayout title="Impressum" description="You get to know our address and how you can contact us." lang="en">
+  <div class="wrapper">
+    <!-- Teaser -->
+    <div>
+      <div class="wrapper-content-rights">
+        <h1 class="box__main-heading main-teaser__heading--dark">Impressum und Kontakt</h1>
+      </div>
+    </div>
+
+    <!-- Hauptinhalt -->
+
+    <div class="wrapper-content-rights">
+      <section>
+        <h2>Impressum</h2>
+        <p>
+          KW³ Business Ltd <br />
+          Aphrodite Gardens Complex <br />
+          Apartment 19 <br />
+          Lytra 5 <br />
+          8041 Paphos <br />
+          Cyprus <br />
+          VAT-ID: CY 104 268 06P <br />
+          E-Mail: <a href="mailto:info@inloopo.com" class="link">info@inloopo.com</a>
+        </p>
+      </section>
+    </div>
+  </div>
+</MainLayout>

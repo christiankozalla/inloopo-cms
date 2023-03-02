@@ -1,0 +1,31 @@
+---
+const { heading, description, icon } = Astro.props;
+---
+
+<div class="detail-card__container">
+  <img src={icon.src} class="detail-card__icon" width="70" height="70" alt={icon.alt} />
+  <h3 class="detail-card__heading">{heading}</h3>
+  <p class="detail-card__text">
+    {description}
+  </p>
+</div>
+
+<style>
+  .detail-card__container {
+    padding: 40px;
+    width: 25%;
+  }
+
+  .detail-card__icon {
+    text-align: left;
+  }
+
+  .detail-card__heading {
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .detail-card__text {
+    text-align: left;
+  }
+</style>

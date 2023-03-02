@@ -1,0 +1,68 @@
+---
+const { title, description, icon, columnReverseClass = "" } = Astro.props;
+---
+
+<div class="wrapper-content">
+  <section>
+    <div class="benefits__wrapper">
+      <div
+        class={`
+      benefits__container
+      ${columnReverseClass}
+      `}>
+        <h2 class="benefits__heading">
+          {title}
+        </h2>
+        <p class="benefits__text">
+          {description}
+        </p>
+      </div>
+      <div class="column half">
+        <div class="icon__circle">
+          <img src={icon.src} width="250" height="250" alt={icon.alt} />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .benefits__wrapper {
+    width: 100%;
+    display: flex;
+    margin-bottom: 60px;
+    margin-top: 60px;
+    flex-direction: row;
+  }
+
+  .benefits__container {
+    padding: 25px;
+    width: 50%;
+  }
+
+  .benefits__heading {
+    font-size: 3.875rem;
+    line-height: 1.2;
+  }
+
+  .benefits__text {
+    font-size: 24px;
+    width: 80%;
+    line-height: 1.5;
+  }
+
+  .img-left {
+    flex-flow: column-reverse;
+  }
+
+  @media only screen and (max-width: 759px) {
+    .benefits__heading {
+      font-size: 30px;
+    }
+
+    .benefits__text {
+      font-size: 18px;
+      width: 100%;
+    }
+  }
+</style>

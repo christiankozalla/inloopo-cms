@@ -1,0 +1,77 @@
+---
+const { title, price, description, button } = Astro.props;
+---
+
+<div class="price-card__container">
+  <h3 class="price-card__heading">{title}</h3>
+  <p class="price-card__text">{price}</p>
+  <p>
+    {description}
+  </p>
+
+  {
+    button && (
+      <p class="button__container">
+        <a href={button.href} target={button.target} class="button">
+          {button.text}
+        </a>
+      </p>
+    )
+  }
+</div>
+
+<style>
+  .price-card__container {
+    padding: 25px;
+    width: 50%;
+    background: #fff;
+    padding: 60px;
+    border: 20px solid var(--dark-background-color);
+    display: flex;
+    flex-direction: column;
+    float: left;
+  }
+
+  .price-card__heading {
+    text-align: center;
+  }
+
+  .price-card__text {
+    font-size: 1.5rem;
+    font-family: "Quattroento Sans", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .button__container {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
+  .button {
+    color: #fff;
+    background: #ff6b35;
+    border: 2px solid #ff6b35;
+    padding: 15px 20px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  @media only screen and (max-width: 759px) {
+    .pric-card__container {
+      padding: 40px 25px;
+    }
+
+    .button {
+      margin-bottom: 30px;
+    }
+  }
+</style>

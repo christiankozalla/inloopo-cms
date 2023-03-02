@@ -1,10 +1,11 @@
 class DynamicChart extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: "open" });
     const markup = `
     <section id="interactive-chart-section">
     <h2 class="chart__heading">Meine ETF Strategie schlägt den Markt</h2>
+    <p class="chart__subheading">Wähle ein Jahr und ein Startkapital, um die Wertentwicklung der Indices mit der inloopo Strategie zu vergleichen.</p>
     <div id="chart-controls">
       <form>
         <label class="chart__p" for="start-money">Startkapital</label>
@@ -12,9 +13,7 @@ class DynamicChart extends HTMLElement {
         <label class="chart__p" style="position: relative" for="start-year">Startjahr
             <input id="start-year" class="chart__input" type="number" min="1998" max="2021" value="1998">
             <ul id="year-picker">
-                ${[...Array(24).keys()]
-                  .map((n) => `<li data-value=${n + 1998}>${n + 1998}</li>`)
-                  .join('')}
+                ${[...Array(24).keys()].map((n) => `<li data-value=${n + 1998}>${n + 1998}</li>`).join("")}
             </ul>
         </label>
       </form>
@@ -46,11 +45,18 @@ class DynamicChart extends HTMLElement {
     .chart__heading {
       text-align: center;
       padding: 40px 25px 15px 25px;
-      font-size: 28px;
+    }
+
+    .chart__subheading {
+      font-size: 1.25rem;
+      text-align: center;
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
     }
     
     .chart__p {
-      text-transform: uppercase;
       font-weight: bold;
       margin-right: 10px;
     }
@@ -69,7 +75,7 @@ class DynamicChart extends HTMLElement {
     #chart-controls {
       display: flex;
       justify-content: center;
-      margin-bottom: 12px;
+      margin-bottom: 60px;
     }
     
     @media screen and (max-width: 768px) {
@@ -90,6 +96,11 @@ class DynamicChart extends HTMLElement {
       }
     }
     
+
+    .chart__heading {
+      font-size: 2.25rem;
+      font-family: 'Cera Pro Black', Arial, Helvetica, sans-serif;
+    }
     
     #chart-dialog {
       padding: 1rem 2rem;
@@ -176,7 +187,7 @@ class DynamicChart extends HTMLElement {
     const observer = new IntersectionObserver((entries, observerRef) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const style = document.createElement('style');
+          const style = document.createElement("style");
           style.textContent = styles;
           this.shadowRoot.innerHTML = markup;
           this.shadowRoot.appendChild(style);
@@ -202,4 +213,4 @@ class DynamicChart extends HTMLElement {
   }
 }
 
-customElements.define('dynamic-chart', DynamicChart);
+customElements.define("dynamic-chart", DynamicChart);

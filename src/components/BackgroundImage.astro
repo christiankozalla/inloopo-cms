@@ -1,0 +1,102 @@
+---
+const { title, description, button, backgroundImageClass, textColorClass } = Astro.props;
+---
+
+<section>
+  <div
+    class={`
+    secondary-teaser
+    ${backgroundImageClass}
+    `}>
+    <div class="wrapper">
+      <h2
+        class={`
+      secondary-teaser__heading
+      ${textColorClass}
+      `}>
+        {title}
+      </h2>
+      <p
+        class={`
+      secondary-teaser__quote
+      ${textColorClass}
+      `}>
+        {description}<br /><br />
+        {
+          button && (
+            <p>
+              <a href={button.href} class="button">
+                {button.text}
+              </a>
+            </p>
+          )
+        }
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .secondary-teaser {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    color: #fff;
+  }
+
+  .secondary-teaser__heading {
+    width: 40%;
+    margin: 90px 0 10px 90px;
+  }
+
+  .secondary-teaser__quote {
+    margin: 40px 0 20px 90px;
+    font-size: 24px;
+    line-height: 1.5;
+    width: 40%;
+  }
+
+  .dark {
+    color: #171614;
+  }
+
+  .light {
+    color: #fff;
+  }
+
+  .button {
+    color: #fff;
+    background: #ff6b35;
+    border: 2px solid #ff6b35;
+    padding: 15px 20px;
+    text-decoration: none;
+    margin-left: 90px;
+    margin-bottom: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  @media only screen and (min-width: 760px) and (max-width: 979px) {
+    .secondary-teaser__heading,
+    .secondary-teaser__quote {
+      width: 55%;
+    }
+  }
+
+  @media only screen and (max-width: 759px) {
+    .secondary-teaser__heading {
+      width: 100%;
+      margin-left: 40px;
+    }
+
+    .secondary-teaser__quote {
+      font-size: 18px;
+      width: 80%;
+      margin-left: 40px;
+    }
+  }
+</style>

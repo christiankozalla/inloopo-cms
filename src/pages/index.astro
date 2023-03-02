@@ -1,222 +1,74 @@
 ---
-import MainLayoutEn from '../layouts/MainLayoutEn.astro';
-import '../styles/styles.css';
+//import component and layout
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroShot from "../components/HeroShot.astro";
+import QualiCard from "../components/QualiCard.astro";
+import BenefitCard from "../components/BenefitCard.astro";
+import BackgroundImage from "../components/BackgroundImage.astro";
+import ProductCard from "../components/ProductCard.astro";
+
+//import styles
+import "../styles/styles.css";
 ---
-<!-- Open Graph -->
-<meta property="og:title" content="Invest money with little effort" />
-<meta property="og:url" content="https://www.inloopo.com" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta
-  property="og:image"
-  content="https://www.inloopo.com/de/images/index-og.jpg"
-/>
-<meta property="og:type" content="website" />
-<meta
-  property="og:description"
-  content="You don't know when to invest money. I help you to make the right decision."
-/>
-<meta property="og:locale" content="en" />
 
-<MainLayoutEn title="Invest money with little effort" description="You want to invest money: By yourself and without any bank. You just don't know how.
-I help you to invest in the right moment.">
-   
+<MainLayout
+  title="Invest money with little effort"
+  description="You want to invest money: By yourself and without any bank. You just don't know how. I help you to invest in the right moment."
+  lang="en"
+  opengraph={{
+    url: "https://www.inloopo.com",
+    image: "https://www.inloopo.com/de/images/index-og.jpg",
+    type: "website",
+    description: "You dont know when to invest money. I help you to make the right decision.",
+    locale: "en",
+  }}>
+  <!-- Teaser -->
+  <HeroShot
+    title="Investing money. But how?"
+    description="I will help you to increase your capital with strategies that can be done without much time or knowledge. Join my Telegram Channel."
+    button={{
+      text: "Join for free",
+      href: "https://t.me/+VjY9SyNmnrU0OTYy",
+      target: "_blank",
+    }}
+    backgroundImageClass="main-teaser__homepage"
+  />
 
-    <!-- Teaser -->
+  <!-- BENEFITS -->
+  <BenefitCard
+    title="Increase your capital without much effort"
+    description="Sign up and you'll need very little time to successfully invest your money and beat the US stock market."
+    icon={{
+      src: "/images/clock.svg",
+      alt: "Clock Icon",
+    }}
+    columnReverseClass="img-left"
+  />
 
-    <div class="main-teaser main-teaser__homepage">
-      <div class="wrapper">
-        <h1 class="main-teaser__heading">Investing money. <br />But how?</h1>
-        <p class="main-teaser__text p--bigger">
-          I will help you to increase your capital with strategies that can be
-          done without much time or knowledge. Join my Telegram Channel.
-          <br>
-          <br>
-          <a href="https://t.me/+VjY9SyNmnrU0OTYy" target="_blank" class="button"><img class="button__img" src="/images/telegram.svg" width="20" alt="Telegram Icon"/>Join for free</a>
-          <br>
-        </p>
-      </div>
-    </div>
+  <BenefitCard
+    title="Invest successfully without prior knowledge"
+    description="I have created solutions for you that you can use without acquiring much new knowledge."
+    icon={{
+      src: "/images/light-bulb.svg",
+      alt: "Light Bulb Icon",
+    }}
+  />
 
-    <!-- CONTENT PROBLEMS-SOLUTIONS -->
-    <div class="desktop__below-header">
-      <div class="wrapper-content">
-        <section>
-          <div class="row">
-            <div class="column half">
-              <h2 class="heading-two--bigger">
-                Increase your capital without much effort
-              </h2>
-              <p class="p--bigger">
-                Sign up and you'll need very little time to successfully invest
-                your money and beat the US stock market.
-              </p>
-            </div>
-            <div class="column half">
-              <div class="icon__circle animation--draw">
-                <img
-                  src="images/clock.svg"
-                  class="animation--up"
-                  width="250"
-                  height="250"
-                  alt="Clock Icon"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="row">
-            <div class="column half">
-              <div class="icon__circle">
-                <img
-                  src="images/light-bulb.svg"
-                  width="250"
-                  height="250"
-                  alt="Light bulb Icon"
-                />
-              </div>
-            </div>
-            <div class="column half">
-              <h2 class="heading-two--bigger">
-                Invest successfully without prior knowledge
-              </h2>
-              <p class="p--bigger">
-                I have created solutions for you that you can use without
-                acquiring much new knowledge.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <!-- FOR MOBILE -->
-    <div class="mobile__below-header">
-      <div class="wrapper-content">
-        <section>
-          <div class="row">
-            <div class="column half">
-              <h2 class="heading-two--bigger">
-                Increase your capital without much effort
-              </h2>
-              <p class="p--bigger">
-                Sign up and you need little time to successfully invest your
-                money and beat the US stock market.
-              </p>
-            </div>
-            <div class="column half">
-              <div class="icon__circle animation--draw">
-                <img
-                  src="images/clock.svg"
-                  class="animation--up"
-                  width="250"
-                  height="250"
-                  alt="Clock Icon"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="row">
-            <div class="column half">
-              <div class="icon__circle">
-                <img
-                  src="images/light-bulb.svg"
-                  width="250"
-                  height="250"
-                  alt="Light bulb Icon"
-                />
-              </div>
-            </div>
-            <div class="column half">
-              <h2 class="heading-two--bigger">
-                Invest successfully without prior knowledge
-              </h2>
-              <p class="p--bigger">
-                I created solutions for you that you can use without acquiring
-                much new knowledge.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <section>
-      <div class="secondary-teaser secondary-teaser__image--philipp">
-        <div class="wrapper">
-          <h2 class="secondary-teaser__heading">I'm Philipp.</h2>
-          <blockquote class="secondary-teaser__quote">
-            Since 2008 I have been working on how to invest my money safe and
-            profitably on the stock market with very little time. What drives
-            me? There are strategies that protect you from big crashes. It's
-            just that many people don't know them.<br /><br />
-            <p>
-              <a href="about" target="_blank" class="button">More about me</a>
-            </p>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
+  <!-- FOR MOBILE -->
+  <div class="mobile__below-header">
     <div class="wrapper-content">
       <section>
-        <div class="row row--no-background">
-          <div class="column third column__col animate">
-            <img
-              src="images/books.svg"
-              class="column__icon"
-              width="70"
-              height="70"
-              alt="Book Icon"
-            />
-            <h3 class="column__subheading">Stock market experience</h3>
-            <p class="column__text">
-              You are looking for an experienced trader? I started with CFD's,
-              and later progressed onto stocks, US options on stocks and
-              commodities. Today I trade futures according to a proper
-              fundamental analysis with COT data and seasonal trends, in line
-              with successful timing, and risk & money management. The rest of
-              my capital I invest strategically based on the stock market
-              indicator with the S&P 500 ETF strategy.
+        <div class="row">
+          <div class="column half">
+            <h2 class="heading-two--bigger">Increase your capital without much effort</h2>
+            <p class="p--bigger">
+              Sign up and you need little time to successfully invest your money and beat the US stock market.
             </p>
           </div>
-
-          <div class="column third column__col animate">
-            <img
-              src="images/hat.svg"
-              class="column__icon"
-              width="70"
-              height="70"
-              alt="Hat Icon"
-            />
-            <h3 class="column__subheading">Proven success</h3>
-            <p class="column__text">
-              You need confidence? I participated in the Global Cup Championship
-              of Futures Trading™ 2021-2022 with the futures trading strategy of
-              <a class="link" href="https://insider-week.com/en/">InsiderWeek</a
-              >. I made it to the 5th place with a profit of +64,1% per year.
-            </p>
-          </div>
-
-          <div class="column third column__col animate">
-            <img
-              src="images/data.svg"
-              class="column__icon"
-              width="70"
-              height="70"
-              alt="Data and Charts"
-            />
-            <h3 class="column__subheading">Analytical thinking</h3>
-            <p class="column__text">
-              You want to follow a strategic person? I make my analyses
-              precisely and carefully. My decisions are rationall and data
-              based. These are the fundamentals for recurring success.
-            </p>
+          <div class="column half">
+            <div class="icon__circle animation--draw">
+              <img src="/images/clock.svg" class="animation--up" width="250" height="250" alt="Clock Icon" />
+            </div>
           </div>
         </div>
       </section>
@@ -224,29 +76,84 @@ I help you to invest in the right moment.">
       <section>
         <div class="row">
           <div class="column half">
-            <div class="circle">
-              <h2 class="circle__heading">
-                Invest with a stock market indicator
-              </h2>
-              <p class="p--bigger circle__text">
-                The stock market indicator shows you when to invest and when to
-                stay in cash.
-              </p>
-              <p><a class="link" href="investment">Learn more</a></p>
+            <div class="icon__circle">
+              <img src="/images/light-bulb.svg" width="250" height="250" alt="Light bulb Icon" />
             </div>
           </div>
           <div class="column half">
-            <div class="circle">
-              <h2 class="circle__heading">Follow my Wikifolio</h2>
-              <p class="p--bigger circle__text">
-                To invest in a managed account.
-              </p>
-              <p><a class="link" href="wikifolio">Learn more</a></p>
-            </div>
+            <h2 class="heading-two--bigger">Invest successfully without prior knowledge</h2>
+            <p class="p--bigger">I created solutions for you that you can use without acquiring much new knowledge.</p>
           </div>
         </div>
       </section>
     </div>
+  </div>
 
-  </MainLayoutEn>
-    
+  <!-- BACKGROUND IMAGE WITH TEXT -->
+  <BackgroundImage
+    title="I'm Philipp."
+    description="Since 2008 I have been working on how to invest my money safe and profitably on the stock market with very little time. What drives me? There are strategies that protect you from big crashes. It's just that many people don't know them."
+    button={{
+      href: "about",
+      text: "More about me",
+    }}
+    backgroundImageClass="secondary-teaser__image--philipp"
+  />
+
+  <!-- QUALIFICATIONS -->
+  <div class="wrapper-content">
+    <div class="row">
+      <QualiCard
+        title="Stock market experience"
+        description="You are looking for an experienced trader? I started with CFD's, and later progressed onto stocks, US options on stocks and commodities. Today I trade futures according to a proper fundamental analysis with COT data and seasonal trends, in line with successful timing, and risk & money management. The rest of my capital I invest strategically based on the stock market indicator with the inloopo strategy."
+        icon={{
+          src: "images/books.svg",
+          alt: "Book Icon",
+        }}
+      />
+
+      <QualiCard
+        title="Proven success"
+        description="You need confidence? I participated in the Global Cup Championship of Futures Trading™ 2021-2022 with the futures trading strategy of <a class='link' href='https://insider-week.com/en/''>InsiderWeek</a>. I made it to the 5th place with a profit of +64,1% per year."
+        icon={{
+          src: "images/hat.svg",
+          alt: "Hat Icon",
+        }}
+      />
+
+      <QualiCard
+        title="Analytical thinking"
+        description="You want to follow a strategic person? I make my analyses precisely and carefully. My decisions are rationall and data based. These are the fundamentals for recurring success."
+        icon={{
+          src: "images/data.svg",
+          alt: "Data and Charts Icon",
+        }}
+      />
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section>
+    <div class="wrapper-content">
+      <div class="row">
+        <ProductCard
+          title="Invest with a stock market indicator"
+          description="The stock market indicator shows you when to invest and when to stay in cash."
+          link={{
+            href: "investment",
+            text: "Go to the indicator",
+          }}
+        />
+
+        <ProductCard
+          title="Follow my Wikifolio"
+          description="To invest in a managed account."
+          link={{
+            href: "wikifolio",
+            text: "Go to Wikifolio",
+          }}
+        />
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,39 @@
+---
+//import layout
+import MainLayout from "../../layouts/MainLayout.astro";
+
+//import
+import "../../styles/styles.css";
+---
+
+<MainLayout title="Kontakt" description="Kontaktier mich per E-Mail oder ruf mich an." lang="de">
+  <!-- TEASER -->
+
+  <!-- TEASER -->
+  <div class="wrapper-content">
+    <section>
+      <div class="row">
+        <div class="column half">
+          <h1 class="box__main-heading">Was ist los?</h1>
+          <p class="p--bigger">
+            Du hast Fragen oder möchtest mir ein Feedback geben. Schreib mir eine E-Mail oder ruf mich an. Ich freue
+            mich von dir zu hören.
+          </p>
+          <img class="main-teaser__icon" src="/images/long-arrow-down.svg" width="40" alt="Pfeil Icon" />
+          <a href="mailto:info@inloopo.com" class="main-teaser__link link">info@inloopo.com</a>
+          <p class="p--bigger">+49 15736977448</p>
+        </div>
+        <div class="column half">
+          <div class="main-teaser__container">
+            <img
+              class="main-teaser__image"
+              src="/images/image-teaser-kontakt.jpg"
+              width="500"
+              alt="Philipp Kozalla mit Daumen hoch"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</MainLayout>
