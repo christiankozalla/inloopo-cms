@@ -144,7 +144,6 @@ section {
   max-width: 730px;
   margin: 0 auto;
   overflow: hidden;
-  margin-top: 120px;
 }
 
 /* ---------------------------------*\
@@ -2173,7 +2172,7 @@ textarea[type="text"]:focus {
   }
 
   .article__main-heading {
-    margin-top: 120px;
+    margin-top: 30px;
     width: 100%;
   }
 
