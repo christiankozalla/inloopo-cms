@@ -41,7 +41,9 @@ import "../../styles/styles.css";
 
     tableEl.addEventListener("mouseover", highlight);
     tableEl.addEventListener("click", highlight);
-    tableEl.addEventListener("mouseout", () => tableEl.querySelectorAll("td").forEach((el) => el.classList.remove("off")));
+    tableEl.addEventListener("mouseout", () =>
+      tableEl.querySelectorAll("td").forEach((el) => el.classList.remove("off"))
+    );
   </script>
 
   <section class="sectorr">
