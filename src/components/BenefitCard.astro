@@ -58,6 +58,7 @@ const { title, description, icon, columnReverseClass = "" } = Astro.props;
   @media only screen and (max-width: 759px) {
     .benefits__heading {
       font-size: 30px;
+      margin-top: 24px;
     }
 
     .benefits__text {
@@ -68,11 +69,26 @@ const { title, description, icon, columnReverseClass = "" } = Astro.props;
     .benefits__container {
       width: 100%;
     }
+
+    .icon__circle {
+      border: none;
+    }
+
+    img {
+      width: 60%;
+    }
+
+    .benefits__wrapper {
+      flex-direction: column-reverse;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
   }
 
   @media only screen and (max-width: 979px) {
     .benefits__container {
       width: 100%;
+      padding: 0 24px;
     }
   }
 </style>

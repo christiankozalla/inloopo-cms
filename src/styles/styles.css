@@ -1853,17 +1853,17 @@ textarea[type="text"]:focus {
 
   h1,
   .main-teaser__heading--page-wikifolio {
-    font-size: 40px;
+    font-size: 32px;
     margin-top: 0;
   }
 
   .heading-one__mobil {
-    font-size: 36px;
+    font-size: 32px;
     margin-top: 0;
   }
 
   h2 {
-    font-size: 34px;
+    font-size: 28px;
   }
 
   h3 {
@@ -1877,6 +1877,11 @@ textarea[type="text"]:focus {
   .heading-two--bigger {
     font-size: 30px;
   }
+
+  
+.wrapper-content-blog {
+  margin-top: 60px;
+}
 
   /* ---------------------------------*\
         #BUTTONS #LINKS
@@ -1922,9 +1927,6 @@ textarea[type="text"]:focus {
     margin-right: auto;
   }
 
-  .icon__circle img {
-    margin: auto 0;
-  }
 
   .icon__circle {
     width: 200px;
@@ -2118,15 +2120,8 @@ textarea[type="text"]:focus {
         #QUOTE 
     \* ---------------------------------*/
 
-  .quote {
-    padding: 0 25px;
-    margin-bottom: 160px;
-    font-size: 24px;
-  }
+  
 
-  .quote__page-wer-wir-sind {
-    margin-top: 60px;
-  }
 
   /* ---------------------------------*\
         #LIST #TOOLS 
@@ -2165,7 +2160,6 @@ textarea[type="text"]:focus {
   }
 
   .article__main-heading {
-    margin-top: 120px;
     width: 100%;
   }
 
