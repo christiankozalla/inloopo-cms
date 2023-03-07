@@ -43,4 +43,16 @@ const url = Astro.url.toString();
   <Author author={author} published={date} url={url} />
   <article set:html={body} />
   <BlogFeedback />
+  <style is:inline>
+    article a {
+      color: #ff6b35;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    article a:hover {
+      border-bottom: 1px solid #ff6b35;
+      padding-bottom: 4px;
+    }
+  </style>
 </BlogLayout>
