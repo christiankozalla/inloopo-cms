@@ -1492,21 +1492,15 @@ textarea[type="text"]:focus {
   font-size: 1.125rem;
 }
 
-@media only screen and (min-width: 1199px) {
-  .wrapper-content-blog.article {
-    margin-right: 96px;
-  }
-}
-
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .wrapper-content-blog {
     width: 600px;
   }
 
-  .toc {
-    width: 185px;
-    overflow-y: auto;
-  }
+  /* .toc {
+    width: 250px;
+    overflow-x: auto;
+  } */
 }
 
 @media only screen and (min-width: 760px) and (max-width: 979px) {
