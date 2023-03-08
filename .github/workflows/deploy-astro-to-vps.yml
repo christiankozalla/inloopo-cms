@@ -94,4 +94,5 @@ jobs:
           ssh-add <(echo "${{ secrets.GH_DEPLOY_KEY }}")
           echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
           echo "${{ env.BUILD_PATH }}/dist/"
-          rsync --recursive --delete --verbose ${{ env.BUILD_PATH }}/dist/ ${{ secrets.VPS_HOST }}:/var/www/sites/${{ github.repository }}/production
+          rsync -a -e 'ssh -p 65002' --delete --exclude='.htaccess' ${{ env.BUILD_PATH }}/dist/ ${{ secrets.HOSTINGER_HOST }}:public_html
+        #   rsync --recursive --delete --verbose ${{ env.BUILD_PATH }}/dist/ ${{ secrets.VPS_HOST }}:/var/www/sites/${{ github.repository }}/production
