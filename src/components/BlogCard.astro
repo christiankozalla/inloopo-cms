@@ -55,4 +55,15 @@ const { title, description, link, image, date } = Astro.props;
   .blog__details {
     padding: 8%;
   }
+
+  @media only screen and (max-width: 979px) {
+    .blog-card__container {
+      width: 100%;
+      margin: 12px 24px;
+    }
+
+    .blog-card__container:first-child {
+    margin-left: 24px;
+  }
+  }
 </style>

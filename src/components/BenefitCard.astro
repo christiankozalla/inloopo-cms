@@ -17,7 +17,7 @@ const { title, description, icon, columnReverseClass = "" } = Astro.props;
           {description}
         </p>
       </div>
-      <div class="column half">
+      <div class="benefits__container">
         <div class="icon__circle">
           <img src={icon.src} width="250" height="250" alt={icon.alt} />
         </div>
@@ -58,11 +58,37 @@ const { title, description, icon, columnReverseClass = "" } = Astro.props;
   @media only screen and (max-width: 759px) {
     .benefits__heading {
       font-size: 30px;
+      margin-top: 24px;
     }
 
     .benefits__text {
       font-size: 18px;
       width: 100%;
+    }
+
+    .benefits__container {
+      width: 100%;
+    }
+
+    .icon__circle {
+      border: none;
+    }
+
+    img {
+      width: 60%;
+    }
+
+    .benefits__wrapper {
+      flex-direction: column-reverse;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+  }
+
+  @media only screen and (max-width: 979px) {
+    .benefits__container {
+      width: 100%;
+      padding: 0 24px;
     }
   }
 </style>

@@ -50,7 +50,7 @@ class DynamicChart extends HTMLElement {
     .chart__subheading {
       font-size: 1.25rem;
       text-align: center;
-      width: 40%;
+      width: 80%;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 40px;
