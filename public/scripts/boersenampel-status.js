@@ -11,8 +11,11 @@ class BoersenampelStatus extends HTMLElement {
       .then((res) => res.json())
       .then((response) => {
         const updateIds = response.result.map((item) => item["update_id"]);
-        console.log(updateIds);
-        this.latest = response.result.find((item) => item["update_id"] === Math.max(...updateIds))?.message;
+        const found = response.result.find((item) => item["update_id"] === Math.max(...updateIds));
+        if (!found) return console.error("Did not find latest message");
+        const types = ["message", "channel_post", "edited_message", "edited_channel_post"];
+        
+        this.latest = found[types.find((type) => Object.prototype.hasOwnProperty.call(found, type)) || ""];
       })
       .catch((err) => console.error(err))
       .finally(() => {

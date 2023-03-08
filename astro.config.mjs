@@ -8,13 +8,14 @@ export default defineConfig({
   site: "https://www.inloopo.com",
   output: "static",
   integrations: [
-    sitemap({
-      serialize(item) {
-        if (item.url.endsWith("/")) {
-          item.url = item.url.slice(0, -1);
-        }
-        return item;
-      },
-    }),
+    sitemap(),
+    //   {
+    //   serialize(item) {
+    //     if (item.url.endsWith("/")) {
+    //       item.url = item.url.slice(0, -1);
+    //     }
+    //     return item;
+    //   },
+    // }
   ],
 });

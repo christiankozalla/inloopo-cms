@@ -1496,10 +1496,10 @@ textarea[type="text"]:focus {
     width: 600px;
   }
 
-  .toc {
-    width: 185px;
-    overflow-y: auto;
-  }
+  /* .toc {
+    width: 250px;
+    overflow-x: auto;
+  } */
 }
 
 @media only screen and (min-width: 760px) and (max-width: 979px) {

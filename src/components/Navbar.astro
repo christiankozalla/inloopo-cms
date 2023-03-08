@@ -239,7 +239,6 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     padding: 20px;
   }
 
@@ -261,6 +260,9 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
   }
 
   @media only screen and (min-width: 980px) {
+    .sub-navbar__dropdown {
+      height: 100%;
+    }
     .navbar__li {
       height: min-content;
       width: 80%;
