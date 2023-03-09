@@ -65,6 +65,8 @@ jobs:
           CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }} CONTENTFUL_API_KEY=${{ secrets.CONTENTFUL_API_KEY }} \
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
             --site "${{ env.SITE_URL }}"
+          chmod +x ${{ env.BUILD_PATH }}/scripts/after-build.sh
+          ${{ env.BUILD_PATH }}/scripts/after-build.sh
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-artifact@v3
