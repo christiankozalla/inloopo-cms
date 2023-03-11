@@ -240,6 +240,7 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin-right: 40px;
   }
 
   .sub-navbar__dropdown:hover {
@@ -259,18 +260,11 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     display: none;
   }
 
-  @media only screen and (min-width: 980px) {
-    .sub-navbar__dropdown {
-      height: 100%;
-    }
-    .navbar__li {
-      height: min-content;
-      width: 80%;
-      margin-right: 40px;
-    }
-  }
 
-  @media only screen and (max-width: 979px) {
+
+ 
+
+  @media only screen and (max-width: 1300px) {
     .logo {
       padding: 0;
       width: 120px;
