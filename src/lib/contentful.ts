@@ -5,7 +5,10 @@ import type { Document } from "@contentful/rich-text-types";
 
 const contentfulClient = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE_ID,
-  accessToken: import.meta.env.MODE === "development" ? import.meta.env.CONTENTFUL_PREVIEW_KEY : import.meta.env.CONTENTFUL_API_KEY,
+  accessToken:
+    import.meta.env.MODE === "development"
+      ? import.meta.env.CONTENTFUL_PREVIEW_KEY
+      : import.meta.env.CONTENTFUL_API_KEY,
   host: import.meta.env.MODE === "development" ? "preview.contentful.com" : "cdn.contentful.com",
 });
 

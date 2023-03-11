@@ -2,11 +2,10 @@
 const { text, marginBottom = "" } = Astro.props;
 ---
 
-<div class=
-{`quote__container
+<div
+  class={`quote__container
 ${marginBottom}
-`}
->
+`}>
   <img src="/images/quote.svg" class="quote__img" alt="Anführungszeichen für Zitat" width="30" height="30" />
   <blockquote set:html={text} class="quote">
     <slot />
@@ -18,7 +17,6 @@ ${marginBottom}
     margin-bottom: 120px;
     padding: 90px;
   }
-
 
   .quote__img {
     display: flex;
@@ -36,18 +34,18 @@ ${marginBottom}
 
   @media only screen and (max-width: 759px) {
     .quote {
-    padding: 0 25px;
-    font-size: 24px;
-  }
+      padding: 0 25px;
+      font-size: 24px;
+    }
 
-  .quote__container {
-    margin-bottom: 0;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
+    .quote__container {
+      margin-bottom: 0;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
 
-  .less-margin-bottom {
-    margin-bottom: 30px;
-  }
+    .less-margin-bottom {
+      margin-bottom: 30px;
+    }
   }
 </style>
