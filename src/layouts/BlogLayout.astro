@@ -21,7 +21,7 @@ interface Props {
     locale: string;
   };
 }
-
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, opengraph } = Astro.props;
 ---
 
@@ -34,6 +34,7 @@ const { title, opengraph } = Astro.props;
     <title>{title}</title>
 
     <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonicalURL} />
     {opengraph?.description ? <meta name="description" content={opengraph.description} /> : null}
 
     {
