@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 
 const { title, date, body, author, heroImage, seoDescription } = Astro.props;
 const { category, slug } = Astro.params as { category: string; slug: string };
-const url = Astro.url.toString();
+const url = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BlogLayout
