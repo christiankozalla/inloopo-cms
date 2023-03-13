@@ -5,21 +5,24 @@ import type { Document } from "@contentful/rich-text-types";
 
 const contentfulClient = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE_ID,
-  accessToken: import.meta.env.CONTENTFUL_API_KEY,
+  accessToken:
+    import.meta.env.MODE !== "development"
+      ? import.meta.env.CONTENTFUL_API_KEY
+      : import.meta.env.CONTENTFUL_PREVIEW_KEY,
+  host: import.meta.env.MODE !== "development" ? "cdn.contentful.com" : "preview.contentful.com",
 });
 
 const renderOptions = {
   renderNode: {
     [INLINES.EMBEDDED_ENTRY]: (node: any, _children: any) => {
-      return `
-        <div class="article__box--info-item">
-          <h6 class="article__box--info">${node.data.target.fields.heading}</h6>
-        </div>
-        <div class="article__box">
-          ${node.data.target.fields.subHeading ? `<h4>${node.data.target.fields.subHeading}</h4>` : ""}
-          ${node.data.target.fields.paragraphs && documentToHtmlString(node.data.target.fields.paragraphs)}
-        </div>
-      `;
+      switch (node.data.target.sys.contentType.sys.id) {
+        case "postInfoBox":
+          return renderPostInfoBox(node as Node<PostInfoBox>);
+        case "webComponent":
+          return renderWebComponent(node as Node<WebComponent>);
+        default:
+          return "";
+      }
     },
     [BLOCKS.HEADING_2]: (node: any, _children: any) => {
       const text = node.content.find((data: any) => data.nodeType === "text").value;
@@ -56,6 +59,25 @@ function figcaptionWithParsedMarkdownLink(text: string) {
   }
 }
 
+function renderPostInfoBox(node: Node<PostInfoBox>) {
+  return `
+  <div class="article__box--info-item">
+    <h6 class="article__box--info">${node.data.target.fields.heading}</h6>
+  </div>
+  <div class="article__box">
+    ${node.data.target.fields.subHeading ? `<h4>${node.data.target.fields.subHeading}</h4>` : ""}
+    ${node.data.target.fields.paragraphs && documentToHtmlString(node.data.target.fields.paragraphs)}
+  </div>
+`;
+}
+
+function renderWebComponent(node: Node<WebComponent>) {
+  return `
+  <script type="module" src="${node.data.target.fields.source}"></script>
+  <${node.data.target.fields.htmlTag}></${node.data.target.fields.htmlTag.split(" ")[0]}>
+  `;
+}
+
 interface Post {
   title: string;
   slug: string;
@@ -66,6 +88,25 @@ interface Post {
   body: Document;
   author: { fields: { name: string; avatar?: object; bio?: string } };
   heroImage?: Record<string, any>;
+}
+
+interface Node<T> {
+  data: {
+    target: {
+      fields: T;
+    };
+  };
+}
+
+interface WebComponent {
+  htmlTag: string;
+  source: string;
+}
+
+interface PostInfoBox {
+  heading: string;
+  subHeading?: string;
+  paragraphs?: Document;
 }
 
 export { contentfulClient, renderOptions };
