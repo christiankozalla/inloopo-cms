@@ -1,5 +1,5 @@
 ---
-const { title, description, button, backgroundImageClass = "" } = Astro.props;
+const { title, withIcon = false, description, button = "", backgroundImageClass = "" } = Astro.props;
 ---
 
 <div
@@ -14,7 +14,7 @@ main-teaser ${backgroundImageClass}
         button && (
           <>
             <a href={button.href} target={button.target} class="button">
-              <img class="button__img" src="/images/telegram.svg" width="20" alt="Telegram Icon" />
+              {withIcon && <img class="button__img" src="/images/telegram.svg" width="20" alt="Telegram Icon" />}
               {button.text}
             </a>
             <br />
@@ -64,7 +64,6 @@ main-teaser ${backgroundImageClass}
       margin-right: 10%;
       margin-top: 20px;
     }
-
   }
 
   @media only screen and (min-width: 760px) and (max-width: 979px) {

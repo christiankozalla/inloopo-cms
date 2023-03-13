@@ -75,6 +75,8 @@ section {
 
 /* #Raster */
 
+
+
 .row {
   width: 100%;
   display: flex;
@@ -232,6 +234,7 @@ h3 {
   font-size: 28px;
   font-size: 1.75rem;
   margin-bottom: 16px;
+  margin-top: 32px;
 }
 
 h4 {
@@ -474,7 +477,6 @@ p {
   font-size: 1.25rem;
   line-height: 1.8;
 }
-
 
 /* #Circle */
 
@@ -1507,8 +1509,6 @@ textarea[type="text"]:focus {
         #LAYOUT
     \* ---------------------------------*/
 
- 
-
   .main-teaser__page-wikifolio {
     background-position: center;
   }
@@ -1878,10 +1878,9 @@ textarea[type="text"]:focus {
     font-size: 30px;
   }
 
-  
-.wrapper-content-blog {
-  margin-top: 60px;
-}
+  .wrapper-content-blog {
+    margin-top: 60px;
+  }
 
   /* ---------------------------------*\
         #BUTTONS #LINKS
@@ -1926,7 +1925,6 @@ textarea[type="text"]:focus {
     margin-left: auto;
     margin-right: auto;
   }
-
 
   .icon__circle {
     width: 200px;
@@ -1988,7 +1986,6 @@ textarea[type="text"]:focus {
   /* ---------------------------------*\
         #VALUES
     \* ---------------------------------*/
-
 
   .values--mobile {
     display: block;
@@ -2120,9 +2117,6 @@ textarea[type="text"]:focus {
         #QUOTE 
     \* ---------------------------------*/
 
-  
-
-
   /* ---------------------------------*\
         #LIST #TOOLS 
     \* ---------------------------------*/
@@ -2138,8 +2132,6 @@ textarea[type="text"]:focus {
   /* ---------------------------------*\
         #BLOG #ARTICLE
     \* ---------------------------------*/
-
- 
 
   .box__main-heading {
     margin-top: 120px;
