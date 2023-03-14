@@ -20,6 +20,8 @@ const renderOptions = {
           return renderPostInfoBox(node as Node<PostInfoBox>);
         case "webComponent":
           return renderWebComponent(node as Node<WebComponent>);
+        case "tocHeadline":
+          return renderTocHeadline(node as Node<TocHeadline>);
         default:
           return "";
       }
@@ -84,6 +86,18 @@ function isValidCategory(category: string): category is Categories {
 
 type Categories = "finanzwissen" | "anlagestrategien";
 
+function renderTocHeadline(node: Node<TocHeadline>) {
+  return `
+    <h2
+      class="article__heading-two"
+      data-toclink="${node.data.target.fields.tocLink}"
+      id=${"point-" + encodeURIComponent(node.data.target.fields.text.replace(" ", "-"))}
+    >
+      ${node.data.target.fields.text}
+    </h2>
+  `;
+}
+
 interface Post {
   title: string;
   slug: string;
@@ -113,6 +127,11 @@ interface PostInfoBox {
   heading: string;
   subHeading?: string;
   paragraphs?: Document;
+}
+
+interface TocHeadline {
+  text: string;
+  tocLink: string;
 }
 
 export { contentfulClient, renderOptions, isValidCategory };
