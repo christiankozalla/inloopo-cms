@@ -78,6 +78,12 @@ function renderWebComponent(node: Node<WebComponent>) {
   `;
 }
 
+function isValidCategory(category: string): category is Categories {
+  return ["finanzwissen", "anlagestrategien"].indexOf(category) > -1;
+}
+
+type Categories = "finanzwissen" | "anlagestrategien";
+
 interface Post {
   title: string;
   slug: string;
@@ -109,5 +115,5 @@ interface PostInfoBox {
   paragraphs?: Document;
 }
 
-export { contentfulClient, renderOptions };
-export type { Post };
+export { contentfulClient, renderOptions, isValidCategory };
+export type { Post, Categories };

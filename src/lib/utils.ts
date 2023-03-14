@@ -1,6 +1,3 @@
-import type { EntryWithLinkResolutionAndWithUnresolvableLinks } from "contentful";
-import type { Post } from "./contentful";
-
 export function debounce(handler: (event: Event) => void, delay = 500) {
   let timeout: NodeJS.Timeout;
 
@@ -26,10 +23,7 @@ export function throttle(handler: (event: Event) => void, { maxCalls = 50, durat
   };
 }
 
-export function sortPostsByDate(
-  a: EntryWithLinkResolutionAndWithUnresolvableLinks<Post>,
-  b: EntryWithLinkResolutionAndWithUnresolvableLinks<Post>
-) {
+export function sortPostsByDate(a: { fields: { published?: string } }, b: { fields: { published?: string } }) {
   if (!a.fields.published || !b.fields.published) return 0;
   const aDate = new Date(a.fields.published);
   const bDate = new Date(b.fields.published);
