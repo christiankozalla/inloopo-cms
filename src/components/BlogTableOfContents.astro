@@ -1,10 +1,5 @@
 <aside class="toc" id="toc">
   <h6 class="toc__heading--mobile">Inhaltsverzeichnis</h6>
-  <input type="checkbox" id="toc__toggle-button" />
-  <label for="toc__toggle-button" class="toc__toggle-button">
-    <img class="toc__toggle-button" src="/images/plus.svg" width="20" />
-  </label>
-
   <ol class="toc__nav"></ol>
 </aside>
 
@@ -60,16 +55,6 @@
   .toc input[type="checkbox"] {
     display: none;
   }
-
-  .toc__toggle-button {
-    display: none;
-  }
-  @media only screen and (min-width: 1199px) {
-    .wrapper-content-blog.article {
-      width: 900px;
-      margin-right: 96px;
-    }
-  }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .wrapper-content-blog.article {
       margin-right: 48px;
@@ -94,7 +79,7 @@
     const headings = document.querySelectorAll("h2[id^=point]"); // all element whose id begins with "point"
     const links = Array.from(headings).map(
       (el, i) => `<li>
-          <a rel="nofollow" href=#${el.id} class="toc__link">${i + 1}. ${el.innerText}</a>
+          <a rel="nofollow" href=#${el.id} class="toc__link">${i + 1}. ${el.dataset.toclink || el.innerText}</a>
       </li>`
     );
     document.querySelector(".toc__nav").innerHTML = links.join("");
