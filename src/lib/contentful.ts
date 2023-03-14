@@ -79,8 +79,7 @@ function renderWebComponent(node: Node<WebComponent>) {
   <${node.data.target.fields.htmlTag}></${node.data.target.fields.htmlTag.split(" ")[0]}>
   `;
 }
-    //     <h2 class="article__heading-two" id=${"point-" + encodeURIComponent(text.replace(" ", "-"))}>${text}</h2>
-// 
+
 function renderTocHeadline(node: Node<TocHeadline>) {
   return `
     <h2
@@ -127,9 +126,7 @@ interface PostInfoBox {
 interface TocHeadline {
   text: string;
   tocLink: string;
-}  
-
-
+}
 
 export { contentfulClient, renderOptions };
 export type { Post };
