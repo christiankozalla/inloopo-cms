@@ -8,14 +8,8 @@ export default defineConfig({
   site: "https://www.inloopo.com",
   output: "static",
   integrations: [
-    sitemap(),
-    //   {
-    //   serialize(item) {
-    //     if (item.url.endsWith("/")) {
-    //       item.url = item.url.slice(0, -1);
-    //     }
-    //     return item;
-    //   },
-    // }
+    sitemap({
+      filter: (page) => page !== 'https://www.inloopo.com/de/vielen-dank/'
+    }),
   ],
 });
