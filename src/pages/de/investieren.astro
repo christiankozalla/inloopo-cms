@@ -69,6 +69,12 @@ import MainLayout from "../../layouts/MainLayout.astro";
     <p class="quote__autor">André Kostolany</p>
   </Quote>
 
+  <section class="wrapper-content">
+    <h2 class="product-details__heading">Meine ETF Strategie schlägt den Markt</h2>
+    <p class="chart__subheading">
+      Wähle ein Jahr und ein Startkapital, um die Wertentwicklung der Indices mit der inloopo Strategie zu vergleichen.
+    </p>
+  </section>
   <!-- GRAFIC INLOOPO STRATEGIE vs INDICES BUY AND HOLD -->
   <dynamic-chart></dynamic-chart>
 
@@ -590,4 +596,15 @@ import MainLayout from "../../layouts/MainLayout.astro";
   <script is:inline src="/scripts/dynamic-chart.js"></script>
   <!-- JavaScript -->
   <script is:inline src="/scripts/faq.js"></script>
+
+  <style>
+    .chart__subheading {
+      font-size: 1.25rem;
+      text-align: center;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+    }
+  </style>
 </MainLayout>

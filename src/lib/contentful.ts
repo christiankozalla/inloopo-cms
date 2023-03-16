@@ -15,8 +15,8 @@ const contentfulClient = contentful.createClient({
 const renderOptions = {
   renderNode: {
     [BLOCKS.HEADING_2]: (node: any, _children: any) => {
-      const inlineEntry = node.content.find((data: any) => data.nodeType === 'embedded-entry-inline');
-      if (typeof inlineEntry !== 'undefined') {
+      const inlineEntry = node.content.find((data: any) => data.nodeType === "embedded-entry-inline");
+      if (typeof inlineEntry !== "undefined") {
         return renderTocHeadline(inlineEntry as Node<TocHeadline>);
       }
       const text = node.content.find((data: any) => data.nodeType === "text").value;
