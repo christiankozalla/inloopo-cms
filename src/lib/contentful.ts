@@ -14,19 +14,11 @@ const contentfulClient = contentful.createClient({
 
 const renderOptions = {
   renderNode: {
-    [INLINES.EMBEDDED_ENTRY]: (node: any, _children: any) => {
-      switch (node.data.target.sys.contentType.sys.id) {
-        case "postInfoBox":
-          return renderPostInfoBox(node as Node<PostInfoBox>);
-        case "webComponent":
-          return renderWebComponent(node as Node<WebComponent>);
-        case "tocHeadline":
-          return renderTocHeadline(node as Node<TocHeadline>);
-        default:
-          return "";
-      }
-    },
     [BLOCKS.HEADING_2]: (node: any, _children: any) => {
+      const inlineEntry = node.content.find((data: any) => data.nodeType === 'embedded-entry-inline');
+      if (typeof inlineEntry !== 'undefined') {
+        return renderTocHeadline(inlineEntry as Node<TocHeadline>);
+      }
       const text = node.content.find((data: any) => data.nodeType === "text").value;
       return `
         <h2 class="article__heading-two" id=${"point-" + encodeURIComponent(text.replace(" ", "-"))}>${text}</h2>
@@ -47,6 +39,19 @@ const renderOptions = {
         }
         </figure>
       `;
+    },
+    [INLINES.EMBEDDED_ENTRY]: (node: any, _children: any) => {
+      switch (node.data.target.sys.contentType.sys.id) {
+        case "postInfoBox":
+          return renderPostInfoBox(node as Node<PostInfoBox>);
+        case "webComponent":
+          return renderWebComponent(node as Node<WebComponent>);
+        case "tocHeadline":
+          return renderTocHeadline(node as Node<TocHeadline>);
+        default:
+          console.log("Unknown content type: " + node.data.target.sys.contentType.sys.id);
+          return "";
+      }
     },
   },
 };
