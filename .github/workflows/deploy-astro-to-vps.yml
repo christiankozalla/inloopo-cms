@@ -25,7 +25,6 @@ concurrency:
 
 env:
   BUILD_PATH: "." # default value when not using subfolders
-  SITE_URL: "https://inloopo.com"
 
 jobs:
   build:
@@ -63,8 +62,7 @@ jobs:
       - name: Build with Astro
         run: |
           CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }} CONTENTFUL_API_KEY=${{ secrets.CONTENTFUL_API_KEY }} \
-          ${{ steps.detect-package-manager.outputs.runner }} astro build \
-            --site "${{ env.SITE_URL }}"
+          ${{ steps.detect-package-manager.outputs.runner }} astro build
           chmod +x ${{ env.BUILD_PATH }}/scripts/after-build.sh
           ${{ env.BUILD_PATH }}/scripts/after-build.sh
         working-directory: ${{ env.BUILD_PATH }}
