@@ -54,6 +54,8 @@ const renderOptions = {
           return renderWebComponent(node as Node<WebComponent>);
         case "tocHeadline":
           return renderTocHeadline(node as Node<TocHeadline>);
+        case "inlineHtml":
+          return node.data.target.fields.code;
         default:
           console.log("Unknown content type: " + node.data.target.sys.contentType.sys.id);
           return "";
