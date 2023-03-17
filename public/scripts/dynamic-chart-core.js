@@ -146,7 +146,7 @@ function dcIndices(startMoney = 10000, startIndex = 0) {
       data.push(newMoney);
       previousMoney = newMoney;
     });
-    chartLineData = indexIdNameMap[indexId];
+    const chartLineData = indexIdNameMap[indexId];
     return {
       name: chartLineData.name,
       type: "line",
