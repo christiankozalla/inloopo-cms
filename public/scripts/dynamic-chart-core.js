@@ -128,11 +128,11 @@ function displayHtmlDrawdowns(spDrawdowns, strategyDrawdowns) {
 }
 
 const indexIdNameMap = {
-  dax: "DAX",
-  nasdaq: "NASDAQ",
-  "msci-world": "MSCI World",
-  "msci-emerging": "MSCI Emerging",
-  dow: "Dow Jones Industrial",
+  dax: { name: "DAX", color: "#F21BA7" },
+  nasdaq: { name: "NASDAQ", color: "#30C8F5" },
+  "msci-world": { name: "MSCI World", color: "#22A318" },
+  "msci-emerging": { name: "MSCI Emerging", color: "#F21BA7" },
+  dow: { name: "Dow Jones Industrial", color: "#D41F1C" },
 };
 
 function dcIndices(startMoney = 10000, startIndex = 0) {
@@ -146,10 +146,13 @@ function dcIndices(startMoney = 10000, startIndex = 0) {
       data.push(newMoney);
       previousMoney = newMoney;
     });
+    chartLineData = indexIdNameMap[indexId];
     return {
-      name: indexIdNameMap[indexId],
+      name: chartLineData.name,
       type: "line",
       smooth: true,
+      lineStyle: { color: chartLineData.color },
+      itemStyle: { color: chartLineData.color },
       data: data.map((num) => num.toFixed(0)),
     };
   });
@@ -166,7 +169,7 @@ function dcIndices(startMoney = 10000, startIndex = 0) {
 
   const strategyName = "inloopo S&P 500 Strategie";
   const buyAndHoldName = "S&P 500";
-  const legendData = [strategyName, buyAndHoldName, ...Object.keys(window.dcIndices).map((id) => indexIdNameMap[id])];
+  const legendData = [strategyName, buyAndHoldName, ...Object.keys(window.dcIndices).map((id) => indexIdNameMap[id].name)];
   const { spData, drawdowns: spDrawdowns } = calculateSP(data);
   const { strategyData, drawdowns: strategyDrawdowns } = calculateStrategy(data);
 
@@ -207,6 +210,8 @@ function dcIndices(startMoney = 10000, startIndex = 0) {
       {
         name: buyAndHoldName,
         type: "line",
+        lineStyle: { color: "#0607F0" },
+        itemStyle: { color: "#0607F0" },
         smooth: true,
         data: spData,
       },
@@ -246,6 +251,8 @@ function dcIndices(startMoney = 10000, startIndex = 0) {
           name: buyAndHoldName,
           type: "line",
           smooth: true,
+          lineStyle: { color: "#0607F0" },
+          itemStyle: { color: "#0607F0" },
           data: spData,
         },
         ...dcIndices(newStartMoney),
