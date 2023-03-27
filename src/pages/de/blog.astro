@@ -30,7 +30,6 @@ const entries = await contentfulClient.getEntries<Post>({
               <img
                 src={item.fields.heroImage?.fields.file.url}
                 alt={item.fields.heroImage.fields.title}
-                height={item.fields.heroImage.fields.file.details.height}
                 loading="lazy"
               />
             </a>
@@ -81,6 +80,16 @@ const entries = await contentfulClient.getEntries<Post>({
       border: 1px solid #dcdcdc;
       padding: 0;
     }
+
+    .article-card a {
+      display: block;
+      aspect-ratio: 1 / 0.657;
+    }
+
+    .article-card img {
+      min-height: 100%;
+    }
+
     .article-card__details {
       padding: 8%;
     }
