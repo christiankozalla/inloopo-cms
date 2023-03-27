@@ -48,6 +48,12 @@ const { title, opengraph, canonical = new URL(Astro.url.pathname, Astro.site) } 
             <meta property="og:type" content={opengraph.type} />
             <meta property="og:description" content={opengraph.description} />
             <meta property="og:locale" content={opengraph.locale} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@philipp_kozalla" />
+            <meta name="twitter:creator" content="@philipp_kozalla" />
+            <meta name="twitter:title" content={opengraph.title || title} />
+            <meta name="twitter:description" content={opengraph.description} />
+            <meta name="twitter:image" content={opengraph.image.url} />
           </>
           <>
             {opengraph.image.width ? <meta property="og:image:width" content={String(opengraph.image.width)} /> : null}
