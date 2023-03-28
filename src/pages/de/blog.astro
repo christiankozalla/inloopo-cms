@@ -26,7 +26,7 @@ const entries = await contentfulClient.getEntries<Post>({
       entries.items.sort(sortPostsByDate).map((item) => (
         <article class="article-card">
           {item.fields.heroImage?.fields.file.url && (
-            <a class="link__blog" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+            <a class="link__blog img-wrapper" href={`/de/${item.fields.category}/${item.fields.slug}`}>
               <img
                 src={item.fields.heroImage?.fields.file.url}
                 alt={item.fields.heroImage.fields.title}
@@ -81,7 +81,7 @@ const entries = await contentfulClient.getEntries<Post>({
       padding: 0;
     }
 
-    .article-card a {
+    .article-card a.img-wrapper {
       display: block;
       aspect-ratio: 1 / 0.657;
     }
