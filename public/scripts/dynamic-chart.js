@@ -183,9 +183,10 @@ class DynamicChart extends HTMLElement {
           observerRef.unobserve(entry.target);
           try {
             import(`./dynamic-chart-core.js`);
-
+            const validIndices = ["dax", "nasdaq", "dow", "msci-world", "msci-emerging"];
             for (let i = 0; i < this.attributes.length; i++) {
               const indexName = this.attributes[i].name;
+              if (!validIndices.includes(indexName)) continue;
               fetch(`/data/${indexName}.json`)
                 .then((data) => data.json())
                 .then((jsonData) => {

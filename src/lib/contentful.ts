@@ -19,7 +19,8 @@ const renderOptions = {
     [BLOCKS.HEADING_2]: (node: any, _children: any) => {
       const inlineEntry = node.content.find((data: any) => data.nodeType === "embedded-entry-inline");
       if (typeof inlineEntry !== "undefined") {
-        if (inlineEntry.data.target.sys.contentType.sys.id === "tocHeadline") return renderTocHeadline(inlineEntry as Node<TocHeadline>);
+        if (inlineEntry.data.target.sys.contentType.sys.id === "tocHeadline")
+          return renderTocHeadline(inlineEntry as Node<TocHeadline>);
         else {
           console.log("Unknown content type: " + inlineEntry.data.target.sys.contentType.sys.id);
           return "";
