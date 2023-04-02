@@ -1,0 +1,60 @@
+<div>
+  <div id="main" style="width: 100%; height: 400px;"></div>
+  <script>
+    import data from "../lei.json";
+
+    import * as echarts from "echarts/core";
+    import { TooltipComponent, GridComponent, MarkLineComponent } from "echarts/components";
+    import { LineChart } from "echarts/charts";
+    import { UniversalTransition } from "echarts/features";
+    import { CanvasRenderer } from "echarts/renderers";
+
+    const months = ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
+
+    echarts.use([MarkLineComponent, TooltipComponent, GridComponent, LineChart, CanvasRenderer, UniversalTransition]);
+    const mainEl = document.getElementById("main");
+    if (mainEl !== null) {
+      const chart = echarts.init(mainEl);
+      const options = {
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "cross",
+            label: {
+              backgroundColor: "#6a7985",
+            },
+          },
+        },
+        xAxis: {
+          type: "category",
+          data: data.map((_, i) => `${months[i % 12]} ${(Math.floor(i / 12) + 1981).toFixed(0)}`),
+        },
+        yAxis: {
+          type: "value",
+        },
+        series: [
+          {
+            name: "US Leading Economic Index",
+            data: data,
+            lineStyle: { color: "#ff6b35" },
+            type: "line",
+            smooth: true,
+            symbol: "none",
+            markLine: {
+              symbol: ["none", "none"],
+              data: [
+                {
+                  name: "Upper Bound",
+                  yAxis: 7,
+                  lineStyle: { color: "green", type: "solid" },
+                },
+                { name: "Lower Bound", yAxis: -3, lineStyle: { color: "red", type: "solid" } },
+              ],
+            },
+          },
+        ],
+      };
+      chart.setOption(options);
+    }
+  </script>
+</div>
