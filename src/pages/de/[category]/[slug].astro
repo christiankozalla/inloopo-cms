@@ -20,7 +20,9 @@ export async function getStaticPaths() {
       date: item.fields.published ? new Date(item.fields.published).toLocaleDateString("de-DE") : null,
       author: item.fields.author.fields,
       heroImage: {
-        url: item.fields.heroImage?.fields.file.url,
+        url: item.fields.heroImage?.fields.file.url.startsWith("//")
+          ? "https:" + item.fields.heroImage?.fields.file.url
+          : item.fields.heroImage?.fields.file.url,
         height: item.fields.heroImage?.fields.file.details.image.height,
         width: item.fields.heroImage?.fields.file.details.image.width,
       },
@@ -31,7 +33,7 @@ export async function getStaticPaths() {
 
 const { title, date, body, author, heroImage, seoDescription } = Astro.props;
 const { category, slug } = Astro.params as { category: string; slug: string };
-const url = Astro.url.toString();
+const url = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <BlogLayout
@@ -56,6 +58,7 @@ const url = Astro.url.toString();
 
     table {
       overflow-x: auto;
+      margin-bottom: 24px;
     }
 
     @media only screen and (max-width: 40em) {

@@ -57,11 +57,10 @@ const { headline, copy, title, description } = Astro.props;
         items.map((item) => (
           <article class="article-card">
             {item.fields.heroImage?.fields.file.url && (
-              <a class="link__blog" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+              <a class="link__blog img-wrapper" href={`/de/${item.fields.category}/${item.fields.slug}`}>
                 <img
                   src={item.fields.heroImage?.fields.file.url}
                   alt={item.fields.heroImage.fields.title}
-                  height={item.fields.heroImage.fields.file.details.height}
                   loading="lazy"
                 />
               </a>
@@ -111,6 +110,16 @@ const { headline, copy, title, description } = Astro.props;
         border: 1px solid #dcdcdc;
         padding: 0;
       }
+
+      .article-card a.img-wrapper {
+        display: block;
+        aspect-ratio: 1 / 0.657;
+      }
+
+      .article-card img {
+        min-height: 100%;
+      }
+
       .article-card__details {
         padding: 8%;
       }

@@ -4,8 +4,6 @@ class DynamicChart extends HTMLElement {
     this.attachShadow({ mode: "open" });
     const markup = `
     <section id="interactive-chart-section">
-    <h2 class="chart__heading">Meine ETF Strategie schlägt den Markt</h2>
-    <p class="chart__subheading">Wähle ein Jahr und ein Startkapital, um die Wertentwicklung der Indices mit der inloopo Strategie zu vergleichen.</p>
     <div id="chart-controls">
       <form>
         <label class="chart__p" for="start-money">Startkapital</label>
@@ -47,15 +45,6 @@ class DynamicChart extends HTMLElement {
       padding: 40px 25px 15px 25px;
     }
 
-    .chart__subheading {
-      font-size: 1.25rem;
-      text-align: center;
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 40px;
-    }
-    
     .chart__p {
       font-weight: bold;
       margin-right: 10px;
@@ -194,9 +183,10 @@ class DynamicChart extends HTMLElement {
           observerRef.unobserve(entry.target);
           try {
             import(`./dynamic-chart-core.js`);
-
+            const validIndices = ["dax", "nasdaq", "dow", "msci-world", "msci-emerging"];
             for (let i = 0; i < this.attributes.length; i++) {
               const indexName = this.attributes[i].name;
+              if (!validIndices.includes(indexName)) continue;
               fetch(`/data/${indexName}.json`)
                 .then((data) => data.json())
                 .then((jsonData) => {

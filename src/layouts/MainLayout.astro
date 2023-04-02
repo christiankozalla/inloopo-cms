@@ -33,7 +33,7 @@ const { title, description, opengraph = "", lang, canonical = "" } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={ canonical } />
+    <link rel="canonical" href={canonical} />
 
     {
       opengraph && (
@@ -46,6 +46,12 @@ const { title, description, opengraph = "", lang, canonical = "" } = Astro.props
           <meta property="og:type" content={opengraph.type} />
           <meta property="og:description" content={opengraph.description} />
           <meta property="og:locale" content={opengraph.locale} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@philipp_kozalla" />
+          <meta name="twitter:creator" content="@philipp_kozalla" />
+          <meta name="twitter:title" content={opengraph.title || title} />
+          <meta name="twitter:description" content={opengraph.description} />
+          <meta name="twitter:image" content={opengraph.image} />
         </>
       )
     }

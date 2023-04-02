@@ -20,9 +20,10 @@ interface Props {
     description: string;
     locale: string;
   };
+  canonical?: string;
 }
 
-const { title, opengraph, canonical = "" } = Astro.props;
+const { title, opengraph, canonical = new URL(Astro.url.pathname, Astro.site) } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -31,10 +32,10 @@ const { title, opengraph, canonical = "" } = Astro.props;
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href={ canonical } />
     <title>{title}</title>
 
     <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonical} />
     {opengraph?.description ? <meta name="description" content={opengraph.description} /> : null}
 
     {
@@ -47,11 +48,17 @@ const { title, opengraph, canonical = "" } = Astro.props;
             <meta property="og:type" content={opengraph.type} />
             <meta property="og:description" content={opengraph.description} />
             <meta property="og:locale" content={opengraph.locale} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@philipp_kozalla" />
+            <meta name="twitter:creator" content="@philipp_kozalla" />
+            <meta name="twitter:title" content={opengraph.title || title} />
+            <meta name="twitter:description" content={opengraph.description} />
+            <meta name="twitter:image" content={opengraph.image.url} />
           </>
           <>
             {opengraph.image.width ? <meta property="og:image:width" content={String(opengraph.image.width)} /> : null}
             {opengraph.image.height ? (
-              <meta property="og:image:width" content={String(opengraph.image.height)} />
+              <meta property="og:image:height" content={String(opengraph.image.height)} />
             ) : null}
           </>
         </>
