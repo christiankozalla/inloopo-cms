@@ -839,7 +839,7 @@ p {
 }
 
 /* #Table */
-
+table,
 .responsive-table {
   overflow-x: auto;
 }
@@ -869,11 +869,12 @@ tbody {
 th {
   padding: 20px;
   border-bottom: 2px solid #ff6b35;
+  text-align: left;
 }
 
 td {
   border-bottom: 1px solid #dcdcdc;
-  padding: 25px 10px;
+  padding: 25px 20px;
 }
 
 /* #Lists Mobile */
@@ -1494,6 +1495,11 @@ textarea[type="text"]:focus {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .wrapper-content-blog {
     width: 600px;
+  }
+
+  .toc {
+    display: none !important;
+    animation: none !important;
   }
 
   /* .toc {
@@ -2178,6 +2184,11 @@ textarea[type="text"]:focus {
   /* ---------------------------------*\
     #TOC
 \* ---------------------------------*/
+
+.toc {
+  display: none !important;
+  animation: none !important;
+}
 
   /*
 #toc__toggle-button:checked ~ ol {
