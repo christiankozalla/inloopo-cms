@@ -1,21 +1,60 @@
-<div>
-  <div id="main" style="width: 100%; height: 400px;"></div>
-  <script>
-    import data from "../lei.json";
+---
+import { contentfulClient } from "../lib/contentful";
 
+declare global {
+  interface Window {
+    echartsInstance: any;
+  }
+}
+
+const leiData = await contentfulClient.getEntry("3SP32kzxVgpNaKHQ1ddhI0");
+
+let { data, phase } = leiData.fields;
+
+data = data
+  .split(";")
+  .reverse()
+  .map((numString: string) => Number(numString)) as number[];
+---
+
+<div>
+  <p style="text-align: center; margin: 0; padding: 0">Konjunkturphase: {phase}</p>
+  <div id="main" style="width: 100%; aspect-ratio: 16 / 7"></div>
+  <script>
+    // This script is for setting up Echarts
+    // This way it will be bundled and optimized by Astro.
     import * as echarts from "echarts/core";
     import { TooltipComponent, GridComponent, MarkLineComponent } from "echarts/components";
     import { LineChart } from "echarts/charts";
-    import { UniversalTransition } from "echarts/features";
     import { CanvasRenderer } from "echarts/renderers";
 
-    const months = ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
-
-    echarts.use([MarkLineComponent, TooltipComponent, GridComponent, LineChart, CanvasRenderer, UniversalTransition]);
+    echarts.use([MarkLineComponent, TooltipComponent, GridComponent, LineChart, CanvasRenderer]);
     const mainEl = document.getElementById("main");
     if (mainEl !== null) {
       const chart = echarts.init(mainEl);
-      const options = {
+      window.echartsInstance = chart;
+    }
+  </script>
+  <script define:vars={{ data }}>
+    // This is an inline script (not optimized by Astro)
+    // Receives the data from fetched from Contentful in Astro Frontmatter
+    let counter = 0;
+    const max = 20; // 200 * 20 wait = 4 seconds
+    const interval = setInterval(() => {
+      counter++
+      if (window.echartsInstance !== undefined) {
+        attachEcharts();
+        clearInterval(interval);
+      } else if (counter > max) {
+        clearInterval(interval);
+      }
+    }, 200);
+
+    function attachEcharts() {
+      // document.getElementById("konjunkturphase").innerHTML = `Konjunkturphase: <strong>${phase}</strong>`;
+      const months = ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
+
+      window.echartsInstance.setOption({
         tooltip: {
           trigger: "axis",
           axisPointer: {
@@ -53,8 +92,7 @@
             },
           },
         ],
-      };
-      chart.setOption(options);
+      });
     }
   </script>
 </div>
