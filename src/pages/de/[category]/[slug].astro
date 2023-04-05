@@ -56,15 +56,15 @@ const url = new URL(Astro.url.pathname, Astro.site).toString();
       padding-bottom: 4px;
     }
 
-    table {
+    .article__table {
       overflow-x: auto;
       margin-bottom: 24px;
     }
 
     @media only screen and (max-width: 40em) {
-    table {
-      text-align: center;
+      .article__table {
+        text-align: center;
+      }
     }
-  }
   </style>
 </BlogLayout>
