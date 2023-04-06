@@ -429,7 +429,14 @@ p {
 }
 
 .main-teaser__page-sektorrotation {
-  background-image: url("/images/teaser-image-sektorrotation.jpg");
+  background-image: url("/images/teaser-image-sektorrotation.svg");
+  background-position: center;
+  padding-top: 1%;
+  margin-bottom: 120px;
+}
+
+.main-teaser__page-konjunkturzyklus {
+  background-image: url("/images/teaser-image-konjunkturzyklus.svg");
   background-position: center;
   padding-top: 1%;
   margin-bottom: 120px;

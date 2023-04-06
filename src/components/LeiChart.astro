@@ -1,0 +1,89 @@
+---
+import { contentfulClient } from "../lib/contentful";
+
+declare global {
+  interface Window {
+    echartsInstance: any;
+  }
+}
+
+const leiData = await contentfulClient.getEntry("3SP32kzxVgpNaKHQ1ddhI0");
+
+const { data, phase } = leiData.fields;
+---
+
+<div>
+  <p style="text-align: center; margin: 0; padding: 0">Konjunkturphase: {phase}</p>
+  <div id="main" data-y-axis={data}></div>
+  <style>
+    #main {
+      width: 100%;
+      min-height: 300px;
+    }
+
+    @media only screen and (min-width: 480px) {
+      #main {
+        aspect-ratio: 16 / 7;
+      }
+    }
+  </style>
+  <script>
+    import * as echarts from "echarts/core";
+    import { TooltipComponent, GridComponent, MarkLineComponent } from "echarts/components";
+    import { LineChart } from "echarts/charts";
+    import { CanvasRenderer } from "echarts/renderers";
+
+    echarts.use([MarkLineComponent, TooltipComponent, GridComponent, LineChart, CanvasRenderer]);
+    const mainEl = document.getElementById("main");
+    if (mainEl !== null) {
+      const chart = echarts.init(mainEl);
+      window.echartsInstance = chart;
+      const data = mainEl?.dataset.yAxis
+        ?.split(";")
+        .reverse()
+        .map((numString: string) => Number(numString)) as number[];
+
+      const months = ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
+
+      window.echartsInstance.setOption({
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "cross",
+            label: {
+              backgroundColor: "#6a7985",
+            },
+          },
+        },
+        xAxis: {
+          type: "category",
+          data: data.map((_, i) => `${months[i % 12]} ${(Math.floor(i / 12) + 1981).toFixed(0)}`),
+        },
+        yAxis: {
+          type: "value",
+        },
+        series: [
+          {
+            name: "US Leading Economic Index",
+            data: data,
+            lineStyle: { color: "#ff6b35" },
+            type: "line",
+            smooth: true,
+            symbol: "none",
+            markLine: {
+              symbol: ["none", "none"],
+              data: [
+                {
+                  name: "Upper Bound",
+                  yAxis: 7,
+                  lineStyle: { color: "green", type: "solid" },
+                },
+                { name: "Lower Bound", yAxis: -3, lineStyle: { color: "red", type: "solid" } },
+              ],
+            },
+          },
+        ],
+      });
+    }
+  </script>
+</div>

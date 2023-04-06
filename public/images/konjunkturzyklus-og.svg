@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 630.2">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Unbenannter_Verlauf_77-2);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        mix-blend-mode: screen;
+      }
+
+      .cls-2 {
+        fill: url(#Unbenannter_Verlauf_77-3);
+      }
+
+      .cls-6 {
+        fill: #253c78;
+      }
+
+      .cls-7 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        fill: url(#Unbenannter_Verlauf_77-4);
+      }
+
+      .cls-8 {
+        stroke: #ff6b35;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 20px;
+      }
+
+      .cls-8, .cls-9 {
+        fill: none;
+      }
+
+      .cls-4 {
+        fill: url(#Unbenannter_Verlauf_77-5);
+      }
+
+      .cls-5 {
+        fill: url(#Unbenannter_Verlauf_77);
+      }
+    </style>
+    <radialGradient id="Unbenannter_Verlauf_77" data-name="Unbenannter Verlauf 77" cx="518.91" cy="135.45" fx="518.91" fy="135.45" r="48.18" gradientTransform="translate(317.45 -447.66) rotate(91.17) scale(1.19 .45) skewX(-2.67)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff6b35"/>
+      <stop offset=".03" stop-color="#e45f2f"/>
+      <stop offset=".1" stop-color="#b44b25"/>
+      <stop offset=".17" stop-color="#89391c"/>
+      <stop offset=".24" stop-color="#642a14"/>
+      <stop offset=".32" stop-color="#451d0e"/>
+      <stop offset=".41" stop-color="#2b1209"/>
+      <stop offset=".51" stop-color="#180a05"/>
+      <stop offset=".62" stop-color="#0a0402"/>
+      <stop offset=".75" stop-color="#020100"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <radialGradient id="Unbenannter_Verlauf_77-2" data-name="Unbenannter Verlauf 77" cx="920.86" cy="-284.55" fx="920.86" fy="-284.55" r="48.18" gradientTransform="translate(651.19 -949.93) rotate(91.34) scale(1.19 .48) skewX(-2.83)" xlink:href="#Unbenannter_Verlauf_77"/>
+    <radialGradient id="Unbenannter_Verlauf_77-3" data-name="Unbenannter Verlauf 77" cx="730.61" cy="331.46" fx="730.61" fy="331.46" r="48.18" gradientTransform="translate(629.96 -329.09) rotate(93.15) scale(1.09 .52) skewX(-5.2)" xlink:href="#Unbenannter_Verlauf_77"/>
+    <radialGradient id="Unbenannter_Verlauf_77-4" data-name="Unbenannter Verlauf 77" cx="910.67" cy="-489.04" fx="910.67" fy="-489.04" r="48.18" gradientTransform="translate(730.39 -727) rotate(92.03) scale(1.16 .49) skewX(-4.04)" xlink:href="#Unbenannter_Verlauf_77"/>
+    <radialGradient id="Unbenannter_Verlauf_77-5" data-name="Unbenannter Verlauf 77" cx="1373.59" cy="-876.97" fx="1373.59" fy="-876.97" r="48.18" gradientTransform="translate(2441.31 -240.97) rotate(176.76) scale(1.05 .54) skewX(4.66)" xlink:href="#Unbenannter_Verlauf_77"/>
+  </defs>
+  <g class="cls-7">
+    <g id="Ebene_2" data-name="Ebene 2">
+      <g id="Ebene_2-2" data-name="Ebene 2">
+        <rect class="cls-6" width="1200" height="630.2"/>
+        <rect class="cls-9" x="0" y="43.27" width="1200" height="500"/>
+        <g>
+          <path class="cls-8" d="M29.79,346.38c49.89-93.71,119.47-196.4,190.62-191.49,116.4,8.03,147.44,297.85,246.41,298.72,101.04,.89,147.55-300.49,256.87-300.64,96.49-.13,132.26,234.6,247.57,241.28,75.29,4.36,144.28-90.81,187.13-162.77"/>
+          <ellipse class="cls-5" cx="244.21" cy="161.72" rx="21.59" ry="57.48" transform="translate(23.81 354.64) rotate(-74.71)"/>
+          <ellipse class="cls-1" cx="760.35" cy="166.92" rx="22.87" ry="57.5" transform="translate(400.85 857.4) rotate(-74.88)"/>
+          <ellipse class="cls-2" cx="416.25" cy="425.06" rx="24.86" ry="52.89" transform="translate(-178.06 452.34) rotate(-48.23)"/>
+          <ellipse class="cls-3" cx="929.11" cy="381.12" rx="23.37" ry="56.26" transform="translate(210.3 1082.41) rotate(-66.6)"/>
+          <ellipse class="cls-4" cx="1105.92" cy="309.3" rx="50.71" ry="25.92" transform="translate(218.11 1037.66) rotate(-54.99)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
