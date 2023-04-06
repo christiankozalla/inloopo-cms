@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 800">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #35c9ff;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #6b35ff;
+      }
+
+      .cls-3 {
+        fill: #602578;
+      }
+
+      .cls-4 {
+        fill: #ff2b00;
+      }
+
+      .cls-5 {
+        fill: #124d00;
+      }
+
+      .cls-12 {
+        fill: url(#Unbenannter_Verlauf_16-2);
+        opacity: .3;
+      }
+
+      .cls-6 {
+        fill: #fa0;
+      }
+
+      .cls-7 {
+        fill: #ff6040;
+      }
+
+      .cls-13 {
+        fill: url(#Unbenannter_Verlauf_16);
+      }
+
+      .cls-8 {
+        fill: #fff;
+      }
+
+      .cls-9 {
+        fill: #131e3c;
+      }
+
+      .cls-10 {
+        fill: #ffd035;
+      }
+
+      .cls-11 {
+        fill: #ff35c9;
+      }
+    </style>
+    <linearGradient id="Unbenannter_Verlauf_16" data-name="Unbenannter Verlauf 16" x1="66.79" y1="915.69" x2="1853.21" y2="-115.69" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2f3c77"/>
+      <stop offset="1" stop-color="#252d5b"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_16-2" data-name="Unbenannter Verlauf 16" x1="66.79" x2="1853.21" y2="-115.69" xlink:href="#Unbenannter_Verlauf_16"/>
+  </defs>
+  <g id="Ebene_1-2" data-name="Ebene 1">
+    <rect class="cls-1" x="1030.98" y="32" width="126.96" height="82.64"/>
+    <rect class="cls-8" x="1158.06" y="32" width="126.96" height="82.64"/>
+    <rect class="cls-13" x="0" width="1920" height="800"/>
+    <rect class="cls-10" x="1158.07" y="31.28" width="126.96" height="82.64"/>
+    <rect class="cls-1" x="1411.63" y="31.54" width="126.96" height="82.64"/>
+    <rect class="cls-6" x="1792.5" y="113.91" width="126.96" height="82.64"/>
+    <rect class="cls-6" x="904.52" y="114.65" width="126.96" height="82.64"/>
+    <rect class="cls-9" x="777.56" y="444.37" width="126.96" height="82.64"/>
+    <rect class="cls-9" x="1411.63" y="196.83" width="126.96" height="82.64"/>
+    <rect class="cls-2" x="904.52" y="608.05" width="126.96" height="82.64"/>
+    <rect class="cls-11" x="1792.5" y="362.36" width="126.96" height="82.64"/>
+    <rect class="cls-7" x="1602.06" y="114.65" width="126.96" height="82.64"/>
+    <rect class="cls-2" x="1538.59" y="445" width="126.96" height="82.64"/>
+    <rect class="cls-9" x="1792.5" y="527.89" width="126.96" height="82.64"/>
+    <rect class="cls-6" x="1284.93" y="445" width="126.96" height="82.64"/>
+    <rect class="cls-11" x="1538.59" y="693.43" width="126.96" height="82.64"/>
+    <rect class="cls-2" x="1030.98" y="336.74" width="126.96" height="82.64"/>
+    <rect class="cls-4" x="1158.07" y="610.79" width="126.96" height="82.64"/>
+    <rect class="cls-1" x="523.61" y="197.29" width="126.96" height="82.64"/>
+    <rect class="cls-3" x="533.37" y="527.89" width="126.96" height="82.64"/>
+    <rect class="cls-7" x="14.63" y="34.54" width="126.96" height="82.64"/>
+    <rect class="cls-5" x="14.63" y="595.66" width="126.96" height="82.64"/>
+    <rect class="cls-12" width="1920" height="800"/>
+  </g>
+</svg>
