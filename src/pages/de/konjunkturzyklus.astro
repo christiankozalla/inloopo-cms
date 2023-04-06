@@ -1,0 +1,34 @@
+---
+//import layout and components
+import MainLayout from "../../layouts/MainLayout.astro";
+import HeroShot from "../../components/HeroShot.astro";
+import LeiChart from "../../components/LeiChart.astro";
+
+//import
+import "../../styles/styles.css";
+---
+
+<MainLayout
+  title="Sektorenrotation als Tool"
+  description="XXX"
+  opengraph={{
+    description: "XXX",
+    locale: "de",
+    type: "website",
+    url: "https://www.inloopo.com/de/sektorrotation/",
+    image: "https://www.inloopo.com/images/sektorrotation-og.jpg",
+  }}
+  lang="de"
+  canonical="https://www.inloopo.com/de/sektorrotation/">
+  <!-- TEASER -->
+  <HeroShot
+    title="Konjunkturzyklus"
+    description="XXX"
+    backgroundImageClass="main-teaser__page-sektorrotation"
+  />
+
+  <LeiChart />
+
+</MainLayout>
+
+
