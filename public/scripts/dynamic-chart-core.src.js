@@ -138,11 +138,11 @@ function displayHtmlDrawdowns(spDrawdowns, strategyDrawdowns) {
 }
 
 const indexIdNameMap = {
-  dax: { name: "DAX", color: "#39A0ED" },
-  nasdaq: { name: "NASDAQ", color: "#6BD425" },
-  "msci-world": { name: "MSCI World", color: "#DB5ABA" },
-  "msci-emerging": { name: "MSCI Emerging", color: "#6B0504" },
-  dow: { name: "Dow Jones Industrial", color: "#817F82" },
+  dax: { name: "DAX", color: "#ffd25a" },
+  nasdaq: { name: "NASDAQ", color: "#d72483" },
+  "msci-world": { name: "MSCI World", color: "#6457a6" },
+  "msci-emerging": { name: "MSCI Emerging", color: "#3185fc" },
+  dow: { name: "Dow Jones Industrial", color: "#16db93" },
 };
 
 function dcIndices(startMoney = 10000, startIndex = 0) {
