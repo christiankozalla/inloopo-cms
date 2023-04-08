@@ -3,6 +3,8 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import HeroShot from "../../components/HeroShot.astro";
 import LeiChart from "../../components/LeiChart.astro";
+import Button from "../../components/Button.astro";
+import ShareButton from "../../components/ShareButton.astro";
 
 //import
 import "../../styles/styles.css";
@@ -31,6 +33,21 @@ import "../../styles/styles.css";
       target: "_blank",
     }}
   />
-
+ 
+  <h2 class="align-center">inloopo Konjunkturzyklus Tool mit US Leading Economic Index (YoY)</h2>
+  <ShareButton 
+    facebookLink="https://www.facebook.com/sharer/sharer.php?u=https://www.inloopo.com/de/konjunkturzyklus/"
+    linkedinLink="https://www.linkedin.com/shareArticle?mini=true&url=https://www.inloopo.com/de/konjunkturzyklus/"
+    twitterLink="https://twitter.com/share?url=https://www.inloopo.com/de/konjunkturzyklus/"
+  />
   <LeiChart />
+  <div class="wrapper-content-blog">
+    <p>Mit dem inloopo Konjunkturzyklus-Tool kannst du die aktuelle Konjunkturphase bestimmen. Dieses Wissen hilft dir, das Risiko deiner Investitionen zu steuern.</p>
+      <p>Zudem kannst du auf Basis der Konjunkturphasen eine ETF-Strategie mit Sektor-ETFs anwenden. Denn in jeder Konjunkturphase gibt es 1 bis 3 Aktiensektoren, die sich besser entwickeln sollten als der Gesamtmarkt.</p>
+      <p>Erfahre mehr über die Sektorrotation in meinem Tool.</p>
+  </div>
+  <Button 
+  link="http://localhost:3000/de/sektorrotation/"
+  text="Geh zur Sektorrotation"
+  />
 </MainLayout>
