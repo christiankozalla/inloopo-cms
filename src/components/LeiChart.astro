@@ -13,20 +13,12 @@ const { data, phase } = leiData.fields;
 ---
 
 <div>
-  <h2 class="leichart__heading">inloopo Konjunkturzyklus Tool mit US Leading Economic Index (YoY)</h2>
   <div id="main" data-y-axis={data}></div>
   <p style="text-align: center; margin: 0; padding: 0"><strong>Aktuelle Konjunkturphase: {phase}</strong></p>
   <style>
     #main {
       width: 100%;
       min-height: 300px;
-    }
-
-    .leichart__heading {
-    text-align: center;
-    width: 60%;
-    margin: 0 auto 20px auto;
-    padding:  0 24px;
     }
 
     @media only screen and (min-width: 480px) {
