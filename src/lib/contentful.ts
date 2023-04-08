@@ -14,7 +14,8 @@ const contentfulClient = contentful.createClient({
 
 const renderOptions = {
   renderNode: {
-    [BLOCKS.TABLE]: (node: any, children: any) => `<div class="article__table"><table>${children(node.content)}</table></div>`,
+    [BLOCKS.TABLE]: (node: any, children: any) =>
+      `<div class="article__table"><table>${children(node.content)}</table></div>`,
     [BLOCKS.UL_LIST]: (node: any, children: any) => `<ul class="article__list">${children(node.content)}</ul>`,
     [BLOCKS.OL_LIST]: (node: any, children: any) => `<ol class="article__list">${children(node.content)}</ol>`,
     [BLOCKS.HEADING_2]: (node: any, _children: any) => {

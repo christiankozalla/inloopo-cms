@@ -270,7 +270,6 @@ p {
   text-align: center;
 }
 
-
 /* ---------------------------------*\
     #BREADCRUMBS
 \* ---------------------------------*/
@@ -2200,10 +2199,10 @@ textarea[type="text"]:focus {
     #TOC
 \* ---------------------------------*/
 
-.toc {
-  display: none !important;
-  animation: none !important;
-}
+  .toc {
+    display: none !important;
+    animation: none !important;
+  }
 
   /*
 #toc__toggle-button:checked ~ ol {
