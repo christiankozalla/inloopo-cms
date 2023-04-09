@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && chmod +x ./scripts/after-build.sh && ./scripts/after-build.sh",
     "preview": "astro preview",
     "format": "prettier --write ."
   },

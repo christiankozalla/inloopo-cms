@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
+
+// https://astro.build/config
 import sitemap from "@astrojs/sitemap";
-import { processCustomAssets } from "./scripts/process-custom-assets";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,6 +11,5 @@ export default defineConfig({
     sitemap({
       filter: (page) => page !== "https://www.inloopo.com/de/vielen-dank/",
     }),
-    processCustomAssets,
   ],
 });
