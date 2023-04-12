@@ -4,13 +4,7 @@ const { author, published, url } = Astro.props;
 
 <div class="article__info-box">
   <div class="article__info">
-    <img
-      class="article__info--img"
-      src={author.avatar.fields.file.url}
-      alt="Philipp Kozalla"
-      width="80"
-      height="80"
-    />
+    <img class="article__info--img" src={author.avatar.fields.file.url} alt="Philipp Kozalla" width="80" height="80" />
     <p class="article__info--details">{author.name}<br />{published}</p>
   </div>
   <div class="animated_share">
