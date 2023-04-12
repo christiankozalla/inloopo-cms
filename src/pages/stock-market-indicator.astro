@@ -1,0 +1,54 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroShot from "../components/HeroShot.astro";
+import ShareButton from "../components/ShareButton.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout
+  title="Stock market indicator as a tool"
+  description="Check the current status of the inloopo stock market indicator."
+  opengraph={{
+    description: "See the currents status of the inloopo stock market indicator",
+    locale: "en",
+    type: "website",
+    url: "https://www.inloopo.com/stock-market-indicator/",
+    image: "https://www.inloopo.com/images/inloopo-boersenampel-stand-og.jpg",
+  }}
+  lang="en"
+  canonical="https://www.inloopo.com/stock-market-indicator/">
+  <!-- TEASER -->
+  <HeroShot
+    title="Stock market indicator"
+    description="Every Sunday at 6pm I publish the current status of the inloopo stock market indicator. Join my Telegram channel and get the inloopo stock market indicator directly on your mobile phone. You can also ask questions and view all past signals."
+    backgroundImageClass="main-teaser__page-boersenampel"
+    button={{
+      target: "_blank",
+      href: "https://t.me/+Km1-SZkNz-s2ZWRi",
+      text: "Join for free"
+    }}
+     withIcon={true}
+  />
+
+  <div class="wrapper-content-blog">
+    <h2 class="align-center">Current status of the stock market indicator</h2>
+    <ShareButton 
+    facebookLink="https://www.facebook.com/sharer/sharer.php?u=https://www.inloopo.com/stock-market-indicator/"
+    linkedinLink="https://www.linkedin.com/shareArticle?mini=true&url=https://www.inloopo.com/stock-market-indicator/"
+    twitterLink="https://twitter.com/share?url=https://www.inloopo.com/stock-market-indicator/"
+    />
+    <boersenampel-status></boersenampel-status>
+    <h2 class="align-center">What is the inloopo stock market indicator?</h2>
+    <p>
+      The <a class="link" href="https://www.inloopo.com/de/anlagestrategien/inloopo-boersenampel/">inloopo stock market indicator</a> shows a fundamental analysis of the US stock market (S&P 500 Index) every Sunday. Based on that, various strategies can be implemented, such as a conservative ETF strategy with the inloopo signal service. However, the stock market indicator can also be used for option strategies or futures swing trading.
+    </p>
+    <p>Look at the performance of the inloopo signal service as an ETF strategy.</p>
+    <Button 
+    link="https://www.inloopo.com/de/investieren/"
+    text="See the signal service"
+    />
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="/scripts/boersenampel-status.js"></script>
+</MainLayout>
