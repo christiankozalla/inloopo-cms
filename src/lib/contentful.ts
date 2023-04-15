@@ -1,4 +1,5 @@
-import contentful from "contentful";
+import * as contentful from "contentful";
+import type { EntryFields, Entry, Asset } from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import type { Document } from "@contentful/rich-text-types";
@@ -41,10 +42,9 @@ const renderOptions = {
             src='https:${node.data.target.fields.file.url}'
             alt='${node.data.target.fields.description?.replace("[caption]", "") || ""}'
             loading='lazy'>
-        ${
-          node.data.target.fields.description?.startsWith("[caption]")
-            ? figcaptionWithParsedMarkdownLink(node.data.target.fields.description?.replace("[caption]", ""))
-            : ""
+        ${node.data.target.fields.description?.startsWith("[caption]")
+          ? figcaptionWithParsedMarkdownLink(node.data.target.fields.description?.replace("[caption]", ""))
+          : ""
         }
         </figure>
       `;
@@ -109,15 +109,21 @@ function renderTocHeadline(node: Node<TocHeadline>) {
 }
 
 interface Post {
-  title: string;
-  slug: string;
-  category: string;
-  published?: string;
-  description?: string;
-  seoDescription?: string;
+  title: EntryFields.Text;
+  slug: EntryFields.Text;
+  category: EntryFields.Text;
+  published?: EntryFields.Date;
+  description?: EntryFields.Text;
+  seoDescription?: EntryFields.Text;
   body: Document;
-  author: { fields: { name: string; avatar?: object; bio?: string } };
-  heroImage?: Record<string, any>;
+  author: Entry<Author>;
+  heroImage?: Asset;
+}
+
+interface Author {
+  name: EntryFields.Text;
+  avatar?: Asset;
+  bio?: EntryFields.Text;
 }
 
 interface Node<T> {

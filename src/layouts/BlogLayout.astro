@@ -27,7 +27,7 @@ const { title, opengraph, canonical = new URL(Astro.url.pathname, Astro.site) } 
 ---
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang={opengraph?.locale || "de"}>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />

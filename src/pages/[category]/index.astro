@@ -1,36 +1,37 @@
 ---
 import type { Entry } from "contentful";
-import MainLayout from "../../../layouts/MainLayout.astro";
-import Breadcrumbs from "../../../components/Breadcrumbs.astro";
-import { contentfulClient } from "../../../lib/contentful";
-import type { Post } from "../../../lib/contentful";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { contentfulClient } from "../../lib/contentful";
+import type { Post } from "../../lib/contentful";
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<Post>({
-    content_type: "post",
+    content_type: "englishPost",
     order: "-fields.published",
   });
+
   return [
     {
-      params: { category: "finanzwissen" },
+      params: { category: "financial-literacy" },
       props: {
-        title: "Artikel rund ums Basiswissen für dein Investment",
+        title: "Articles about the basics of investing",
         description:
-          "Du willst dein Geld anlegen. Du weißt zu wenig wie du aktiv und strategisch investieren kannst. Dann hier lang.",
-        headline: "Kernkompetenzen für erfolgreiches Investieren",
-        copy: "Hier findest du essentielles Wissen.",
-        items: entries.items.filter((item) => item.fields.category === "finanzwissen"),
+          "You want to invest money. But you need to know how to invest smart and strategically. You're in the right place here.",
+        headline: "Fundamentals for successful investing",
+        copy: "You'll find essential knowledge here.",
+        items: entries.items.filter((item) => item.fields.category === "financial-literacy"),
       },
     },
     {
-      params: { category: "anlagestrategien" },
+      params: { category: "investment-strategies" },
       props: {
-        title: "Alle Artikel zum Thema Strategie zum Investieren",
+        title: "All blog articles about investing strategically",
         description:
-          "Du willst wissen we du strategisch investierst. Du findest auf dieser Seite Beiträge genau zu diesem Thema.",
-        headline: "Investieren mit Strategie",
-        copy: "Alle Blogeinträge zum Thema strategisches Investieren findest du hier.",
-        items: entries.items.filter((item) => item.fields.category === "anlagestrategien"),
+          "You want to invest money. But you need to know how to invest smart and strategically. You're in the right place here.",
+        headline: "Investing strategically",
+        copy: "All blog articles about investing strategically can be found here.",
+        items: entries.items.filter((item) => item.fields.category === "investment-strategies"),
       },
     },
   ];
@@ -39,7 +40,18 @@ const items: Entry<Post>[] = Astro.props.items;
 const { headline, copy, title, description } = Astro.props;
 ---
 
-<MainLayout title={title} description={description} lang="de">
+<MainLayout
+  title={title}
+  description={description}
+  lang="en"
+  opengraph={{
+    title,
+    description,
+    locale: "en",
+    type: "website",
+    url: "https://www.inloopo.com/blog/",
+    image: "https://www.inloopo.com/images/blog-og.jpg",
+  }}>
   <main>
     <div class="box--orange-background">
       <div class="wrapper-content">
@@ -57,7 +69,7 @@ const { headline, copy, title, description } = Astro.props;
         items.map((item) => (
           <article class="article-card">
             {item.fields.heroImage?.fields.file.url && (
-              <a class="link__blog img-wrapper" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+              <a class="link__blog img-wrapper" href={`/${item.fields.category}/${item.fields.slug}`}>
                 <img
                   src={item.fields.heroImage?.fields.file.url}
                   alt={item.fields.heroImage.fields.title}
@@ -67,13 +79,13 @@ const { headline, copy, title, description } = Astro.props;
             )}
             <div class="article-card__details">
               {item.fields.published && (
-                <h6 class="blog__date">{new Date(item.fields.published).toLocaleDateString("de-DE")}</h6>
+                <h6 class="blog__date">{new Date(item.fields.published).toLocaleDateString("en-GB")}</h6>
               )}
-              <a class="link__blog" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+              <a class="link__blog" href={`/${item.fields.category}/${item.fields.slug}`}>
                 <h2>{item.fields.title}</h2>
               </a>
               <p>{item.fields.description}</p>
-              <a class="link" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+              <a class="link" href={`/${item.fields.category}/${item.fields.slug}`}>
                 Zum Artikel
               </a>
             </div>
