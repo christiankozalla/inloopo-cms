@@ -15,22 +15,22 @@ export async function getStaticPaths() {
     {
       params: { category: "financial-literacy" },
       props: {
-        title: "Articles about the basics of investing",
+        title: "Blog posts that cover basic knowledge on how to invest successfully",
         description:
-          "You want to invest money. But you need to know how to invest smart and strategically. You're in the right place here.",
-        headline: "Fundamentals for successful investing",
-        copy: "You'll find essential knowledge here.",
+          "You want to invest your money. You don't know enough about how to invest actively and strategically. Then come along.",
+        headline: "Core competencies for successful investing",
+        copy: "Here you will find essential knowledge.",
         items: entries.items.filter((item) => item.fields.category === "financial-literacy"),
       },
     },
     {
       params: { category: "investment-strategies" },
       props: {
-        title: "All blog articles about investing strategically",
+        title: "Blog posts on investment strategies",
         description:
-          "You want to invest money. But you need to know how to invest smart and strategically. You're in the right place here.",
-        headline: "Investing strategically",
-        copy: "All blog articles about investing strategically can be found here.",
+          "You want to know how to invest strategically. On this page you will find posts on this topic.",
+        headline: "Investing with a strategy",
+        copy: "You can find all blog posts on the topic of strategic investing here.",
         items: entries.items.filter((item) => item.fields.category === "investment-strategies"),
       },
     },
