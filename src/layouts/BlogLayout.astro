@@ -8,6 +8,7 @@ import "../styles/styles.css";
 
 interface Props {
   title: string;
+  locale: "de" | "en";
   opengraph?: {
     title: string;
     url: string;
@@ -23,11 +24,11 @@ interface Props {
   canonical?: string;
 }
 
-const { title, opengraph, canonical = new URL(Astro.url.pathname, Astro.site) } = Astro.props;
+const { title, opengraph, locale, canonical = new URL(Astro.url.pathname, Astro.site) } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang={opengraph?.locale || "de"}>
+<html lang={locale || opengraph?.locale || "de"}>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -87,11 +88,11 @@ const { title, opengraph, canonical = new URL(Astro.url.pathname, Astro.site) } 
   <body>
     <ReadingProgress />
     <div class="wrapper">
-      <Navbar lang="de" />
+      <Navbar lang={locale} />
       <main class="wrapper-content-blog">
         <slot />
       </main>
     </div>
-    <Footer lang="de" />
+    <Footer lang={locale} />
   </body>
 </html>
