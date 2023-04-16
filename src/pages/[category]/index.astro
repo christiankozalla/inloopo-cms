@@ -27,8 +27,7 @@ export async function getStaticPaths() {
       params: { category: "investment-strategies" },
       props: {
         title: "Blog posts on investment strategies",
-        description:
-          "You want to know how to invest strategically. On this page you will find posts on this topic.",
+        description: "You want to know how to invest strategically. On this page you will find posts on this topic.",
         headline: "Investing with a strategy",
         copy: "You can find all blog posts on the topic of strategic investing here.",
         items: entries.items.filter((item) => item.fields.category === "investment-strategies"),

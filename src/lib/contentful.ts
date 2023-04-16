@@ -42,9 +42,10 @@ const renderOptions = {
             src='https:${node.data.target.fields.file.url}'
             alt='${node.data.target.fields.description?.replace("[caption]", "") || ""}'
             loading='lazy'>
-        ${node.data.target.fields.description?.startsWith("[caption]")
-          ? figcaptionWithParsedMarkdownLink(node.data.target.fields.description?.replace("[caption]", ""))
-          : ""
+        ${
+          node.data.target.fields.description?.startsWith("[caption]")
+            ? figcaptionWithParsedMarkdownLink(node.data.target.fields.description?.replace("[caption]", ""))
+            : ""
         }
         </figure>
       `;

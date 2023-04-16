@@ -13,24 +13,26 @@ export async function getStaticPaths() {
     content_type: "englishPost",
   });
 
-  return entries.items.map((item) => ({
-    params: { category: item.fields.category, slug: item.fields.slug },
-    props: {
-      title: item.fields.title,
-      body: documentToHtmlString(item.fields.body, renderOptions),
-      date: item.fields.published ? new Date(item.fields.published).toLocaleDateString("en-GB") : null,
-      author: item.fields.author.fields,
-      heroImage: {
-        url: item.fields.heroImage?.fields.file.url.startsWith("//")
-          ? "https:" + item.fields.heroImage?.fields.file.url
-          : item.fields.heroImage?.fields.file.url,
-        height: item.fields.heroImage?.fields?.file?.details?.image?.height,
-        width: item.fields.heroImage?.fields?.file?.details?.image?.width,
+  return entries.items
+    .filter((item) => item.fields.slug && item.fields.category)
+    .map((item) => ({
+      params: { category: item.fields.category, slug: item.fields.slug },
+      props: {
+        title: item.fields.title,
+        body: documentToHtmlString(item.fields.body, renderOptions),
+        date: item.fields.published ? new Date(item.fields.published).toLocaleDateString("en-GB") : null,
+        author: item.fields.author.fields,
+        heroImage: {
+          url: item.fields.heroImage?.fields.file.url.startsWith("//")
+            ? "https:" + item.fields.heroImage?.fields.file.url
+            : item.fields.heroImage?.fields.file.url,
+          height: item.fields.heroImage?.fields?.file?.details?.image?.height,
+          width: item.fields.heroImage?.fields?.file?.details?.image?.width,
+        },
+        seoDescription: item.fields.seoDescription,
+        lang: "en",
       },
-      seoDescription: item.fields.seoDescription,
-      lang: "en"
-    },
-  }));
+    }));
 }
 
 const { title, date, body, author, heroImage, seoDescription, lang } = Astro.props;

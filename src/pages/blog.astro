@@ -33,7 +33,7 @@ const entries = await contentfulClient.getEntries<Post>({
   <div class="grid">
     {
       entries.items.map((item) => (
-          <article class="article-card">
+        <article class="article-card">
           {item.fields.heroImage?.fields.file.url && (
             <a class="link__blog img-wrapper" href={`/${item.fields.category}/${item.fields.slug}`}>
               <img
@@ -52,7 +52,7 @@ const entries = await contentfulClient.getEntries<Post>({
             </a>
             <p>{item.fields.description}</p>
             <a class="link" href={`/${item.fields.category}/${item.fields.slug}`}>
-                Read the article
+              Read the article
             </a>
           </div>
         </article>
