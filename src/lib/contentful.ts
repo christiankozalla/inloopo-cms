@@ -1,4 +1,4 @@
-import * as contentful from "contentful";
+import contentful from "contentful";
 import type { EntryFields, Entry, Asset } from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
