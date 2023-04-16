@@ -1,0 +1,70 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogTableOfContents from "../../components/BlogTableOfContents.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Author from "../../components/Author.astro";
+import BlogFeedback from "../../components/BlogFeedback.astro";
+import { contentfulClient, renderOptions } from "../../lib/contentful";
+import type { Post } from "../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+
+export async function getStaticPaths() {
+  const entries = await contentfulClient.getEntries<Post>({
+    content_type: "post",
+  });
+  return entries.items.map((item) => ({
+    params: { category: item.fields.category, slug: item.fields.slug },
+    props: {
+      title: item.fields.title,
+      body: documentToHtmlString(item.fields.body, renderOptions),
+      date: item.fields.published ? new Date(item.fields.published).toLocaleDateString("de-DE") : null,
+      author: item.fields.author.fields,
+      heroImage: {
+        url: item.fields.heroImage?.fields.file.url.startsWith("//")
+          ? "https:" + item.fields.heroImage?.fields.file.url
+          : item.fields.heroImage?.fields.file.url,
+        height: item.fields.heroImage?.fields.file.details.image.height,
+        width: item.fields.heroImage?.fields.file.details.image.width,
+      },
+      seoDescription: item.fields.seoDescription,
+    },
+  }));
+}
+
+const { title, date, body, author, heroImage, seoDescription } = Astro.props;
+const { category, slug } = Astro.params as { category: string; slug: string };
+const url = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<BlogLayout
+  title={title}
+  opengraph={{ title, url, locale: "en", image: heroImage, description: seoDescription, type: "article" }}>
+  <BlogTableOfContents />
+  <Breadcrumbs title={title} category={category} slug={slug} />
+  <h1 class="article__main-heading">{title}</h1>
+  <Author author={author} published={date} url={url} />
+  <article set:html={body} />
+  <BlogFeedback />
+  <style is:inline>
+    article a {
+      color: #ff6b35;
+      text-decoration: none;
+    }
+
+    article a:hover {
+      border-bottom: 1px solid #ff6b35;
+      padding-bottom: 4px;
+    }
+
+    .article__table {
+      overflow-x: auto;
+      margin-bottom: 24px;
+    }
+
+    @media only screen and (max-width: 40em) {
+      .article__table {
+        text-align: center;
+      }
+    }
+  </style>
+</BlogLayout>
