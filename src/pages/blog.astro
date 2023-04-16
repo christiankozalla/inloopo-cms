@@ -1,30 +1,32 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
-import { contentfulClient } from "../../lib/contentful.js";
-import type { Post } from "../../lib/contentful.js";
+import MainLayout from "../layouts/MainLayout.astro";
+import { contentfulClient } from "../lib/contentful.js";
+import type { Post } from "../lib/contentful.js";
 
 const entries = await contentfulClient.getEntries<Post>({
-  content_type: "post",
+  content_type: "englishPost",
   order: "-fields.published",
 });
 ---
 
 <MainLayout
-  title="Alle Blogartikel im Überblick"
-  description="Du willst wissen, wie du dein Geld anlegen kannst. Manche Ding verstehst du noch nicht. In meinem Blog erkläre ich es dir."
-  lang="de"
+  title="All blog posts"
+  description="You want to know how to invest your money. There are things you don't understand yet. I'll explain it to you in my blog."
+  lang="en"
   opengraph={{
-    description: "Lese und lerne zu investieren",
-    locale: "de",
+    description: "Read and learn how to invest",
+    locale: "en",
     type: "website",
-    url: "https://www.inloopo.com/de/blog/",
+    url: "https://www.inloopo.com/blog/",
     image: "https://www.inloopo.com/images/blog-og.jpg",
   }}>
   <div class="box--orange-background">
     <div class="wrapper-content">
-      <h1 class="main-teaser__heading--center main-teaser__heading-one--mobile">Investieren lernen. So gehts.</h1>
+      <h1 class="main-teaser__heading--center main-teaser__heading-one--mobile">
+        Learn to invest. This is how it works.
+      </h1>
       <p class="main-teaser__text--center p--bigger">
-        In meinem Blog findest du Antworten, Anleitungen, Wissen und Erfahrung.
+        In my blog you will find answers, instructions, knowledge and experience.
       </p>
     </div>
   </div>
@@ -33,7 +35,7 @@ const entries = await contentfulClient.getEntries<Post>({
       entries.items.map((item) => (
         <article class="article-card">
           {item.fields.heroImage?.fields.file.url && (
-            <a class="link__blog img-wrapper" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+            <a class="link__blog img-wrapper" href={`/${item.fields.category}/${item.fields.slug}`}>
               <img
                 src={item.fields.heroImage?.fields.file.url}
                 alt={item.fields.heroImage.fields.title}
@@ -43,14 +45,14 @@ const entries = await contentfulClient.getEntries<Post>({
           )}
           <div class="article-card__details">
             {item.fields.published && (
-              <h6 class="blog__date">{new Date(item.fields.published).toLocaleDateString("de-DE")}</h6>
+              <h6 class="blog__date">{new Date(item.fields.published).toLocaleDateString("en-GB")}</h6>
             )}
-            <a class="link__blog" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+            <a class="link__blog" href={`/${item.fields.category}/${item.fields.slug}`}>
               <h2>{item.fields.title}</h2>
             </a>
             <p>{item.fields.description}</p>
-            <a class="link" href={`/de/${item.fields.category}/${item.fields.slug}`}>
-              Zum Artikel
+            <a class="link" href={`/${item.fields.category}/${item.fields.slug}`}>
+              Read the article
             </a>
           </div>
         </article>

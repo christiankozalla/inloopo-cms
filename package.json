@@ -1,5 +1,5 @@
 {
-  "name": "@example/blog",
+  "name": "inloopo",
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
@@ -19,7 +19,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^1.0.1",
     "@contentful/rich-text-html-renderer": "16.0.2",
-    "contentful": "10.0.0-beta-v10.11",
+    "contentful": "^9",
     "echarts": "^5.4.2"
   },
   "prettier": {
