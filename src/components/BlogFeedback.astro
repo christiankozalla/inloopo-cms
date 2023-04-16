@@ -1,5 +1,35 @@
-<div class="rating">
-  <h2 class="article__heading-two rating__heading">Wie hat dir der Artikel gefallen?</h2>
+---
+interface Props {
+  lang: "de" | "en";
+}
+
+interface Content {
+  heading: string;
+  feedbackHeading: string;
+  feedbackPlaceholder: string;
+  submitBtn: string;
+}
+
+const content: Record<Props["lang"], Content> = {
+  de: {
+    heading: "Wie hat dir der Artikel gefallen?",
+    feedbackHeading: "Was können wir besser machen?",
+    feedbackPlaceholder: "Dein Feedback.",
+    submitBtn: "Senden",
+  },
+  en: {
+    heading: "How did you like the article?",
+    feedbackHeading: "What can we do better?",
+    feedbackPlaceholder: "Your feedback.",
+    submitBtn: "Send",
+  },
+};
+
+const { lang } = Astro.props;
+---
+
+<div class={`rating rating__locale--${lang}`}>
+  <h2 class="article__heading-two rating__heading">{content[lang].heading}</h2>
   <form action="https://formsubmit.co/info@inloopo.com" method="post">
     <div class="rating__stars">
       <input type="radio" id="five" name="rate" value="5" />
@@ -15,9 +45,170 @@
       <span class="rating__result"></span>
     </div>
     <div class="rating__feedback">
-      <label class="rating__feedback-heading" for="nachricht">Was können wir besser machen?</label>
-      <textarea class="rating__feedback-text" placeholder="Dein Feedback." name="text"></textarea>
-      <input class="rating__submit-btn" id="Senden" type="submit" name="submit" value="Senden" />
+      <label class="rating__feedback-heading" for="nachricht">{content[lang].feedbackHeading}</label>
+      <textarea class="rating__feedback-text" placeholder={content[lang].feedbackPlaceholder} name="text"></textarea>
+      <input class="rating__submit-btn" id="Senden" type="submit" name="submit" value={content[lang].submitBtn} />
     </div>
   </form>
 </div>
+
+<style>
+  .rating {
+    width: 100%;
+  }
+
+  .rating__heading {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .rating,
+  .rating__feedback {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rating__stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  .rating__stars input {
+    display: none;
+  }
+
+  .rating__stars label {
+    font-size: 80px;
+    color: lightgrey;
+  }
+
+  .rating__stars label:before {
+    content: "☆";
+  }
+
+  .rating__stars input:checked ~ label {
+    color: var(--accent-color);
+  }
+
+  .rating__stars:not(:checked) > label:hover,
+  .rating__stars:not(:checked) > label:hover ~ label {
+    color: var(--accent-color);
+  }
+
+  .rating__stars input:checked > label:hover,
+  .rating__stars input:checked > label:hover ~ label {
+    color: var(--accent-color);
+  }
+
+  .rating__result:before {
+    text-align: center;
+    margin-bottom: 20px;
+    content: "";
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--accent-color);
+    display: none;
+    position: absolute;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  .rating__stars input:checked ~ .rating__result:before {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .rating__locale--de .rating__stars #five:checked ~ .rating__result:before {
+    content: "Es ist großartig!";
+  }
+
+  .rating__locale--de .rating__stars #four:checked ~ .rating__result:before {
+    content: "Gefällt mir!";
+  }
+
+  .rating__locale--de .rating__stars #three:checked ~ .rating__result:before {
+    content: "Ist ganz ok.";
+  }
+
+  .rating__locale--de .rating__stars #two:checked ~ .rating__result:before {
+    content: "Ich finds eher schlecht.";
+  }
+
+  .rating__locale--de .rating__stars #one:checked ~ .rating__result:before {
+    content: "Geht gar nicht.";
+  }
+
+  /* English */
+  .rating__locale--en .rating__stars #five:checked ~ .rating__result:before {
+    content: "It's awesome!";
+  }
+
+  .rating__locale--en .rating__stars #four:checked ~ .rating__result:before {
+    content: "I like it!";
+  }
+
+  .rating__locale--en .rating__stars #three:checked ~ .rating__result:before {
+    content: "It's okay.";
+  }
+
+  .rating__locale--en .rating__stars #two:checked ~ .rating__result:before {
+    content: "I find it rather bad.";
+  }
+
+  .rating__locale--en .rating__stars #one:checked ~ .rating__result:before {
+    content: "Not at all.";
+  }
+  .rating__submit-btn {
+    color: #fff;
+    background: #ff6b35;
+    border: 2px solid #ff6b35;
+    padding: 15px 20px;
+    text-decoration: none;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-size: 1.25rem;
+    font-family: "QuattrocentoSans", Arial, Helvetica, sans-serif;
+    width: 100%;
+  }
+
+  .rating__submit-btn:hover {
+    background: #fff;
+    color: #ff6b35;
+    border: 2px solid #ff6b35;
+  }
+
+  .rating__feedback-heading {
+    font-size: 24px;
+    margin-top: 28px;
+    margin-bottom: 20px;
+    font-family: "Cera Pro", Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+
+  .rating__feedback-text {
+    padding: 8px;
+    font-size: 16px;
+    font-family: "QuattrocentoSans", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    height: 200px;
+    width: 100%;
+  }
+
+  .rating__feedback-text:hover,
+  .rating__feedback-text:focus {
+    border: 1px solid var(--accent-color);
+  }
+
+  textarea[type="text"] {
+    border: 1px solid var(--text-color);
+  }
+
+  textarea[type="text"]:focus {
+    border: 2px solid var(--accent-color);
+  }
+</style>
