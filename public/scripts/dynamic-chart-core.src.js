@@ -1,5 +1,3 @@
-// Must be bundled with esbuild to resolve and inline imports
-// npx esbuild public/scripts/dynamic-chart-core.src.js --bundle --outfile=public/scripts/dynamic-chart-core.js --minify --target=es2015
 import * as echarts from "echarts/core";
 import { TooltipComponent, GridComponent, LegendComponent } from "echarts/components";
 import { LineChart } from "echarts/charts";
