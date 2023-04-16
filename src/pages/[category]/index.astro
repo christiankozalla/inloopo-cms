@@ -1,0 +1,153 @@
+---
+import type { EntryWithLinkResolutionAndWithUnresolvableLinks } from "contentful";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { contentfulClient } from "../../lib/contentful";
+import { sortPostsByDate } from "../../lib/utils";
+import type { EnglishPost } from "../../lib/contentful";
+
+export async function getStaticPaths() {
+  const entries = await contentfulClient.getEntries<EnglishPost>({
+    content_type: "post",
+  });
+  return [
+    {
+      params: { category: "financial-literacy" },
+      props: {
+        title: "Blog posts that cover basic knowledge on how to invest successfully",
+        description:
+          "You want to invest your money. You don't know enough about how to invest actively and strategically. Then come along.",
+        headline: "Core competencies for successful investing",
+        copy: "Here you will find essential knowledge.",
+        items: entries.items.filter((item) => item.fields.category === "financial-literacy").sort(sortPostsByDate),
+      },
+    },
+    {
+      params: { category: "investment-strategies" },
+      props: {
+        title: "Blog posts on investment strategies",
+        description:
+          "You want to know how to invest strategically. On this page you will find posts on this topic.",
+        headline: "Investing with a strategy",
+        copy: "You can find all blog posts on the topic of strategic investing here.",
+        items: entries.items.filter((item) => item.fields.category === "investment-strategies").sort(sortPostsByDate),
+      },
+    },
+  ];
+}
+const items: EntryWithLinkResolutionAndWithUnresolvableLinks<EnglishPost>[] = Astro.props.items;
+const { headline, copy, title, description } = Astro.props;
+---
+
+<MainLayout title={title} description={description} lang="en">
+  <main>
+    <div class="box--orange-background">
+      <div class="wrapper-content">
+        <h1 class="main-teaser__heading--center main-teaser__heading-one--mobile">{headline}</h1>
+        <p class="main-teaser__text--center p--bigger">
+          {copy}
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <Breadcrumbs category={Astro.params.category as string} />
+    </div>
+    <div class="grid container">
+      {
+        items.map((item) => (
+          <article class="article-card">
+            {item.fields.heroImage?.fields.file.url && (
+              <a class="link__blog img-wrapper" href={`/${item.fields.category}/${item.fields.slug}`}>
+                <img
+                  src={item.fields.heroImage?.fields.file.url}
+                  alt={item.fields.heroImage.fields.title}
+                  loading="lazy"
+                />
+              </a>
+            )}
+            <div class="article-card__details">
+              {item.fields.published && (
+                <h6 class="blog__date">{new Date(item.fields.published).toLocaleDateString("de-DE")}</h6>
+              )}
+              <a class="link__blog" href={`/${item.fields.category}/${item.fields.slug}`}>
+                <h2>{item.fields.title}</h2>
+              </a>
+              <p>{item.fields.description}</p>
+              <a class="link" href={`/${item.fields.category}/${item.fields.slug}`}>
+                Read more
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    <style>
+      .grid {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2em;
+        margin: 24px 12px;
+      }
+
+      @media screen and (max-width: 500px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media screen and (min-width: 501px) and (max-width: 979px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media screen and (min-width: 1200px) {
+        .container {
+          margin: 24px auto;
+          max-width: 1200px;
+        }
+      }
+      .article-card {
+        border: 1px solid #dcdcdc;
+        padding: 0;
+      }
+
+      .article-card a.img-wrapper {
+        display: block;
+        aspect-ratio: 1 / 0.657;
+      }
+
+      .article-card img {
+        min-height: 100%;
+      }
+
+      .article-card__details {
+        padding: 8%;
+      }
+
+      .link__blog {
+        text-decoration: none;
+        color: #171614;
+      }
+
+      .link__blog:hover {
+        cursor: pointer;
+      }
+
+      .link {
+        color: #ff6b35;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .link:hover {
+        border-bottom: 1px solid #ff6b35;
+        padding-bottom: 4px;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+    </style>
+  </main>
+</MainLayout>
