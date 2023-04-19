@@ -37,9 +37,10 @@ export async function getStaticPaths() {
 }
 const items: Entry<Post>[] = Astro.props.items;
 const { headline, copy, title, description } = Astro.props;
+const lang = "de";
 ---
 
-<MainLayout title={title} description={description} lang="de">
+<MainLayout title={title} description={description} lang={lang}>
   <main>
     <div class="box--orange-background">
       <div class="wrapper-content">
@@ -50,7 +51,7 @@ const { headline, copy, title, description } = Astro.props;
       </div>
     </div>
     <div class="container">
-      <Breadcrumbs category={Astro.params.category as string} />
+      <Breadcrumbs category={Astro.params.category as string} lang={lang} />
     </div>
     <div class="grid container">
       {

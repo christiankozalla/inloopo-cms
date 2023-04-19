@@ -37,12 +37,13 @@ export async function getStaticPaths() {
 }
 const items: Entry<Post>[] = Astro.props.items;
 const { headline, copy, title, description } = Astro.props;
+const lang = "en";
 ---
 
 <MainLayout
   title={title}
   description={description}
-  lang="en"
+  lang={lang}
   opengraph={{
     title,
     description,
@@ -61,7 +62,7 @@ const { headline, copy, title, description } = Astro.props;
       </div>
     </div>
     <div class="container">
-      <Breadcrumbs category={Astro.params.category as string} />
+      <Breadcrumbs category={Astro.params.category as string} lang={lang} />
     </div>
     <div class="grid container">
       {

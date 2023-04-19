@@ -45,7 +45,7 @@ const url = new URL(Astro.url.pathname, Astro.site).toString();
   locale={lang}
   opengraph={{ title, url, locale: lang, image: heroImage, description: seoDescription, type: "article" }}>
   <BlogTableOfContents />
-  <Breadcrumbs title={title} category={category} slug={slug} />
+  <Breadcrumbs title={title} category={category} slug={slug} lang={lang} />
   <h1 class="article__main-heading">{title}</h1>
   <Author author={author} published={date} url={url} />
   <article set:html={body} />

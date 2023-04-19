@@ -34,18 +34,19 @@ export async function getStaticPaths() {
 const { title, date, body, author, heroImage, seoDescription } = Astro.props;
 const { category, slug } = Astro.params as { category: string; slug: string };
 const url = new URL(Astro.url.pathname, Astro.site).toString();
+const lang = "de";
 ---
 
 <BlogLayout
   title={title}
-  locale="de"
-  opengraph={{ title, url, locale: "de", image: heroImage, description: seoDescription, type: "article" }}>
+  locale={lang}
+  opengraph={{ title, url, locale: lang, image: heroImage, description: seoDescription, type: "article" }}>
   <BlogTableOfContents />
-  <Breadcrumbs title={title} category={category} slug={slug} />
+  <Breadcrumbs title={title} category={category} slug={slug} lang={lang} />
   <h1 class="article__main-heading">{title}</h1>
   <Author author={author} published={date} url={url} />
   <article set:html={body} />
-  <BlogFeedback lang="de" />
+  <BlogFeedback lang={lang} />
   <style is:inline>
     article a {
       color: #ff6b35;
