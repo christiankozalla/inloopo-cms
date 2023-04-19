@@ -3,23 +3,29 @@ interface Props {
   title?: string;
   category: string;
   slug?: string;
+  lang: "en" | "de";
 }
-const { title, category, slug } = Astro.props;
+const { title, category, slug, lang } = Astro.props;
+const localePathSegment = lang === "de" ? "/de" : "";
+
+function displayCategory(category: string) {
+  return category.split("-").map((part) => part.slice(0, 1).toUpperCase() + part.slice(1)).join(" ");
+}
 ---
 
 <div class="breadcrumbs">
   <ul class="breadcrumbs__ul">
-    <li class="breadcrumbs__li"><a class="breadcrumbs__a" href="/de">Home</a></li>
-    <li class="breadcrumbs__li"><a class="breadcrumbs__a" href="/de/blog">Blog</a></li>
+    <li class="breadcrumbs__li"><a class="breadcrumbs__a" href={`${localePathSegment}/`}>Home</a></li>
+    <li class="breadcrumbs__li"><a class="breadcrumbs__a" href={`${localePathSegment}/blog/`}>Blog</a></li>
     <li class="breadcrumbs__li">
-      <a class={title && slug ? "breadcrumbs__a" : "breadcrumbs--active"} href={`/de/${category}`}>
-        {category.slice(0, 1).toUpperCase() + category.slice(1)}
+      <a class={title && slug ? "breadcrumbs__a" : "breadcrumbs--active"} href={`${localePathSegment}/${category}/`}>
+        {displayCategory(category)}
       </a>
     </li>
     {
       title && slug && (
         <li class="breadcrumbs__li">
-          <a class="breadcrumbs--active" href={`/de/${category}/${slug}`}>
+          <a class="breadcrumbs--active" href={`${localePathSegment}/${category}/${slug}`}>
             {title}
           </a>
         </li>
