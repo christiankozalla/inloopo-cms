@@ -1,5 +1,6 @@
 ---
 import { contentfulClient } from "../lib/contentful";
+import type { ChartData } from "../lib/contentful";
 
 declare global {
   interface Window {
@@ -7,14 +8,20 @@ declare global {
   }
 }
 
-const leiData = await contentfulClient.getEntry("3SP32kzxVgpNaKHQ1ddhI0");
+interface Props {
+  lang: "de" | "en";
+}
 
-const { data, phase } = leiData.fields;
+const leiData = await contentfulClient.getEntry<ChartData>("3SP32kzxVgpNaKHQ1ddhI0");
+
+const { data, phase, englishPhase } = leiData.fields;
+const { lang } = Astro.props;
+const caption = lang === "de" ? `Aktuelle Konjunkturphase: ${phase}` : `Current business cycle phase: ${englishPhase}`;
 ---
 
 <div>
   <div id="main" data-y-axis={data}></div>
-  <p style="text-align: center; margin: 0; padding: 0"><strong>Aktuelle Konjunkturphase: {phase}</strong></p>
+  <p style="text-align: center; margin: 0; padding: 0"><strong>{caption}</strong></p>
   <style>
     #main {
       width: 100%;

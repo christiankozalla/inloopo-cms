@@ -127,6 +127,12 @@ interface Author {
   bio?: EntryFields.Text;
 }
 
+interface ChartData {
+  phase: EntryFields.Text;
+  englishPhase: EntryFields.Text;
+  data: EntryFields.Text;
+}
+
 interface Node<T> {
   data: {
     target: {
@@ -152,4 +158,4 @@ interface TocHeadline {
 }
 
 export { contentfulClient, renderOptions };
-export type { Post };
+export type { Post, ChartData };
