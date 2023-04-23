@@ -11,6 +11,10 @@ const localePathSegment = lang === "de" ? "/de" : "";
 function displayCategory(category: string) {
   return category.split("-").map((part) => part.slice(0, 1).toUpperCase() + part.slice(1)).join(" ");
 }
+
+function hasAdditionalLinkToPost() {
+  return title && slug;
+}
 ---
 
 <div class="breadcrumbs">
@@ -18,12 +22,12 @@ function displayCategory(category: string) {
     <li class="breadcrumbs__li"><a class="breadcrumbs__a" href={`${localePathSegment}/`}>Home</a></li>
     <li class="breadcrumbs__li"><a class="breadcrumbs__a" href={`${localePathSegment}/blog/`}>Blog</a></li>
     <li class="breadcrumbs__li">
-      <a class={title && slug ? "breadcrumbs__a" : "breadcrumbs--active"} href={`${localePathSegment}/${category}/`}>
+      <a class={hasAdditionalLinkToPost() ? "breadcrumbs__a" : "breadcrumbs--active"} href={`${localePathSegment}/${category}/`}>
         {displayCategory(category)}
       </a>
     </li>
     {
-      title && slug && (
+      hasAdditionalLinkToPost() && (
         <li class="breadcrumbs__li">
           <a class="breadcrumbs--active" href={`${localePathSegment}/${category}/${slug}`}>
             {title}
