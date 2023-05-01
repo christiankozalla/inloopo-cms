@@ -499,13 +499,6 @@ p {
 }
 
 .icon__circle {
-  border: 6px solid var(--accent-color);
-  border-radius: 50%;
-  width: 350px;
-  height: 350px;
-}
-
-.icon__circle {
   display: flex;
   justify-content: center;
   justify-items: center;
