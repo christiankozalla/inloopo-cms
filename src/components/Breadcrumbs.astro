@@ -9,7 +9,10 @@ const { title, category, slug, lang } = Astro.props;
 const localePathSegment = lang === "de" ? "/de" : "";
 
 function displayCategory(category: string) {
-  return category.split("-").map((part) => part.slice(0, 1).toUpperCase() + part.slice(1)).join(" ");
+  return category
+    .split("-")
+    .map((part) => part.slice(0, 1).toUpperCase() + part.slice(1))
+    .join(" ");
 }
 
 function hasAdditionalLinkToPost() {
@@ -22,7 +25,9 @@ function hasAdditionalLinkToPost() {
     <li class="breadcrumbs__li"><a class="breadcrumbs__a" href={`${localePathSegment}/`}>Home</a></li>
     <li class="breadcrumbs__li"><a class="breadcrumbs__a" href={`${localePathSegment}/blog/`}>Blog</a></li>
     <li class="breadcrumbs__li">
-      <a class={hasAdditionalLinkToPost() ? "breadcrumbs__a" : "breadcrumbs--active"} href={`${localePathSegment}/${category}/`}>
+      <a
+        class={hasAdditionalLinkToPost() ? "breadcrumbs__a" : "breadcrumbs--active"}
+        href={`${localePathSegment}/${category}/`}>
         {displayCategory(category)}
       </a>
     </li>

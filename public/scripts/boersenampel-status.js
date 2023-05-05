@@ -1,9 +1,10 @@
 class BoersenampelStatus extends HTMLElement {
   latest = {};
-  chatId = { // channel IDs
+  chatId = {
+    // channel IDs
     en: -1001869699916,
     de: -1001657145651,
-  }
+  };
   lang = "de";
   constructor() {
     super();
@@ -61,7 +62,7 @@ class BoersenampelStatus extends HTMLElement {
     // Filter posts by language
     const postsInLang = results.filter((item) => {
       const [type] = Object.keys(item).filter((key) => key !== "update_id");
-      return item[type].forward_from_chat?.id === this.chatId[this.lang]
+      return item[type].forward_from_chat?.id === this.chatId[this.lang];
     });
 
     // Find latest post
@@ -75,7 +76,8 @@ class BoersenampelStatus extends HTMLElement {
     // Assign latest post to this.latest looking for one of these post types (we don't know ahead of time)
     const types = ["message", "channel_post", "edited_message", "edited_channel_post"];
 
-    this.latest[lang] = foundLatest[types.find((type) => Object.prototype.hasOwnProperty.call(foundLatest, type)) || ""]; 
+    this.latest[lang] =
+      foundLatest[types.find((type) => Object.prototype.hasOwnProperty.call(foundLatest, type)) || ""];
   }
 }
 

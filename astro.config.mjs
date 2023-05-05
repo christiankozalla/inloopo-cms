@@ -8,7 +8,8 @@ export default defineConfig({
   output: "static",
   integrations: [
     sitemap({
-      filter: (page) => page !== "https://www.inloopo.com/de/vielen-dank/",
+      filter: (page) =>
+        page !== "https://www.inloopo.com/de/vielen-dank/" && page !== "https://www.inloopo.com/de/thank-you/",
     }),
     processCustomAssets,
   ],
