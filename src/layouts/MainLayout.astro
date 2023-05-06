@@ -19,10 +19,11 @@ interface Props {
     locale: string;
   };
   canonical?: string;
+  noIndex?: boolean;
 }
 
 // props
-const { title, description, opengraph = "", lang, canonical = "" } = Astro.props;
+const { title, description, opengraph = "", lang, canonical = "", noIndex = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -34,6 +35,7 @@ const { title, description, opengraph = "", lang, canonical = "" } = Astro.props
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noIndex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow" />}
 
     {
       opengraph && (
