@@ -2,6 +2,7 @@
 //import component and layout
 import MainLayout from "../layouts/MainLayout.astro";
 import HeroShot from "../components/HeroShot.astro";
+import Software from "../components/Software.astro";
 import QualiCard from "../components/QualiCard.astro";
 import BenefitCard from "../components/BenefitCard.astro";
 import BackgroundImage from "../components/BackgroundImage.astro";
@@ -33,6 +34,7 @@ import "../styles/styles.css";
     }}
     backgroundImageClass="main-teaser__homepage"
   />
+
 
   <!-- BENEFITS -->
   <BenefitCard
@@ -76,6 +78,16 @@ import "../styles/styles.css";
     }}
     backgroundImageClass="secondary-teaser__image--philipp"
   />
+
+   <!-- SOFTWARE AND TOOLS -->
+   <section>
+   <div class="wrapper-content">
+   <Software 
+   heading="Tools I work with"
+   />
+   </div>
+  </section>
+
   <!-- QUALIFICATIONS -->
   <div class="wrapper-content">
     <div class="row">

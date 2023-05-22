@@ -1,0 +1,30 @@
+---
+const { heading } = Astro.props;
+---
+
+<h2 class="tools__heading">{ heading }</h2>
+<div class="grid__tools">
+    <img src="/images/Logo_Finviz.png">
+    <img src="/images/Logo_InteractiveBrokers.jpg">
+    <img src="/images/Logo_SierraChart.png">
+    <img src="/images/Logo_Tradesviz.png">
+    <img src="/images/Logo_TradingView.png">
+    <img src="/images/Logo_Aktienfinder.png">
+    <img src="/images/NinjaTrader_NTE_BO_RGB.svg">
+</div>
+
+<style>
+    .grid__tools {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+       
+    }
+
+    .tools__heading {
+        text-align: center;
+        margin-top: 90px;
+    }
+</style>
