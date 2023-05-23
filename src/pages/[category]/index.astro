@@ -33,6 +33,16 @@ export async function getStaticPaths() {
         items: entries.items.filter((item) => item.fields.category === "investment-strategies"),
       },
     },
+    {
+      params: { category: "stocks-analysis" },
+      props: {
+        title: "Blog posts on stocks analysis",
+        description:"Looking for stock analysis? On this page you will find my latest stock analysis.",
+        headline: "Stocks analysis.",
+        copy: "You can find all blog posts on the topic of stock analysis here.",
+        items: entries.items.filter((item) => item.fields.category === "stocks-analysis"),
+      },
+    },
   ];
 }
 const items: Entry<Post>[] = Astro.props.items;
