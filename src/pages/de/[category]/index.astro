@@ -33,6 +33,17 @@ export async function getStaticPaths() {
         items: entries.items.filter((item) => item.fields.category === "anlagestrategien"),
       },
     },
+    {
+      params: { category: "aktienanalyse" },
+      props: {
+        title: "Blogbeiträge zur Aktienanalyse",
+        description:
+          "Du bist auf der Suche nach Aktienanalysen? Auf dieser Seite finden Sie meine neuesten Artikel.",
+        headline: "Aktienanalysen",
+        copy: "Hier findest du alle Aktienanalysen auf meinem Blog.",
+        items: entries.items.filter((item) => item.fields.category === "aktienanalyse"),
+      },
+    },
   ];
 }
 const items: Entry<Post>[] = Astro.props.items;
