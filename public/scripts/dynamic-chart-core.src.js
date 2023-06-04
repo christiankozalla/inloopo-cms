@@ -277,15 +277,15 @@ function dcIndices(startMoney = 10000, startIndex = 0) {
 
   yearPicker.addEventListener("click", function (event) {
     startYearControl.value = event.target.dataset.value;
-    startYearControl.dispatchEvent(new Event("change"));
+    startYearControl.dispatchEvent(new CustomEvent("change", { detail: { value: event.target.dataset.value } }));
   });
 
   startYearControl.addEventListener(
     "change",
-    debounce(600, (event) => {
+    debounce(200, (event) => {
       // hide year-picker list
       startYearControl.blur();
-      const year = event.path[0].value;
+      const year = event.detail.value; // event.path[0].value;
       const startIndex = data.findIndex((row) => row[0].endsWith(year)); // picks first trading day of selected year
 
       if (startIndex > -1) {
