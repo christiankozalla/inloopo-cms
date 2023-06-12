@@ -1,0 +1,482 @@
+---
+//import components and layout
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroShot from "../components/HeroShot.astro";
+import ProblemCard from "../components/ProblemCard.astro";
+import CourseCard from "../components/CourseCard.astro";
+import Quote from "../components/Quote.astro";
+import QualiCard from "../components/QualiCard.astro";
+import BackgroundImage from "../components/BackgroundImage.astro";
+
+//import styles
+import "../styles/styles.css";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout
+  title="inloopo day trading course"
+  description="You want to learn how to invest money. Day trading is one way. The inloopo day trading course teaches you how to day trade efficiently."
+  lang="en"
+  opengraph={{
+    url: "https://www.inloopo.com/day-trading-course/",
+    image: "https://www.inloopo.com/de/blog/images/XXXX",
+    locale: "en",
+    type: "website",
+    description: "You want to invest. Learn how to do with day trading.",
+  }}
+  canonical="https://www.inloopo.com/day-trading-course/">
+
+  <!-- MAIN TEASER -->
+  <HeroShot
+    title="Learn how to day trade consistently"
+    description="In this day trading course you will learn how to day trade without sitting in front of the screen all day. You will be able to manage your trades efficiently even though you trade only some hours in the evening."
+    button={{
+      href: "https://philipp-s-site-351a.thinkific.com/order?ct=29c15e14-609f-4a41-b022-f0f8a6292b54",
+      target: "_blank",
+      text: "Buy the course",
+    }}
+    backgroundImageClass="main-teaser__page-daytrading"
+  />
+
+  <!-- PROBLEMS -->
+  <section>
+    <div class="row box--grey-background box--desktop">
+      <div class="wrapper-content">
+        <ProblemCard
+          title="You are..."
+          icon={{
+            src: "/images/sad.svg",
+            alt: "Sad Face",
+          }}
+          listItems={[
+            "just following random indicators for your trading setups.",
+            "failing in reading and trading the markets.",
+            "lacking knowledge in how to manage your risks.",
+          ]}
+        />
+
+        <ProblemCard
+          title="You would rather like to..."
+          icon={{
+            src: "/images/happy.svg",
+            alt: "Happy Face",
+          }}
+          listItems={[
+            "use professional software to see behind the scene with less indicators and interpretation.",
+            "become consistently in demo and later in real money trading.",
+            "know exactly how to manage positions and risks to constantly master your account.",
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR WHOM -->
+  <div class="wrapper-content">
+    <h2 class="text-box__heading">Become a professional trader</h2>
+    <div class="text-box">
+<p>I believe that almost anyone can succeed in the financial markets with the right tools, education and mindset. Your prior trading experience does not really matter, the only skill you need is passion and the ability to work consistently and keep improving.</p>
+<p>My day trading course is designed for traders of all levels. It covers the professional trader's view of the markets, but also starts with the very fundamentals. Check out my trading statistics to get the confidence and start your course.</p>
+</div>
+</div>
+  <!-- FEATURES -->
+  <div class="wrapper-content">
+    <h2 class="column__heading">Course with features, you need</h2>
+    <div class="row">
+      <QualiCard
+        title="Professional tools"
+        description="Learn to use professional tools like the big investment firms. You will use Sierra Charts Toolbox & Setup (worth $2.000)."
+        icon={{
+          src: "/images/automation.svg",
+          alt: "Buch Icon",
+        }}
+      />
+      <QualiCard
+        title="Track record"
+        description="I publish a 100 % transparent track record. You will have the chance to watch me while trading in my life trading sessions."
+        icon={{
+          src: "/images/bear-tracks.svg",
+          alt: "Hut Icon",
+        }}
+      />
+      <QualiCard
+        title="Trade with profit"
+        description="Everybody else is trading FOREX or CFDs. Not you. Because you will learn how to trade Futures."
+        icon={{
+          src: "/images/diamond.svg",
+          alt: "Daten und Charts Icon",
+        }}
+      />
+    </div>
+  </div>
+
+  <section class="wrapper-content">
+    <h2 class="column__heading">A video course with 14 modules</h2>
+    <div class="grid  grid-3fr">
+        <CourseCard
+            title="Your Professional Trading Career Starts"
+            icon={{
+                src:'/images/space-shuttle.svg',
+                alt:'Start icon',
+                width:'70'
+            }}
+            listItems={[
+                "Introduction",
+                "Who are the big market participants?",
+                "Why to trade Futures and not FOREX or CFD’s?",
+                "Trading timetable and summary"
+            ]}
+        />
+
+        <CourseCard
+        title="Market theory and raw data"
+        icon={{
+            src:'/images/inbox.svg',
+            alt:'Put data in icon',
+            width:'70'
+        }}
+        listItems={[
+            "Theory of the market - Why does the price move?",
+            "Orderbook (DOM)",
+            "Live example",
+            "Task: Transfer supply and demand to your real live",
+            "Summary and next steps"
+        ]}
+    />
+
+    <CourseCard
+    title="Tools and Downloads"
+    icon={{
+        src:'/images/lunch.svg',
+        alt:'Put data in icon',
+        width:'120'
+    }}
+    listItems={[
+        "Sierra Chart installation",
+        "Institutional Sierra Chart Setup tools (worth 2.000$)",
+        "Demo trading",
+        "Task: Trade with the DOM (2 weeks)",
+        "Summary and next steps",
+        "Download PDF Documents"
+    ]}
+/>
+
+        <CourseCard
+        title="Volume Profile"
+        icon={{
+            src:'/images/pixel.svg',
+            alt:'Put data in icon',
+            width:'70'
+        }}
+        listItems={[
+            "What is the goal of the volume profile?",
+            "Profile shapes",
+            "When to merge profiles?",
+            "When to split profiles?",
+            "The ultimate goal",
+            "Task: Take a look and the current market and merge or split volume profiles for the last 2 month"
+        ]}
+        />
+
+        <CourseCard
+        title="VVAP and volume-based candle chart"
+        icon={{
+            src:'/images/candle-chart.svg',
+            alt:'Candle chart icon',
+            width:'70'
+        }}
+        listItems={[
+            "What is the VWAP?",
+            "Why do we use volume candles?",
+            "POC",
+            "First and second deviation"
+        ]}
+        />
+
+        <CourseCard
+        title="Context and trade setup"
+        icon={{
+            src:'/images/laptop.svg',
+            alt:'Put data in icon',
+            width:'100'
+        }}
+        listItems={[
+            "What is context and why is it so important?",
+            "Market profile conditions and rhythm (DVA)",
+            "Composite value area (CVA) / Line in the sand (LIS)",
+            "Task: Merge profiles and train to define your hypothesis (min. 2 month)"
+        ]}
+        />
+
+        <CourseCard
+        title="Footprint"
+        icon={{
+            src:'/images/foot-print.svg',
+            alt:'Put data in icon',
+            width:'70'
+        }}
+        listItems={[
+            "Introduction",
+            "Settings and what do you see",
+            "What is most important?",
+            "Conclusion"
+        ]}
+        />
+
+        <CourseCard
+        title="Cumulative data"
+        icon={{
+            src:'/images/calculator.svg',
+            alt:'Calculator icon',
+            width:'60'
+        }}
+        listItems={[
+            "Introduction – What is cumulative Delta?",
+            "Why do we use it?",
+            "What can you see?",
+            "Conclusion"
+        ]}
+        />
+
+        <CourseCard
+        title="Putting everything together"
+        icon={{
+            src:'/images/lego.svg',
+            alt:'Laptop icon',
+            width:'50'
+        }}
+        listItems={[
+            "Context and trading setup - the ultimat goal",
+            "Task: Demo trading until you are constantly successful for at least 20 trading days"
+        ]}
+        />
+
+        <CourseCard
+        title="Risk and money management"
+        icon={{
+            src:'/images/monster.svg',
+            alt:'Put data in icon',
+            width:'70'
+        }}
+        listItems={[
+            "Rule number one! – Always trade with a hard stop loss order!",
+            "Rule number two! – Never move your initial stop loss order!",
+            "Always try to reduce your risk to break even + 1 tick",
+            "The only thing you can control is your risk. – Profits will come by itself. 😊" 
+        ]}
+        />
+
+        <CourseCard
+        title="Entry and exit strategy"
+        icon={{
+            src:'/images/drill.svg',
+            alt:'Drill icon',
+            width:'70'
+        }}
+        listItems={[
+            "Introduction - What is the context",
+            "Trade with the trend",
+            "How to trade ranges? - VVAP is flat",
+            "Conclusion"
+        ]}
+        />
+
+        <CourseCard
+        title="Position management"
+        icon={{
+            src:'/images/coins.svg',
+            alt:'Put data in icon',
+            width:'60'
+        }}
+        listItems={[
+            "What is the VWAP?"
+        ]}
+        />
+
+        <CourseCard
+        title="Trading statistics"
+        icon={{
+            src:'/images/presentation.svg',
+            alt:'Put data in icon',
+            width:'70'
+        }}
+        listItems={[
+            "I use and recommend TradesViz.com"
+        ]}
+        />
+
+        <CourseCard
+        title="Bonus trading psychology mindset"
+        icon={{
+            src:'/images/law.svg',
+            alt:'Put data in icon',
+            width:'70'
+        }}
+        listItems={[
+            "What is the right mindset?",
+            "How to get it?"
+        ]}
+        />
+    </div>
+  </section>
+
+
+  <!-- HWY US -->
+  <section>
+    <BackgroundImage
+      title="You learn when you fail and keep going"
+      description="I spent years trading with the wrong tools and financial education. I made many mistakes but learned a lot. In 2022 I completed a 2-year training to become a professional futures trader. After that I saw the markets from a professional perspective. Now I'm trading 3 strategies on different accounts. The best performing strategy is this day trading strategy that I will teach you with this course."
+      button={{
+        text: "Buy the course",
+        href: "https://philipp-s-site-351a.thinkific.com/order?ct=29c15e14-609f-4a41-b022-f0f8a6292b54",
+      }}
+      backgroundImageClass="secondary-teaser__course"
+      textColorClass="light"
+    />
+  </section>
+
+ 
+  <!-- CONTENT FAQ SECTION -->
+  <div class="wrapper-content">
+    <section>
+      <div class="faq__container">
+        <h2 class="faq__heading--center">FAQs</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <a>What makes you different?</a>
+            <div class="content">
+              <p>
+                I started trading the financial markets completely wrong. Because I thought it was easy and anyone could do it with just a few minutes a day. It took me from 2008 to 2021 to become consistent in my trading approach and also with my results. I will give you all my knowledge and show you the pitfalls you should avoid to become a successful trader. 
+              </p>
+              <p>What's more, 99% of trading coaches do not show their live trading statistics and results. That is why I participated in the Futures World Cup Trading Championship 2021-2022 and made it to the 5th place with a performance of 64.1%.</p>
+              <p>And now I'm showing my real trading results with my small account every week on <a class="link" href="https://www.youtube.com/@inloopo" target="_blank">my YouTube channel</a>.</p>
+              <p>Feel free to check everything out and build confidence.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>I have little or no trading experience. Will I struggle?</a>
+            <div class="content">
+              <p>
+                For those who have no trading experience, it will be very intense. Because you have to learn everything from scratch. But this is also a very good opportunity to learn everything right from the beginning and don't get messed up for example by trading the wrong products like CFDs or Knockout Certificates.</p>
+                <p>You will learn everything a professional trader should know and how the pig market participants view the stock markets on the intraday timeframe.</p>
+                <p>If you have no trading experience at all, but are excited and motivated to learn, I will give you all my support to become successful. But you need to take your time and have a lot of patience and power to internalize everything.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Do I need to be in front of my screen all day?</a>
+            <div class="content">
+              <p>
+                The name "day trading" does not mean that you have to be in front of the screen all day. As mentioned before, I only trade for 2-3 hours in the evening because it fits perfectly into my life. Other people like to trade earlier in the session, which is also fine. Everyone should find a time in their life that works best for them to trade.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>How long do I need to take the course per day?</a>
+            <div class="content">
+              <p>
+                You can take the course anytime from anywhere in the world. The course is built on a world-leading learning platform that is completely independent of my website. You will have your own private login area with a username and password and will have access to the material 24/7.</p>
+                <p>I recommend at least one hour a day for the course and training. The more the better, I guess. There is a lot of information that may be new and everyone should find their own rhythm and pace to absorb it all.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>How long do I have access to the course material?</a>
+            <div class="content">
+              <p>
+                You will have lifetime access to the course materials.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Will the course get frequently updates?</a>
+            <div class="content">
+              <p>
+                Yes, the course will evolve and grow over time and I will continue to add valuable content at no additional cost.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Do you support outside of the course or am I left on my own?</a>
+            <div class="content">
+              <p>
+                For the first 3 months after your purchase, you will have access to my live trading webinars where you can watch me trade the markets. This is at least twice a week. You can also email me your questions and I will answer them directly or in weekly live webinars. After the first 3 months you can subscribe to my live trading and support webinars.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Which markets do you trade?</a>
+            <div class="content">
+              <p>
+                I mainly trade the most liquid markets such as S&P 500 Index [ES], NASDAQ Index [NQ], Crude Oil [CL] and others.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Do I need to have a big account to start the course?</a>
+            <div class="content">
+              <p>
+                I recommend a minimum account size of at least 5000 USD. Of course the larger the account the better, as you will be more flexible with your trading and risk and money management.</p>
+                <p>But you can also start the course without your own trading account and learn everything on simulated demo trading. Once you have internalized everything and are successful with simulated demo trading, you can apply for a funded account at a prop trading firm. With this workaround, your own trading account is not necessary.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>How much money do I have to spent for trading software and live data?</a>
+            <div class="content">
+              <p>
+                To start the course, I recommend using Sierra Charts. Sierra Charts has a 15 days free trial period and after that you will need delayed data to do all the tasks and also to start simulated demo trading.</p>
+                <p>To finish the course you will need Package 3 Base Standard for 26 USD per month.</p>
+                <p>Once you have finished the simulated demo trading and are ready to trade with real money, you will need to upgrade to e.g. Package 11 for 46 USD per month + Live Data Feed for 34.25 USD per month.</p>
+                <p>Please check the current prices on the Sierra Chart Website (https://www.sierrachart.com/index.php?page=doc/Packages.php).</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>What timescales or style do you trade with?</a>
+            <div class="content">
+              <p>
+                I usually only trade in the evenings when my kids are asleep because it fits my lifestyle perfectly. In terms of trading, I try to catch the waves that the markets give me. This means I try to find a good entry and stay in the position for a few minutes to an hour.
+              </p>
+          </div>
+          <div class="accordion-item">
+            <a>What is the annual return or performance?</a>
+            <div class="content">
+              <p>
+                The annual performance is based on that of the S&P 500 Index and is calculated on the basis of closed
+                trades. In the years when there were no closed trades, 0% was entere, just like in the years when there
+                were no open positions at all. There have only been two years of slightly negative performance since
+                1998 (2000 and 2008). For comparison: In the S&P 500 there were 6 years with a negative annual
+                performance.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Are you affiliated with any broker?</a>
+            <div class="content">
+              <p>
+                No, I'm not affiliated with any broker or trading software. I personally trade with Sierra Charts and have Dorman Trading as my broker.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Where can I see your latest trading statistics?</a>
+            <div class="content">
+              <p>
+                You can see my latest trading statistics on my <a href="https://www.tradesviz.com/viewstats/inloopo" target="_blank" class="link">TradesViz</a> account or on my <a href="https://www.youtube.com/@inloopo" target="_blank" class="link">YouTube Channel</a>.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>I still have questions. Can I speak to you in person?</a>
+            <div class="content">
+              <p>
+                Sure, just send me an email to info@inloopo.com or contact me via Telegram at +4915736977448.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <Button 
+    href="https://philipp-s-site-351a.thinkific.com/order?ct=29c15e14-609f-4a41-b022-f0f8a6292b54"
+    text="Buy the course"
+    alignClass="button--align-center"
+  />
+
+  <!-- SCRIPTS -->
+  <script src="/scripts/faq.js" defer></script>
+</MainLayout>

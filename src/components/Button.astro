@@ -1,8 +1,11 @@
 ---
-const { link, text } = Astro.props;
+const { link, text, alignClass } = Astro.props;
 ---
-
-<a href={link} class="button">{text}</a>
+<div class="button__container">
+<a href={link} class={`
+button
+${alignClass}`}>{text}</a>
+</div>
 
 <style>
   .button {
@@ -18,4 +21,16 @@ const { link, text } = Astro.props;
     font-size: 1.25rem;
     font-weight: bold;
   }
+
+  .button__container {
+    display: flex;
+  }
+
+  .button--align-center {
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
 </style>

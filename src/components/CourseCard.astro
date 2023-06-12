@@ -1,0 +1,45 @@
+---
+const { icon, title, listItems } = Astro.props;
+interface Props {
+  title: string;
+  icon: { src: string; alt: string; width: string };
+  listItems: string[];
+}
+---
+
+<div class="course__container">
+    <img src={icon.src} alt={icon.alt} width={icon.width}>
+    <h3 class="course__heading">{ title }</h3>
+    <ul class="course__ul">
+        {
+          listItems.map((item) => (
+            <li class="course__li">
+              <img class="arrow" src="/images/icon-arrow.svg" width="15" height="15" alt="Pfeil Icon" />
+              {item}
+            </li>
+          ))
+        }
+      </ul>
+</div>
+
+<style>
+    .course__container {
+    padding: 25px 2.6em;
+    border: 1px solid #d5d5d5;
+    box-shadow: 1px 1px 4px #d2d2d2;
+  }
+
+  .course__heading {
+    margin-top: 20px;
+  }
+
+  .course__li {
+    list-style: none;
+    padding: 8px 0;
+  }
+
+  .arrow {
+    margin-right: 4px;
+  }
+  
+  </style>

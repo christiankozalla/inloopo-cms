@@ -7,10 +7,11 @@ const { heading } = Astro.props;
     <img src="/images/Logo_Finviz.png">
     <img src="/images/Logo_InteractiveBrokers.jpg">
     <img src="/images/Logo_SierraChart.png">
+    <a href="https://account.ninjatrader.com/register" target="_blank"><img src="/images/NinjaTrader_NTE_BO_RGB.svg"></a>
     <img src="/images/Logo_Tradesviz.png">
     <img src="/images/Logo_TradingView.png">
     <img src="/images/Logo_Aktienfinder.png">
-    <img src="/images/NinjaTrader_NTE_BO_RGB.svg">
+    
 </div>
 
 <style>
@@ -19,12 +20,17 @@ const { heading } = Astro.props;
         grid-template-columns: repeat(7, 1fr);
         justify-content: center;
         align-items: center;
-        gap: 2em;
-       
+        gap: 0.8em;
     }
 
     .tools__heading {
         text-align: center;
         margin-top: 90px;
+    }
+
+    @media only screen and (min-width: 40em) {
+        .grid__tools {
+        gap: 2em;
+    }
     }
 </style>
