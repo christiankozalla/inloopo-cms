@@ -25,7 +25,7 @@ const { title, description, button, backgroundImageClass, textColorClass } = Ast
         {
           button && (
             <p>
-              <a href={button.href} class="button">
+              <a href={button.href} class="backgroundimage__button">
                 {button.text}
               </a>
             </p>
@@ -42,7 +42,7 @@ const { title, description, button, backgroundImageClass, textColorClass } = Ast
     background-size: cover;
     width: 100%;
     margin-bottom: 20px;
-    margin-top: 30px;
+    margin-top: 90px;
     color: #fff;
   }
 
@@ -52,7 +52,7 @@ const { title, description, button, backgroundImageClass, textColorClass } = Ast
   }
 
   .secondary-teaser__quote {
-    margin: 40px 0 20px 90px;
+    margin: 20px 0 20px 90px;
     font-size: 24px;
     line-height: 1.5;
     width: 40%;
@@ -66,7 +66,7 @@ const { title, description, button, backgroundImageClass, textColorClass } = Ast
     color: #fff;
   }
 
-  .button {
+  .backgroundimage__button {
     color: #fff;
     background: #ff6b35;
     border: 2px solid #ff6b35;
@@ -74,7 +74,6 @@ const { title, description, button, backgroundImageClass, textColorClass } = Ast
     text-decoration: none;
     margin-left: 90px;
     margin-bottom: 30px;
-    margin-bottom: 20px;
     font-size: 18px;
     font-size: 1.25rem;
     font-weight: bold;
