@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) =>
-        page !== "https://www.inloopo.com/de/vielen-dank/" && page !== "https://www.inloopo.com/de/thank-you/",
+        page !== "https://www.inloopo.com/de/vielen-dank/" && page !== "https://www.inloopo.com/thank-you/",
     }),
     processCustomAssets,
   ],
