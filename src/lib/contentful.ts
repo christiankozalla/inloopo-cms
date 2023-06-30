@@ -115,7 +115,7 @@ function renderYoutubeVideo(node: Node<YoutubeVideo>) {
   // node.data.target.videoId - e.g. P_X8gdJqbgM as in https://www.youtube.com/watch?v=P_X8gdJqbgM
   // node.data.target.title - e.g. "Sector Rotation explained with free Tool"
   return `
-    <iframe width="90%" height="400" style="display: block; margin: 0 auto" loading="lazy" src="https://www.youtube-nocookie.com/embed/${node.data.target.fields.videoId}?controls=0" title=${node.data.target.fields.title} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="90%" height="400" style="display: block; margin: 24px auto" loading="lazy" src="https://www.youtube-nocookie.com/embed/${node.data.target.fields.videoId}?controls=0" title=${node.data.target.fields.title} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   `;
 }
 
