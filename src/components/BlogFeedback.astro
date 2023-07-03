@@ -30,7 +30,9 @@ const { lang } = Astro.props;
 
 <div class={`rating rating__locale--${lang}`}>
   <h2 class="article__heading-two rating__heading">{content[lang].heading}</h2>
-  <form action="https://formsubmit.co/info@inloopo.com" method="post">
+  <form action="https://www.inloopo.com/mail-feedback/" method="POST">
+    <input type="hidden" name="url" value={Astro.url.pathname}>
+    <input type="hidden" min="0" max="5" name="rating" id="rating" required>
     <div class="rating__stars">
       <input type="radio" id="five" name="rate" value="5" />
       <label for="five"></label>
@@ -45,11 +47,19 @@ const { lang } = Astro.props;
       <span class="rating__result"></span>
     </div>
     <div class="rating__feedback">
-      <label class="rating__feedback-heading" for="nachricht">{content[lang].feedbackHeading}</label>
-      <textarea class="rating__feedback-text" placeholder={content[lang].feedbackPlaceholder} name="text"></textarea>
-      <input class="rating__submit-btn" id="Senden" type="submit" name="submit" value={content[lang].submitBtn} />
+      <label class="rating__feedback-heading" for="message">{content[lang].feedbackHeading}</label>
+      <textarea class="rating__feedback-text" placeholder={content[lang].feedbackPlaceholder} name="message" id="message"></textarea>
+      <input class="rating__submit-btn" id="Senden" type="submit" value={content[lang].submitBtn} />
     </div>
   </form>
+    <script>
+    document.querySelector("form").addEventListener("click", (e) => {
+      const ratingInput = document.querySelector("input[type='hidden'][name='rating']");
+      if (e.target.tagName === "INPUT") {
+        if (ratingInput) ratingInput.value = e.target.value;
+      }
+    })
+  </script>
 </div>
 
 <style>
@@ -83,6 +93,7 @@ const { lang } = Astro.props;
   .rating__stars label {
     font-size: 80px;
     color: lightgrey;
+    cursor: pointer;
   }
 
   .rating__stars label:before {
@@ -174,6 +185,7 @@ const { lang } = Astro.props;
     font-size: 1.25rem;
     font-family: "QuattrocentoSans", Arial, Helvetica, sans-serif;
     width: 100%;
+    cursor: pointer;
   }
 
   .rating__submit-btn:hover {
