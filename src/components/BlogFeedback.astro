@@ -55,7 +55,7 @@ const { lang } = Astro.props;
     <script>
     document.querySelector("form").addEventListener("click", (e) => {
       const ratingInput = document.querySelector("input[type='hidden'][name='rating']");
-      if (e.target.tagName === "INPUT") {
+      if (e.target.tagName === "INPUT" && e.target.type === "radio") {
         if (ratingInput) ratingInput.value = e.target.value;
       }
     })
