@@ -30,29 +30,94 @@ const { lang } = Astro.props;
 
 <div class={`rating rating__locale--${lang}`}>
   <h2 class="article__heading-two rating__heading">{content[lang].heading}</h2>
-  <form action="https://formsubmit.co/info@inloopo.com" method="post">
+  <form>
+    <input type="hidden" name="url" value={Astro.url.pathname} />
     <div class="rating__stars">
-      <input type="radio" id="five" name="rate" value="5" />
+      <input type="radio" id="five" name="rating" value="5" />
       <label for="five"></label>
-      <input type="radio" id="four" name="rate" value="4" />
+      <input type="radio" id="four" name="rating" value="4" />
       <label for="four"></label>
-      <input type="radio" id="three" name="rate" value="3" />
+      <input type="radio" id="three" name="rating" value="3" />
       <label for="three"></label>
-      <input type="radio" id="two" name="rate" value="2" />
+      <input type="radio" id="two" name="rating" value="2" />
       <label for="two"></label>
-      <input type="radio" id="one" name="rate" value="1" />
+      <input type="radio" id="one" name="rating" value="1" />
       <label for="one"></label>
       <span class="rating__result"></span>
     </div>
     <div class="rating__feedback">
-      <label class="rating__feedback-heading" for="nachricht">{content[lang].feedbackHeading}</label>
-      <textarea class="rating__feedback-text" placeholder={content[lang].feedbackPlaceholder} name="text"></textarea>
-      <input class="rating__submit-btn" id="Senden" type="submit" name="submit" value={content[lang].submitBtn} />
+      <label class="rating__feedback-heading" for="message">{content[lang].feedbackHeading}</label>
+      <textarea
+        class="rating__feedback-text"
+        placeholder={content[lang].feedbackPlaceholder}
+        name="message"
+        id="message"></textarea>
+      <input class="rating__submit-btn" id="Senden" type="submit" value={content[lang].submitBtn} />
     </div>
+    <p id="feedback-response"></p>
   </form>
+  <script>
+    const form = document.querySelector("form");
+    const submitButton = document.querySelector("#Senden");
+    const feedbackResponse = document.querySelector("#feedback-response");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      submitButton.classList.add("loading");
+      submitButton.disabled = true;
+      const formData = new FormData(e.currentTarget);
+      fetch("/mail-feedback/", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          feedbackResponse.classList.remove(...feedbackResponse.classList);
+          if (response.status === 201) {
+            feedbackResponse.innerText = "Thank you for your feedback!";
+            feedbackResponse.classList.add("success");
+          } else if (response.status === 400) {
+            feedbackResponse.innerText = "Please rate the article by clicking on a star above!";
+            feedbackResponse.classList.add("warning");
+          } else if (response.status === 500) {
+            feedbackResponse.innerText = "Something went wrong...";
+            feedbackResponse.classList.add("error");
+          }
+        })
+        .catch((response) => {
+          feedbackResponse.innerText = "Something went wrong...";
+          feedbackResponse.classList.add("error");
+        })
+        .finally(() => {
+          submitButton.disabled = false;
+          submitButton.classList.remove("loading");
+        });
+    });
+  </script>
 </div>
 
+<style is:inline>
+    #Senden.loading {
+    opacity: 0.5;
+    position: relative;
+  }
+  #feedback-response {
+    font-weight: 700;
+  }
+  #feedback-response.success {
+    color: #198754;
+  }
+  #feedback-response.warning {
+    color: #ff6b35;
+  }
+  #feedback-response.error {
+    color: #dc3545;
+  }
+</style>
 <style>
+  form {
+    width: 100%;
+  }
+
   .rating {
     width: 100%;
   }
@@ -74,6 +139,7 @@ const { lang } = Astro.props;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
+    width: 100%;
   }
 
   .rating__stars input {
@@ -83,7 +149,16 @@ const { lang } = Astro.props;
   .rating__stars label {
     font-size: 80px;
     color: lightgrey;
+    cursor: pointer;
   }
+
+  @media screen and (max-width: 480px) {
+    .rating__stars label {
+      width: 22%;
+      font-size: 60px;
+    }
+  }
+
 
   .rating__stars label:before {
     content: "☆";
@@ -174,6 +249,7 @@ const { lang } = Astro.props;
     font-size: 1.25rem;
     font-family: "QuattrocentoSans", Arial, Helvetica, sans-serif;
     width: 100%;
+    cursor: pointer;
   }
 
   .rating__submit-btn:hover {

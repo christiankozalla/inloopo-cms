@@ -1,4 +1,6 @@
 User-agent: *
+Disallow: /mail-feedback/
+Disallow: /mail-feedback/index.php
 Allow: /
 
 Sitemap: https://www.inloopo.com/sitemap.xml
