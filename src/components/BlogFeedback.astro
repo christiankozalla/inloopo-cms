@@ -30,7 +30,6 @@ const { lang } = Astro.props;
 
 <div class={`rating rating__locale--${lang}`}>
   <h2 class="article__heading-two rating__heading">{content[lang].heading}</h2>
-  <!--  action="https://www.inloopo.com/mail-feedback/" method="POST" -->
   <form>
     <input type="hidden" name="url" value={Astro.url.pathname} />
     <div class="rating__stars">
@@ -67,7 +66,7 @@ const { lang } = Astro.props;
       submitButton.classList.add("loading");
       submitButton.disabled = true;
       const formData = new FormData(e.currentTarget);
-      fetch("https://www.inloopo.com/mail-feedback/", {
+      fetch("/mail-feedback/", {
         method: "POST",
         body: formData,
       })
