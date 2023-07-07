@@ -11,6 +11,17 @@ export async function getStaticPaths() {
     order: "-fields.published",
   });
   return [
+    { 
+      params: { category: "daytrading" },
+      props: {
+        title: "Artikel rund ums Daytrading",
+        description:
+          "Bist du ein Daytrader? Hier findest du essentielles Wissen zum Thema Daytrading.",
+        headline: "Daytrading",
+        copy: "Hier findest du essentielles Wissen zum Thema Daytrading.",
+        items: entries.items.filter((item) => item.fields.category === "daytrading"),
+      },
+    },
     {
       params: { category: "finanzwissen" },
       props: {

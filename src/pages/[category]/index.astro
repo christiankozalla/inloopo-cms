@@ -13,6 +13,17 @@ export async function getStaticPaths() {
 
   return [
     {
+      params: { category: "day-trading" },
+      props: {
+        title: "Blog posts on day trading",
+        description:
+          "Are you a day trader investing money on a daily basis? Here you will find essential knowledge for day trading.",
+        headline: "Day Trading",
+        copy: "Here you will find essential knowledge for day trading.",
+        items: entries.items.filter((item) => item.fields.category === "day-trading"),
+      },
+    },
+    {
       params: { category: "financial-literacy" },
       props: {
         title: "Blog posts that cover basic knowledge on how to invest successfully",
