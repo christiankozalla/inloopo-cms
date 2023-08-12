@@ -128,7 +128,7 @@ function displayHtmlDrawdowns(spDrawdowns, strategyDrawdowns) {
   const strategyDrawdownElement = shadow.getElementById("strategy-drawdown-element");
 
   spDrawdownElement.innerText = `${(Math.min(...spDrawdowns.map((dd) => dd.getDrawdownInPercent())) * 100).toFixed(
-    1
+    1,
   )} %`;
   strategyDrawdownElement.innerText = `${(
     Math.min(...strategyDrawdowns.map((dd) => dd.getDrawdownInPercent())) * 100
@@ -238,7 +238,7 @@ function dcIndices(startMoney = 10000, startIndex = 0) {
     const { strategyData, drawdowns: strategyDrawdowns } = calculateStrategy(
       data,
       newStartMoney || undefined,
-      startYearControl.value || undefined
+      startYearControl.value || undefined,
     );
     displayHtmlDrawdowns(spDrawdowns, strategyDrawdowns);
 
@@ -292,12 +292,12 @@ function dcIndices(startMoney = 10000, startIndex = 0) {
         const { spData, drawdowns: spDrawdowns } = calculateSP(
           data,
           Number(startMoneyControl.value) || undefined,
-          year
+          year,
         );
         const { strategyData, drawdowns: strategyDrawdowns } = calculateStrategy(
           data,
           Number(startMoneyControl.value) || undefined,
-          year
+          year,
         );
 
         displayHtmlDrawdowns(spDrawdowns, strategyDrawdowns);
@@ -328,6 +328,6 @@ function dcIndices(startMoney = 10000, startIndex = 0) {
         };
         chart.setOption(newOptions);
       }
-    })
+    }),
   );
 })();

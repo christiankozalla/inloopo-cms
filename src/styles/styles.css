@@ -195,7 +195,9 @@ section {
 
 @font-face {
   font-family: "Cera Pro Black";
-  src: url("/fonts/CeraProBlack.otf") format("opentype"), url("/fonts/CeraProBlack.ttf") format("truetype");
+  src:
+    url("/fonts/CeraProBlack.otf") format("opentype"),
+    url("/fonts/CeraProBlack.ttf") format("truetype");
 }
 
 /* @font-face {
@@ -441,7 +443,6 @@ p {
 .text-box__heading {
   text-align: center;
 }
-
 
 /* #Teaser #Background Image */
 
@@ -981,7 +982,6 @@ td {
 .box__link {
   margin-left: 42px;
 }
-
 
 /* #FAQ */
 

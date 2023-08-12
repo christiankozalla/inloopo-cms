@@ -29,7 +29,7 @@ class BoersenampelStatus extends HTMLElement {
       .finally(() => {
         const template = document.createElement("template");
         template.innerHTML = `<div style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35">${this.render(
-          { text: this.latest[this.lang].text, actions: this.latest[this.lang].entities }
+          { text: this.latest[this.lang].text, actions: this.latest[this.lang].entities },
         )}</div>`;
         this.shadowRoot.appendChild(template.content.cloneNode(true));
       });
