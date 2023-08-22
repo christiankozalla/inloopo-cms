@@ -35,7 +35,7 @@ const entries = await contentfulClient.getEntries<Post>({
       entries.items.map((item) => (
         <article class="article-card">
           {item.fields.heroImage?.fields.file.url && (
-            <a class="link__blog img-wrapper" href={`/${item.fields.category}/${item.fields.slug}`}>
+            <a class="link__blog img-wrapper" href={`/${item.fields.category}/${item.fields.slug}/`}>
               <img
                 src={item.fields.heroImage?.fields.file.url}
                 alt={item.fields.heroImage.fields.title}
@@ -47,11 +47,11 @@ const entries = await contentfulClient.getEntries<Post>({
             {item.fields.published && (
               <h6 class="blog__date">{new Date(item.fields.published).toLocaleDateString("en-GB")}</h6>
             )}
-            <a class="link__blog" href={`/${item.fields.category}/${item.fields.slug}`}>
+            <a class="link__blog" href={`/${item.fields.category}/${item.fields.slug}/`}>
               <h2>{item.fields.title}</h2>
             </a>
             <p>{item.fields.description}</p>
-            <a class="link" href={`/${item.fields.category}/${item.fields.slug}`}>
+            <a class="link" href={`/${item.fields.category}/${item.fields.slug}/`}>
               Read the article
             </a>
           </div>

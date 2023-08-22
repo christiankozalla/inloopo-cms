@@ -14,7 +14,7 @@ const entries = await contentfulClient.getEntries<Post>({
   description="Du willst wissen, wie du dein Geld anlegen kannst. Manche Ding verstehst du noch nicht. In meinem Blog erkläre ich es dir."
   lang="de"
   opengraph={{
-    description: "Lese und lerne zu investieren",
+    description: "Lies und lerne zu investieren",
     locale: "de",
     type: "website",
     url: "https://www.inloopo.com/de/blog/",
@@ -33,7 +33,7 @@ const entries = await contentfulClient.getEntries<Post>({
       entries.items.map((item) => (
         <article class="article-card">
           {item.fields.heroImage?.fields.file.url && (
-            <a class="link__blog img-wrapper" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+            <a class="link__blog img-wrapper" href={`/de/${item.fields.category}/${item.fields.slug}/`}>
               <img
                 src={item.fields.heroImage?.fields.file.url}
                 alt={item.fields.heroImage.fields.title}
@@ -45,11 +45,11 @@ const entries = await contentfulClient.getEntries<Post>({
             {item.fields.published && (
               <h6 class="blog__date">{new Date(item.fields.published).toLocaleDateString("de-DE")}</h6>
             )}
-            <a class="link__blog" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+            <a class="link__blog" href={`/de/${item.fields.category}/${item.fields.slug}/`}>
               <h2>{item.fields.title}</h2>
             </a>
             <p>{item.fields.description}</p>
-            <a class="link" href={`/de/${item.fields.category}/${item.fields.slug}`}>
+            <a class="link" href={`/de/${item.fields.category}/${item.fields.slug}/`}>
               Zum Artikel
             </a>
           </div>
