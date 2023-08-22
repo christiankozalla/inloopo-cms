@@ -325,7 +325,8 @@ import "../styles/styles.css";
   </section>
 
   <section class="sectorr">
-    <div class="grid">
+    <div class="sectorr__grid">
+    
       <div class="sectorr-scnd">
         <table class="sectorr__table-scnd">
           <thead>
@@ -414,6 +415,7 @@ import "../styles/styles.css";
       <div class="sectorr__img">
         <img src="/images/sector-rotation-en.svg" alt="Sektor rotation with economic cycle" />
       </div>
+  
       <div class="sectorr__p">
         <h4>What is sector rotation?</h4>
         <p>
@@ -437,10 +439,11 @@ import "../styles/styles.css";
     </div>
   </section>
   <style>
-    .grid {
+    .sectorr__grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      margin: 0 7em;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1em;
+      margin: 5em 7em;
     }
 
     .sectorr {
@@ -449,16 +452,13 @@ import "../styles/styles.css";
       margin: 0 25px;
     }
 
-    .sectorr__img {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-
     .sectorr,
     .sectorr-scnd {
       overflow-y: auto;
+    }
+
+    .sectorr__p {
+      margin-top: 2em;
     }
 
     .sectorr td {
@@ -478,12 +478,7 @@ import "../styles/styles.css";
     }
 
     .sectorr__table-scnd {
-      margin-right: 50px;
       overflow-x: auto;
-    }
-
-    .sectorr__p {
-      margin-top: 45px;
     }
 
     .sectorr__table {
