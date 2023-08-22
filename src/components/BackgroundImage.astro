@@ -25,7 +25,7 @@ const { title, description, button, backgroundImageClass, textColorClass } = Ast
         {
           button && (
             <p>
-              <a href={button.href} class="backgroundimage__button">
+              <a href={button.href} target={button.target}class="backgroundimage__button">
                 {button.text}
               </a>
             </p>
