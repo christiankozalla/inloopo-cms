@@ -16,7 +16,7 @@ function displayCategory(category: string) {
 }
 
 function hasAdditionalLinkToPost() {
-  return title && slug;
+  return Boolean(title && slug);
 }
 ---
 
@@ -34,7 +34,7 @@ function hasAdditionalLinkToPost() {
     {
       hasAdditionalLinkToPost() && (
         <li class="breadcrumbs__li">
-          <a class="breadcrumbs--active" href={`${localePathSegment}/${category}/${slug}`}>
+          <a class="breadcrumbs--active" href={`${localePathSegment}/${category}/${slug}/`}>
             {title}
           </a>
         </li>
