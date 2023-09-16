@@ -27,7 +27,7 @@ interface Props {
 const { title, opengraph, locale, canonical = new URL(Astro.url.pathname, Astro.site) } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={locale || opengraph?.locale || "de"}>
   <head>
     <meta charset="UTF-8" />

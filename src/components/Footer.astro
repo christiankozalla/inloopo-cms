@@ -19,7 +19,8 @@ const de: Content = {
   headline: "inloopo",
   copy: "Dein Investment. Deine Freiheit.",
   icons: "Folge mir",
-  affiliate: "*Bei Links mit Sternchen handelt es sich um einen Affiliate-Link, das heißt, wenn du auf der verlinkten Website etwas kaufst, erhalte ich eine Provision. Dies hat keinerlei Einfluss darauf, wie ich ein Tool oder einen Anbieter bewerte.",
+  affiliate:
+    "*Bei Links mit Sternchen handelt es sich um einen Affiliate-Link, das heißt, wenn du auf der verlinkten Website etwas kaufst, erhalte ich eine Provision. Dies hat keinerlei Einfluss darauf, wie ich ein Tool oder einen Anbieter bewerte.",
   links: [
     { text: "Datenschutz", href: "/de/datenschutz/" },
     { text: "Nutzungsbedingungen", href: "/de/nutzungsbedingungen/" },
@@ -37,7 +38,8 @@ const en: Content = {
   headline: "inloopo",
   copy: "Your Investment. Your Freedom.",
   icons: "Follow me",
-  affiliate: "Links with an * are affiliate links, which means that if you buy something on the linked website, I receive a commission. This has no influence on how I rate a tool or a provider.",
+  affiliate:
+    "Links with an * are affiliate links, which means that if you buy something on the linked website, I receive a commission. This has no influence on how I rate a tool or a provider.",
   links: [
     { text: "Privacy Policy", href: "/privacy-policy/" },
     { text: "Terms and Conditions", href: "/terms-and-conditions/" },
@@ -63,8 +65,12 @@ const t = <T extends keyof Content>(key: T) => {
     <p class="site-footer__text--center">{t("copy")}</p>
     <h6 class="site-footer__text--center">{t("icons")}</h6>
     <div class="site-footer__icons-container">
-      <a href="https://www.youtube.com/@inloopo" target="_blank" title="Youtube Channel inloopo"><img src="/images/icon-youtube.svg" alt="Youtube Icon" width="60"></a>
-      <a href="https://www.facebook.com/Philipp123456" target="_blank" title="Facebook Page Philipp Kozalla"><img src="/images/icon-facebook.svg" alt="Facebook Icon" width="40"></a>
+      <a href="https://www.youtube.com/@inloopo" target="_blank" title="Youtube Channel inloopo"
+        ><img src="/images/icon-youtube.svg" alt="Youtube Icon" width="60" /></a
+      >
+      <a href="https://www.facebook.com/Philipp123456" target="_blank" title="Facebook Page Philipp Kozalla"
+        ><img src="/images/icon-facebook.svg" alt="Facebook Icon" width="40" /></a
+      >
     </div>
     <p class="site-footer__text--center">{t("affiliate")}</p>
     <p class="site-footer__text--center">

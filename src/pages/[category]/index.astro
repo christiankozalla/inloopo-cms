@@ -59,7 +59,7 @@ export async function getStaticPaths() {
       params: { category: "stocks-analysis" },
       props: {
         title: "Blog posts on stocks analysis",
-        description:"Looking for stock analysis? On this page you will find my latest stock analysis.",
+        description: "Looking for stock analysis? On this page you will find my latest stock analysis.",
         headline: "Stocks analysis.",
         copy: "You can find all blog posts on the topic of stock analysis here.",
         items: entries.items.filter((item) => item.fields.category === "stocks-analysis"),

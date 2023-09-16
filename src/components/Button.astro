@@ -1,10 +1,15 @@
 ---
-const { link, text, alignClass, target ="" } = Astro.props;
+const { link, text, alignClass, target = "" } = Astro.props;
 ---
+
 <div class="button__container">
-<a href={link} target={ target } class={`
+  <a
+    href={link}
+    target={target}
+    class={`
 button
-${alignClass}`}>{text}</a>
+${alignClass}`}>{text}</a
+  >
 </div>
 
 <style>
@@ -32,5 +37,4 @@ ${alignClass}`}>{text}</a>
     text-align: center;
     align-items: center;
   }
-
 </style>

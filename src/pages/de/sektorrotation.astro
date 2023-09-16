@@ -44,7 +44,7 @@ import "../../styles/styles.css";
     tableEl.addEventListener("mouseover", highlight);
     tableEl.addEventListener("click", highlight);
     tableEl.addEventListener("mouseout", () =>
-      tableEl.querySelectorAll("td").forEach((el) => el.classList.remove("off"))
+      tableEl.querySelectorAll("td").forEach((el) => el.classList.remove("off")),
     );
   </script>
 
@@ -332,80 +332,67 @@ import "../../styles/styles.css";
             <tr>
               <th>Sektoren</th>
               <th>Sektorindex</th>
-              
             </tr>
           </thead>
           <tbody>
             <tr>
               <td class="cond">cond</td>
               <td class="cond">S&P 500 Konsum zyklisch</td>
-              
             </tr>
 
             <tr>
               <td class="cons">cons</td>
               <td class="cons">S&P 500 Konsum nicht-zyklisch</td>
-              
             </tr>
 
             <tr>
               <td class="enrs">enrs</td>
               <td class="enrs">S&P 500 Energie</td>
-              
             </tr>
 
             <tr>
               <td class="finl">finl</td>
               <td class="finl">S&P 500 Finanzen</td>
-              
             </tr>
 
             <tr>
               <td class="hlth">hlth</td>
               <td class="hlth">S&P 500 Gesundheitswesen</td>
-              
             </tr>
 
             <tr>
               <td class="indu">indu</td>
               <td class="indu">S&P 500 Industrie</td>
-              
             </tr>
 
             <tr>
               <td class="inft">inft</td>
               <td class="inft">S&P 500 Technologie</td>
-              
             </tr>
 
             <tr>
               <td class="matr">matr</td>
               <td class="matr">S&P 500 Materialien</td>
-             
             </tr>
 
             <tr>
               <td class="real">real</td>
               <td class="real">S&P 500 Immobilien</td>
-             
             </tr>
 
             <tr>
               <td class="tels">tels</td>
               <td class="tels">S&P 500 Kommunikation</td>
-              
             </tr>
 
             <tr>
               <td class="util">util</td>
               <td class="util">S&P 500 Versorger</td>
-              
             </tr>
 
             <tr>
               <td class="sp">S&P</td>
               <td class="sp">S&P 500 Index</td>
-              
             </tr>
           </tbody>
         </table>

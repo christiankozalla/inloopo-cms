@@ -137,7 +137,7 @@ interface Author {
     name: EntryFields.Text;
     avatar?: Asset;
     bio?: EntryFields.Text;
-  }
+  };
 }
 
 interface ChartData {

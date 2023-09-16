@@ -11,7 +11,7 @@ export async function getStaticPaths() {
     order: "-fields.published",
   });
   return [
-  {
+    {
       params: { category: "swing-trading" },
       props: {
         title: "Swing Trading",
@@ -22,12 +22,11 @@ export async function getStaticPaths() {
         items: entries.items.filter((item) => item.fields.category === "swing-trading"),
       },
     },
-    { 
+    {
       params: { category: "daytrading" },
       props: {
         title: "Artikel rund ums Daytrading",
-        description:
-          "Bist du ein Daytrader? Hier findest du essentielles Wissen zum Thema Daytrading.",
+        description: "Bist du ein Daytrader? Hier findest du essentielles Wissen zum Thema Daytrading.",
         headline: "Daytrading",
         copy: "Hier findest du essentielles Wissen zum Thema Daytrading.",
         items: entries.items.filter((item) => item.fields.category === "daytrading"),
@@ -59,8 +58,7 @@ export async function getStaticPaths() {
       params: { category: "aktienanalyse" },
       props: {
         title: "Blogbeiträge zur Aktienanalyse",
-        description:
-          "Du bist auf der Suche nach Aktienanalysen? Auf dieser Seite finden Sie meine neuesten Artikel.",
+        description: "Du bist auf der Suche nach Aktienanalysen? Auf dieser Seite finden Sie meine neuesten Artikel.",
         headline: "Aktienanalysen",
         copy: "Hier findest du alle Aktienanalysen auf meinem Blog.",
         items: entries.items.filter((item) => item.fields.category === "aktienanalyse"),

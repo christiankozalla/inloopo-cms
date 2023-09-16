@@ -44,7 +44,7 @@ import "../styles/styles.css";
     tableEl.addEventListener("mouseover", highlight);
     tableEl.addEventListener("click", highlight);
     tableEl.addEventListener("mouseout", () =>
-      tableEl.querySelectorAll("td").forEach((el) => el.classList.remove("off"))
+      tableEl.querySelectorAll("td").forEach((el) => el.classList.remove("off")),
     );
   </script>
 
@@ -326,87 +326,73 @@ import "../styles/styles.css";
 
   <section class="sectorr">
     <div class="sectorr__grid">
-    
       <div class="sectorr-scnd">
         <table class="sectorr__table-scnd">
           <thead>
             <tr>
               <th>Sectors</th>
               <th>Sectorindex</th>
-             
             </tr>
           </thead>
           <tbody>
             <tr>
               <td class="cond">cond</td>
               <td class="cond">S&P 500 Consumption cyclical</td>
-             
             </tr>
 
             <tr>
               <td class="cons">cons</td>
               <td class="cons">S&P 500 Consumption non-cyclical</td>
-              
             </tr>
 
             <tr>
               <td class="enrs">enrs</td>
               <td class="enrs">S&P 500 Energy</td>
-             
             </tr>
 
             <tr>
               <td class="finl">finl</td>
               <td class="finl">S&P 500 Finance</td>
-              
             </tr>
 
             <tr>
               <td class="hlth">hlth</td>
               <td class="hlth">S&P 500 Healthcare</td>
-              
             </tr>
 
             <tr>
               <td class="indu">indu</td>
               <td class="indu">S&P 500 Industry</td>
-              
             </tr>
 
             <tr>
               <td class="inft">inft</td>
               <td class="inft">S&P 500 Technology</td>
-             
             </tr>
 
             <tr>
               <td class="matr">matr</td>
               <td class="matr">S&P 500 Materials</td>
-             
             </tr>
 
             <tr>
               <td class="real">real</td>
               <td class="real">S&P 500 Immobilien</td>
-              
             </tr>
 
             <tr>
               <td class="tels">tels</td>
               <td class="tels">S&P 500 Communikation</td>
-              
             </tr>
 
             <tr>
               <td class="util">util</td>
               <td class="util">S&P 500 Utilities</td>
-              
             </tr>
 
             <tr>
               <td class="sp">S&P</td>
               <td class="sp">S&P 500 Index</td>
-              
             </tr>
           </tbody>
         </table>
@@ -415,7 +401,7 @@ import "../styles/styles.css";
       <div class="sectorr__img">
         <img src="/images/sector-rotation-en.svg" alt="Sektor rotation with economic cycle" />
       </div>
-  
+
       <div class="sectorr__p">
         <h4>What is sector rotation?</h4>
         <p>
@@ -428,7 +414,8 @@ import "../styles/styles.css";
           > changes, for example from a growth phase to a stagnation phase and then to a recession phase.
         </p>
         <p>
-          The idea of sector rotation is that you can improve your performances by investing in companies that are doing well rather than in companies that are struggling.
+          The idea of sector rotation is that you can improve your performances by investing in companies that are doing
+          well rather than in companies that are struggling.
         </p>
         <p>
           If you want to know more about how you can use this exactly, then write me an email or give me a call. There
