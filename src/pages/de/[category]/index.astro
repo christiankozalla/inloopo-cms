@@ -11,6 +11,17 @@ export async function getStaticPaths() {
     order: "-fields.published",
   });
   return [
+  {
+      params: { category: "swing-trading" },
+      props: {
+        title: "Swing Trading",
+        description:
+          "Bist du ein Trader, der regelmäßig investiert? Hier findest du essentielles Wissen zum Thema Swing Trading.",
+        headline: "Swing Trading",
+        copy: "Hier findest du essentielles Wissen zum Thema Swing Trading.",
+        items: entries.items.filter((item) => item.fields.category === "swing-trading"),
+      },
+    },
     { 
       params: { category: "daytrading" },
       props: {

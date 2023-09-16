@@ -13,6 +13,17 @@ export async function getStaticPaths() {
 
   return [
     {
+      params: { category: "swing-trading" },
+      props: {
+        title: "Swing Trading",
+        description:
+          "Are you a trader investing money frequently? Here you will find essential knowledge for swing trading.",
+        headline: "Swing Trading",
+        copy: "Here you will find essential knowledge for swing trading.",
+        items: entries.items.filter((item) => item.fields.category === "swing-trading"),
+      },
+    },
+    {
       params: { category: "day-trading" },
       props: {
         title: "Blog posts on day trading",
