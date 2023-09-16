@@ -12,13 +12,13 @@
   },
   "devDependencies": {
     "@types/node": "18.11.18",
-    "astro": "2.10.7",
+    "astro": "^2",
     "prettier": "^3.0.1",
-    "prettier-plugin-astro": "^0.11.0"
+    "prettier-plugin-astro": "^0.12.0",
+    "@astrojs/sitemap": "^3.0.0"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^2.0.1",
-    "@contentful/rich-text-html-renderer": "16.1.1",
+    "@contentful/rich-text-html-renderer": "^16.1.2",
     "contentful": "^9",
     "echarts": "^5.4.3"
   },
