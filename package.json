@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^16.1.2",
-    "contentful": "^9",
+    "contentful": "^10",
     "echarts": "^5.4.3"
   },
   "prettier": {
