@@ -132,9 +132,12 @@ interface Post {
 }
 
 interface Author {
-  name: EntryFields.Text;
-  avatar?: Asset;
-  bio?: EntryFields.Text;
+  contentTypeId: string;
+  fields: {
+    name: EntryFields.Text;
+    avatar?: Asset;
+    bio?: EntryFields.Text;
+  };
 }
 
 interface ChartData {

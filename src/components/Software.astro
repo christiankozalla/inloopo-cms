@@ -2,35 +2,36 @@
 const { heading } = Astro.props;
 ---
 
-<h2 class="tools__heading">{ heading }</h2>
+<h2 class="tools__heading">{heading}</h2>
 <div class="grid__tools">
-    <img src="/images/Logo_Finviz.png" alt="Logo Finviz">
-    <img src="/images/Logo_InteractiveBrokers.jpg" alt="Logo Interactive Broker">
-    <img src="/images/Logo_SierraChart.png" alt="Logo Sierra Chart">
-    <a href="https://account.ninjatrader.com/register" target="_blank"><img src="/images/NinjaTrader_NTE_BO_RGB.svg" alt="Logo Ninja Trader"></a>
-    <img src="/images/Logo_Tradesviz.png" alt="Logo Tradesviz">
-    <img src="/images/Logo_TradingView.png" alt="Logo TradingView">
-    <img src="/images/Logo_Aktienfinder.png" alt="Logo Aktienfinder">
-    
+  <img src="/images/Logo_Finviz.png" alt="Logo Finviz" />
+  <img src="/images/Logo_InteractiveBrokers.jpg" alt="Logo Interactive Broker" />
+  <img src="/images/Logo_SierraChart.png" alt="Logo Sierra Chart" />
+  <a href="https://account.ninjatrader.com/register" target="_blank"
+    ><img src="/images/NinjaTrader_NTE_BO_RGB.svg" alt="Logo Ninja Trader" /></a
+  >
+  <img src="/images/Logo_Tradesviz.png" alt="Logo Tradesviz" />
+  <img src="/images/Logo_TradingView.png" alt="Logo TradingView" />
+  <img src="/images/Logo_Aktienfinder.png" alt="Logo Aktienfinder" />
 </div>
 
 <style>
+  .grid__tools {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 0.8em;
+  }
+
+  .tools__heading {
+    text-align: center;
+    margin-top: 90px;
+  }
+
+  @media only screen and (min-width: 40em) {
     .grid__tools {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        justify-content: center;
-        align-items: center;
-        gap: 0.8em;
+      gap: 2em;
     }
-
-    .tools__heading {
-        text-align: center;
-        margin-top: 90px;
-    }
-
-    @media only screen and (min-width: 40em) {
-        .grid__tools {
-        gap: 2em;
-    }
-    }
+  }
 </style>

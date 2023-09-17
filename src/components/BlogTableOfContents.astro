@@ -69,7 +69,7 @@
     const links = Array.from(headings).map(
       (el, i) => `<li>
           <a rel="nofollow" href=#${el.id} class="toc__link">${i + 1}. ${el.dataset.toclink || el.innerText}</a>
-      </li>`
+      </li>`,
     );
     document.querySelector(".toc__nav").innerHTML = links.join("");
 

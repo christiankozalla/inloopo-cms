@@ -32,7 +32,7 @@ const links: Record<Langs, LinkInfo> = {
       {
         name: "Produkte",
         links: [
-        {
+          {
             name: "Day Trading Kurs",
             href: "/de/day-trading-kurs/",
           },
@@ -92,7 +92,7 @@ const links: Record<Langs, LinkInfo> = {
       {
         name: "Products",
         links: [
-        {
+          {
             name: "Day Trading Course",
             href: "/day-trading-course/",
           },
@@ -531,7 +531,9 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     }
   }
   .toggle-button span.bar {
-    transition: transform 200ms linear, opacity 100ms linear;
+    transition:
+      transform 200ms linear,
+      opacity 100ms linear;
   }
 
   .toggle-button span.bar:nth-child(1) {

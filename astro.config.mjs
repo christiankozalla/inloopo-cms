@@ -6,6 +6,7 @@ import { processCustomAssets } from "./scripts/process-custom-assets.mjs";
 export default defineConfig({
   site: "https://www.inloopo.com",
   output: "static",
+  scopedStyleStrategy: "where",
   integrations: [
     sitemap({
       filter: (page) =>
