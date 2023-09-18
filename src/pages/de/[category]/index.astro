@@ -2,72 +2,79 @@
 import type { Entry } from "contentful";
 import MainLayout from "../../../layouts/MainLayout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
-import { contentfulClient } from "../../../lib/contentful";
-import type { Post } from "../../../lib/contentful";
+import { contentfulClient, isValidCategory } from "../../../lib/contentful";
+import type { Post, Categories } from "../../../lib/contentful";
 
-export async function getStaticPaths() {
-  const entries = await contentfulClient.getEntries<Post>({
-    content_type: "post",
-    order: "-fields.published",
-  });
-  return [
-    {
-      params: { category: "swing-trading" },
-      props: {
-        title: "Swing Trading",
-        description:
-          "Bist du ein Trader, der regelmäßig investiert? Hier findest du essentielles Wissen zum Thema Swing Trading.",
-        headline: "Swing Trading",
-        copy: "Hier findest du essentielles Wissen zum Thema Swing Trading.",
-        items: entries.items.filter((item) => item.fields.category === "swing-trading"),
-      },
-    },
-    {
-      params: { category: "daytrading" },
-      props: {
-        title: "Artikel rund ums Daytrading",
-        description: "Bist du ein Daytrader? Hier findest du essentielles Wissen zum Thema Daytrading.",
-        headline: "Daytrading",
-        copy: "Hier findest du essentielles Wissen zum Thema Daytrading.",
-        items: entries.items.filter((item) => item.fields.category === "daytrading"),
-      },
-    },
-    {
-      params: { category: "finanzwissen" },
-      props: {
-        title: "Artikel rund ums Basiswissen für dein Investment",
-        description:
-          "Du willst dein Geld anlegen. Du weißt zu wenig wie du aktiv und strategisch investieren kannst. Dann hier lang.",
-        headline: "Kernkompetenzen für erfolgreiches Investieren",
-        copy: "Hier findest du essentielles Wissen.",
-        items: entries.items.filter((item) => item.fields.category === "finanzwissen"),
-      },
-    },
-    {
-      params: { category: "anlagestrategien" },
-      props: {
-        title: "Alle Artikel zum Thema Strategie zum Investieren",
-        description:
-          "Du willst wissen we du strategisch investierst. Du findest auf dieser Seite Beiträge genau zu diesem Thema.",
-        headline: "Investieren mit Strategie",
-        copy: "Alle Blogeinträge zum Thema strategisches Investieren findest du hier.",
-        items: entries.items.filter((item) => item.fields.category === "anlagestrategien"),
-      },
-    },
-    {
-      params: { category: "aktienanalyse" },
-      props: {
-        title: "Blogbeiträge zur Aktienanalyse",
-        description: "Du bist auf der Suche nach Aktienanalysen? Auf dieser Seite finden Sie meine neuesten Artikel.",
-        headline: "Aktienanalysen",
-        copy: "Hier findest du alle Aktienanalysen auf meinem Blog.",
-        items: entries.items.filter((item) => item.fields.category === "aktienanalyse"),
-      },
-    },
-  ];
+const category = Astro.params.category;
+
+if (!category || !isValidCategory(category)) {
+  return Astro.redirect("/de/");
 }
-const items: Entry<Post>[] = Astro.props.items;
-const { headline, copy, title, description } = Astro.props;
+
+const entries = await contentfulClient
+  .getEntries<Post>({
+    content_type: "post",
+    "fields.category": category,
+    order: "-fields.published",
+  })
+  .catch((error) => {
+    console.error(error);
+    return { items: [] };
+  });
+
+if (!entries || entries.items.length === 0) {
+  return Astro.redirect("/de/");
+}
+
+interface PageProps {
+  title: string;
+  description: string;
+  headline: string;
+  copy: string;
+  items: Entry<Post>[];
+}
+
+const props: Partial<Record<Categories, PageProps>> = {
+  "swing-trading": {
+    title: "Swing Trading",
+    description:
+      "Bist du ein Trader, der regelmäßig investiert? Hier findest du essentielles Wissen zum Thema Swing Trading.",
+    headline: "Swing Trading",
+    copy: "Hier findest du essentielles Wissen zum Thema Swing Trading.",
+    items: entries.items.filter((item) => item.fields.category === "swing-trading"),
+  },
+  daytrading: {
+    title: "Artikel rund ums Daytrading",
+    description: "Bist du ein Daytrader? Hier findest du essentielles Wissen zum Thema Daytrading.",
+    headline: "Daytrading",
+    copy: "Hier findest du essentielles Wissen zum Thema Daytrading.",
+    items: entries.items.filter((item) => item.fields.category === "daytrading"),
+  },
+  aktienanalyse: {
+    title: "Blogbeiträge zur Aktienanalyse",
+    description: "Du bist auf der Suche nach Aktienanalysen? Auf dieser Seite finden Sie meine neuesten Artikel.",
+    headline: "Aktienanalysen",
+    copy: "Hier findest du alle Aktienanalysen auf meinem Blog.",
+    items: entries.items.filter((item) => item.fields.category === "aktienanalyse"),
+  },
+  finanzwissen: {
+    title: "Artikel rund ums Basiswissen für dein Investment",
+    description:
+      "Du willst dein Geld anlegen. Du weißt zu wenig wie du aktiv und strategisch investieren kannst. Dann hier lang.",
+    headline: "Kernkompetenzen für erfolgreiches Investieren",
+    copy: "Hier findest du essentielles Wissen.",
+    items: entries.items.filter((item) => item.fields.category === "finanzwissen"), // .sort(sortPostsByDate),
+  },
+  anlagestrategien: {
+    title: "Alle Artikel zum Thema Strategie zum Investieren",
+    description:
+      "Du willst wissen we du strategisch investierst. Du findest auf dieser Seite Beiträge genau zu diesem Thema.",
+    headline: "Investieren mit Strategie",
+    copy: "Alle Blogeinträge zum Thema strategisches Investieren findest du hier.",
+    items: entries.items.filter((item) => item.fields.category === "anlagestrategien"), // .sort(sortPostsByDate),
+  },
+};
+const { headline, copy, title, description, items } = props[category];
 const lang = "de";
 ---
 

@@ -119,16 +119,25 @@ function renderYoutubeVideo(node: Node<YoutubeVideo>) {
   `;
 }
 
+function isValidCategory(category: string): category is Categories {
+  return ["aktienanalyse", "stocks-analysis", "finanzwissen", "anlagestrategien", "financial-literacy", "investment-strategies", "daytrading", "day-trading", "swing-trading"].indexOf(category) > -1;
+}
+
+type Categories = "aktienanalyse" | "stocks-analysis" | "finanzwissen" | "financial-literacy" | "investment-strategies" | "anlagestrategien" | "daytrading" | "day-trading" | "swing-trading";
+
 interface Post {
-  title: EntryFields.Text;
-  slug: EntryFields.Text;
-  category: EntryFields.Text;
-  published?: EntryFields.Date;
-  description?: EntryFields.Text;
-  seoDescription?: EntryFields.Text;
-  body: Document;
-  author: Entry<Author>;
-  heroImage?: Asset;
+  contentTypeId: string;
+  fields: {
+    title: EntryFields.Text;
+    slug: EntryFields.Text;
+    category: EntryFields.Text;
+    published?: EntryFields.Date;
+    description?: EntryFields.Text;
+    seoDescription?: EntryFields.Text;
+    body: Document;
+    author: Entry<Author>;
+    heroImage?: Asset;
+  }
 }
 
 interface Author {
@@ -175,5 +184,5 @@ interface YoutubeVideo {
   title: string;
 }
 
-export { contentfulClient, renderOptions };
-export type { Post, ChartData };
+export { contentfulClient, renderOptions, isValidCategory };
+export type { Post, Categories, ChartData };

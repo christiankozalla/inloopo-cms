@@ -2,74 +2,90 @@
 import type { Entry } from "contentful";
 import MainLayout from "../../layouts/MainLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { contentfulClient } from "../../lib/contentful";
-import type { Post } from "../../lib/contentful";
+import { contentfulClient, isValidCategory } from "../../lib/contentful";
+import type { Post, Categories } from "../../lib/contentful";
 
-export async function getStaticPaths() {
-  const entries = await contentfulClient.getEntries<Post>({
+const category = Astro.params.category;
+
+if (!category || !isValidCategory(category)) {
+  return Astro.redirect("/");
+}
+
+const entries = await contentfulClient
+  .getEntries<Post>({
     content_type: "englishPost",
+    "fields.category": category,
     order: "-fields.published",
+  })
+  .catch((error) => {
+    console.error(error);
+    return { items: [] };
   });
 
-  return [
-    {
-      params: { category: "swing-trading" },
-      props: {
-        title: "Swing Trading",
-        description:
-          "Are you a trader investing money frequently? Here you will find essential knowledge for swing trading.",
-        headline: "Swing Trading",
-        copy: "Here you will find essential knowledge for swing trading.",
-        items: entries.items.filter((item) => item.fields.category === "swing-trading"),
-      },
-    },
-    {
-      params: { category: "day-trading" },
-      props: {
-        title: "Blog posts on day trading",
-        description:
-          "Are you a day trader investing money on a daily basis? Here you will find essential knowledge for day trading.",
-        headline: "Day Trading",
-        copy: "Here you will find essential knowledge for day trading.",
-        items: entries.items.filter((item) => item.fields.category === "day-trading"),
-      },
-    },
-    {
-      params: { category: "financial-literacy" },
-      props: {
-        title: "Blog posts that cover basic knowledge on how to invest successfully",
-        description:
-          "You want to invest your money. You don't know enough about how to invest actively and strategically. Then come along.",
-        headline: "Core competencies for successful investing",
-        copy: "Here you will find essential knowledge.",
-        items: entries.items.filter((item) => item.fields.category === "financial-literacy"),
-      },
-    },
-    {
-      params: { category: "investment-strategies" },
-      props: {
-        title: "Blog posts on investment strategies",
-        description: "You want to know how to invest strategically. On this page you will find posts on this topic.",
-        headline: "Investing with a strategy",
-        copy: "You can find all blog posts on the topic of strategic investing here.",
-        items: entries.items.filter((item) => item.fields.category === "investment-strategies"),
-      },
-    },
-    {
-      params: { category: "stocks-analysis" },
-      props: {
-        title: "Blog posts on stocks analysis",
-        description: "Looking for stock analysis? On this page you will find my latest stock analysis.",
-        headline: "Stocks analysis.",
-        copy: "You can find all blog posts on the topic of stock analysis here.",
-        items: entries.items.filter((item) => item.fields.category === "stocks-analysis"),
-      },
-    },
-  ];
+// if (!entries || entries.items.length === 0) {
+if (!entries) {
+  return Astro.redirect("/");
 }
-const items: Entry<Post>[] = Astro.props.items;
-const { headline, copy, title, description } = Astro.props;
+
+interface PageProps {
+  title: string;
+  description: string;
+  headline: string;
+  copy: string;
+  items: Entry<Post>[];
+}
+
+const props: Partial<Record<Categories, PageProps>> = {
+  "swing-trading": {
+    title: "Swing Trading",
+    description:
+      "Are you a trader investing money frequently? Here you will find essential knowledge for swing trading.",
+    headline: "Swing Trading",
+    copy: "Here you will find essential knowledge for swing trading.",
+    items: entries.items.filter((item) => item.fields.category === "swing-trading"),
+  },
+  "day-trading": {
+    title: "Blog posts on day trading",
+    description:
+      "Are you a day trader investing money on a daily basis? Here you will find essential knowledge for day trading.",
+    headline: "Day Trading",
+    copy: "Here you will find essential knowledge for day trading.",
+    items: entries.items.filter((item) => item.fields.category === "day-trading"),
+  },
+  "financial-literacy": {
+    title: "Blog posts that cover basic knowledge on how to invest successfully",
+    description:
+      "You want to invest your money. You don't know enough about how to invest actively and strategically. Then come along.",
+    headline: "Core competencies for successful investing",
+    copy: "Here you will find essential knowledge.",
+    items: entries.items.filter((item) => item.fields.category === "financial-literacy"),
+  },
+  anlagestrategien: {
+    title: "Blog posts on investment strategies",
+    description: "You want to know how to invest strategically. On this page you will find posts on this topic.",
+    headline: "Investing with a strategy",
+    copy: "You can find all blog posts on the topic of strategic investing here.",
+    items: entries.items.filter((item) => item.fields.category === "investment-strategies"),
+  },
+  "stocks-analysis": {
+    title: "Blog posts on stocks analysis",
+    description: "Looking for stock analysis? On this page you will find my latest stock analysis.",
+    headline: "Stocks analysis.",
+    copy: "You can find all blog posts on the topic of stock analysis here.",
+    items: entries.items.filter((item) => item.fields.category === "stocks-analysis"),
+  },
+  "investment-strategies": {
+    title: "Blog posts on investment strategies",
+    description: "You want to know how to invest strategically. On this page you will find posts on this topic.",
+    headline: "Investing with a strategy",
+    copy: "You can find all blog posts on the topic of strategic investing here.",
+    items: entries.items.filter((item) => item.fields.category === "investment-strategies"),
+  },
+};
+
+
 const lang = "en";
+const { headline, copy, title, description, items } = props[category];
 ---
 
 <MainLayout

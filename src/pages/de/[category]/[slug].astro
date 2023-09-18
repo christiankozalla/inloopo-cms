@@ -4,35 +4,41 @@ import BlogTableOfContents from "../../../components/BlogTableOfContents.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import Author from "../../../components/Author.astro";
 import BlogFeedback from "../../../components/BlogFeedback.astro";
-import { contentfulClient, renderOptions } from "../../../lib/contentful";
+import { contentfulClient, renderOptions, isValidCategory } from "../../../lib/contentful";
 import type { Post } from "../../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
-export async function getStaticPaths() {
-  const entries = await contentfulClient.getEntries<Post>({
-    content_type: "post",
-  });
-  return entries.items.map((item) => ({
-    params: { category: item.fields.category, slug: item.fields.slug },
-    props: {
-      title: item.fields.title,
-      body: documentToHtmlString(item.fields.body, renderOptions),
-      date: item.fields.published ? new Date(item.fields.published).toLocaleDateString("de-DE") : null,
-      author: item.fields.author.fields,
-      heroImage: {
-        url: item.fields.heroImage?.fields.file.url.startsWith("//")
-          ? "https:" + item.fields.heroImage?.fields.file.url
-          : item.fields.heroImage?.fields.file.url,
-        height: item.fields.heroImage?.fields?.file?.details?.image?.height,
-        width: item.fields.heroImage?.fields?.file?.details?.image?.width,
-      },
-      seoDescription: item.fields.seoDescription,
-    },
-  }));
+const { category, slug } = Astro.params as { category: string; slug: string };
+if (!category || !isValidCategory(category)) {
+  return Astro.redirect("/de/blog/");
 }
 
-const { title, date, body, author, heroImage, seoDescription } = Astro.props;
-const { category, slug } = Astro.params as { category: string; slug: string };
+const entries = await contentfulClient
+  .getEntries<Post>({
+    content_type: "post",
+    "fields.category": category,
+    "fields.slug": slug,
+  })
+  .catch((err) => {
+    console.error(err);
+    return { items: [] };
+  });
+
+const post = entries.items[0];
+if (!post) {
+  return Astro.redirect("/de/blog/");
+}
+
+const title = post.fields.title;
+const body = documentToHtmlString(post.fields.body, renderOptions);
+const date = post.fields.published ? new Date(post.fields.published).toLocaleDateString("de-DE") : null;
+const author = post.fields.author.fields;
+const heroImage = {
+  url: post.fields.heroImage?.fields.file.url,
+  height: post.fields.heroImage?.fields.file.details.image.height,
+  width: post.fields.heroImage?.fields.file.details.image.width,
+};
+const seoDescription = post.fields.seoDescription || post.fields.description || "";
 const url = new URL(Astro.url.pathname, Astro.site).toString();
 const lang = "de";
 ---
