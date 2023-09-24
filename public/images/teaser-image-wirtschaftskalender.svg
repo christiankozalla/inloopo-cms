@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 800">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Unbenannter_Verlauf_16);
+        opacity: .3;
+      }
+
+      .cls-2 {
+        fill: #6b35ff;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        fill: #fa0;
+      }
+
+      .cls-5 {
+        fill: #ff6040;
+      }
+
+      .cls-8 {
+        fill: url(#Unbenannter_Verlauf_16-2);
+      }
+
+      .cls-6 {
+        fill: #131e3c;
+      }
+
+      .cls-7 {
+        fill: #ff35c9;
+      }
+    </style>
+    <linearGradient id="Unbenannter_Verlauf_16" data-name="Unbenannter Verlauf 16" x1="66.79" y1="915.69" x2="1853.21" y2="-115.69" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2f3c77"/>
+      <stop offset="1" stop-color="#252d5b"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_16-2" data-name="Unbenannter Verlauf 16" x1="66.79" x2="1853.21" y2="-115.69" xlink:href="#Unbenannter_Verlauf_16"/>
+  </defs>
+  <g id="Ebene_1-2" data-name="Ebene 1">
+    <rect class="cls-1" width="1920" height="800"/>
+    <rect class="cls-8" x="0" width="1920" height="800"/>
+    <rect class="cls-4" x="1665.54" y="196.83" width="126.96" height="82.64"/>
+    <rect class="cls-6" x="1411.63" y="196.83" width="126.96" height="82.64"/>
+    <rect class="cls-7" x="1792.5" y="196.57" width="126.96" height="82.64"/>
+    <rect class="cls-5" x="1538.59" y="196.57" width="126.96" height="82.64"/>
+    <rect class="cls-2" x="1284.93" y="196.83" width="126.96" height="82.64"/>
+    <line class="cls-3" x1="1411.88" y1="281.98" x2="1411.88" y2="719.91"/>
+    <line class="cls-3" x1="1538.59" y1="281.98" x2="1538.59" y2="647.64"/>
+    <line class="cls-3" x1="1665.54" y1="281.98" x2="1665.54" y2="678.55"/>
+    <line class="cls-3" x1="1792.5" y1="284.26" x2="1792.5" y2="749.02"/>
+    <line class="cls-3" x1="1330.64" y1="371.51" x2="1920" y2="371.51"/>
+    <line class="cls-3" x1="1284.93" y1="463.55" x2="1920" y2="463.55"/>
+    <line class="cls-3" x1="1337.53" y1="555.6" x2="1919.6" y2="555.6"/>
+    <line class="cls-3" x1="1189.7" y1="647.64" x2="1920" y2="647.64"/>
+  </g>
+</svg>
