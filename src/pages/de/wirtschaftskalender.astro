@@ -2,7 +2,7 @@
 //import layout and components
 import MainLayout from "../../layouts/MainLayout.astro";
 import HeroShot from "../../components/HeroShot.astro";
-import ShareButton from "../../components/ShareButton.astro";
+import Button from "../../components/Button.astro";
 
 //import
 import "../../styles/styles.css";
@@ -10,7 +10,7 @@ import "../../styles/styles.css";
 
 <MainLayout
   title="Wirtschaftskalender"
-  description="..."
+  description="Mit diesem Wirtschaftskalender hast du alle wichtigen Börsentermine für die USA und die EU im Blick."
   opengraph={{
     description: "Nutze den Wirtschaftskalender wie ich",
     locale: "de",
@@ -22,17 +22,30 @@ import "../../styles/styles.css";
   canonical="https://www.inloopo.com/de/wirtschaftskalender/">
   <!-- TEASER -->
   <HeroShot
-    title="Wirtschaftskalender"
-    description="..."
-    backgroundImageClass="main-teaser__page-sektorrotation"
+    title="Wirtschaftskalender USA und EU"
+    description="Mit diesem Wirtschaftskalender hast du alle wichtigen Börsentermine für die USA und die EU im Blick. Vielen Dank an investing.com de für die Nutzung. Du kannst den Kalender ganz ohne störende Werbung nutzen."
+    backgroundImageClass="main-teaser__page-wirtschaftskalender"
   />
 
   <section>
+    <div class="wrapper-content-blog">
   <h2>Wirtschaftskalender wie ich ihn nutze</h2>  
   <iframe src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=3&features=datepicker,timezone,timeselector,filters&countries=72,5&calType=week&timeZone=68&lang=1" width="650" height="467" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
   <div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">
     <span style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a href="https://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span>
 </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrapper-content-blog">
+    <h2>Wie verwende ich den Wirtschaftskalender?</h2>
+    <p>Ich benutze den Wirtschaftskalender hauptsächlich für mein Daytrading. Denn dort ist es sehr wichtig, die kursbewegenden Börsentermine zu kennen. In diesem Wirtschaftskalender zeige ich dir bewusst nur die wichtigsten Wirtschaftstermine der USA / EU. So wirst du nicht mit unwichtigen Terminen überschwemmt und kannst dich voll und ganz auf das Wichtigste konzentrieren. </p>
+    <p>Das Geld verdienen mit Trading.</p>
+    <Button 
+    link="https://www.inloopo.com/de/day-trading-kurs/"
+    text="Zum Day Trading Kurs"
+    />
+  </div>
   </section>
 
 

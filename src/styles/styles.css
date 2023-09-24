@@ -481,6 +481,14 @@ p {
   margin-bottom: 120px;
 }
 
+.main-teaser__page-wirtschaftskalender {
+  background-image: url("/images/teaser-image-wirtschaftskalender.svg");
+  background-position: center;
+  padding-top: 1%;
+  padding-bottom: 6%;
+  margin-bottom: 120px;
+}
+
 .main-teaser__page-konjunkturzyklus {
   background-image: url("/images/teaser-image-konjunkturzyklus.svg");
   background-position: center;
