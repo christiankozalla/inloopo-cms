@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/styles.css";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout
@@ -20,7 +21,10 @@ import "../styles/styles.css";
             </p>
             <img class="main-teaser__icon" src="/images/long-arrow-down.svg" width="40" alt="Pfeil Icon" />
             <a href="mailto:info@inloopo.com" class="main-teaser__link link">info@inloopo.com</a>
-            <p class="p--bigger">+49 15736977448</p>
+            <Button 
+            link="https://calendly.com/philipp-kozalla-call/30min"
+            target="_target"
+            text="Book a Zoom Call"/>
           </div>
           <div class="column half">
             <div class="main-teaser__container">
