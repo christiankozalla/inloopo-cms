@@ -8,9 +8,10 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-  schedule:
-    - cron: "55 17 * * 0,3,5"
-
+  # Allows Contentful to use a Webhook in order to trigger deployment,
+  # if an entry is published or unpublished
+  repository_dispatch:
+      types: [publish-event, unpublish-event]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
