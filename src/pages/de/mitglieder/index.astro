@@ -1,0 +1,55 @@
+---
+import MemberLayout from "../../../layouts/MemberLayout.astro";
+import CourseCard from "../../../components/ModuleCard.astro";
+---
+
+<MemberLayout
+title="Mitgliederbereich Inloopo"
+description=""
+lang="de">
+
+<section class="wrapper-content">
+    <h2 class="column__heading">Kuse im Überblick</h2>
+<div class="grid grid-3fr">
+<CourseCard
+title="Börsenampelkurs"
+icon={{
+  src: "/images/traffic-light.svg",
+  alt: "Börsenampel",
+  width: "35",
+}}
+listItems={[
+  "14 Videos",
+  "5h Stunden"
+]}
+/>
+
+<CourseCard
+title="Daytrading Kurs"
+icon={{
+  src: "/images/bull-and-bear.svg",
+  alt: "Börsenampel",
+  width: "120",
+}}
+listItems={[
+  "14 Videos",
+  "5h Stunden"
+]}
+/>
+
+<CourseCard
+title="ETF Signaldienst"
+icon={{
+  src: "/images/alarm.svg",
+  alt: "Börsenampel",
+  width: "60",
+}}
+listItems={[
+  "14 Videos",
+  "5h Stunden"
+]}
+/>
+</div>
+</section>
+
+</MemberLayout>

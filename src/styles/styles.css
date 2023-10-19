@@ -34,7 +34,7 @@ html {
   font-size: 100%;
   /*Browserstandard 16px*/
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 90px;
 }
 
 img {
@@ -48,6 +48,10 @@ img {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* ---------------------------------*\
@@ -170,6 +174,8 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
+
 
 /* ---------------------------------*\
     #FONTS
@@ -386,6 +392,8 @@ p {
 .secondary-teaser__link {
   color: #ff6b35;
   text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #fff;
 }
 
 .link--background {
@@ -2041,13 +2049,17 @@ td {
   }
 
   /* ---------------------------------*\
-        #Calendar 
-    \* ---------------------------------*/
+        #COURSE CARD 
+  \* ---------------------------------*/
 
+  .course-card__link {
+    text-decoration: none;
+  }
 
-  /* ---------------------------------*\
-        #LIST #TOOLS 
-    \* ---------------------------------*/
+  .course-card__hover:hover {
+    background-color: var(--accent-color);
+    width: 100%;
+  }
 
   /* ---------------------------------*\
             #BREADCRUMBS

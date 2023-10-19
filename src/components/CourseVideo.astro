@@ -1,0 +1,109 @@
+---
+const { videoLarge, videoMedium, videoSmall, videoId, backgroundColorClass, heading, text = "", download = "", download2 = ""} = Astro.props;
+---
+<div class={`
+    course-video__heading-container
+    ${backgroundColorClass}
+    `}>
+    <h2 class="course-video__heading">{heading}</h2>
+</div>
+<div class="course-video__container">
+<video controls id={videoId}>
+    <source src={videoLarge} type="video/mp4" class="video--large">
+    <source src={videoMedium} type="video/mp4" class="video--medium">
+    <source src={videoSmall} type="video/mp4" class="video--small">
+    Your browser does not support the video tag.
+</video>
+<p class="course-video__text">{text}</p>
+<div class="course-video__download">
+{download &&
+(<a href={download.link} class="link"><img class="course-video__download-icon" src="/images/download.svg" width="26" alt="download icon">{download.text}</a>)
+}
+{download2 &&
+(<a href={download2.link} class="link"><img class="course-video__download-icon" src="/images/download.svg" width="26" alt="download icon">{download2.text}</a>)
+}
+</div>
+</div>
+
+<style>
+    .course-video__heading-container {
+        color: #fff;
+        padding: 1em 2em;
+        margin-top: 3em;
+    }
+
+    .heading-container--accent {
+        background-color: var(--accent-color);
+    }
+
+    .heading-container--dark {
+        background-color: var(--dark-background-color);
+    }
+
+    .course-video__heading {
+        margin-bottom: 0;
+    }
+    video {
+        max-width: 100%;
+    }
+
+    .video--large,
+        .video--medium {
+            display: none;
+        }
+
+    .course-video__container {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #d5d5d5;
+        box-shadow: 1px 1px 4px #d2d2d2;
+        padding: 1em 0;
+    }
+
+    .course-video__download {
+        display: flex;
+        gap: 1em;
+        padding: 0 2em;
+    }
+
+    .course-video__download-icon {
+        margin-right: 0.6em;
+    }
+
+    .course-video__text {
+        padding: 1em 2em;
+    }
+
+    @media only screen and (min-width: 60em) {
+        .course-video__container {
+            margin: 0 2em 6em 2em;
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+        }
+
+        .course-video__heading-container {
+            margin: 0 2em;
+        }
+
+        .video--large,
+        .video--small {
+            display: none;
+        }
+
+        .video--medium {
+            display: flex;
+        }
+    }
+
+    @media only screen and (min-width: 80em) {
+        .video--small,
+        .video--medium {
+            display: none;
+        }
+
+        .video--large {
+            display: flex;
+        }
+    }
+</style>
