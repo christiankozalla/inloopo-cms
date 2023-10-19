@@ -4,7 +4,7 @@ import "../styles/styles.css";
 
 // component import
 import Footer from "../components/Footer.astro";
-import Navbar from "../components/Navbar.astro";
+import Navbar from "../components/MemberNavbar.astro";
 
 interface Props {
   title: string;
@@ -63,10 +63,12 @@ const { title, description, opengraph = "", lang, canonical = "", noIndex = fals
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <script> var MemberSpace = window.MemberSpace || {"subdomain":"inloopo"}; (function(d){ var s = d.createElement("script"); s.src = "https://cdn.memberspace.com/scripts/widgets.js"; var e = d.getElementsByTagName("script")[0]; e.parentNode.insertBefore(s,e); }(document)); </script>
   </head>
+
   <body>
     <Navbar lang={lang} />
+    <main>
     <slot />
-
+    </main>
     <Footer lang={lang} />
   </body>
 </html>

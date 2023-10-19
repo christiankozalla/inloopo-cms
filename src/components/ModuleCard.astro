@@ -1,53 +1,46 @@
 ---
-const { icon, title, listItems} = Astro.props;
+const { icon, title, listItems } = Astro.props;
 interface Props {
   title: string;
   icon: { src: string; alt: string; width: string };
   listItems: string[];
 }
 ---
-<a href="/de/mitglieder/boersenampel-kurs">
-<div class="course__container">
+
+<div class="module__container">
   <img src={icon.src} alt={icon.alt} width={icon.width} />
-  <h3 class="course__heading">{title}</h3>
-  <ul class="course__ul">
+  <h3 class="module__heading">{title}</h3>
+  <ul class="module__ul">
     {
       listItems.map((item) => (
-        <li class="course__li">
+        <li class="module__li">
           <img class="arrow" src="/images/icon-arrow.svg" width="15" height="15" alt="Pfeil Icon" />
           {item}
         </li>
       ))
-    }   
+    }
   </ul>
 </div>
-</a>
 
 <style>
-  .course__container {
+  .module__container {
     padding: 25px 2.6em;
     border: 1px solid #d5d5d5;
     box-shadow: 1px 1px 4px #d2d2d2;
     color: var(--text-color);
   }
 
-  .course__heading {
+  .module__heading {
     margin-top: 20px;
   }
 
-  .course__li {
+  .module__li {
     list-style: none;
     padding: 8px 0;
-    color: var(--accent-color);
   }
 
   .arrow {
     margin-right: 4px;
-  }
-
-  .course__container:hover {
-    background-color: var(--accent-color);
-    color: #fff;
   }
 
 </style>
