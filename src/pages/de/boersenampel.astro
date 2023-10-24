@@ -3,6 +3,15 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import HeroShot from "../../components/HeroShot.astro";
 import ShareButton from "../../components/ShareButton.astro";
 import Button from "../../components/Button.astro";
+import { renderOptions, type StockMarketIndicatorPost } from "../../lib/contentful";
+import { contentfulClient } from "../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+
+const entries = await contentfulClient.getEntries<StockMarketIndicatorPost>({
+  content_type: "stockMarketIndicatorPost",
+  // order: ["-sys.firstPublishedAt"],
+  limit: 10,
+});
 ---
 
 <MainLayout
@@ -37,7 +46,14 @@ import Button from "../../components/Button.astro";
       linkedinLink="https://www.linkedin.com/shareArticle?mini=true&url=https://www.inloopo.com/de/boersenampel/"
       twitterLink="https://twitter.com/share?url=https://www.inloopo.com/de/boersenampel/"
     />
-    <boersenampel-status lang="de"></boersenampel-status>
+    {
+      entries.items.map((item) => (
+        <div
+          set:html={documentToHtmlString(item.fields.content, renderOptions)}
+          style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
+        />
+      ))
+    }
     <h2 class="align-center">Was ist die inloopo Börsenampel?</h2>
     <p>
       Die <a class="link" href="https://www.inloopo.com/de/anlagestrategien/inloopo-boersenampel/"
@@ -49,7 +65,4 @@ import Button from "../../components/Button.astro";
     <p>Schau dir die Performance des inloopo Signaldienstes als ETF Strategie an.</p>
     <Button link="https://www.inloopo.com/de/investieren/" text="Geh zum Signaldienst" />
   </div>
-
-  <!-- Scripts -->
-  <script type="module" src="/scripts/boersenampel-status.js"></script>
 </MainLayout>

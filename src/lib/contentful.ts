@@ -1,5 +1,5 @@
 import contentful from "contentful";
-import type { EntryFields, Entry, Asset } from "contentful";
+import type { EntryFields, EntryFieldTypes, Asset } from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import type { Document } from "@contentful/rich-text-types";
@@ -42,10 +42,9 @@ const renderOptions = {
             src='https:${node.data.target.fields.file.url}'
             alt='${node.data.target.fields.description?.replace("[caption]", "") || ""}'
             loading='lazy'>
-        ${
-          node.data.target.fields.description?.startsWith("[caption]")
-            ? figcaptionWithParsedMarkdownLink(node.data.target.fields.description?.replace("[caption]", ""))
-            : ""
+        ${node.data.target.fields.description?.startsWith("[caption]")
+          ? figcaptionWithParsedMarkdownLink(node.data.target.fields.description?.replace("[caption]", ""))
+          : ""
         }
         </figure>
       `;
@@ -120,15 +119,25 @@ function renderYoutubeVideo(node: Node<YoutubeVideo>) {
 }
 
 interface Post {
-  title: EntryFields.Text;
-  slug: EntryFields.Text;
-  category: EntryFields.Text;
-  published?: EntryFields.Date;
-  description?: EntryFields.Text;
-  seoDescription?: EntryFields.Text;
-  body: Document;
-  author: Entry<Author>;
-  heroImage?: Asset;
+  contentTypeId: 'post' | 'englishPost';
+  fields: {
+    title: EntryFields.Text;
+    slug: EntryFields.Text;
+    category: EntryFields.Text;
+    published?: EntryFields.Date;
+    description?: EntryFields.Text;
+    seoDescription?: EntryFields.Text;
+    body: Document;
+    author: EntryFieldTypes.EntryLink<Author>;
+    heroImage?: EntryFieldTypes.AssetLink;
+  }
+}
+
+interface StockMarketIndicatorPost {
+  contentTypeId: 'stockMarketIndicatorPost' | 'englishStockMarketIndicatorPost';
+  fields: {
+    content: Document;
+  }
 }
 
 interface Author {
@@ -176,4 +185,4 @@ interface YoutubeVideo {
 }
 
 export { contentfulClient, renderOptions };
-export type { Post, ChartData };
+export type { Post, ChartData, StockMarketIndicatorPost };
