@@ -49,6 +49,7 @@ const entries = await contentfulClient.getEntries<StockMarketIndicatorPost>({
       entries.items.map((item) => (
         <div
           set:html={documentToHtmlString(item.fields.content, renderOptions)}
+          class="article"
           style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
         />
       ))
@@ -64,6 +65,24 @@ const entries = await contentfulClient.getEntries<StockMarketIndicatorPost>({
     <p>Look at the performance of the inloopo signal service as an ETF strategy.</p>
     <Button link="https://www.inloopo.com/investment/" text="See the signal service" />
   </div>
+  <style is:inline>
+    .article p {
+      margin-bottom: 1.2rem;
+    }
 
-  <!-- Scripts -->
+    .article__list {
+      list-style: none;
+      margin: 0;
+      padding-left: 12px;
+      border-left: none;
+    }
+    .article__list li p {
+      margin: 0;
+      padding: 0;
+    }
+    .article__list li p::before {
+      content: "- ";
+      display: inline;
+    }
+  </style>
 </MainLayout>

@@ -65,4 +65,24 @@ const entries = await contentfulClient.getEntries<StockMarketIndicatorPost>({
     <p>Schau dir die Performance des inloopo Signaldienstes als ETF Strategie an.</p>
     <Button link="https://www.inloopo.com/de/investieren/" text="Geh zum Signaldienst" />
   </div>
+  <style is:inline>
+    .article p {
+      margin-bottom: 1.2rem;
+    }
+
+    .article__list {
+      list-style: none;
+      margin: 0;
+      padding-left: 12px;
+      border-left: none;
+    }
+    .article__list li p {
+      margin: 0;
+      padding: 0;
+    }
+    .article__list li p::before {
+      content: "- ";
+      display: inline;
+    }
+  </style>
 </MainLayout>
