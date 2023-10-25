@@ -1,0 +1,110 @@
+---
+const { heading, description, listItems } = Astro.props;
+interface Props {
+  heading: string;
+  icon: { src: string; alt: string; width: string };
+  description: string[];
+  listItems: string[];
+}
+---
+
+<div class="banner__container">
+    <div class="banner__text-container">
+        <div>
+<h2 class="banner__heading">{ heading }</h2>
+<p class="banner__text">{ description }</p>
+</div>
+<div class="banner__details">
+    <h4>Deine Vorteile</h4>
+    <ul class="banner__ul">
+        {
+          listItems.map((item) => (
+            <li class="banner__li">
+              <img class="arrow" src="/images/icon-arrow-white.svg" width="15" height="15" alt="Pfeil Icon" />
+              {item}
+            </li>
+          ))
+        }   
+      </ul>
+      <div class="button__container">
+         <a href="https://calendly.com/philipp-kozalla-call/30min" target="_blanket" class="button">Buche einen Zoom Call</a>
+      </div>
+</div>
+</div>
+<slot />
+</div>
+
+<style>
+    .banner__container {
+        background: linear-gradient(to right, var(--accent-color), #6A0800);
+        padding: 4em 2em;
+        margin-top: 6em;
+        margin-bottom: -90px;
+    }
+    
+    .banner__text-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
+    .banner__heading {
+        font-size: 2.2rem;
+    }
+
+    .banner__text {
+        font-size: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .banner__details {
+        color: #fff;
+    }
+
+    .banner__li {
+    list-style: none;
+    padding: 8px 0;
+    color: #fff;
+    font-size: 1.25rem;
+  }
+
+  .button {
+    color: #fff;
+    background: #ff6b35;
+    border: 2px solid #ff6b35;
+    padding: 15px 20px;
+    text-decoration: none;
+    margin-top: 30px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  @media only screen and (min-width: 40em){
+        .banner__container {
+        padding: 4em 4em;
+    }
+
+        .banner__text-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 4em;
+    }
+
+    .banner__heading {
+        font-size: 2.8rem;
+    }
+    }
+
+    @media only screen and (min-width: 60em){
+        .banner__container {
+        padding: 4em 6em;
+    }
+
+        .banner__text-container {
+        gap: 6em;
+    }
+    }
+
+</style>

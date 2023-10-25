@@ -1,5 +1,5 @@
 ---
-const { link, text, alignClass, target = "" } = Astro.props;
+const { link, text, alignClass, target = "", colorClass="" } = Astro.props;
 ---
 
 <div class="button__container">
@@ -8,7 +8,8 @@ const { link, text, alignClass, target = "" } = Astro.props;
     target={target}
     class={`
 button
-${alignClass}`}>{text}</a
+${alignClass}
+${colorClass}`}>{text}</a
   >
 </div>
 
@@ -25,6 +26,11 @@ ${alignClass}`}>{text}</a
     font-size: 18px;
     font-size: 1.25rem;
     font-weight: bold;
+  }
+
+  .button__background--light {
+    background: #fff;
+    color: var(--accent-color);
   }
 
   .button__container {
