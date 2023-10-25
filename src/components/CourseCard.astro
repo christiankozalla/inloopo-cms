@@ -1,12 +1,12 @@
 ---
-const { icon, title, listItems} = Astro.props;
+const { icon, title, listItems } = Astro.props;
 interface Props {
   title: string;
   icon: { src: string; alt: string; width: string };
   listItems: string[];
 }
 ---
-<a href="/de/mitglieder/boersenampel-kurs">
+
 <div class="course__container">
   <img src={icon.src} alt={icon.alt} width={icon.width} />
   <h3 class="course__heading">{title}</h3>
@@ -21,7 +21,6 @@ interface Props {
     }   
   </ul>
 </div>
-</a>
 
 <style>
   .course__container {
