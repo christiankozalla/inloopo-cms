@@ -9,9 +9,9 @@ const { videoLarge, videoMedium, videoSmall, videoId, backgroundColorClass, head
 </div>
 <div class="course-video__container">
 <video controls id={videoId}>
-    <source data-src={videoLarge} type="video/mp4" class="video--large  lazy">
-    <source data-src={videoMedium} type="video/mp4" class="video--medium  lazy">
-    <source data-src={videoSmall} type="video/mp4" class="video--small  lazy">
+    <source src={videoLarge} type="video/mp4" class="video--large  lazy">
+    <source src={videoMedium} type="video/mp4" class="video--medium  lazy">
+    <source src={videoSmall} type="video/mp4" class="video--small  lazy">
     Your browser does not support the video tag.
 </video>
 <p class="course-video__text">{text}</p>
