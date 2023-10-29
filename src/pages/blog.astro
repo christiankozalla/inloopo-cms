@@ -5,7 +5,7 @@ import type { Post } from "../lib/contentful.js";
 
 const entries = await contentfulClient.getEntries<Post>({
   content_type: "englishPost",
-  order: "-fields.published",
+  order: ["-fields.published"],
 });
 ---
 

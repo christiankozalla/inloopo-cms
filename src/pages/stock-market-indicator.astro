@@ -3,6 +3,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 import HeroShot from "../components/HeroShot.astro";
 import ShareButton from "../components/ShareButton.astro";
 import Button from "../components/Button.astro";
+import { contentfulClient, renderOptions, type StockMarketIndicatorPost } from "../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+
+const entries = await contentfulClient.getEntries<StockMarketIndicatorPost>({
+  content_type: "englishStockMarketIndicatorPost",
+  // order: ["-sys.firstPublishedAt"],
+  limit: 10,
+});
 ---
 
 <MainLayout
@@ -37,7 +45,15 @@ import Button from "../components/Button.astro";
       linkedinLink="https://www.linkedin.com/shareArticle?mini=true&url=https://www.inloopo.com/stock-market-indicator/"
       twitterLink="https://twitter.com/share?url=https://www.inloopo.com/stock-market-indicator/"
     />
-    <boersenampel-status lang="en"></boersenampel-status>
+    {
+      entries.items.map((item) => (
+        <div
+          set:html={documentToHtmlString(item.fields.content, renderOptions)}
+          class="article"
+          style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
+        />
+      ))
+    }
     <h2 class="align-center">What is the inloopo stock market indicator?</h2>
     <p>
       The <a class="link" href="https://www.inloopo.com/de/anlagestrategien/inloopo-boersenampel/"
@@ -49,7 +65,24 @@ import Button from "../components/Button.astro";
     <p>Look at the performance of the inloopo signal service as an ETF strategy.</p>
     <Button link="https://www.inloopo.com/investment/" text="See the signal service" />
   </div>
+  <style is:inline>
+    .article p {
+      margin-bottom: 1.2rem;
+    }
 
-  <!-- Scripts -->
-  <script type="module" src="/scripts/boersenampel-status.js"></script>
+    .article__list {
+      list-style: none;
+      margin: 0;
+      padding-left: 12px;
+      border-left: none;
+    }
+    .article__list li p {
+      margin: 0;
+      padding: 0;
+    }
+    .article__list li p::before {
+      content: "- ";
+      display: inline;
+    }
+  </style>
 </MainLayout>
