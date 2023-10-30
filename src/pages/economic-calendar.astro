@@ -4,7 +4,6 @@ import MainLayout from "../layouts/MainLayout.astro";
 import HeroShot from "../components/HeroShot.astro";
 import Button from "../components/Button.astro";
 
-
 //import
 import "../styles/styles.css";
 ---
@@ -30,28 +29,42 @@ import "../styles/styles.css";
 
   <section>
     <div class="wrapper-content-blog">
-  <h2>Economic calendar with my settings</h2>  
- 
-  <iframe src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=3&features=datepicker,timezone,timeselector,filters&countries=72,5&calType=week&timeZone=68&lang=1" width="100%" height="600" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
+      <h2>Economic calendar with my settings</h2>
 
-  <div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">
-    <span style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a href="https://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span>
-</div>
-</div>
+      <iframe
+        src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=3&features=datepicker,timezone,timeselector,filters&countries=72,5&calType=week&timeZone=68&lang=1"
+        width="100%"
+        height="600"
+        frameborder="0"
+        allowtransparency="true"
+        marginwidth="0"
+        marginheight="0"></iframe>
+
+      <div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">
+        <span style="font-size: 11px;color: #333333;text-decoration: none;"
+          >Real Time Economic Calendar provided by <a
+            href="https://www.investing.com/"
+            rel="nofollow"
+            target="_blank"
+            style="font-size: 11px;color: #06529D; font-weight: bold;"
+            class="underline_link">Investing.com</a
+          >.</span
+        >
+      </div>
+    </div>
   </section>
 
   <section>
     <div class="wrapper-content-blog">
-    <h2>How do I use the economic calendar?</h2>
-    <p>I use the economic calendar mainly for my day trading. Because there it is very important to know the price-moving stock exchange dates. In this economic calendar I deliberately show you only the most important economic dates of the US / EU. This way you will not be flooded with unimportant dates and can fully concentrate on the most important thing.</p>
-    <p>Making money with trading.</p>
-    <Button 
-    link="https://www.inloopo.com/day-trading-course/"
-    text="Go to Day Trading Course"
-    />
-  </div>
+      <h2>How do I use the economic calendar?</h2>
+      <p>
+        I use the economic calendar mainly for my day trading. Because there it is very important to know the
+        price-moving stock exchange dates. In this economic calendar I deliberately show you only the most important
+        economic dates of the US / EU. This way you will not be flooded with unimportant dates and can fully concentrate
+        on the most important thing.
+      </p>
+      <p>Making money with trading.</p>
+      <Button link="https://www.inloopo.com/day-trading-course/" text="Go to Day Trading Course" />
+    </div>
   </section>
-
-
-
 </MainLayout>

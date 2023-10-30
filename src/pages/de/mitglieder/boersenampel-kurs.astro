@@ -1,257 +1,258 @@
 ---
 import MemberLayout from "../../../layouts/MemberLayout.astro";
 import CourseVideo from "../../../components/CourseVideo.astro";
-
 ---
 
-<MemberLayout
-title="Börsenampelkurs"
-description="#"
-lang="de">
-<div class="course__grid">
-  <div>
-    <aside>
-          <div id="toc" class="toc-course">
-              <a class="toc-course__accordion"><h6 class="toc-course__heading">Inhaltsverzeichnis</h6></a>
-              <div class="toc-course__accordion-content">
-              <ol class="toc-course__nav">
-                  <li><a rel="nofollow" href="#ampelfarben" class="toc-course__link"><strong>1. Börsenampel</strong></a></li>
-                  <li><a rel="nofollow" href="#cot" class="toc-course__link">1.1 COT Daten</a></li>
-                  <li><a rel="nofollow" href="#movingaverage" class="toc-course__link">1.2 Moving Average</a></li>
-                  <li><a rel="nofollow" href="#trend" class="toc-course__link">1.3 Trendstruktur</a></li>
-                  <li><a rel="nofollow" href="#momentum" class="toc-course__link">1.4 Momentum</a></li>
-                  <li><a rel="nofollow" href="#divergenz" class="toc-course__link">1.5 Divergenz</a></li>
-                  <li><a rel="nofollow" href="#spread" class="toc-course__link">1.6 Spread</a></li>
-                  <li><a rel="nofollow" href="#indikatoren" class="toc-course__link">1.7 Indikatoren</a></li>
-                  <li><a rel="nofollow" href="#signaldienst" class="toc-course__link"><strong>2. ETF Signaldienst</strong></a></li>
-                  <li><a rel="nofollow" href="#einstieg" class="toc-course__link">2.1 Einstiegssignale</a></li>
-                  <li><a rel="nofollow" href="#stopp" class="toc-course__link">2.2 Stopp Setzung</a></li>
-                  <li><a rel="nofollow" href="#ausstieg" class="toc-course__link">2.3 Ausstieg</a></li>
-                  <li><a rel="nofollow" href="#etf" class="toc-course__link">2.4 ETF Auswahl</a></li>
-                  <li><a rel="nofollow" href="#strategie" class="toc-course__link">2.5 Strategieentwicklung</a></li>
-                  <li><a rel="nofollow" href="#bonus" class="toc-course__link"><strong>3. Bonusvideos</strong></a></li>
-                  <li><a rel="nofollow" href="#einszueins" class="toc-course__link"><strong>4. Persönliches Abschlussgespräch</strong></a></li>
-              </ol>
-            </div>
-            </div>
+<MemberLayout title="Börsenampelkurs" description="#" lang="de">
+  <div class="course__grid">
+    <div>
+      <aside>
+        <div id="toc" class="toc-course">
+          <a class="toc-course__accordion"><h6 class="toc-course__heading">Inhaltsverzeichnis</h6></a>
+          <div class="toc-course__accordion-content">
+            <ol class="toc-course__nav">
+              <li>
+                <a rel="nofollow" href="#ampelfarben" class="toc-course__link"><strong>1. Börsenampel</strong></a>
+              </li>
+              <li><a rel="nofollow" href="#cot" class="toc-course__link">1.1 COT Daten</a></li>
+              <li><a rel="nofollow" href="#movingaverage" class="toc-course__link">1.2 Moving Average</a></li>
+              <li><a rel="nofollow" href="#trend" class="toc-course__link">1.3 Trendstruktur</a></li>
+              <li><a rel="nofollow" href="#momentum" class="toc-course__link">1.4 Momentum</a></li>
+              <li><a rel="nofollow" href="#divergenz" class="toc-course__link">1.5 Divergenz</a></li>
+              <li><a rel="nofollow" href="#spread" class="toc-course__link">1.6 Spread</a></li>
+              <li><a rel="nofollow" href="#indikatoren" class="toc-course__link">1.7 Indikatoren</a></li>
+              <li>
+                <a rel="nofollow" href="#signaldienst" class="toc-course__link"><strong>2. ETF Signaldienst</strong></a>
+              </li>
+              <li><a rel="nofollow" href="#einstieg" class="toc-course__link">2.1 Einstiegssignale</a></li>
+              <li><a rel="nofollow" href="#stopp" class="toc-course__link">2.2 Stopp Setzung</a></li>
+              <li><a rel="nofollow" href="#ausstieg" class="toc-course__link">2.3 Ausstieg</a></li>
+              <li><a rel="nofollow" href="#etf" class="toc-course__link">2.4 ETF Auswahl</a></li>
+              <li><a rel="nofollow" href="#strategie" class="toc-course__link">2.5 Strategieentwicklung</a></li>
+              <li><a rel="nofollow" href="#bonus" class="toc-course__link"><strong>3. Bonusvideos</strong></a></li>
+              <li>
+                <a rel="nofollow" href="#einszueins" class="toc-course__link"
+                  ><strong>4. Persönliches Abschlussgespräch</strong></a
+                >
+              </li>
+            </ol>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div>
+      <CourseVideo
+        videoLarge="/videos/01-1-willkommen-1080.mp4"
+        videoMedium="/videos/01-1-willkommen-720.mp4"
+        videoSmall="/videos/01-1-willkommen-576.mp4"
+        videoId="ampelfarben"
+        text=""
+        heading="Börsenampel"
+        backgroundColorClass="heading-container--accent"
+      />
 
-    </aside>
+      <CourseVideo
+        videoLarge="/videos/02-cot-daten-1080.mp4"
+        videoMedium="/videos/02-cot-daten-720.mp4"
+        videoSmall="/videos/02-cot-daten-576.mp4"
+        videoId="cot"
+        heading="COT Daten"
+        text="Hier findest du meine Indikatoren, mit denen ich die COT Daten auf dem Wochenchart analysiere."
+        backgroundColorClass="heading-container--accent"
+        download={{
+          link: "https://www.inloopo.com/?msopen=/content/cot_index_inloopo-txt",
+          text: "COT Net Position",
+        }}
+        download2={{
+          link: "https://www.inloopo.com/?msopen=/content/cot_net_position_inloopo-txt",
+          text: "COT Index",
+        }}
+      />
+
+      <CourseVideo
+        videoLarge="/videos/03-52-moving-average-1080.mp4"
+        videoMedium="/videos/03-52-moving-average-720.mp4"
+        videoSmall="/videos/03-52-moving-average-576.mp4"
+        videoId="movingaverage"
+        heading="Moving Average"
+        text="Hier findest du meinen 52 Moving Average Indikator für den Wochenchart."
+        download={{
+          link: "https://www.inloopo.com/?msopen=/content/52_moving_average_inloopo-txt",
+          text: "52 Moving Average",
+        }}
+        backgroundColorClass="heading-container--accent"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/04-trend-1080.mp4"
+        videoMedium="/videos/04-trend-720.mp4"
+        videoSmall="/videos/04-trend-576.mp4"
+        videoId="trend"
+        heading="Trend"
+        backgroundColorClass="heading-container--accent"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/05-momentum-1080.mp4"
+        videoMedium="/videos/05-momentum-720.mp4"
+        videoSmall="/videos/05-momentum-576.mp4"
+        videoId="momentum"
+        heading="Momentum"
+        text="Hier findest du meinen Momentum Indikator für den Tageschart."
+        download={{
+          link: "https://www.inloopo.com/?msopen=/content/momentum_-_percentr_inloopo-txt",
+          text: "Momentum + PercentR",
+        }}
+        backgroundColorClass="heading-container--accent"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/06-divergenz-1080.mp4"
+        videoMedium="/videos/06-divergenz-720.mp4"
+        videoSmall="/videos/06-divergenz-576.mp4"
+        videoId="divergenz"
+        heading="Divergenz"
+        text="Hier findest du meinen POIV Indikator für den Tageschart."
+        download={{
+          link: "https://www.inloopo.com/?msopen=/content/poiv_inloopo-txt",
+          text: "POIV",
+        }}
+        backgroundColorClass="heading-container--accent"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/07-spread-vix-1080.mp4"
+        videoMedium="/videos/07-spread-vix-720.mp4"
+        videoSmall="/videos/07-spread-vix-576.mp4"
+        videoId="spread"
+        heading="Spread"
+        backgroundColorClass="heading-container--accent"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/08-indikatoren-zusammenfassung-1080.mp4"
+        videoMedium="/videos/08-indikatoren-zusammenfassung-720.mp4"
+        videoSmall="/videos/08-indikatoren-zusammenfassung-576.mp4"
+        videoId="indikatoren"
+        heading="Indikatoren"
+        backgroundColorClass="heading-container--accent"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/09-etf-signaldienst-regelwerk-1080.mp4"
+        videoMedium="/videos/09-etf-signaldienst-regelwerk-720.mp4"
+        videoSmall="/videos/09-etf-signaldienst-regelwerk-576.mp4"
+        videoId="signaldienst"
+        heading="Signaldienst Regelwerk"
+        backgroundColorClass="heading-container--dark"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/10-einstieg-1080.mp4"
+        videoMedium="/videos/10-einstieg-720.mp4"
+        videoSmall="/videos/10-einstieg-576.mp4"
+        videoId="einstieg"
+        heading="Einstiegssignale"
+        text="Hier findest du meinen 18 Moving Average Indikator für den Tageschart."
+        download={{
+          link: "https://www.inloopo.com/?msopen=/content/18_moving_average-txt",
+          text: "18 Moving Average",
+        }}
+        backgroundColorClass="heading-container--dark"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/11-stopp-setzung-1080.mp4"
+        videoMedium="/videos/11-stopp-setzung-720.mp4"
+        videoSmall="/videos/11-stopp-setzung-576.mp4"
+        videoId="stopp"
+        heading="Stopp"
+        text="Mein PercentR Indikator ist im Momentum Indikator enthalten."
+        backgroundColorClass="heading-container--dark"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/12-ausstieg-1080.mp4"
+        videoMedium="/videos/12-ausstieg-720.mp4"
+        videoSmall="/videos/12-ausstieg-576.mp4"
+        videoId="ausstieg"
+        heading="Ausstiegssignale"
+        backgroundColorClass="heading-container--dark"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/13-etf-1080.mp4"
+        videoMedium="/videos/13-etf-720.mp4"
+        videoSmall="/videos/13-etf-576.mp4"
+        videoId="etf"
+        heading="ETF"
+        backgroundColorClass="heading-container--dark"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/14-strategieentwicklung-1080.mp4"
+        videoMedium="/videos/14-strategieentwicklung-720.mp4"
+        videoSmall="/videos/14-strategieentwicklung-576.mp4"
+        videoId="strategie"
+        heading="Strategie"
+        backgroundColorClass="heading-container--dark"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/15-bonusteil-1080.mp4"
+        videoMedium="/videos/15-bonusteil-720.mp4"
+        videoSmall="/videos/15-bonusteil-576.mp4"
+        videoId="bonus"
+        heading="Bonus"
+        text=" Hier findest zu später Videos mit den Antworten auf deine Fragen."
+        backgroundColorClass="heading-container--accent"
+      />
+
+      <CourseVideo
+        videoLarge="/videos/16-abschluss-1080.mp4"
+        videoMedium="/videos/16-abschluss-720.mp4"
+        videoSmall="/videos/16-abschluss-576.mp4"
+        videoId="einszueins"
+        heading="Persönliches Gespräch"
+        text="Buche dein persönliches Abschlussgespräch mit mir. Ich freue mich darauf! 😊"
+        download={{
+          link: "https://calendly.com/philipp-kozalla-call/30min",
+          text: "Buche einen Zoom Call",
+        }}
+        backgroundColorClass="heading-container--dark"
+      />
+    </div>
   </div>
-  <div>
-    <CourseVideo 
-    videoLarge="/videos/01-1-willkommen-1080.mp4"
-    videoMedium="/videos/01-1-willkommen-720.mp4"
-    videoSmall="/videos/01-1-willkommen-576.mp4"
-    videoId="ampelfarben"
-    text=""
-    heading="Börsenampel"
-    backgroundColorClass="heading-container--accent"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/02-cot-daten-1080.mp4"
-    videoMedium="/videos/02-cot-daten-720.mp4"
-    videoSmall="/videos/02-cot-daten-576.mp4"
-    videoId="cot"
-    heading="COT Daten"
-    text="Hier findest du meine Indikatoren, mit denen ich die COT Daten auf dem Wochenchart analysiere."
-    backgroundColorClass="heading-container--accent"
-    download={{
-      link:'https://www.inloopo.com/?msopen=/content/cot_index_inloopo-txt',
-      text:'COT Net Position'
-    }}
-     download2={{
-      link:'https://www.inloopo.com/?msopen=/content/cot_net_position_inloopo-txt',
-      text:'COT Index'
-    }}
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/03-52-moving-average-1080.mp4"
-    videoMedium="/videos/03-52-moving-average-720.mp4"
-    videoSmall="/videos/03-52-moving-average-576.mp4"
-    videoId="movingaverage"
-    heading="Moving Average"
-    text="Hier findest du meinen 52 Moving Average Indikator für den Wochenchart."
-    download={{
-      link:'https://www.inloopo.com/?msopen=/content/52_moving_average_inloopo-txt',
-      text:'52 Moving Average'
-    }}
-    backgroundColorClass="heading-container--accent"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/04-trend-1080.mp4"
-    videoMedium="/videos/04-trend-720.mp4"
-    videoSmall="/videos/04-trend-576.mp4"
-    videoId="trend"
-    heading="Trend"
-    backgroundColorClass="heading-container--accent"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/05-momentum-1080.mp4"
-    videoMedium="/videos/05-momentum-720.mp4"
-    videoSmall="/videos/05-momentum-576.mp4"
-    videoId="momentum"
-    heading="Momentum"
-    text="Hier findest du meinen Momentum Indikator für den Tageschart."
-    download={{
-      link:'https://www.inloopo.com/?msopen=/content/momentum_-_percentr_inloopo-txt',
-      text:'Momentum + PercentR'
-    }}
-    backgroundColorClass="heading-container--accent"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/06-divergenz-1080.mp4"
-    videoMedium="/videos/06-divergenz-720.mp4"
-    videoSmall="/videos/06-divergenz-576.mp4"
-    videoId="divergenz"
-    heading="Divergenz"
-    text="Hier findest du meinen POIV Indikator für den Tageschart."
-    download={{
-      link:'https://www.inloopo.com/?msopen=/content/poiv_inloopo-txt',
-      text:'POIV'
-    }}
-    backgroundColorClass="heading-container--accent"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/07-spread-vix-1080.mp4"
-    videoMedium="/videos/07-spread-vix-720.mp4"
-    videoSmall="/videos/07-spread-vix-576.mp4"
-    videoId="spread"
-    heading="Spread"
-    backgroundColorClass="heading-container--accent"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/08-indikatoren-zusammenfassung-1080.mp4"
-    videoMedium="/videos/08-indikatoren-zusammenfassung-720.mp4"
-    videoSmall="/videos/08-indikatoren-zusammenfassung-576.mp4"
-    videoId="indikatoren"
-    heading="Indikatoren"
-    backgroundColorClass="heading-container--accent"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/09-etf-signaldienst-regelwerk-1080.mp4"
-    videoMedium="/videos/09-etf-signaldienst-regelwerk-720.mp4"
-    videoSmall="/videos/09-etf-signaldienst-regelwerk-576.mp4"
-    videoId="signaldienst"
-    heading="Signaldienst Regelwerk"
-    backgroundColorClass="heading-container--dark"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/10-einstieg-1080.mp4"
-    videoMedium="/videos/10-einstieg-720.mp4"
-    videoSmall="/videos/10-einstieg-576.mp4"
-    videoId="einstieg"
-    heading="Einstiegssignale"
-    text="Hier findest du meinen 18 Moving Average Indikator für den Tageschart."
-    download={{
-      link:'https://www.inloopo.com/?msopen=/content/18_moving_average-txt',
-      text:'18 Moving Average'
-    }}
-    backgroundColorClass="heading-container--dark"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/11-stopp-setzung-1080.mp4"
-    videoMedium="/videos/11-stopp-setzung-720.mp4"
-    videoSmall="/videos/11-stopp-setzung-576.mp4"
-    videoId="stopp"
-    heading="Stopp"
-    text="Mein PercentR Indikator ist im Momentum Indikator enthalten."
-    backgroundColorClass="heading-container--dark"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/12-ausstieg-1080.mp4"
-    videoMedium="/videos/12-ausstieg-720.mp4"
-    videoSmall="/videos/12-ausstieg-576.mp4"
-    videoId="ausstieg"
-    heading="Ausstiegssignale"
-    backgroundColorClass="heading-container--dark"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/13-etf-1080.mp4"
-    videoMedium="/videos/13-etf-720.mp4"
-    videoSmall="/videos/13-etf-576.mp4"
-    videoId="etf"
-    heading="ETF"
-    backgroundColorClass="heading-container--dark"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/14-strategieentwicklung-1080.mp4"
-    videoMedium="/videos/14-strategieentwicklung-720.mp4"
-    videoSmall="/videos/14-strategieentwicklung-576.mp4"
-    videoId="strategie"
-    heading="Strategie"
-    backgroundColorClass="heading-container--dark"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/15-bonusteil-1080.mp4"
-    videoMedium="/videos/15-bonusteil-720.mp4"
-    videoSmall="/videos/15-bonusteil-576.mp4"
-    videoId="bonus"
-    heading="Bonus"
-    text=" Hier findest zu später Videos mit den Antworten auf deine Fragen."
-    backgroundColorClass="heading-container--accent"
-    />
-
-    <CourseVideo 
-    videoLarge="/videos/16-abschluss-1080.mp4"
-    videoMedium="/videos/16-abschluss-720.mp4"
-    videoSmall="/videos/16-abschluss-576.mp4"
-    videoId="einszueins"
-    heading="Persönliches Gespräch"
-    text="Buche dein persönliches Abschlussgespräch mit mir. Ich freue mich darauf! 😊"
-    download={{
-      link:'https://calendly.com/philipp-kozalla-call/30min',
-      text:'Buche einen Zoom Call'
-    }}
-    backgroundColorClass="heading-container--dark"
-    />
-  </div>
-</div>
 </MemberLayout>
 
-
 <style>
-
   .course__grid {
     display: grid;
     grid-template-columns: 1fr;
   }
 
-      .toc-course {
-      top: 0;
-      max-width: 100%;
-      margin: 0 1em; 
-      animation: fadeEffect 3s;
-      /* fading effect takes 3s */
-    }
+  .toc-course {
+    top: 0;
+    max-width: 100%;
+    margin: 0 1em;
+    animation: fadeEffect 3s;
+    /* fading effect takes 3s */
+  }
 
-    .toc-course__nav {
-      list-style: none;
-    }
+  .toc-course__nav {
+    list-style: none;
+  }
 
   .toc-course__accordion {
     position: relative;
-   display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 1rem 3rem 1rem 1rem;
-  color: var(--black-color);
-  font-size: 1.15rem;
-  font-weight: 400;
-  border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    color: var(--black-color);
+    font-size: 1.15rem;
+    font-weight: 400;
+    border-bottom: 1px solid #e5e5e5;
   }
 
   .toc-course__accordion:hover,
@@ -261,9 +262,9 @@ lang="de">
   }
 
   .toc-course__accordion.active {
-  color: var(--first-color);
-  border-bottom: 1px solid var(--first-color);
-}
+    color: var(--first-color);
+    border-bottom: 1px solid var(--first-color);
+  }
 
   .toc-course__accordion::after {
     content: "+";
@@ -278,64 +279,62 @@ lang="de">
   }
 
   .toc-course__accordion.active::after {
-  content: "-";
-  color: var(--first-color);
-}
+    content: "-";
+    color: var(--first-color);
+  }
 
-.toc-course__accordion-content {
-  opacity: 0;
-  padding: 0 1rem;
-  max-height: 0;
-  border-bottom: 1px solid #e5e5e5;
-  overflow: hidden;
-  clear: both;
-  transition: all 0.2s ease 0.15s;
-}
+  .toc-course__accordion-content {
+    opacity: 0;
+    padding: 0 1rem;
+    max-height: 0;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+    clear: both;
+    transition: all 0.2s ease 0.15s;
+  }
 
-.toc-course__accordion-content.active {
-  opacity: 1;
-  padding: 1rem;
-  max-height: 100%;
-  transition: all 0.35s ease 0.15s;
-}
+  .toc-course__accordion-content.active {
+    opacity: 1;
+    padding: 1rem;
+    max-height: 100%;
+    transition: all 0.35s ease 0.15s;
+  }
 
-
-  
-    @keyframes fadeEffect {
-      /* from 0 to full opacity */
-      from {
-        opacity: 0;
-      }
-  
-      to {
-        opacity: 1;
-      }
-    }
-  
-    .toc-course__link {
-      text-decoration: none;
-      list-style: none;
-      display: block;
-      padding: 6px 0;
-      color: #171614;
-      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-  
-    .toc-course__link:hover,
-    .toc-course__link:focus {
-      color: #ff6b35;
-    }
-  
-    .toc-course__link.active {
-      /* transform: translateX(8px); */
-      padding: 2px 0 2px 8px;
-      margin-left: 8px;
-      color: #ff6b35;
-      border-left: 3px solid #ff6b35;
+  @keyframes fadeEffect {
+    /* from 0 to full opacity */
+    from {
+      opacity: 0;
     }
 
-    @media only screen and (min-width: 60em) {
-      .toc-course {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .toc-course__link {
+    text-decoration: none;
+    list-style: none;
+    display: block;
+    padding: 6px 0;
+    color: #171614;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .toc-course__link:hover,
+  .toc-course__link:focus {
+    color: #ff6b35;
+  }
+
+  .toc-course__link.active {
+    /* transform: translateX(8px); */
+    padding: 2px 0 2px 8px;
+    margin-left: 8px;
+    color: #ff6b35;
+    border-left: 3px solid #ff6b35;
+  }
+
+  @media only screen and (min-width: 60em) {
+    .toc-course {
       padding-top: 120px;
       position: fixed;
       overflow-y: scroll;
@@ -344,28 +343,24 @@ lang="de">
 
     .toc-course__accordion {
       width: 80%;
-  }
+    }
 
     .course__grid {
-    grid-template-columns: 1fr 3fr;
-  }
-
+      grid-template-columns: 1fr 3fr;
     }
-  </style>
+  }
+</style>
 
 <script>
   // Code for FAQ
-const items = document.querySelectorAll(".toc-course__accordion");
+  const items = document.querySelectorAll(".toc-course__accordion");
 
-function toggleAccordion() {
-this.classList.toggle("active");
-this.nextElementSibling.classList.toggle("active");
-}
+  function toggleAccordion() {
+    // @ts-ignore
+    this.classList.toggle("active");
+    // @ts-ignore
+    this.nextElementSibling.classList.toggle("active");
+  }
 
-items.forEach((item) => item.addEventListener("click", toggleAccordion));
-
-
-
+  items.forEach((item) => item.addEventListener("click", toggleAccordion));
 </script>
-  
-  

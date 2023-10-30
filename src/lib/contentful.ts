@@ -42,9 +42,10 @@ const renderOptions = {
             src='https:${node.data.target.fields.file.url}'
             alt='${node.data.target.fields.description?.replace("[caption]", "") || ""}'
             loading='lazy'>
-        ${node.data.target.fields.description?.startsWith("[caption]")
-          ? figcaptionWithParsedMarkdownLink(node.data.target.fields.description?.replace("[caption]", ""))
-          : ""
+        ${
+          node.data.target.fields.description?.startsWith("[caption]")
+            ? figcaptionWithParsedMarkdownLink(node.data.target.fields.description?.replace("[caption]", ""))
+            : ""
         }
         </figure>
       `;
@@ -119,7 +120,7 @@ function renderYoutubeVideo(node: Node<YoutubeVideo>) {
 }
 
 interface Post {
-  contentTypeId: 'post' | 'englishPost';
+  contentTypeId: "post" | "englishPost";
   fields: {
     title: EntryFields.Text;
     slug: EntryFields.Text;
@@ -130,16 +131,16 @@ interface Post {
     body: Document;
     author: EntryFieldTypes.EntryLink<Author>;
     heroImage?: EntryFieldTypes.AssetLink;
-  }
+  };
 }
 
 interface StockMarketIndicatorPost {
-  contentTypeId: 'stockMarketIndicatorPost' | 'englishStockMarketIndicatorPost';
+  contentTypeId: "stockMarketIndicatorPost" | "englishStockMarketIndicatorPost";
   fields: {
     title: EntryFields.Text;
-    date: EntryFields.Date,
+    date: EntryFields.Date;
     content: Document;
-  }
+  };
 }
 
 interface Author {

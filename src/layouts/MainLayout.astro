@@ -58,10 +58,18 @@ const { title, description, opengraph = "", lang, canonical = "", noIndex = fals
       )
     }
     <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-    <script> var MemberSpace = window.MemberSpace || {"subdomain":"inloopo"}; (function(d){ var s = d.createElement("script"); s.src = "https://cdn.memberspace.com/scripts/widgets.js"; var e = d.getElementsByTagName("script")[0]; e.parentNode.insertBefore(s,e); }(document)); </script>
+    <script>
+      var MemberSpace = window.MemberSpace || { subdomain: "inloopo" };
+      (function (d) {
+        var s = d.createElement("script");
+        s.src = "https://cdn.memberspace.com/scripts/widgets.js";
+        var e = d.getElementsByTagName("script")[0];
+        e.parentNode.insertBefore(s, e);
+      })(document);
+    </script>
   </head>
   <body>
     <Navbar lang={lang} />

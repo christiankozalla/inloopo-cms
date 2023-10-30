@@ -197,10 +197,10 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     </ul>
   </nav>
   <script>
-    // Close menu on ESC                
-    document.addEventListener('keyup', (e) => {
-      if (e.key === 'Escape') {
-        const checkbox = document.getElementById('toggle-button') as HTMLInputElement | null;
+    // Close menu on ESC
+    document.addEventListener("keyup", (e) => {
+      if (e.key === "Escape") {
+        const checkbox = document.getElementById("toggle-button") as HTMLInputElement | null;
         if (checkbox) checkbox.checked = false;
       }
     });

@@ -18,13 +18,22 @@ export async function getStaticPaths() {
       title: item.fields.title,
       body: documentToHtmlString(item.fields.body, renderOptions),
       date: item.fields.published ? new Date(item.fields.published).toLocaleDateString("de-DE") : undefined,
-      author: 'fields' in item.fields.author ? item.fields.author.fields : {},
+      author: "fields" in item.fields.author ? item.fields.author.fields : {},
       heroImage: {
-        url: (item.fields.heroImage && 'fields' in item.fields.heroImage) ? item.fields.heroImage.fields?.file?.url.startsWith("//")
-          ? "https:" + item.fields.heroImage?.fields.file.url
-          : item.fields.heroImage?.fields.file?.url : undefined,
-        height: (item.fields.heroImage && 'fields' in item.fields.heroImage)? item.fields.heroImage?.fields?.file?.details?.image?.height : undefined,
-        width: (item.fields.heroImage && 'fields' in item.fields.heroImage) ? item.fields.heroImage?.fields?.file?.details?.image?.width : undefined,
+        url:
+          item.fields.heroImage && "fields" in item.fields.heroImage
+            ? item.fields.heroImage.fields?.file?.url.startsWith("//")
+              ? "https:" + item.fields.heroImage?.fields.file.url
+              : item.fields.heroImage?.fields.file?.url
+            : undefined,
+        height:
+          item.fields.heroImage && "fields" in item.fields.heroImage
+            ? item.fields.heroImage?.fields?.file?.details?.image?.height
+            : undefined,
+        width:
+          item.fields.heroImage && "fields" in item.fields.heroImage
+            ? item.fields.heroImage?.fields?.file?.details?.image?.width
+            : undefined,
       },
       seoDescription: item.fields.seoDescription,
     },
