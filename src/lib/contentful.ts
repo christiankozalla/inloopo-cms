@@ -137,6 +137,7 @@ interface StockMarketIndicatorPost {
   contentTypeId: 'stockMarketIndicatorPost' | 'englishStockMarketIndicatorPost';
   fields: {
     title: EntryFields.Text;
+    date: EntryFields.Date,
     content: Document;
   }
 }

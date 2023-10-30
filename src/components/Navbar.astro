@@ -196,9 +196,23 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
       }
     </ul>
   </nav>
+  <script>
+    // Close menu on ESC                
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 'Escape') {
+        const checkbox = document.getElementById('toggle-button') as HTMLInputElement | null;
+        if (checkbox) checkbox.checked = false;
+      }
+    });
+  </script>
 </header>
 
 <style>
+  /* Prevent scrolling body when menu is open */
+  body:has(#toggle-button:checked) {
+    overflow: hidden;
+  }
+
   header {
     height: var(--navbar-height, 80px);
   }
@@ -218,6 +232,7 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     z-index: 3;
     box-shadow: 1px 1px 4px #d2d2d2;
   }
@@ -491,14 +506,14 @@ function isSubnavLink(navData: NavbarData): navData is SubNav {
     }
 
     .navbar__ul {
-      height: min-content;
-      width: 100%;
+      height: calc(100vh - var(--navbar-height, 80px));
+      overflow-y: scroll;
+      overflow-x: hidden;
       background: #fff;
       display: none;
       position: absolute;
       top: 80px;
       left: 0;
-      padding-right: 30px;
       text-align: right;
       opacity: 0.98;
     }

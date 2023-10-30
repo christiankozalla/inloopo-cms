@@ -8,9 +8,10 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const entries = await contentfulClient.getEntries<StockMarketIndicatorPost>({
   content_type: "englishStockMarketIndicatorPost",
-  // order: ["-sys.firstPublishedAt"],
   limit: 10,
 });
+
+entries.items.sort((a, b) => new Date(a.fields.date) < new Date(b.fields.date) ? 1 : -1);
 ---
 
 <MainLayout
