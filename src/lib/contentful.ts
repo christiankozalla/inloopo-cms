@@ -19,7 +19,7 @@ function renderOptionsAndVideos() {
   const renderOptions = {
     renderNode: {
       [INLINES.HYPERLINK]: (node: any, next: any) => {
-        return `<a href="${node.data.uri}"${node.data.uri.includes('inloopo.com') ? '' : ' target="_blank"'}>${next(node.content)}</a>`;
+        return `<a href="${node.data.uri}"${(node.data.uri.includes('inloopo.com') || node.data.uri.startsWith('/')) ? '' : ' target="_blank"'}>${next(node.content)}</a>`;
       },
       [BLOCKS.TABLE]: (node: any, children: any) =>
         `<div class="article__table"><table>${children(node.content)}</table></div>`,
