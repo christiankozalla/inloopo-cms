@@ -1,0 +1,70 @@
+---
+import { type VideoNode } from "../lib/contentful";
+type Props = {
+    title?: string;
+    seoDescription?: string 
+    url?: string | null;
+    body?: string | null;
+    heroImage?: { url?: string, width?: number, height?: number } | null;
+    date?: Date | string | null;
+    dateModified?: Date | string | null;
+    videos?: VideoNode[]
+}
+const { title, seoDescription, url, body, heroImage, date, dateModified, videos } = Astro.props;
+
+function removeHtmlTags(html: string): string {
+  return html.replace(/<[^>]*>?/gm, " ").replace(/\s{1,}/g, " ").trim();
+}
+
+const template = {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": url
+      },
+      "headline": title,
+      "description": seoDescription,
+      "datePublished": date ? new Date(date).toISOString() :  null,
+      "dateModified": dateModified ? new Date(dateModified).toISOString() : date ? new Date(date) : null,
+      "author": {
+        "@type": "Person",
+        "name": "Philipp Kozalla"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inloopo",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.inloopo.com/images/logo.svg",
+          "width": 300,
+          "height": 74
+        }
+      },
+      "articleBody": body ? removeHtmlTags(body) : "",
+    }
+
+    if (heroImage) {
+        // @ts-ignore
+        template.image = {
+        "@type": "ImageObject",
+        "url": heroImage.url,
+        "width": heroImage.width,
+        "height": heroImage.height
+      }
+    }
+    if (videos) {
+        // @ts-ignore
+        template.videos = videos.map((v) => ({
+          "@type": "VideoObject",
+          "name": v.data.target.fields.title,
+          "description": "An Inloopo Video",
+          "contentUrl": `https://www.youtube-nocookie.com/embed/${v.data.target.fields.videoId}`,
+          "thumbnailUrl": `https://i.ytimg.com/vi/${v.data.target.fields.videoId}/sddefault.jpg`,
+          "uploadDate": v.data.target.sys.createdAt,
+       })) 
+    }
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(template)}></script>
+    

@@ -3,12 +3,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 import HeroShot from "../components/HeroShot.astro";
 import ShareButton from "../components/ShareButton.astro";
 import Button from "../components/Button.astro";
-import { contentfulClient, renderOptions, type StockMarketIndicatorPost } from "../lib/contentful";
+import { contentfulClient, renderOptionsAndVideos, type StockMarketIndicatorPost } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const entries = await contentfulClient.getEntries<StockMarketIndicatorPost>({
   content_type: "englishStockMarketIndicatorPost",
 });
+
+const { renderOptions } = renderOptionsAndVideos();
 
 entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) ? 1 : -1));
 ---

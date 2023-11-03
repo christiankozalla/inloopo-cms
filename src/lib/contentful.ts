@@ -1,5 +1,5 @@
 import contentful from "contentful";
-import type { EntryFields, EntryFieldTypes, Asset } from "contentful";
+import type { EntryFieldTypes, Asset } from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import type { Document } from "@contentful/rich-text-types";
@@ -13,62 +13,74 @@ const contentfulClient = contentful.createClient({
   host: import.meta.env.MODE !== "development" ? "cdn.contentful.com" : "preview.contentful.com",
 });
 
-const renderOptions = {
-  renderNode: {
-    [BLOCKS.TABLE]: (node: any, children: any) =>
-      `<div class="article__table"><table>${children(node.content)}</table></div>`,
-    [BLOCKS.UL_LIST]: (node: any, children: any) => `<ul class="article__list">${children(node.content)}</ul>`,
-    [BLOCKS.OL_LIST]: (node: any, children: any) => `<ol class="article__list">${children(node.content)}</ol>`,
-    [BLOCKS.HEADING_2]: (node: any, _children: any) => {
-      const inlineEntry = node.content.find((data: any) => data.nodeType === "embedded-entry-inline");
-      if (typeof inlineEntry !== "undefined") {
-        if (inlineEntry.data.target.sys.contentType.sys.id === "tocHeadline")
-          return renderTocHeadline(inlineEntry as Node<TocHeadline>);
-        else {
-          console.log("Unknown content type: " + inlineEntry.data.target.sys.contentType.sys.id);
-          return "";
+
+function renderOptionsAndVideos() {
+  const videos: VideoNode[] = [];
+  const renderOptions = {
+    renderNode: {
+      [INLINES.HYPERLINK]: (node: any, next: any) => {
+        return `<a href="${node.data.uri}"${node.data.uri.includes('inloopo.com') ? '' : ' target="_blank"'}>${next(node.content)}</a>`;
+      },
+      [BLOCKS.TABLE]: (node: any, children: any) =>
+        `<div class="article__table"><table>${children(node.content)}</table></div>`,
+      [BLOCKS.UL_LIST]: (node: any, children: any) => `<ul class="article__list">${children(node.content)}</ul>`,
+      [BLOCKS.OL_LIST]: (node: any, children: any) => `<ol class="article__list">${children(node.content)}</ol>`,
+      [BLOCKS.HEADING_2]: (node: any, _children: any) => {
+        const inlineEntry = node.content.find((data: any) => data.nodeType === "embedded-entry-inline");
+        if (typeof inlineEntry !== "undefined") {
+          if (inlineEntry.data.target.sys.contentType.sys.id === "tocHeadline")
+            return renderTocHeadline(inlineEntry as Node<TocHeadline>);
+          else {
+            console.log("Unknown content type: " + inlineEntry.data.target.sys.contentType.sys.id);
+            return "";
+          }
         }
-      }
-      const text = node.content.find((data: any) => data.nodeType === "text").value;
-      return `
+        const text = node.content.find((data: any) => data.nodeType === "text").value;
+        return `
         <h2 class="article__heading-two" id=${"point-" + encodeURIComponent(text.replace(" ", "-"))}>${text}</h2>
       `;
-    },
-    [BLOCKS.EMBEDDED_ASSET]: (node: any, _children: any) => {
-      // render the EMBEDDED_ASSET as you need
-      return `
+      },
+      [BLOCKS.EMBEDDED_ASSET]: (node: any, _children: any) => {
+        // render the EMBEDDED_ASSET as you need
+        return `
       <figure class='article__figure'>
         <img
             src='https:${node.data.target.fields.file.url}'
             alt='${node.data.target.fields.description?.replace("[caption]", "") || ""}'
             loading='lazy'>
-        ${
-          node.data.target.fields.description?.startsWith("[caption]")
+        ${node.data.target.fields.description?.startsWith("[caption]")
             ? figcaptionWithParsedMarkdownLink(node.data.target.fields.description?.replace("[caption]", ""))
             : ""
-        }
+          }
         </figure>
       `;
+      },
+      [INLINES.EMBEDDED_ENTRY]: (node: any, _children: any) => {
+        switch (node.data.target.sys.contentType.sys.id) {
+          case "postInfoBox":
+            return renderPostInfoBox(node as Node<PostInfoBox>);
+          case "webComponent":
+            return renderWebComponent(node as Node<WebComponent>);
+          case "tocHeadline":
+            return renderTocHeadline(node as Node<TocHeadline>);
+          case "youtubeVideo":
+            videos.push(node);
+            return renderYoutubeVideo(node);
+          case "inlineHtml":
+            return node.data.target.fields.code;
+          default:
+            console.log("Unknown content type: " + node.data.target.sys.contentType.sys.id);
+            return "";
+        }
+      },
     },
-    [INLINES.EMBEDDED_ENTRY]: (node: any, _children: any) => {
-      switch (node.data.target.sys.contentType.sys.id) {
-        case "postInfoBox":
-          return renderPostInfoBox(node as Node<PostInfoBox>);
-        case "webComponent":
-          return renderWebComponent(node as Node<WebComponent>);
-        case "tocHeadline":
-          return renderTocHeadline(node as Node<TocHeadline>);
-        case "youtubeVideo":
-          return renderYoutubeVideo(node);
-        case "inlineHtml":
-          return node.data.target.fields.code;
-        default:
-          console.log("Unknown content type: " + node.data.target.sys.contentType.sys.id);
-          return "";
-      }
-    },
-  },
-};
+  };
+  return {
+    videos,
+    renderOptions
+  };
+}
+
 
 function figcaptionWithParsedMarkdownLink(text: string) {
   const regex = /(.*?)\[(.*?)\]\((.*?)\)(.*)/g;
@@ -122,23 +134,23 @@ function renderYoutubeVideo(node: Node<YoutubeVideo>) {
 interface Post {
   contentTypeId: "post" | "englishPost";
   fields: {
-    title: EntryFields.Text;
-    slug: EntryFields.Text;
-    category: EntryFields.Text;
-    published?: EntryFields.Date;
-    description?: EntryFields.Text;
-    seoDescription?: EntryFields.Text;
+    title: EntryFieldTypes.Text;
+    slug: EntryFieldTypes.Text;
+    category: EntryFieldTypes.Text;
+    published?: EntryFieldTypes.Date;
+    description: EntryFieldTypes.Text;
+    seoDescription: EntryFieldTypes.Text;
     body: Document;
     author: EntryFieldTypes.EntryLink<Author>;
-    heroImage?: EntryFieldTypes.AssetLink;
+    heroImage: EntryFieldTypes.AssetLink;
   };
 }
 
 interface StockMarketIndicatorPost {
   contentTypeId: "stockMarketIndicatorPost" | "englishStockMarketIndicatorPost";
   fields: {
-    title: EntryFields.Text;
-    date: EntryFields.Date;
+    title: EntryFieldTypes.Text;
+    date: EntryFieldTypes.Date;
     content: Document;
   };
 }
@@ -146,16 +158,16 @@ interface StockMarketIndicatorPost {
 interface Author {
   contentTypeId: string;
   fields: {
-    name: EntryFields.Text;
+    name: EntryFieldTypes.Text;
     avatar?: Asset;
-    bio?: EntryFields.Text;
+    bio?: EntryFieldTypes.Text;
   };
 }
 
 interface ChartData {
-  phase: EntryFields.Text;
-  englishPhase: EntryFields.Text;
-  data: EntryFields.Text;
+  phase: EntryFieldTypes.Text;
+  englishPhase: EntryFieldTypes.Text;
+  data: EntryFieldTypes.Text;
 }
 
 interface Node<T> {
@@ -164,6 +176,17 @@ interface Node<T> {
       fields: T;
     };
   };
+}
+
+interface VideoNode {
+  nodeType: 'embedded-entry-inline';
+  data: {
+    target: {
+      sys: { createdAt: string },
+      fields: { title: string, videoId: string }
+    }
+  }
+  content: any[];
 }
 
 interface WebComponent {
@@ -187,5 +210,5 @@ interface YoutubeVideo {
   title: string;
 }
 
-export { contentfulClient, renderOptions };
-export type { Post, ChartData, StockMarketIndicatorPost };
+export { contentfulClient, renderOptionsAndVideos };
+export type { Post, ChartData, StockMarketIndicatorPost, VideoNode };

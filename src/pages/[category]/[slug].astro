@@ -4,9 +4,9 @@ import BlogTableOfContents from "../../components/BlogTableOfContents.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import Author from "../../components/Author.astro";
 import BlogFeedback from "../../components/BlogFeedback.astro";
-import { contentfulClient, renderOptions } from "../../lib/contentful";
-import type { Post } from "../../lib/contentful";
+import { contentfulClient, renderOptionsAndVideos, type Post } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import StructuredData from "../../components/StructuredData.astro";
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<Post>({
@@ -15,27 +15,41 @@ export async function getStaticPaths() {
 
   return entries.items
     .filter((item) => item.fields.slug && item.fields.category)
-    .map((item) => ({
-      params: { category: item.fields.category, slug: item.fields.slug },
-      props: {
-        title: item.fields.title,
-        body: documentToHtmlString(item.fields.body, renderOptions),
-        date: item.fields.published ? new Date(item.fields.published).toLocaleDateString("en-GB") : null,
-        author: item.fields.author.fields,
-        heroImage: {
-          url: item.fields.heroImage?.fields.file.url.startsWith("//")
-            ? "https:" + item.fields.heroImage?.fields.file.url
-            : item.fields.heroImage?.fields.file.url,
-          height: item.fields.heroImage?.fields?.file?.details?.image?.height,
-          width: item.fields.heroImage?.fields?.file?.details?.image?.width,
+    .map((item) => {
+      const { videos, renderOptions } = renderOptionsAndVideos();
+      return {
+        params: { category: item.fields.category, slug: item.fields.slug },
+        props: {
+          title: item.fields.title,
+          body: documentToHtmlString(item.fields.body, renderOptions),
+          date: item.fields.published ? new Date(item.fields.published).toLocaleDateString("en-GB") : null,
+          dateModified: item.sys.updatedAt ? new Date(item.sys.updatedAt) : null,
+          author: "fields" in item.fields.author ? item.fields.author.fields : {},
+          heroImage: {
+            url:
+              item.fields.heroImage && "fields" in item.fields.heroImage
+                ? item.fields.heroImage.fields?.file?.url.startsWith("//")
+                  ? "https:" + item.fields.heroImage?.fields.file.url
+                  : item.fields.heroImage?.fields.file?.url
+                : undefined,
+            height:
+              item.fields.heroImage && "fields" in item.fields.heroImage
+                ? item.fields.heroImage?.fields?.file?.details?.image?.height
+                : undefined,
+            width:
+              item.fields.heroImage && "fields" in item.fields.heroImage
+                ? item.fields.heroImage?.fields?.file?.details?.image?.width
+                : undefined,
+          },
+          seoDescription: item.fields.seoDescription,
+          lang: "en" as const,
+          videos,
         },
-        seoDescription: item.fields.seoDescription,
-        lang: "en",
-      },
-    }));
+      };
+    });
 }
 
-const { title, date, body, author, heroImage, seoDescription, lang } = Astro.props;
+const { title, date, body, author, heroImage, seoDescription, lang, dateModified, videos } = Astro.props;
 const { category, slug } = Astro.params as { category: string; slug: string };
 const url = new URL(Astro.url.pathname, Astro.site).toString();
 ---
@@ -44,6 +58,7 @@ const url = new URL(Astro.url.pathname, Astro.site).toString();
   title={title}
   locale={lang}
   opengraph={{ title, url, locale: lang, image: heroImage, description: seoDescription, type: "article" }}>
+  <StructuredData slot="head" {...Astro.props} />
   <BlogTableOfContents />
   <Breadcrumbs title={title} category={category} slug={slug} lang={lang} />
   <h1 class="article__main-heading">{title}</h1>
