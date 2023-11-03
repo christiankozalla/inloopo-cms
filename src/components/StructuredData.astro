@@ -6,15 +6,16 @@ type Props = {
     url?: string | null;
     body?: string | null;
     heroImage?: { url?: string, width?: number, height?: number } | null;
-    date?: Date | string | null;
+    datePublished?: Date | string | null;
     dateModified?: Date | string | null;
     videos?: VideoNode[]
 }
-const { title, seoDescription, url, body, heroImage, date, dateModified, videos } = Astro.props;
+const { title, seoDescription, url, body, heroImage, datePublished, dateModified, videos } = Astro.props;
 
 function removeHtmlTags(html: string): string {
   return html.replace(/<[^>]*>?/gm, " ").replace(/\s{1,}/g, " ").trim();
 }
+
 
 const template = {
       "@context": "http://schema.org",
@@ -25,8 +26,7 @@ const template = {
       },
       "headline": title,
       "description": seoDescription,
-      "datePublished": date ? new Date(date).toISOString() :  null,
-      "dateModified": dateModified ? new Date(dateModified).toISOString() : date ? new Date(date) : null,
+      "datePublished": datePublished,
       "author": {
         "@type": "Person",
         "name": "Philipp Kozalla"
@@ -42,6 +42,11 @@ const template = {
         }
       },
       "articleBody": body ? removeHtmlTags(body) : "",
+    };
+
+    if (dateModified) {
+        // @ts-ignore
+      template.dateModified = dateModified;
     }
 
     if (heroImage) {

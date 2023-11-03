@@ -20,6 +20,7 @@ export async function getStaticPaths() {
         title: item.fields.title,
         body: documentToHtmlString(item.fields.body, renderOptions),
         date: item.fields.published ? new Date(item.fields.published).toLocaleDateString("de-DE") : undefined,
+        datePublished: item.fields.published,
         dateModified: item.sys.updatedAt ? new Date(item.sys.updatedAt) : null,
         author: "fields" in item.fields.author ? item.fields.author.fields : {},
         heroImage: {
@@ -45,7 +46,7 @@ export async function getStaticPaths() {
   });
 }
 
-const { title, date, body, author, heroImage, seoDescription, dateModified } = Astro.props;
+const { title, date, body, author, heroImage, seoDescription } = Astro.props;
 const { category, slug } = Astro.params as { category: string; slug: string };
 const url = new URL(Astro.url.pathname, Astro.site).toString();
 const lang = "de";
