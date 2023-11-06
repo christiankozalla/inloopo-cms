@@ -41,6 +41,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
       </aside>
     </div>
     <div>
+
       <CourseVideo
         videoLarge="/videos/01-1-willkommen-1080.mp4"
         videoMedium="/videos/01-1-willkommen-720.mp4"
@@ -49,6 +50,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         text=""
         heading="Börsenampel"
         backgroundColorClass="heading-container--accent"
+        poster="/images/boersenampel-kurs-einfuehrung.webp"
       />
 
       <CourseVideo
@@ -59,6 +61,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         heading="COT Daten"
         text="Hier findest du meine Indikatoren, mit denen ich die COT Daten auf dem Wochenchart analysiere."
         backgroundColorClass="heading-container--accent"
+        poster="/images/boersenampel-kurs-cot-daten.webp"
         download={{
           link: "https://www.inloopo.com/?msopen=/content/cot_index_inloopo-txt",
           text: "COT Net Position",
@@ -76,11 +79,12 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoId="movingaverage"
         heading="Moving Average"
         text="Hier findest du meinen 52 Moving Average Indikator für den Wochenchart."
+        backgroundColorClass="heading-container--accent"
+        poster="/images/boersenampel-kurs-moving-average.webp"
         download={{
           link: "https://www.inloopo.com/?msopen=/content/52_moving_average_inloopo-txt",
           text: "52 Moving Average",
         }}
-        backgroundColorClass="heading-container--accent"
       />
 
       <CourseVideo
@@ -90,6 +94,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoId="trend"
         heading="Trend"
         backgroundColorClass="heading-container--accent"
+        poster="/images/boersenampel-kurs-trend.webp"
       />
 
       <CourseVideo
@@ -99,6 +104,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoId="momentum"
         heading="Momentum"
         text="Hier findest du meinen Momentum Indikator für den Tageschart."
+        poster="/images/boersenampel-kurs-momentum.webp"
         download={{
           link: "https://www.inloopo.com/?msopen=/content/momentum_-_percentr_inloopo-txt",
           text: "Momentum + PercentR",
@@ -113,11 +119,12 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoId="divergenz"
         heading="Divergenz"
         text="Hier findest du meinen POIV Indikator für den Tageschart."
+        backgroundColorClass="heading-container--accent"
+        poster="/images/boersenampel-kurs-divergenz.webp"
         download={{
           link: "https://www.inloopo.com/?msopen=/content/poiv_inloopo-txt",
           text: "POIV",
         }}
-        backgroundColorClass="heading-container--accent"
       />
 
       <CourseVideo
@@ -127,6 +134,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoId="spread"
         heading="Spread"
         backgroundColorClass="heading-container--accent"
+        poster="/images/boersenampel-kurs-spread.webp"
       />
 
       <CourseVideo
@@ -136,6 +144,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoId="indikatoren"
         heading="Indikatoren"
         backgroundColorClass="heading-container--accent"
+        poster="/images/boersenampel-kurs-zusammenfassung.webp"
       />
 
       <CourseVideo
@@ -145,6 +154,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoId="signaldienst"
         heading="Signaldienst Regelwerk"
         backgroundColorClass="heading-container--dark"
+        poster="/images/boersenampel-kurs-etf.webp"
       />
 
       <CourseVideo
@@ -159,6 +169,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
           text: "18 Moving Average",
         }}
         backgroundColorClass="heading-container--dark"
+        poster="/images/boersenampel-kurs-einstieg.webp"
       />
 
       <CourseVideo
@@ -169,6 +180,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         heading="Stopp"
         text="Mein PercentR Indikator ist im Momentum Indikator enthalten."
         backgroundColorClass="heading-container--dark"
+        poster="/images/boersenampel-kurs-stop.webp"
       />
 
       <CourseVideo
@@ -178,6 +190,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoId="ausstieg"
         heading="Ausstiegssignale"
         backgroundColorClass="heading-container--dark"
+        poster="/images/boersenampel-kurs-ausstieg.webp"
       />
 
       <CourseVideo
@@ -187,6 +200,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoId="etf"
         heading="ETF"
         backgroundColorClass="heading-container--dark"
+        poster="/images/boersenampel-kurs-auswahl.webp"
       />
 
       <CourseVideo
@@ -196,6 +210,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoId="strategie"
         heading="Strategie"
         backgroundColorClass="heading-container--dark"
+        poster="/images/boersenampel-kurs-strategie.webp"
       />
 
       <CourseVideo
@@ -204,8 +219,9 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoSmall="/videos/15-bonusteil-576.mp4"
         videoId="bonus"
         heading="Bonus"
-        text=" Hier findest zu später Videos mit den Antworten auf deine Fragen."
+        text="Hier findest zu später Videos mit den Antworten auf deine Fragen."
         backgroundColorClass="heading-container--accent"
+        poster="/images/boersenampel-kurs-bonus.webp"
       />
 
       <CourseVideo
@@ -215,6 +231,7 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoId="einszueins"
         heading="Persönliches Gespräch"
         text="Buche dein persönliches Abschlussgespräch mit mir. Ich freue mich darauf! 😊"
+        poster="/images/boersenampel-kurs-talk.webp"
         download={{
           link: "https://calendly.com/philipp-kozalla-call/30min",
           text: "Buche einen Zoom Call",
@@ -226,6 +243,17 @@ import CourseVideo from "../../../components/CourseVideo.astro";
 </MemberLayout>
 
 <style>
+  .video__container {
+    position: relative;
+  }
+
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
   .course__grid {
     display: grid;
     grid-template-columns: 1fr;

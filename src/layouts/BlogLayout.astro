@@ -72,7 +72,7 @@ const { title, opengraph, locale, canonical = new URL(Astro.url.pathname, Astro.
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <slot name="head" />
   </head>
-  <body>
+  <body oncontextmenu="return false;">
     <ReadingProgress />
     <div class="wrapper">
       <Navbar lang={locale} />

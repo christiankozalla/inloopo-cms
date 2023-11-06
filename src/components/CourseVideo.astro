@@ -9,6 +9,7 @@ const {
   text = "",
   download = "",
   download2 = "",
+  poster
 } = Astro.props;
 ---
 
@@ -20,12 +21,14 @@ const {
   <h2 class="course-video__heading">{heading}</h2>
 </div>
 <div class="course-video__container">
-  <video controls id={videoId}>
-    <source src={videoLarge} type="video/mp4" class="video--large lazy" />
-    <source src={videoMedium} type="video/mp4" class="video--medium lazy" />
-    <source src={videoSmall} type="video/mp4" class="video--small lazy" />
+  <>
+  <video controls oncontextmenu="return false;" controlsList="nodownload" id={videoId} poster={poster}>
+    <source src={videoLarge} type="video/mp4" class="video--large  lazy" />
+    <source src={videoMedium} type="video/mp4" class="video--medium  lazy" />
+    <source src={videoSmall} type="video/mp4" class="video--small  lazy" />
      Your browser does not support the video tag.
   </video>
+  </>
   <p class="course-video__text">{text}</p>
   <div class="course-video__download">
     {
