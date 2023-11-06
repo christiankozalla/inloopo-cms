@@ -63,13 +63,14 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         backgroundColorClass="heading-container--accent"
         poster="/images/boersenampel-kurs-cot-daten.webp"
         download={{
-          link: "https://www.inloopo.com/?msopen=/content/cot_index_inloopo-txt",
+          link: "https://www.inloopo.com/?msopen=/content/cot_net_inloopo-txt",
           text: "COT Net Position",
         }}
         download2={{
-          link: "https://www.inloopo.com/?msopen=/content/cot_net_position_inloopo-txt",
+          link: "https://www.inloopo.com/?msopen=/content/cot_index_inloopo-txt",
           text: "COT Index",
         }}
+        tip="Hinweise<br>Wähle in deinem TradingView immer den S&P 500 Futures Kontrakt mit dem Symbol ES1! aus. <img src='/images/es1.png' alt='ES1 in TradingView'/>"
       />
 
       <CourseVideo
@@ -133,8 +134,13 @@ import CourseVideo from "../../../components/CourseVideo.astro";
         videoSmall="/videos/07-spread-vix-576.mp4"
         videoId="spread"
         heading="Spread"
+        text="Hier der Link zur Seite von VIX Central, wo du den Spread nachschauen kannst"
         backgroundColorClass="heading-container--accent"
         poster="/images/boersenampel-kurs-spread.webp"
+        download={{
+          link: "http://www.vixcentral.com/",
+          text: "vixcentral",
+        }}
       />
 
       <CourseVideo

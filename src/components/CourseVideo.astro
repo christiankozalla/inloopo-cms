@@ -9,6 +9,7 @@ const {
   text = "",
   download = "",
   download2 = "",
+  tip,
   poster
 } = Astro.props;
 ---
@@ -48,6 +49,7 @@ const {
       )
     }
   </div>
+  <p set:html={tip} class="course-video__tip" />
 </div>
 
 <style>
@@ -95,8 +97,14 @@ const {
     margin-right: 0.6em;
   }
 
-  .course-video__text {
+  .course-video__text,
+  .course-video__tip {
     padding: 1em 2em;
+  }
+
+  .course-video__tip--colored {
+    color: var(--accent-color);
+    font-weight: bold;
   }
 
   @media only screen and (min-width: 60em) {
