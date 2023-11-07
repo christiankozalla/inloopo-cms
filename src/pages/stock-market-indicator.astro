@@ -48,13 +48,14 @@ entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) 
       twitterLink="https://twitter.com/share?url=https://www.inloopo.com/stock-market-indicator/"
     />
     {
-      entries.items.map((item) => (
-        <div
-          set:html={documentToHtmlString(item.fields.content, renderOptions)}
-          class="article"
-          style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
-        />
-      ))
+      entries.items
+        .slice(0, 1)
+        .map((item) => (
+          <div
+            set:html={documentToHtmlString(item.fields.content, renderOptions)}
+            style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
+          />
+        ))
     }
     <h2 class="align-center">What is the inloopo stock market indicator?</h2>
     <p>
@@ -66,7 +67,32 @@ entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) 
     </p>
     <p>Look at the performance of the inloopo signal service as an ETF strategy.</p>
     <Button link="https://www.inloopo.com/investment/" text="See the signal service" />
+    {
+      entries.items
+        .slice(1)
+        .map((item, index) => (
+          <div
+            set:html={documentToHtmlString(item.fields.content, renderOptions)}
+            style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
+            class={index >= 2 ? "hidden" : ""}
+          />
+        ))
+    }
+    <Button element="button" text="Show more" id="show-more-entries-button" />
   </div>
+  <script>
+    const button = document.getElementById("show-more-entries-button");
+    button?.addEventListener("click", (_e) => {
+      const hiddenEntries = Array.from(document.querySelectorAll(".hidden"));
+      if (hiddenEntries.length) {
+        hiddenEntries.forEach((entry, i) => {
+          if (i < 3) entry.classList.remove("hidden");
+        });
+      } else {
+        button.innerText = "No more entries";
+      }
+    });
+  </script>
   <style is:inline>
     .article p {
       margin-bottom: 1.2rem;
@@ -85,6 +111,10 @@ entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) 
     .article__list li p::before {
       content: "- ";
       display: inline;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </MainLayout>

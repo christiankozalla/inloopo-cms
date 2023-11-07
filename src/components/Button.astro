@@ -1,16 +1,17 @@
 ---
-const { link, text, alignClass, target = "", colorClass = "" } = Astro.props;
+const { link, text, alignClass, target = "", colorClass = "", element = "a", id } = Astro.props;
 ---
 
 <div class="button__container">
-  <a
-    href={link}
-    target={target}
-    class={`
-button
-${alignClass}
-${colorClass}`}>{text}</a
-  >
+  {
+    element === "a" ? (
+      <a href={link} target={target} class={`button ${alignClass} ${colorClass}`}>
+        {text}
+      </a>
+    ) : (
+      <button id={id} class={`button ${alignClass} ${colorClass}`}>{text}</button>
+    )
+  }
 </div>
 
 <style>
@@ -26,6 +27,7 @@ ${colorClass}`}>{text}</a
     font-size: 18px;
     font-size: 1.25rem;
     font-weight: bold;
+    cursor: pointer;
   }
 
   .button__background--light {

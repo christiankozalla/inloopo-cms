@@ -49,12 +49,14 @@ entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) 
       twitterLink="https://twitter.com/share?url=https://www.inloopo.com/de/boersenampel/"
     />
     {
-      entries.items.map((item) => (
-        <div
-          set:html={documentToHtmlString(item.fields.content, renderOptions)}
-          style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
-        />
-      ))
+      entries.items
+        .slice(0, 1)
+        .map((item) => (
+          <div
+            set:html={documentToHtmlString(item.fields.content, renderOptions)}
+            style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
+          />
+        ))
     }
     <h2 class="align-center">Was ist die inloopo Börsenampel?</h2>
     <p>
@@ -66,7 +68,32 @@ entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) 
     </p>
     <p>Schau dir die Performance des inloopo Signaldienstes als ETF Strategie an.</p>
     <Button link="https://www.inloopo.com/de/investieren/" text="Geh zum Signaldienst" />
+    {
+      entries.items
+        .slice(1)
+        .map((item, index) => (
+          <div
+            set:html={documentToHtmlString(item.fields.content, renderOptions)}
+            style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
+            class={index >= 2 ? "hidden" : ""}
+          />
+        ))
+    }
+    <Button element="button" text="Zeige mehr Börsenampel-Einträge" id="show-more-entries-button" />
   </div>
+  <script>
+    const button = document.getElementById("show-more-entries-button");
+    button?.addEventListener("click", (_e) => {
+      const hiddenEntries = Array.from(document.querySelectorAll(".hidden"));
+      if (hiddenEntries.length) {
+        hiddenEntries.forEach((entry, i) => {
+        if (i < 3) entry.classList.remove("hidden");
+      });
+      } else {
+        button.innerText = "Keine weiteren Einträge mehr"
+      }
+    });
+  </script>
   <style is:inline>
     .article p {
       margin-bottom: 1.2rem;
@@ -85,6 +112,10 @@ entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) 
     .article__list li p::before {
       content: "- ";
       display: inline;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </MainLayout>
