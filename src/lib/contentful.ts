@@ -13,13 +13,14 @@ const contentfulClient = contentful.createClient({
   host: import.meta.env.MODE !== "development" ? "cdn.contentful.com" : "preview.contentful.com",
 });
 
-
 function renderOptionsAndVideos() {
   const videos: VideoNode[] = [];
   const renderOptions = {
     renderNode: {
       [INLINES.HYPERLINK]: (node: any, next: any) => {
-        return `<a href="${node.data.uri}"${(node.data.uri.includes('inloopo.com') || node.data.uri.startsWith('/')) ? '' : ' target="_blank"'}>${next(node.content)}</a>`;
+        return `<a href="${node.data.uri}"${
+          node.data.uri.includes("inloopo.com") || node.data.uri.startsWith("/") ? "" : ' target="_blank"'
+        }>${next(node.content)}</a>`;
       },
       [BLOCKS.TABLE]: (node: any, children: any) =>
         `<div class="article__table"><table>${children(node.content)}</table></div>`,
@@ -48,10 +49,11 @@ function renderOptionsAndVideos() {
             src='https:${node.data.target.fields.file.url}'
             alt='${node.data.target.fields.description?.replace("[caption]", "") || ""}'
             loading='lazy'>
-        ${node.data.target.fields.description?.startsWith("[caption]")
+        ${
+          node.data.target.fields.description?.startsWith("[caption]")
             ? figcaptionWithParsedMarkdownLink(node.data.target.fields.description?.replace("[caption]", ""))
             : ""
-          }
+        }
         </figure>
       `;
       },
@@ -77,10 +79,9 @@ function renderOptionsAndVideos() {
   };
   return {
     videos,
-    renderOptions
+    renderOptions,
   };
 }
-
 
 function figcaptionWithParsedMarkdownLink(text: string) {
   const regex = /(.*?)\[(.*?)\]\((.*?)\)(.*)/g;
@@ -179,13 +180,13 @@ interface Node<T> {
 }
 
 interface VideoNode {
-  nodeType: 'embedded-entry-inline';
+  nodeType: "embedded-entry-inline";
   data: {
     target: {
-      sys: { createdAt: string },
-      fields: { title: string, videoId: string }
-    }
-  }
+      sys: { createdAt: string };
+      fields: { title: string; videoId: string };
+    };
+  };
   content: any[];
 }
 

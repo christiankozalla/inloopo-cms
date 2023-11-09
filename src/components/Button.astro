@@ -9,7 +9,9 @@ const { link, text, alignClass, target = "", colorClass = "", element = "a", id 
         {text}
       </a>
     ) : (
-      <button id={id} class={`button ${alignClass} ${colorClass}`}>{text}</button>
+      <button id={id} class={`button ${alignClass} ${colorClass}`}>
+        {text}
+      </button>
     )
   }
 </div>

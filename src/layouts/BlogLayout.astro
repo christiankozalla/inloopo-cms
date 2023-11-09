@@ -60,9 +60,11 @@ const { title, opengraph, locale, canonical = new URL(Astro.url.pathname, Astro.
               <meta property="og:image:height" content={String(opengraph.image.height)} />
             ) : null}
             {opengraph.image.url ? (
-              <meta name="twitter:image" content={opengraph.image.url} />
-              <meta property="og:image" content={opengraph.image.url} />
-            ): null}
+              <>
+                <meta name="twitter:image" content={opengraph.image.url} />
+                <meta property="og:image" content={opengraph.image.url} />
+              </>
+            ) : null}
           </>
         </>
       )

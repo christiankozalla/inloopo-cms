@@ -87,10 +87,10 @@ entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) 
       const hiddenEntries = Array.from(document.querySelectorAll(".hidden"));
       if (hiddenEntries.length) {
         hiddenEntries.forEach((entry, i) => {
-        if (i < 3) entry.classList.remove("hidden");
-      });
+          if (i < 3) entry.classList.remove("hidden");
+        });
       } else {
-        button.innerText = "Keine weiteren Einträge mehr"
+        button.innerText = "Keine weiteren Einträge mehr";
       }
     });
   </script>
