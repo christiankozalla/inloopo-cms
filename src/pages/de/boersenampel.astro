@@ -3,6 +3,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import HeroShot from "../../components/HeroShot.astro";
 import ShareButton from "../../components/ShareButton.astro";
 import Button from "../../components/Button.astro";
+import CourseVideo from "../../components/CourseVideo.astro";
 import { renderOptionsAndVideos, type StockMarketIndicatorPost } from "../../lib/contentful";
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
@@ -49,15 +50,20 @@ entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) 
       twitterLink="https://twitter.com/share?url=https://www.inloopo.com/de/boersenampel/"
     />
     {
-      entries.items
-        .slice(0, 1)
-        .map((item) => (
-          <div
-            set:html={documentToHtmlString(item.fields.content, renderOptions)}
-            style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
-          />
-        ))
-    }
+      entries.items.map((item) => (
+        <div
+          set:html={documentToHtmlString(item.fields.content, renderOptions)}
+          style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
+        />
+      ))
+    }    
+     <CourseVideo
+     videoLarge="/videos/00-landingpage-1080.mp4"
+     videoMedium="/videos/00-landingpage-720.mp4"
+     videoSmall="/videos/00-landingpage-576.mp4"
+     poster="/images/boersenampel-kurs-vorstellung.webp"
+   />
+
     <h2 class="align-center">Was ist die inloopo Börsenampel?</h2>
     <p>
       Die <a class="link" href="https://www.inloopo.com/de/anlagestrategien/inloopo-boersenampel/"
@@ -66,34 +72,8 @@ entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) 
       verschiedene Strategien umgesetzt werden, wie z.B. eine konservative ETF-Strategie mit dem inloopo Signaldienst.
       Die Börsenampel kann aber auch für Optionsstrategien oder Futures Swing Trading genutzt werden.
     </p>
-    <p>Schau dir die Performance des inloopo Signaldienstes als ETF Strategie an.</p>
-    <Button link="https://www.inloopo.com/de/investieren/" text="Geh zum Signaldienst" />
-    {
-      entries.items
-        .slice(1)
-        .map((item, index) => (
-          <div
-            set:html={documentToHtmlString(item.fields.content, renderOptions)}
-            style="margin: 2rem auto; max-width: 100%; font-size: 1.1rem; padding: 2rem; border: 3px solid #ff6b35"
-            class={index >= 2 ? "hidden" : ""}
-          />
-        ))
-    }
-    <Button element="button" text="Zeige mehr Börsenampel-Einträge" id="show-more-entries-button" />
+    <Button link="https://www.inloopo.com?msopen=/member/plans/pzlaqvs6yc" text="Börsenampelkurs kaufen" />
   </div>
-  <script>
-    const button = document.getElementById("show-more-entries-button");
-    button?.addEventListener("click", (_e) => {
-      const hiddenEntries = Array.from(document.querySelectorAll(".hidden"));
-      if (hiddenEntries.length) {
-        hiddenEntries.forEach((entry, i) => {
-          if (i < 3) entry.classList.remove("hidden");
-        });
-      } else {
-        button.innerText = "Keine weiteren Einträge mehr";
-      }
-    });
-  </script>
   <style is:inline>
     .article p {
       margin-bottom: 1.2rem;
@@ -112,10 +92,6 @@ entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) 
     .article__list li p::before {
       content: "- ";
       display: inline;
-    }
-
-    .hidden {
-      display: none;
     }
   </style>
 </MainLayout>
