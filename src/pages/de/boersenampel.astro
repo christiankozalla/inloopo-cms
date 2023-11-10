@@ -3,6 +3,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import HeroShot from "../../components/HeroShot.astro";
 import ShareButton from "../../components/ShareButton.astro";
 import Button from "../../components/Button.astro";
+import CourseVideo from "../../components/CourseVideo.astro";
 import { renderOptionsAndVideos, type StockMarketIndicatorPost } from "../../lib/contentful";
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
@@ -58,6 +59,16 @@ entries.items.sort((a, b) => (new Date(a.fields.date) < new Date(b.fields.date) 
           />
         ))
     }
+
+    <CourseVideo
+      videoLarge="/videos/00-landingpage-1080.mp4"
+      videoMedium="/videos/00-landingpage-720.mp4"
+      videoSmall="/videos/00-landingpage-576.mp4"
+      poster="/images/boersenampel-kurs-vorstellung.webp"
+    />
+
+    <Button link="https://www.inloopo.com?msopen=/member/plans/pzlaqvs6yc" text="Börsenampelkurs kaufen" />
+
     <h2 class="align-center">Was ist die inloopo Börsenampel?</h2>
     <p>
       Die <a class="link" href="https://www.inloopo.com/de/anlagestrategien/inloopo-boersenampel/"
