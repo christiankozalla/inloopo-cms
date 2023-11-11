@@ -67,7 +67,10 @@ const { title, description, opengraph = "", lang, canonical = "", noIndex = fals
         var s = d.createElement("script");
         s.src = "https://cdn.memberspace.com/scripts/widgets.js";
         var e = d.getElementsByTagName("script")[0];
-        e.parentNode.insertBefore(s, e);
+        e.parentNode?.insertBefore(s, e);
+        s.onload = () => {
+          document.body.dispatchEvent(new Event("finished-loading-memberspace"));
+        };
       })(document);
     </script>
   </head>
