@@ -183,7 +183,7 @@ const courseVideos = [
     videoLarge: "/videos/16-abschluss-1080.mp4",
     videoMedium: "/videos/16-abschluss-720.mp4",
     videoSmall: "/videos/16-abschluss-576.mp4",
-    videoId: "einszueins" as const,
+    videoId: "einszueins",
     heading: "Persönliches Gespräch",
     text: "Buche dein persönliches Abschlussgespräch mit mir. Ich freue mich darauf! 😊",
     poster: "/images/boersenampel-kurs-talk.webp",
@@ -203,36 +203,36 @@ const courseVideos = [
         <div id="toc" class="toc-course">
           <a class="toc-course__accordion"><h6 class="toc-course__heading">Inhaltsverzeichnis</h6></a>
           <div class="toc-course__accordion-content">
-            <nav>
-              <ol class="toc-course__nav">
-                <li>
-                  <a rel="nofollow" href="#ampelfarben" class="toc-course__link"><strong>1. Börsenampel</strong></a>
-                </li>
-                <li><a rel="nofollow" href="#cot" class="toc-course__link">1.1 COT Daten</a></li>
-                <li><a rel="nofollow" href="#movingaverage" class="toc-course__link">1.2 Moving Average</a></li>
-                <li><a rel="nofollow" href="#trend" class="toc-course__link">1.3 Trendstruktur</a></li>
-                <li><a rel="nofollow" href="#momentum" class="toc-course__link">1.4 Momentum</a></li>
-                <li><a rel="nofollow" href="#divergenz" class="toc-course__link">1.5 Divergenz</a></li>
-                <li><a rel="nofollow" href="#spread" class="toc-course__link">1.6 Spread</a></li>
-                <li><a rel="nofollow" href="#indikatoren" class="toc-course__link">1.7 Indikatoren</a></li>
-                <li>
-                  <a rel="nofollow" href="#signaldienst" class="toc-course__link"
-                    ><strong>2. ETF Signaldienst</strong></a
-                  >
-                </li>
-                <li><a rel="nofollow" href="#einstieg" class="toc-course__link">2.1 Einstiegssignale</a></li>
-                <li><a rel="nofollow" href="#stopp" class="toc-course__link">2.2 Stopp Setzung</a></li>
-                <li><a rel="nofollow" href="#ausstieg" class="toc-course__link">2.3 Ausstieg</a></li>
-                <li><a rel="nofollow" href="#etf" class="toc-course__link">2.4 ETF Auswahl</a></li>
-                <li><a rel="nofollow" href="#strategie" class="toc-course__link">2.5 Strategieentwicklung</a></li>
-                <li><a rel="nofollow" href="#bonus" class="toc-course__link"><strong>3. Bonusvideos</strong></a></li>
-                <li>
-                  <a rel="nofollow" href="#einszueins" class="toc-course__link"
-                    ><strong>4. Persönliches Abschlussgespräch</strong></a
-                  >
-                </li>
-              </ol>
-            </nav>
+            <ol class="toc-course__nav">
+              <li>
+                <a rel="nofollow" href="#ampelfarben" class="toc-course__link"><strong>1. Börsenampel</strong></a>
+              </li>
+              <li><a rel="nofollow" href="#cot" class="toc-course__link">1.1 COT Daten</a></li>
+              <li><a rel="nofollow" href="#movingaverage" class="toc-course__link">1.2 Moving Average</a></li>
+              <li><a rel="nofollow" href="#trend" class="toc-course__link">1.3 Trendstruktur</a></li>
+              <li><a rel="nofollow" href="#momentum" class="toc-course__link">1.4 Momentum</a></li>
+              <li><a rel="nofollow" href="#divergenz" class="toc-course__link">1.5 Divergenz</a></li>
+              <li><a rel="nofollow" href="#spread" class="toc-course__link">1.6 Spread</a></li>
+              <li><a rel="nofollow" href="#indikatoren" class="toc-course__link">1.7 Indikatoren</a></li>
+              <li>
+                <a rel="nofollow" href="#signaldienst" class="toc-course__link"><strong>2. ETF Signaldienst</strong></a>
+              </li>
+              <li><a rel="nofollow" href="#einstieg" class="toc-course__link">2.1 Einstiegssignale</a></li>
+              <li><a rel="nofollow" href="#stopp" class="toc-course__link">2.2 Stopp Setzung</a></li>
+              <li><a rel="nofollow" href="#ausstieg" class="toc-course__link">2.3 Ausstieg</a></li>
+              <li><a rel="nofollow" href="#etf" class="toc-course__link">2.4 ETF Auswahl</a></li>
+              <li><a rel="nofollow" href="#strategie" class="toc-course__link">2.5 Strategieentwicklung</a></li>
+              <li><a rel="nofollow" href="#bonus" class="toc-course__link"><strong>3. Bonusvideos</strong></a></li>
+              <li>
+                <a rel="nofollow" href="#einszueins" class="toc-course__link"
+                  ><strong>4. Persönliches Abschlussgespräch</strong></a
+                >
+              </li>
+            </ol>
+            <p style="margin-top: 24px; font-size: small">✔ = Video bereits angesehen</p><button
+              id="reset-video-tracker-progress"
+              class="button seen-button">Fortschritt zurücksetzen</button
+            >
           </div>
         </div>
       </aside>
@@ -281,10 +281,17 @@ const courseVideos = [
       if (videoTracker) {
         for (const seenVideoId in videoTracker) {
           const button = document.querySelector(`button[data-video-id=${seenVideoId}`) as HTMLElement | null;
-          if (!button) continue;
-          button.removeAttribute("data-video-id");
-          button.setAttribute("data-seen", "true");
-          button.innerHTML = "&#10003; Video angesehen"; // "&#x2705; Video gesehen";
+          if (button) {
+            button.removeAttribute("data-video-id");
+            button.setAttribute("data-seen", "true");
+            button.innerHTML = "&#10004; Video angesehen"; // "&#x2705; Video gesehen";
+          }
+
+          // Links in Navbar
+          const link = document.querySelector(`a[href="#${seenVideoId}"]`) as HTMLElement | null;
+          if (link) {
+            link.setAttribute("data-seen", "true");
+          }
         }
       }
     }
@@ -307,6 +314,12 @@ const courseVideos = [
           "click",
           handleUpdateVideoTracker({ tagName: "BUTTON", getVideoId: (el) => el.dataset.videoId }),
         );
+
+        const resetProgressButton = document.getElementById("reset-video-tracker-progress");
+        resetProgressButton?.addEventListener("click", async () => {
+          await window.MemberSpace.clearMemberMetadata();
+          location.reload();
+        });
       } else {
         console.log("Member currently not logged in.");
       }
@@ -386,7 +399,7 @@ const courseVideos = [
   .toc-course__accordion-content {
     opacity: 0;
     padding: 0 1rem;
-    max-height: 0;
+    height: 0;
     border-bottom: 1px solid #e5e5e5;
     overflow: hidden;
     clear: both;
@@ -396,7 +409,7 @@ const courseVideos = [
   .toc-course__accordion-content.active {
     opacity: 1;
     padding: 1rem;
-    max-height: 100%;
+    height: fit-content;
     transition: all 0.35s ease 0.15s;
   }
 
@@ -432,6 +445,11 @@ const courseVideos = [
     color: #ff6b35;
     border-left: 3px solid #ff6b35;
   }
+
+  .toc-course__link[data-seen]::after {
+    content: " ✔";
+  }
+
   .button.seen-button {
     margin: 0 12px;
     margin-left: auto;
