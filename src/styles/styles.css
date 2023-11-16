@@ -504,6 +504,12 @@ p {
   margin-bottom: 120px;
 }
 
+.main-teaser__page-boersenampelkurs {
+  margin-bottom: 0;
+  background-position: center;
+  background-image: url("/images/image-teaser-boersenampelkurs.jpg");
+}
+
 .main-teaser__page-daytrading {
   margin-bottom: 0;
   background-position: center;
