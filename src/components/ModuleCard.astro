@@ -28,6 +28,7 @@ interface Props {
     border: 1px solid #d5d5d5;
     box-shadow: 1px 1px 4px #d2d2d2;
     color: var(--text-color);
+    margin: 0 1em;
   }
 
   .module__heading {
@@ -42,4 +43,10 @@ interface Props {
   .arrow {
     margin-right: 4px;
   }
+
+  @media only screen and (min-width: 40em) {
+    .module__container {
+      margin: 0;
+  }
+}
 </style>

@@ -6,7 +6,8 @@ const {
   videoId,
   backgroundColorClass,
   marginClass = "",
-  heading,
+  paddingClass = "",
+  heading = "",
   text = "",
   download = "",
   download2 = "",
@@ -42,7 +43,10 @@ ${marginClass}
        Your browser does not support the video tag.
     </video>
   </>
-  <p class="course-video__text">{text}</p>
+  <p class={`
+  course-video__text
+  ${paddingClass}
+  `}>{text}</p>
   <div class="course-video__download">
     {
       download && (
@@ -62,7 +66,10 @@ ${marginClass}
     }
     <slot name="videoTracker" />
   </div>
-  <p set:html={tip} class="course-video__tip" />
+  <p set:html={tip} class={`
+  course-video__tip
+  ${paddingClass}
+  `} />
   <script src="./lazy-videos.js"></script>
 </div>
 
@@ -84,6 +91,7 @@ ${marginClass}
   .course-video__heading {
     margin-bottom: 0;
   }
+  
   video {
     max-width: 100%;
   }
@@ -115,6 +123,10 @@ ${marginClass}
     padding: 1em 2em;
   }
 
+  .text__padding--less {
+    padding: 0;
+  }
+
   .course-video__tip--colored {
     color: var(--accent-color);
     font-weight: bold;
@@ -130,6 +142,10 @@ ${marginClass}
 
     .video-container__margin--less {
     margin: 0;
+  }
+
+  .text__padding--less {
+    padding: 0;
   }
 
     .course-video__heading-container {
