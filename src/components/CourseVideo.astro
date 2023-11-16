@@ -5,6 +5,7 @@ const {
   videoSmall,
   videoId,
   backgroundColorClass,
+  marginClass = "",
   heading,
   text = "",
   download = "",
@@ -21,7 +22,10 @@ const {
     `}>
   <h2 class="course-video__heading">{heading}</h2>
 </div>
-<div class="course-video__container">
+<div class={`
+course-video__container
+${marginClass}
+`}>
   <>
     <video
       class="lazy"
@@ -92,6 +96,10 @@ const {
     padding: 1em 0;
   }
 
+  .video-container__margin--less {
+    margin: 0;
+  }
+
   .course-video__download {
     display: flex;
     gap: 1em;
@@ -119,6 +127,10 @@ const {
       justify-content: center;
       padding: 1em;
     }
+
+    .video-container__margin--less {
+    margin: 0;
+  }
 
     .course-video__heading-container {
       margin: 0 2em;

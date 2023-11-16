@@ -1,0 +1,292 @@
+---
+//import components and layout
+import MainLayout from "../../layouts/MainLayout.astro";
+import HeroShot from "../../components/HeroShot.astro";
+import ProblemCard from "../../components/ProblemCard.astro";
+import ModuleCard from "../../components/ModuleCard.astro";
+import QualiCard from "../../components/QualiCard.astro";
+import BackgroundImage from "../../components/BackgroundImage.astro";
+import Button from "../../components/Button.astro";
+
+//import styles
+import "../../styles/styles.css";
+---
+
+<MainLayout
+  title="inloopo Börsenampelkurs"
+  description="Du weißt nicht, ob du investieren sollst. Wann kommt der nächste Crash? Dass weißt du nicht. Mit meinem Börsenampelkurs lernst du die Märkte selbst einzuschätzen."
+  lang="de"
+  opengraph={{
+    url: "https://www.inloopo.com/de/boersenampelkurs/",
+    image: "https://www.inloopo.com/images/image-teaser-boersenampelkurs.jpg",
+    locale: "en",
+    type: "website",
+    description: "Werde dein eigener Börsenexperte.",
+  }}
+  canonical="https://www.inloopo.com/de/boersenampelkurs/">
+  <!-- MAIN TEASER -->
+  <HeroShot
+    title="Lerne die Börsen selbsteinzuschätzen"
+    description="In diesem Börsenampelkurs lernst du Finanzcrashs frühzeitig zu erkennen. Du wirst wissen, wann du wieder einsteigst, um erfolgreich zu sein."
+    button={{
+      href: "#",
+      target: "_blank",
+      text: "Kaufe den Kurs",
+    }}
+    backgroundImageClass="main-teaser__page-boersenampelkurs"
+  />
+
+  <!-- PROBLEMS -->
+  <section>
+    <div class="row box--grey-background box--desktop">
+      <div class="wrapper-content">
+        <ProblemCard
+          title="Du..."
+          icon={{
+            src: "/images/sad.svg",
+            alt: "Sad Face",
+          }}
+          listItems={[
+            "folgst den News.",
+            "lässt dich von selbsternannten Experten lenken.",
+            "sammelst Informationen, die dich davon abhalten Entscheidungen zu treffen.",
+          ]}
+        />
+
+        <ProblemCard
+          title="Du möchtest..."
+          icon={{
+            src: "/images/happy.svg",
+            alt: "Happy Face",
+          }}
+          listItems={[
+            "unabhängig deine Entscheidungen treffen können.",
+            "lernen wie Profis die Märkte sehen.",
+            "klare Ein- und Ausstiegsregeln für eine ETF oder Investmentstrategie.",
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR WHOM -->
+  <div class="wrapper-content">
+    <h2 class="text-box__heading">Werde ein professioneller Investor</h2>
+    <div class="text-box">
+      <p>
+        Lerne meine professionelle Sicht auf die Finanzmärkte, die ich mir über mehr als 15 Jahre erarbeitet habe. Damit wird es für dich eindeutig, wann du investieren solltest und wann du lieber Cash im Depot hast. Dabei brauchst du nur am Wochenende 10 - 30 Minuten, um die richtige Entscheidung zu treffen. Das Resultat: Du kannst den Markt schlagen und hast eine glattere Kapitalkurve.
+      </p>
+    </div>
+  </div>
+  <!-- FEATURES -->
+  <div class="wrapper-content">
+    <h2 class="column__heading">Alles was du brauchst</h2>
+    <div class="row">
+      <QualiCard
+        title="TradingView Indikatoren"
+        description="Erhalte alle meine TradingView Indikatoren, mit denen du die Märkte einschätzen kannst. Damit kannst du deine eigene Börsenampel erstellen."
+        icon={{
+          src: "/images/binoculars.svg",
+          alt: "Buch Icon",
+        }}
+      />
+      <QualiCard
+        title="Fundamentale + technische Analyse"
+        description="Lerne meine universelle Analyse. Sie warnt dich rechtzeitig vor dem nächsten Börsencrash und zeigt dir, wann du nach einem Börsencrash wieder einsteigen solltest."
+        icon={{
+          src: "/images/bug.svg",
+          alt: "Hut Icon",
+        }}
+      />
+      <QualiCard
+        title="ETF Strategie"
+        description="Ich biete dir eine einfach umzusetzende ETF Strategie, die für jede Kontogröße funktioniert. Mit dieser Strategie lernst du dein Kapital zu schützen und in den richtigen Zeiten zu investieren."
+        icon={{
+          src: "/images/fox.svg",
+          alt: "Daten und Charts Icon",
+        }}
+      />
+      <QualiCard
+      title="Wenig Zeitaufwand"
+      description="Du brauchst dich nur am Wochenende mit den Finanzmärkten zu beschäftigen. Das reicht aus, um die richtigen Entscheidungen zu treffen! Somit hast du mehr Zeit für deine Familie, deine Arbeit oder deine Hobbys."
+      icon={{
+        src: "/images/battery.svg",
+        alt: "Daten und Charts Icon",
+      }}
+    />
+    </div>
+  </div>
+
+  <section class="wrapper-content">
+    <h2 class="column__heading">Ein Videokurs mit 4 Modulen</h2>
+    <div class="grid grid-3fr">
+      <ModuleCard
+        title="inloopo Börsenampel"
+        icon={{
+          src: "/images/traffic-light.svg",
+          alt: "Start icon",
+          width: "40",
+        }}
+        listItems={[
+          "COT Daten",
+          "Moving Average",
+          "Trendstruktur",
+          "Momentum",
+          "Divergenz",
+          "Spread",
+          "Indikatoren"
+        ]}
+      />
+
+      <ModuleCard
+        title="ETF Strategie"
+        icon={{
+          src: "/images/fox.svg",
+          alt: "Put data in icon",
+          width: "70",
+        }}
+        listItems={[
+          "Einstiegssignale",
+          "Stoppsetzung",
+          "Ausstieg",
+          "ETF Auswahl",
+          "Strategieentwicklung"
+        ]}
+      />
+
+      <ModuleCard
+        title="Bonusteil"
+        icon={{
+          src: "/images/star.svg",
+          alt: "Put data in icon",
+          width: "80",
+        }}
+        listItems={[
+          "Konjukturzyklus",
+          "Sektorrotation",
+          "Saisonale Trends",
+          "Weitere Antworten auf häufig gestellte Fragen",
+        ]}
+      />
+
+      <ModuleCard
+        title="Persönliches Abschlussgespräch"
+        icon={{
+          src: "/images/chat.svg",
+          alt: "Put data in icon",
+          width: "70",
+        }}
+        listItems={[
+          "Ich kläre letzte persönliche Anliegen",
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- HWY US -->
+  <section>
+    <BackgroundImage
+      title="Man lernt, wenn man scheitert, aufsteht und weitermacht"
+      description="Ich habe jahrelang mit den falschen Strategien und einer falschen Finanzausbildung gehandelt. Ich habe viele Fehler gemacht, und eine Menge gelernt. Seit Ausbildung zum professionellen Futures Trader, sehe ich die Märkte aus einer anderen Perspektive. Jetzt handel ich 3 Strategien auf verschiedenen Konten. Alle basieren auf der fundamentalen Analyse mit der Börsenampel. Eine von den 3 Strategie ist die ETF Strategie, welche den geringsten Zeitaufwand hat."
+      button={{
+        text: "Jetzt kaufen",
+        href: "https://www.inloopo.com?msopen=/member/plans/pzlaqvs6yc",
+        target: "target__blank",
+      }}
+      backgroundImageClass="secondary-teaser__course"
+      textColorClass="light"
+    />
+  </section>
+
+  <!-- CONTENT FAQ SECTION -->
+  <div class="wrapper-content">
+    <section>
+      <div class="faq__container">
+        <h2 class="faq__heading--center">FAQs</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <a>Für wen ist der Börsenampelkurs geeignet?</a>
+            <div class="content">
+              <p>
+                Mein Börsenampelkurs ist für Anfänger als auch fortgeschrittene Investoren geeignet. Alle Menschen, die ihre Entscheidungen selbstständig treffen wollen und unabhängig von Finanznews oder anderen Experten werden wollen.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Wie viel Zeit benötige ich?</a>
+            <div class="content">
+              <p>
+                Der Börsenampelkurs ist in 5 – 15 Minuten lange Videos gegliedert. Diese kannst du dir so oft anschauen, wie du willst. Ebenso hast du unbegrenzten Zugriff auf das Kursmaterial. Wenn du mit dem Videokurs fertig bist und das Wissen verinnerlicht hast, brauchst du 10-30 Minuten am Wochenende für deine Analyse der Aktienmärkt
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Wie geht es nach dem Kurs weiter?</a>
+            <div class="content">
+              <p>
+                Nach dem Kurs lernst du die selbstständige Anwendung und Umsetzung. Dabei kannst du deine Analysen immer mit meinen abgleichen. Wenn du Fragen hast, kannst du mir immer einen Kommentar schreiben und erhältst eine persönliche Antwort von mir.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Wie lange habe ich Zugriff auf das Kursmaterial?</a>
+            <div class="content">
+              <p>
+                Du hast unbegrenzten Zugang zu dem Kursmaterial.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Wird der Kurs häufig aktualisiert?</a>
+            <div class="content">
+              <p>Ja, der Kurs wird sich im Laufe der Zeit weiterentwickeln. Vor allem im Bonusteil werde ich Antworten auf häufig gestellte Fragen hinzufügen.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Für welche Märkte funktioniert die Börsenampel?</a>
+            <div class="content">
+              <p>
+                Ich wende die Börsenampel auf die US-Indices S&P 500, NASDAQ und DOW Jones an. Zusätzlich benutze ich diese Analysemethode für Währungen, Crude Oil, Gold und andere Futures Märkte.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Lerne ich auch, wie ich die Sektorrotation anwenden kann?</a>
+            <div class="content">
+              <p>
+                Ja, im Bonusteil gibt es einen umfangreichen Teil, in dem ich dir zeige, wie ich die Sektorrotation nutze, um die aussichtsreichsten Aktien-Sektoren und Aktien zu finden. Swing Trading oder Optionstrading mit Aktien kann ich dir im persönlichen 1:1 Coaching beibringen.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <a>Bietest du außerhalb des Kurses Unterstützung an oder bin ich auf mich allein gestellt?</a>
+            <div class="content">
+              <p>
+                Wenn du zusätzliche Unterstützung brauchst, kannst du gerne ein 1:1 Coaching mit mir persönlich buchen. Vereinbare dazu zuerst ein persönliches Kennlerngespräch, in dem wir alles besprechen und schauen, ob wir zusammenpassen.
+              </p>
+            </div>
+          </div>
+            <div class="accordion-item">
+              <a>Ich habe noch Fragen. Kann ich persönlich mit dir sprechen?</a>
+              <div class="content">
+                <p>
+                  Klar, schick mir einfach eine E-Mail an info@inloopo.com oder buche einen Zoom Call über meine Kontaktseite.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Button
+      link="https://www.inloopo.com?msopen=/member/plans/pzlaqvs6yc"
+      text="Jetzt kaufen"
+      alignClass="button--align-center"
+      target="target__blank"
+    />
+
+    <!-- SCRIPTS -->
+    <script src="/scripts/faq.js" defer></script>
+  </div>
+</MainLayout>
