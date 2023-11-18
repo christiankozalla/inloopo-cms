@@ -1,0 +1,197 @@
+---
+import "../../styles/styles.css";
+import HeroShot from "../../components/HeroShot.astro";
+import Quote from "../../components/Quote.astro";
+import DetailCard from "../../components/DetailCard.astro";
+import ProblemCard from "../../components/ProblemCard.astro";
+import BackgroundImage from "../../components/BackgroundImage.astro";
+import QualiCard from "../../components/QualiCard.astro";
+import PriceCard from "../../components/PriceCard.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+---
+
+<MainLayout
+  title="1-zu-1 Coaching"
+  description="Werde ein besserer Investor oder Trader. In meinem 1-zu-1-Coaching helfe ich dir, dein gewünschtes Ziel im Trading oder Investieren zu erreichen."
+  opengraph={{
+    title: "1-zu-1 Coaching",
+    description: "Du brauchst persönliche Unterstützung. In meinem Coaching passe ich die Inhalt an deine Bedürfnisse an.",
+    url: "https://www.inloopo.com/de/coaching/",
+    image: "https://www.inloopo.com/images/teaser-coaching.jpg",
+    type: "website",
+    locale: "de",
+  }}
+  lang="de"
+  canonical="https://www.inloopo.com/de/coaching/">
+  <!-- MAIN TEASER -->
+  <HeroShot
+    title="Werde ein besserer Investor oder Trader."
+    description="In meinem 1-zu-1-Coaching helfe ich dir, dein gewünschtes Ziel im Trading oder Investieren zu erreichen."
+    button={{
+      href: "https://calendly.com/philipp-kozalla-call/30min",
+      target: "_blank",
+      text: "Buche ein Zoom Call",
+    }}
+    backgroundImageClass="main-teaser__page-coaching"
+  />
+
+  
+  <!-- FOR WHOM -->
+  <section>
+    <div class="row box--grey-background box--desktop">
+      <div class="wrapper-content">
+        <ProblemCard
+          title="Werde ein noch besserer Investor"
+          icon={{
+            src: "/images/direction-sign.svg",
+            alt: "Richtungsweiser",
+          }}
+          listItems={[
+            "Aufbau eines robusten und diversifizierten Portfolios",
+            "Wie du den Konjunkturzyklus nutzt",
+            "Nutze die Sektorenrotation, um deine Gewinne zur richtigen Zeit zu sichern",
+            "Hedging / Absicherung",
+            "Währungsrisiken",
+            "Und mehr..."
+          ]}
+        />
+        <ProblemCard
+          title="Werde ein konstanter Trader"
+          icon={{ src: "/images/pulse.svg", alt: "Stier und Bär" }}
+          listItems={[
+            "Finde deinen Handelsstil (Day Trading, Swing Trading, Optionshandel)",
+            "Finde dein Trading-Instrument (Futures, Aktien, Optionen, ...)",
+            "Optimiere deine Trading Strategie",
+            "Analyse der Trading Statistik",
+            "Verbessere Ein- und Ausstiege mit konkreten und reproduzierbaren Strategien",
+            "Handelsplan, Analyse und Feinabstimmung",
+            "Risikomanagement optimieren",
+            "Wie du konstant Erfolgreich wirst",
+            "Und mehr..."
+
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <Quote text="Wer immer tut, was er schon kann, bleibt immer das, was er schon ist.">
+    <p class="quote__autor">Henry Ford</p>
+  </Quote>
+
+  <!-- PRODUCT DETAILS -->
+  <section>
+    <h2 class="product-details__heading">Gemeinsam erfolgreicher Geld vermehren</h2>
+    <div class="wrapper-content">
+      <div class="row column--no-background">
+        <DetailCard
+          icon={{
+            src: "/images/finger-print.svg",
+            alt: "Fingerabdruck Icon",
+          }}
+          heading="Individuell"
+          description="Das Coaching ist 100 % auf dich zugeschnitten. Ich gehe auf deine Bedürfnisse und Ziele ein. Du erhälst eine individuelle Betreuung und Wissensvermittlung."
+        />
+        <DetailCard
+          icon={{ src: "/images/cyclist.svg", alt: "Fahrradfahrer Icon" }}
+          heading="Fokusiert"
+          description="Ich priorisiere Lösungen, die zu deiner Lebenssituation und deiner Persönlichkeit passen, so dass du erfolgreicher Geld anlegen bzw. vermehren kannst."
+        />
+        <DetailCard
+          icon={{ src: "/images/muscle-weight.svg", alt: "Muskelarm mit Gewicht Icon" }}
+          heading="Persönlich"
+          description="Ich fokussiere mich auf deine Stärken. Ich trainiere mit dir dein Mindset, um aus dir einen stabileren Investor bzw. Trader zu machen."
+        />
+        <DetailCard
+        icon={{ src: "/images/rocket.svg", alt: "Rakete Icon" }}
+        heading="Motivierend"
+        description="Ich höre hin, verstehe, passe das Coaching an und unterstütze dich in deinem Vorhaben ein erfolgreicher Investor bzw. Trader zu werden."
+      />
+      </div>
+    </div>
+  </section>
+
+<!-- Price of Coaching --> 
+<section>
+    <div class="box--blue-background">
+      <div class="wrapper-content">
+        <h2 class="box__heading--white">Ein Coaching mit 12 wöchentlichen Sessions</h2>
+       
+          <PriceCard
+            title="1-zu-1 Coaching"
+            price="3500 € inkl. MwSt"
+            description="Du bekommst 12 Sitzungen à 90 Minuten. Es wird kleine Aufgaben nach jeder Sitzung geben. Du erlernst eine neue Strategie bzw. passen wir deine Strategie an. Du lernst dein Konto zu skalieren. Wir arbeiten an deinem Mindset und du stärkst dein Selbstvertrauen als Trader oder Investor."
+            button={{
+              text: "Buche ein Zoom Call",
+              href: "https://calendly.com/philipp-kozalla-call/30min",
+              target: "_blank",
+            }}
+          />
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section>
+    <BackgroundImage
+      title="Hör nicht auf zu lernen"
+      description="Ich nehme nur Coachees auf, die zu 100 % von ihrem Trading oder Investieren überzeugt sind. Ich begleite nur 3 Coachees auf einmal, denn ich möchte ein Vollzeit-Trader und Investor bleiben. Gebe aber gerne mein Wissen als Trader und Investor weiter."
+      backgroundImageClass="secondary-teaser__image-at-work"
+      button={{
+        text: "Buche ein Zoom Call",
+        href: "https://calendly.com/philipp-kozalla-call/30min",
+      }}
+      textColorClass="dark"
+    />
+  </section>
+
+    
+  <!-- QUALIFICATIONS -->
+  <section>
+    <div class="row row--no-background">
+      <div class="wrapper-content">
+        <QualiCard
+          icon={{
+            src: "/images/books.svg",
+            alt: "Buch Icon",
+          }}
+          title="Börsenerfahrung"
+          description="Du suchst nach einem erfahrenen Trader. Ich bin seit 2008 aktiv an der Börse und habe anfangs CFD's, später Aktien, Optionsscheine auf Trendaktien und Optionen gehandelt. Heute handel ich Futures nach COT Daten, Saisonalität und Wetteranalyse und investiere strategisch auf Basis der Börsenampel mit der S&P 500 ETF Strategie."
+        />
+        <QualiCard
+          icon={{ src: "/images/hat.svg", alt: "Hut Icon" }}
+          title="Nachweisbarer Erfolg"
+          description="Du brauchst Sicherheit? Ich habe mit der Futures Swing Trading Strategie am Global Cup Championship of Futures Trading™ 2021-2022 teilgenommen. Das ist die Trading Weltmeisterschaft. Mit <a href='/images/wcc.pdf' target='_blank' title='PDF Nachweis' class='link'>64,1 % Gewinn pro Jahr</a> habe ich den 5. Platz belegt. Dieses Jahr nehme ich erneut teil."
+        />
+        <QualiCard
+          icon={{ src: "/images/data.svg", alt: "Daten und Charts Icon" }}
+          title="Analytische Denkweise"
+          description="Du möchtest einem strategisch denkenden Menschen folgen. Ich mache meine Analysen präzise und sorfältig. Meine Entscheidungen treffe ich rational und auf Basis von Daten."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT FAQ SECTION -->
+ 
+
+
+
+  <!-- Register Custom Elements -->
+  <!-- Load Dynamic Chart Skript -->
+  <script is:inline src="/scripts/dynamic-chart.js"></script>
+  <!-- JavaScript -->
+  <script is:inline src="/scripts/faq.js"></script>
+
+  <style>
+    .chart__subheading {
+      font-size: 1.25rem;
+      text-align: center;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+    }
+  </style>
+</MainLayout>
