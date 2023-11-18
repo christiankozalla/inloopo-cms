@@ -1,9 +1,16 @@
 ---
-const { title, description, link } = Astro.props;
+const { icon, type, title, description, link, backgroundColorClass, linkColorClass="" } = Astro.props;
 ---
 
-<div class="product-card__container">
-  <div class="circle">
+<div class={`product-card__container
+${backgroundColorClass}
+`}>
+{icon && 
+<div class="product-card__icon-container">
+<img class="product-card__icon" src={icon.src} alt={icon.alt} width="40"/>
+</div>
+}
+  <h6>{type}</h6>
     <h2 class="product-card__heading">{title}</h2>
     <p class="product-card__text">
       {description}
@@ -11,7 +18,9 @@ const { title, description, link } = Astro.props;
     {
       link && (
         <p>
-          <a class="link" href={link.href}>
+          <a class={`
+            link  bolder
+            ${linkColorClass}`} href={link.href}>
             {link.text}
           </a>
         </p>
@@ -21,40 +30,71 @@ const { title, description, link } = Astro.props;
 </div>
 
 <style>
+  .product-card__icon-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.4em;
+  }
+
   .product-card__container {
     padding: 25px;
     width: 50%;
+    margin: 0 0.2em;
   }
 
   .product-card__heading {
     margin-bottom: 0;
+    text-align: left;
+    line-height: 1.2;
   }
 
-  .circle {
-    border: 6px solid var(--accent-color);
-    border-radius: 50%;
-    width: 550px;
-    height: 550px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    text-align: center;
-    padding: 0 60px;
+  .accent-color {
+    background-color: var(--accent-color);
   }
 
-  .product-card__heading {
-    text-align: center;
+  .light-color {
+    background-color: #ff6b35;
+  }
+
+  .dark-color {
+    background-color: var(--dark-background-color);
+    color: #fff;
+  }
+
+  .darker-color {
+    background-color: #131e3c;
+    color: #fff;
+  }
+
+  /* Link Color */
+
+  .dark-text-color {
+    color: var(--text-color);
+  }
+
+  .darker-border {
+    border-bottom: 1px solid #131e3c;
+  }
+
+  .dark-border {
+    border-bottom: 1px solid var(--dark-background-color);
+  }
+
+  .light-text-color {
+    color: #fff;
+    border-bottom: 1px solid var(--accent-color);
+  }
+
+  .light-text-color:hover {
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+  }
+
+  .bolder {
+    font-weight: bolder;
   }
 
   @media only screen and (max-width: 759px) {
-    .circle {
-      margin-left: auto;
-      margin-right: auto;
-      width: 320px;
-      height: 320px;
-      padding: 0 20px;
-    }
 
     .product-card__heading {
       font-size: 24px;

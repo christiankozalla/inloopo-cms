@@ -479,6 +479,13 @@ p {
   background-image: url("/images/image-teaser-investieren.svg");
 }
 
+.main-teaser__page-coaching {
+  margin-bottom: 0;
+  background-position: center;
+  background-image: url("/images/teaser-coaching.jpg");
+}
+
+
 .main-teaser__page-boersenampel {
   background-image: url("/images/image-teaser-boersenampel.jpg");
   background-position: center;

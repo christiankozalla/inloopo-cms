@@ -66,6 +66,90 @@ import "../../styles/styles.css";
     }}
   />
 
+  <!-- PRODUCTS -->
+  <section>
+    <div class="wrapper">
+      <div class="row">
+        <ProductCard
+        icon={{
+          src:'/images/star-circle.svg',
+          alt:'ein Ampel'
+        }}
+        type="Individuell"
+          title="1-zu-1 Coaching"
+          description="Ich gestalte das Coaching nach deinen Interessen, Fähigkeiten und Zielvorgaben."
+          link={{
+            href: "coaching/",
+            text: "Geh zu Coachingprogramm",
+          }}
+          backgroundColorClass="darker-color"
+          linkColorClass="darker-border"
+        />
+        <ProductCard
+        icon={{
+          src:'/images/traffic-light-circle.svg',
+          alt:'ein Ampel'
+        }}
+        type="Investieren"
+          title="Börsenampelkurs"
+          description="In diesem Kurs lernst du fundamentale Analysen der Märkte durchzuführen und wirst Vertraut mit einer einfachen ETF Strategie."
+          link={{
+            href: "boersenampelkurs/",
+            text: "Geh zum Kurs",
+          }}
+          backgroundColorClass="dark-color"
+          linkColorClass="dark-border"
+        />
+        <ProductCard
+        icon={{
+          src:'/images/direction-sign-circle.svg',
+          alt:'ein Richtungsschild'
+        }}
+        type="Investieren"
+          title="ETF Signaldienst"
+          description="In diesem Kurs lernst du fundamentale Analysen der Märkte durchzuführen und wirst Vertraut mit einer einfachen ETF Strategie."
+          link={{
+            href: "investieren/",
+            text: "Geh zum Kurs",
+          }}
+          backgroundColorClass="dark-color"
+          linkColorClass="dark-border"
+        />
+        <ProductCard
+        icon={{
+          src:'/images/beach-circle.svg',
+          alt:'eine Strandliege'
+        }}
+        type="Investieren"
+          title="Wikifolio"
+          description="Du investierst in ein Account, der von mir für dich gemanagt wird."
+          link={{
+            href: "wikifolio/",
+            text: "Geh zum Kurs",
+          }}
+         backgroundColorClass="dark-color"
+         linkColorClass="dark-border"
+        />
+        <ProductCard
+        icon={{
+          src:'/images/pulse-circle.svg',
+          alt:'ein Bär und Stier'
+        }}
+        type="Trading"
+          title="Daytrading Kurs"
+          description="In diesem Kurs lernst Daytrading."
+          link={{
+            href: "day-trading-kurs/",
+            text: "Geh zum Kurs",
+          }}
+          backgroundColorClass="accent-color"
+          linkColorClass="light-text-color"
+        />
+      </div>
+    </div>
+  </section>
+
+
   <!-- BACKGROUND IMAGE WITH TEXT -->
   <BackgroundImage
     title="Ich bin Philipp."
@@ -115,30 +199,7 @@ import "../../styles/styles.css";
     </div>
   </div>
 
-  <!-- PRODUCTS -->
-  <section>
-    <div class="wrapper-content">
-      <div class="row">
-        <ProductCard
-          title="Mit Börsenampel investieren"
-          description="Die Börsenampel zeigt dir, wann du investierst und wann nicht."
-          link={{
-            href: "investieren/",
-            text: "Geh zur Börsenampel",
-          }}
-        />
-        <ProductCard
-          title="Meinem Wikifolio folgen"
-          description="Du investierst in ein aktiv gemanagten Account."
-          link={{
-            href: "wikifolio/",
-            text: "Geh zum Wikifolio",
-          }}
-        />
-      </div>
-    </div>
-  </section>
-
+  
   <!-- BLOG ARTICLE -->
   <div class="wrapper-content">
     <section class="blog-section">
