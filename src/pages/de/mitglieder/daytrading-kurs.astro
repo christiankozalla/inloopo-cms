@@ -1,7 +1,317 @@
 ---
 import MemberLayout from "../../../layouts/MemberLayout.astro";
+import CourseVideo from "../../../components/CourseVideo.astro";
+
+const courseVideos = [
+  {
+    videoLarge: "/videos/00-einleitung-1080.mp4",
+    videoMedium: "/videos/00-einleitung-720.mp4",
+    videoSmall: "/videos/00-einleitung-576.mp4",
+    videoId: "einleitung",
+    text: "",
+    heading: "Einführung",
+    backgroundColorClass: "heading-container--accent",
+    poster: "",
+  },
+  {
+    videoLarge: "/videos/01-0-professionelles-trading-beginnt-1080.mp4",
+    videoMedium: "/videos/01-0-professionelles-trading-beginnt-720.mp4",
+    videoSmall: "/videos/01-0-professionelles-trading-beginnt-576.mp4",
+    videoId: "prof",
+    heading: "Einführung Professionelles Trading",
+    backgroundColorClass: "heading-container--accent",
+    poster: "",
+  },
+  {
+    videoLarge: "/videos/01-1-marktauswahl-und-trading-software-1080.mp4",
+    videoMedium: "/videos/01-1-marktauswahl-und-trading-software-720.mp4",
+    videoSmall: "/videos/01-1-marktauswahl-und-trading-software-576.mp4",
+    videoId: "marktauswahl",
+    heading: "Einführung Marktauswahl",
+    text: "Mit diesem <a href='https://sierrachart.com/RegisterStep1.php?UserAffiliateID=7c28b913cb77a9314fa49e50231240f2' target='_blank' class='link'>Link</a> kannst du einen 15-tägigen kostenfreien Sierra Chart Testaccount eröffnen.",
+    backgroundColorClass: "heading-container--accent",
+    poster: "",
+  },
+];
 ---
 
-<MemberLayout title="Daytrading Kurs" description="" lang="de">
-  <h2 class="product-details__heading">Der Daytrading Kurs ist noch nicht fertig.</h2>
+<MemberLayout title="Börsenampelkurs" description="#" lang="de">
+  <div class="course__grid">
+    <div>
+      <aside>
+        <div id="toc" class="toc-course">
+          <a class="toc-course__accordion"><h6 class="toc-course__heading">Inhaltsverzeichnis</h6></a>
+          <div class="toc-course__accordion-content">
+            <ol class="toc-course__nav">
+              <li>
+                <a rel="nofollow" href="#einleitung" class="toc-course__link"><strong>1. Einführung</strong></a>
+              </li>
+              <li><a rel="nofollow" href="#prof" class="toc-course__link">1.1 Professionelles Trading</a></li>
+              <li><a rel="nofollow" href="#marktauswahl" class="toc-course__link">1.2 Marktauswahl</a></li>
+            </ol>
+            <p style="margin-top: 24px; font-size: small">✔ = Video bereits angesehen</p><button
+              id="reset-video-tracker-progress"
+              class="button seen-button">Fortschritt zurücksetzen</button
+            >
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div>
+      {
+        courseVideos.map((data) => (
+          <>
+            <CourseVideo key={data.videoId} {...data}>
+              <button class="button seen-button" slot="videoTracker" data-video-id={data.videoId}>
+                Als gesehen markieren
+              </button>
+            </CourseVideo>
+          </>
+        ))
+      }
+    </div>
+  </div>
+  <script>
+    import { memberSpaceReady, updateVideoTracker } from "../../../lib/memberspace.ts";
+    const courseId = "boersenampel-kurs";
+    const courseVideos = document.querySelectorAll("video[id]");
+
+    const handleUpdateVideoTracker =
+      ({
+        tagName,
+        getVideoId,
+      }: {
+        tagName: string;
+        getVideoId: (el: HTMLElement) => string | null | void;
+      }): EventListener =>
+      async (e) => {
+        if (e.target instanceof HTMLElement && e.target.tagName.toUpperCase() === tagName.toUpperCase()) {
+          const videoId = getVideoId(e.target);
+          if (videoId) {
+            await updateVideoTracker(window.MemberSpace, { courseId, videoId }, { hasBeenViewed: true });
+            await updateDisplaySeenVideos(window.MemberSpace);
+          } else console.log("no videoId");
+        }
+      };
+
+    async function updateDisplaySeenVideos(MemberSpace: Window["MemberSpace"]) {
+      const memberMeta = await MemberSpace.getMemberMetadata();
+      const videoTracker = memberMeta.videoTracker?.[courseId];
+
+      if (videoTracker) {
+        for (const seenVideoId in videoTracker) {
+          const button = document.querySelector(`button[data-video-id=${seenVideoId}`) as HTMLElement | null;
+          if (button) {
+            button.removeAttribute("data-video-id");
+            button.setAttribute("data-seen", "true");
+            button.innerHTML = "&#10004; Video angesehen"; // "&#x2705; Video gesehen";
+          }
+
+          // Links in Navbar
+          const link = document.querySelector(`a[href="#${seenVideoId}"]`) as HTMLElement | null;
+          if (link) {
+            link.setAttribute("data-seen", "true");
+          }
+        }
+      }
+    }
+
+    document.body.addEventListener("finished-loading-memberspace", async (e) => {
+      await memberSpaceReady(); // rejects if window.MemberSpace won't be found
+      const member = await window.MemberSpace.getMemberInfo();
+
+      if (member.isLoggedIn === true) {
+        await updateDisplaySeenVideos(window.MemberSpace);
+
+        for (const video of courseVideos) {
+          video.addEventListener(
+            "ended",
+            handleUpdateVideoTracker({ tagName: "VIDEO", getVideoId: (el) => el.getAttribute("id") }),
+          );
+        }
+
+        document.body.addEventListener(
+          "click",
+          handleUpdateVideoTracker({ tagName: "BUTTON", getVideoId: (el) => el.dataset.videoId }),
+        );
+
+        const resetProgressButton = document.getElementById("reset-video-tracker-progress");
+        resetProgressButton?.addEventListener("click", async () => {
+          await window.MemberSpace.clearMemberMetadata();
+          location.reload();
+        });
+      } else {
+        console.log("Member currently not logged in.");
+      }
+    });
+  </script>
 </MemberLayout>
+
+<style>
+  .video__container {
+    position: relative;
+  }
+
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .course__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .toc-course {
+    top: 0;
+    max-width: 100%;
+    margin: 0 1em;
+    animation: fadeEffect 3s;
+    /* fading effect takes 3s */
+  }
+
+  .toc-course__nav {
+    list-style: none;
+  }
+
+  .toc-course__accordion {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    color: var(--black-color);
+    font-size: 1.15rem;
+    font-weight: 400;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .toc-course__accordion:hover,
+  .toc-course__accordion:hover::after {
+    cursor: pointer;
+    color: var(--first-color);
+  }
+
+  .toc-course__accordion.active {
+    color: var(--first-color);
+    border-bottom: 1px solid var(--first-color);
+  }
+
+  .toc-course__accordion::after {
+    content: "+";
+    position: absolute;
+    top: 8%;
+    float: right;
+    right: 10px;
+    font-family: var(--ff-heading);
+    font-size: 2rem;
+    color: var(--black-color);
+    text-align: center;
+  }
+
+  .toc-course__accordion.active::after {
+    content: "-";
+    color: var(--first-color);
+  }
+
+  .toc-course__accordion-content {
+    opacity: 0;
+    padding: 0 1rem;
+    height: 0;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+    clear: both;
+    transition: all 0.2s ease 0.15s;
+  }
+
+  .toc-course__accordion-content.active {
+    opacity: 1;
+    padding: 1rem;
+    height: fit-content;
+    transition: all 0.35s ease 0.15s;
+  }
+
+  @keyframes fadeEffect {
+    /* from 0 to full opacity */
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .toc-course__link {
+    text-decoration: none;
+    list-style: none;
+    display: block;
+    padding: 6px 0;
+    color: #171614;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .toc-course__link:hover,
+  .toc-course__link:focus {
+    color: #ff6b35;
+  }
+
+  .toc-course__link.active {
+    /* transform: translateX(8px); */
+    padding: 2px 0 2px 8px;
+    margin-left: 8px;
+    color: #ff6b35;
+    border-left: 3px solid #ff6b35;
+  }
+
+  .toc-course__link[data-seen]::after {
+    content: " ✔";
+  }
+
+  .button.seen-button {
+    margin: 0 12px;
+    margin-left: auto;
+    padding: 0 12px;
+    font-weight: normal;
+    font-size: small;
+    cursor: pointer;
+    height: 45px;
+  }
+
+  .button.seen-button[data-seen] {
+    cursor: initial;
+  }
+
+  @media only screen and (min-width: 60em) {
+    .toc-course {
+      padding-top: 120px;
+      position: fixed;
+      overflow-y: scroll;
+      height: 100%;
+    }
+
+    .toc-course__accordion {
+      width: 96%;
+    }
+
+    .course__grid {
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+</style>
+
+<script>
+  // Code for FAQ
+  const items = document.querySelectorAll(".toc-course__accordion");
+
+  function toggleAccordion() {
+    // @ts-ignore
+    this.classList.toggle("active");
+    // @ts-ignore
+    this.nextElementSibling.classList.toggle("active");
+  }
+
+  items.forEach((item) => item.addEventListener("click", toggleAccordion));
+</script>

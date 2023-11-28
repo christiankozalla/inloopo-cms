@@ -46,7 +46,7 @@ ${marginClass}
   <p class={`
   course-video__text
   ${paddingClass}
-  `}>{text}</p>
+  `} set:html={text} />
   <div class="course-video__download">
     {
       download && (
