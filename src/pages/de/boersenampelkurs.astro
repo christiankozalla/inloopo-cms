@@ -8,6 +8,7 @@ import QualiCard from "../../components/QualiCard.astro";
 import BackgroundImage from "../../components/BackgroundImage.astro";
 import Button from "../../components/Button.astro";
 import Video from "../../components/Video.astro";
+import PriceCard from "../../components/PriceCard.astro";
 
 //import styles
 import "../../styles/styles.css";
@@ -125,6 +126,7 @@ import "../../styles/styles.css";
   </div>
 
   <section class="wrapper-content">
+    <div class="add-margin-bottom">
     <h2 class="column__heading">Ein Videokurs mit 4 Modulen</h2>
     <div class="grid grid-3fr">
       <ModuleCard
@@ -188,7 +190,28 @@ import "../../styles/styles.css";
         ]}
       />
     </div>
+  </div>
   </section>
+
+  <!-- Price of Coaching --> 
+<section>
+  <div class="box--blue-background">
+    <div class="wrapper-content">
+      <h2 class="box__heading--white">Ein Coaching mit 12 wöchentlichen Sessions</h2>
+     
+        <PriceCard
+          title="Werde dein eigener Börsenexperte"
+          price="799 € inkl. MwSt"
+          description="Du bekommst 16 Lernvideos, die drei Modulen organisiert sind, ein persönliches Abschlussgespräch und meine Tradingview Indikatoren."
+          button={{
+           text: "Jetzt kaufen",
+        href: "https://www.inloopo.com?msopen=/member/plans/pzlaqvs6yc",
+        target: "target__blank",
+          }}
+        />
+    </div>
+  </div>
+</section>
 
   <!-- HWY US -->
   <section>

@@ -7,6 +7,8 @@ import ModuleCard from "../../components/ModuleCard.astro";
 import QualiCard from "../../components/QualiCard.astro";
 import BackgroundImage from "../../components/BackgroundImage.astro";
 import Button from "../../components/Button.astro";
+import Video from "../../components/Video.astro";
+import PriceCard from "../../components/PriceCard.astro";
 
 //import styles
 import "../../styles/styles.css";
@@ -87,6 +89,12 @@ import "../../styles/styles.css";
         > an, um Vertrauen zu gewinnen und deinen Kurs zu beginnen.
       </p>
     </div>
+    <Video
+    videoLarge="/videos/00-daytrading-landingpage-1080.mp4"
+    videoMedium="/videos/00-daytrading-landingpage-720.mp4"
+    videoSmall="/videos/00-daytrading-landingpage-576.mp4"
+    poster="/images/boersenampel-kurs-vorstellung.webp"
+  />
   </div>
   <!-- FEATURES -->
   <div class="wrapper-content">
@@ -120,8 +128,8 @@ import "../../styles/styles.css";
   </div>
 
   <section class="wrapper-content">
-    <h2 class="column__heading">Ein Videokurs mit 14 Modulen</h2>
-    <p>Achtung. Der Kurs ist auf Englisch.</p>
+    <div class="add-margin-bottom">
+    <h2 class="column__heading">Ein Videokurs mit 13 Modulen</h2>
     <div class="grid grid-3fr">
       <ModuleCard
         title="Your Professional Trading Career Starts"
@@ -306,7 +314,28 @@ import "../../styles/styles.css";
         listItems={["What is the right mindset?", "How to get it?"]}
       />
     </div>
+    </div>
   </section>
+
+   <!-- Price of Coaching --> 
+<section>
+  <div class="box--blue-background">
+    <div class="wrapper-content">
+      <h2 class="box__heading--white"></h2>
+     
+        <PriceCard
+          title="Werde Day Trader"
+          price="1200 € inkl. MwSt"
+          description="Du bekommst 13 Lernmodule, Sierra Chart Book, Sierra Chart Settings und wöchentliche Live Trading Sessions."
+          button={{
+          text: "Jetzt kaufen",
+        href: "https://www.inloopo.com?msopen=/member/plans/uqhenfd5ag",
+        target: "target__blank",
+          }}
+        />
+    </div>
+  </div>
+</section>
 
   <!-- HWY US -->
   <section>
