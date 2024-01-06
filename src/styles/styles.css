@@ -254,7 +254,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h6 {
   font-family: "Cera Pro Black", Arial, Helvetica, sans-serif;
   font-weight: 300;
 }
@@ -289,7 +290,8 @@ h5 {
   margin-bottom: 8px;
 }
 
-h6 {
+h6,
+.h6 {
   font-size: 1.125rem;
   margin-bottom: 4px;
 }
