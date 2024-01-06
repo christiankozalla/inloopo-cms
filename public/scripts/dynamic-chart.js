@@ -11,7 +11,7 @@ class DynamicChart extends HTMLElement {
         <label class="chart__p" style="position: relative" for="start-year">Startjahr
             <input id="start-year" class="chart__input" type="number" min="1998" max="2021" value="1998">
             <ul id="year-picker">
-                ${[...Array(24).keys()].map((n) => `<li data-value=${n + 1998}>${n + 1998}</li>`).join("")}
+                ${[...Array(26).keys()].map((n) => `<li data-value=${n + 1998}>${n + 1998}</li>`).join("")}
             </ul>
         </label>
       </form>
