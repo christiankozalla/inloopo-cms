@@ -63,7 +63,7 @@ a {
 \* ---------------------------------*/
 
 body {
-  font-family: "Quattrocento Sans", Helvetica, Arial, sans-serif;
+  font-family: "Quattrocento Sans", Arial, sans-serif;
   line-height: 1.5;
   color: var(--text-color);
   background: #fff;
@@ -216,6 +216,7 @@ section {
   src:
     url("/fonts/CeraProBlack.otf") format("opentype"),
     url("/fonts/CeraProBlack.ttf") format("truetype");
+  font-display: optional;
 }
 
 /* @font-face {
@@ -242,6 +243,7 @@ section {
 @font-face {
   font-family: "Quattrocento Sans";
   src: url("/fonts/QuattrocentoSans-Regular.ttf") format("truetype");
+  font-display: optional;
 }
 
 /* ---------------------------------*\
@@ -256,7 +258,7 @@ h4,
 h5,
 h6,
 .h6 {
-  font-family: "Cera Pro Black", Arial, Helvetica, sans-serif;
+  font-family: "Cera Pro Black", Arial, sans-serif;
   font-weight: 300;
 }
 
@@ -297,7 +299,7 @@ h6,
 }
 
 p {
-  font-family: "Quattrocento Sans", Helvetica, Arial, sans-serif;
+  font-family: "Quattrocento Sans", Arial, sans-serif;
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-bottom: 12px;
@@ -819,7 +821,7 @@ p {
 
 .box__text--bigger {
   font-size: 24px;
-  font-family: "Quattroento Sans", Arial, Helvetica, sans-serif;
+  font-family: "Quattroento Sans", Arial, sans-serif;
   font-weight: normal;
   text-align: center;
   padding: 8px 0;
@@ -852,7 +854,7 @@ p {
   color: #ff6b35;
   font-size: 42px;
   font-weight: bold;
-  font-family: "Cera Pro", Arial, Helvetica, sans-serif;
+  font-family: "Cera Pro", Arial, sans-serif;
   text-align: center;
 }
 
