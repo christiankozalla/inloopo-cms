@@ -35,6 +35,22 @@ const { title, opengraph, locale, canonical = new URL(Astro.url.pathname, Astro.
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
 
+    <style>
+      @font-face {
+        font-family: "Cera Pro Black";
+        src:
+          url("/fonts/CeraProBlack.otf") format("opentype"),
+          url("/fonts/CeraProBlack.ttf") format("truetype");
+        font-display: optional;
+      }
+
+      @font-face {
+        font-family: "Quattrocento Sans";
+        src: url("/fonts/QuattrocentoSans-Regular.ttf") format("truetype");
+        font-display: optional;
+      }
+    </style>
+
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href={canonical} />
     {opengraph?.description ? <meta name="description" content={opengraph.description} /> : null}

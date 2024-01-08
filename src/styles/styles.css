@@ -63,7 +63,7 @@ a {
 \* ---------------------------------*/
 
 body {
-  font-family: "Quattrocento Sans", Arial, sans-serif;
+  font-family: "Quattrocento Sans",  Arial, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.5;
   color: var(--text-color);
   background: #fff;
@@ -192,59 +192,8 @@ section {
 /* ---------------------------------*\
     #FONTS
 \* ---------------------------------*/
+/* --> Moved into HTML Head <--- */
 
-/* Cera Pro */
-/* 
-@font-face {
-  font-family: 'Cera Pro';
-  src: url("/fonts/Cera Pro Light.otf") format('opentype'), url("/fonts/Cera Pro Light.ttf") format('truetype');
-}
-@font-face {
-  font-family: 'Cera Pro';
-  src: url("/fonts/Cera Pro Regular Italic.otf") format('opentype'), url("/fonts/Cera Pro Regular Italic.ttf") format('truetype');
-}
-
-@font-face {
-  font-family: 'Cera Pro';
-  src: url("/fonts/Cera Pro Bold.otf") format('opentype'), url("/fonts/Cera Pro Bold.ttf") format('truetype');
-}
-
-*/
-
-@font-face {
-  font-family: "Cera Pro Black";
-  src:
-    url("/fonts/CeraProBlack.otf") format("opentype"),
-    url("/fonts/CeraProBlack.ttf") format("truetype");
-  font-display: optional;
-}
-
-/* @font-face {
-  font-family: 'Cera Pro';
-  src: url('/fonts/CeraProMedium.otf') format('opentype'), url('/fonts/CeraProMedium.ttf') format('truetype');
-} */
-
-/* Quattrocento */
-/* @font-face {
-  font-family: 'Quattrocento Sans';
-  src: url(/fonts/QuattrocentoSans-Bold.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Quattrocento Sans';
-  src: url(/fonts/QuattrocentoSans-BoldItalic.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Quattrocento Sans';
-  src: url(/fonts/QuattrocentoSans-Italic.ttf) format('truetype');
-} */
-
-@font-face {
-  font-family: "Quattrocento Sans";
-  src: url("/fonts/QuattrocentoSans-Regular.ttf") format("truetype");
-  font-display: optional;
-}
 
 /* ---------------------------------*\
     #BASE ELEMENTS
@@ -258,7 +207,7 @@ h4,
 h5,
 h6,
 .h6 {
-  font-family: "Cera Pro Black", Arial, sans-serif;
+  font-family: "Cera Pro Black",  Arial, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 300;
 }
 
@@ -299,7 +248,7 @@ h6,
 }
 
 p {
-  font-family: "Quattrocento Sans", Arial, sans-serif;
+  font-family: "Quattrocento Sans", Arial, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-bottom: 12px;
@@ -821,7 +770,7 @@ p {
 
 .box__text--bigger {
   font-size: 24px;
-  font-family: "Quattroento Sans", Arial, sans-serif;
+  font-family: "Quattroento Sans", Arial, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: normal;
   text-align: center;
   padding: 8px 0;
@@ -854,7 +803,7 @@ p {
   color: #ff6b35;
   font-size: 42px;
   font-weight: bold;
-  font-family: "Cera Pro", Arial, sans-serif;
+  font-family: "Cera Pro",  Arial, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-align: center;
 }
 

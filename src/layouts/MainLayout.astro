@@ -33,6 +33,23 @@ const { title, description, opengraph = "", lang, canonical = "", noIndex = fals
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+
+    <style>
+      @font-face {
+        font-family: "Cera Pro Black";
+        src:
+          url("/fonts/CeraProBlack.otf") format("opentype"),
+          url("/fonts/CeraProBlack.ttf") format("truetype");
+        font-display: optional;
+      }
+
+      @font-face {
+        font-family: "Quattrocento Sans";
+        src: url("/fonts/QuattrocentoSans-Regular.ttf") format("truetype");
+        font-display: optional;
+      }
+    </style>
+
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noIndex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow" />}
