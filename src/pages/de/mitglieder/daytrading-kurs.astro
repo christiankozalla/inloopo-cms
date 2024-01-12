@@ -11,7 +11,7 @@ const courseVideos = [
     text: "",
     heading: "Einführung",
     backgroundColorClass: "heading-container--accent",
-    poster: "",
+    poster: "/images/daytrading-kurs-profi.webp",
   },
   {
     videoLarge: "/videos/01-0-professionelles-trading-beginnt-1080.mp4",
@@ -20,7 +20,7 @@ const courseVideos = [
     videoId: "prof",
     heading: "Einführung Professionelles Trading",
     backgroundColorClass: "heading-container--accent",
-    poster: "",
+    poster: "/images/daytrading-kurs-karriere.webp",
   },
   {
     videoLarge: "/videos/01-1-marktauswahl-und-trading-software-1080.mp4",
@@ -30,7 +30,7 @@ const courseVideos = [
     heading: "Einführung Marktauswahl",
     text: "Mit diesem <a href='https://sierrachart.com/RegisterStep1.php?UserAffiliateID=7c28b913cb77a9314fa49e50231240f2' target='_blank' class='link'>Link</a> kannst du einen 15-tägigen kostenfreien Sierra Chart Testaccount eröffnen.",
     backgroundColorClass: "heading-container--accent",
-    poster: "",
+    poster: "/images/daytrading-kurs-markttheorie.webp",
   },
   {
     videoLarge: "/videos/02-0-rohdaten-time-and-sales-and-dom-1080.mp4",
@@ -40,7 +40,7 @@ const courseVideos = [
     heading: "Markttheorie und Rohdaten",
     text: "",
     backgroundColorClass: "heading-container--dark",
-    poster: "",
+    poster: "/images/daytrading-kurs-marktauswahl.webp",
   },
   {
     videoLarge: "/videos/02-1-markttheorie-beispiel-1080.mp4",
@@ -50,7 +50,7 @@ const courseVideos = [
     heading: "Markttheorie Beispiel",
     text: "",
     backgroundColorClass: "heading-container--dark",
-    poster: "",
+    poster: "/images/daytrading-kurs-rohdaten-bsp.webp",
   },
   {
     videoLarge: "/videos/03-0-sierra-chart-setup-1080.mp4",
@@ -64,7 +64,7 @@ const courseVideos = [
       text: "Download Chartbook",
     },
     backgroundColorClass: "heading-container--accent",
-    poster: "",
+    poster: "/images/daytrading-kurs-sierra-chart.webp",
   },
   {
     videoLarge: "/videos/03-1-dom-trading-1080.mp4",
@@ -74,7 +74,7 @@ const courseVideos = [
     heading: "DOM Trading",
     text: "",
     backgroundColorClass: "heading-container--accent",
-    poster: "",
+    poster: "/images/daytrading-kurs-dom-trading.webp",
   },
   {
     videoLarge: "/videos/03-2-orderaufgabe-erklaert-1080.mp4",
@@ -84,7 +84,7 @@ const courseVideos = [
     heading: "Orderaufgabe",
     text: "",
     backgroundColorClass: "heading-container--accent",
-    poster: "",
+    poster: "/images/daytrading-kurs-orderaufgabe.webp",
   },
   {
     videoLarge: "/videos/04-0-vorteil-im-markt-1080.mp4",
@@ -98,6 +98,7 @@ const courseVideos = [
       text: "Download Trading Plan",
     },
     backgroundColorClass: "heading-container--dark",
+    poster: "/images/daytrading-kurs-trading-plan.webp",
   },
   {
     videoLarge: "/videos/04-1-market-profile-einstellungen-1080.mp4",
@@ -107,6 +108,7 @@ const courseVideos = [
     heading: "Market Profile Einstellungen",
     text: "",
     backgroundColorClass: "heading-container--dark",
+    poster: "/images/daytrading-kurs-market-profile.webp",
   },
   {
     videoLarge: "/videos/04-2-market-profile-value-area-1080.mp4",
@@ -116,6 +118,7 @@ const courseVideos = [
     heading: "Market Profile Value Area",
     text: "",
     backgroundColorClass: "heading-container--dark",
+    poster: "/images/daytrading-kurs-value-area.webp",
   },
   {
     videoLarge: "/videos/04-3-market-profile-beispiele-und-aufgabe-1080.mp4",
@@ -125,6 +128,7 @@ const courseVideos = [
     heading: "Market Profile Beispiele",
     text: "",
     backgroundColorClass: "heading-container--dark",
+    poster: "/images/daytrading-kurs-market-profile-bsp.webp",
   },
 ];
 ---
@@ -142,12 +146,12 @@ const courseVideos = [
               </li>
               <li><a rel="nofollow" href="#prof" class="toc-course__link">1.1 Professionelles Trading</a></li>
               <li><a rel="nofollow" href="#marktauswahl" class="toc-course__link">1.2 Marktauswahl</a></li>
-              <li><a rel="nofollow" href="#markttheorie" class="toc-course__link">2. Markttheorie und Rohdaten</a></li>
+              <li><a rel="nofollow" href="#markttheorie" class="toc-course__link"><strong>2. Markttheorie und Rohdaten</strong></a></li>
               <li><a rel="nofollow" href="#rohdaten" class="toc-course__link">2.1. Rohdaten</a></li>
-              <li><a rel="nofollow" href="#sierra" class="toc-course__link">3. Sierra Chart</a></li>
+              <li><a rel="nofollow" href="#sierra" class="toc-course__link"><strong>3. Sierra Chart</strong></a></li>
               <li><a rel="nofollow" href="#dom" class="toc-course__link">3.1 DOM Trading</a></li>
               <li><a rel="nofollow" href="#order" class="toc-course__link">3.2 Orderaufgabe</a></li>
-              <li><a rel="nofollow" href="#plan" class="toc-course__link">4. Professioneller Trading Plan</a></li>
+              <li><a rel="nofollow" href="#plan" class="toc-course__link"><strong>4. Professioneller Trading Plan</strong></a></li>
               <li><a rel="nofollow" href="#profil" class="toc-course__link">4.1 Market Profile Einstellungen</a></li>
               <li><a rel="nofollow" href="#value" class="toc-course__link">4.2 Market Profile Value Area</a></li>
               <li><a rel="nofollow" href="#profilbsp" class="toc-course__link">4.3 Market Profile Beispiele</a></li>
@@ -302,6 +306,7 @@ const courseVideos = [
     border-bottom: 1px solid var(--first-color);
   }
 
+  
   .toc-course__accordion::after {
     content: "+";
     position: absolute;
@@ -313,6 +318,7 @@ const courseVideos = [
     color: var(--black-color);
     text-align: center;
   }
+
 
   .toc-course__accordion.active::after {
     content: "-";
@@ -337,7 +343,7 @@ const courseVideos = [
   }
 
   @keyframes fadeEffect {
-    /* from 0 to full opacity */
+     from 0 to full opacity 
     from {
       opacity: 0;
     }
@@ -404,6 +410,7 @@ const courseVideos = [
     }
   }
 </style>
+
 
 <script>
   // Code for FAQ
