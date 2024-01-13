@@ -28,8 +28,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for 5 minutes, delay to batch multiple webhook triggers (from contentful)
-        run: sleep 300 
       - name: Checkout
         uses: actions/checkout@v3
       - name: Detect package manager
