@@ -88,6 +88,8 @@ const url = new URL(Astro.url.pathname, Astro.site).toString();
       left: 0;
       right: 12px;
       z-index: 3;
+      max-height: calc(100vh - 80px);
+      margin: 0 auto;
     }
 
     body.fullscreen-mode {

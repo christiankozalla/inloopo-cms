@@ -19,9 +19,15 @@ function toggleImageFullscreenOnBody(bodyEl: HTMLElement) {
       return;
     }
     const el = e.target as HTMLElement;
-    if (el.tagName.toUpperCase() === "IMG") {
-      toggleFullscreenOnImg(el);
+    const fullscreenEls = document.querySelectorAll(".fullscreen");
+    if (fullscreenEls.length > 0) {
+      fullscreenEls.forEach((fsEl) => { toggleFullscreenOnImg(fsEl as HTMLElement)})
       toggleImageFullscreenOnBody(this.body);
+    } else {
+      if (el.tagName.toUpperCase() === "IMG") {
+        toggleFullscreenOnImg(el);
+        toggleImageFullscreenOnBody(this.body);
+      }
     }
   });
 
