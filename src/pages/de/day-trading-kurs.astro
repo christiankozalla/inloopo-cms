@@ -9,6 +9,7 @@ import BackgroundImage from "../../components/BackgroundImage.astro";
 import Button from "../../components/Button.astro";
 import Video from "../../components/Video.astro";
 import PriceCard from "../../components/PriceCard.astro";
+import Banner from "../../components/Banner.astro";
 
 //import styles
 import "../../styles/styles.css";
@@ -38,6 +39,18 @@ import "../../styles/styles.css";
     backgroundImageClass="main-teaser__page-daytrading"
   />
 
+  <Banner
+  heading="Discord Community"
+  description="Bevor du direkt mit dem Kurs startest komm in meine Discord Community. Dort poste ich meine Ergebnisse, du kannst Fragen stellen und dich mit anderen Kursteilnehmern austauschen."
+  listItems={[
+    "besserer Austausch",
+    "Antworten auf deine Frage",
+    "Teil einer Community",
+  ]}
+  href="https://discord.gg/TRhBe43e"
+  linkText="Jetzt beitreten"
+/>
+  
   <!-- PROBLEMS -->
   <section>
     <div class="row box--grey-background box--desktop">

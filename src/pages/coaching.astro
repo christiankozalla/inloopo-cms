@@ -1,0 +1,197 @@
+---
+import "../styles/styles.css";
+import HeroShot from "../components/HeroShot.astro";
+import Quote from "../components/Quote.astro";
+import DetailCard from "../components/DetailCard.astro";
+import ProblemCard from "../components/ProblemCard.astro";
+import BackgroundImage from "../components/BackgroundImage.astro";
+import QualiCard from "../components/QualiCard.astro";
+import PriceCard from "../components/PriceCard.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout
+  title="1-to-1 Coaching"
+  description="Become a better investor or trader. In my 1-to-1 coaching I will help you achieve your desired goal in trading or investing."
+  opengraph={{
+    title: "1-to-1 Coaching",
+    description: "You need personal support. In my coaching I adapt the content to your needs.",
+    url: "https://www.inloopo.com/coaching/",
+    image: "https://www.inloopo.com/images/teaser-coaching-en.jpg",
+    type: "website",
+    locale: "en",
+  }}
+  lang="de"
+  canonical="https://www.inloopo.com/coaching/">
+  <!-- MAIN TEASER -->
+  <HeroShot
+    title="Become a better investor or trader."
+    description="In my 1-to-1 coaching I will help you achieve your desired goal in trading or investing."
+    button={{
+      href: "https://calendly.com/philipp-kozalla-call/30min",
+      target: "_blank",
+      text: "Book a Zoom Call",
+    }}
+    backgroundImageClass="main-teaser__page-coaching"
+  />
+
+  
+  <!-- FOR WHOM -->
+  <section>
+    <div class="row box--grey-background box--desktop">
+      <div class="wrapper-content">
+        <ProblemCard
+          title="Become an even better investor"
+          icon={{
+            src: "/images/direction-sign.svg",
+            alt: "Direction sign",
+          }}
+          listItems={[
+            "Build a robust and diversified portfolio",
+            "Learn how to take advantage of the economic cycle",
+            "Use sector rotation to lock in your profits at the right time",
+            "Hedging",
+            "Currency risks",
+            "And more..."
+          ]}
+        />
+        <ProblemCard
+          title="Become a consistent trader"
+          icon={{ src: "/images/pulse.svg", alt: "Bull and bear" }}
+          listItems={[
+            "Find your trading style (day trading, swing trading, options trading)",
+            "Find your trading instrument (futures, stocks, options, ...)",
+            "Optimize your trading strategy",
+            "Analyse of trading statistics",
+            "Improve entries and exits with precise and repeatable strategies",
+            "Trading plan, analysis and fine-tuning",
+            "Optimize risk management",
+            "How to become consistently successful",
+            "And more..."
+
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <Quote text="If you always do what you’ve always done, you’ll always get what you’ve always got.">
+    <p class="quote__autor">Henry Ford</p>
+  </Quote>
+
+  <!-- PRODUCT DETAILS -->
+  <section>
+    <h2 class="product-details__heading">Grow money more successfully together</h2>
+    <div class="wrapper-content">
+      <div class="row column--no-background">
+        <DetailCard
+          icon={{
+            src: "/images/finger-print.svg",
+            alt: "Finger print icon",
+          }}
+          heading="Individual"
+          description="The coaching is 100% tailored to you. I respond to your needs and goals. You will receive individual support and knowledge transfer."
+        />
+        <DetailCard
+          icon={{ src: "/images/cyclist.svg", alt: "Cyclist Icon" }}
+          heading="Focused"
+          description="I prioritize solutions that fit your life situation and personality so that you can invest or increase money more successfully."
+        />
+        <DetailCard
+          icon={{ src: "/images/muscle-weight.svg", alt: "Muscle weight icon" }}
+          heading="Personal"
+          description="I focus on your strengths. I will train your mindset with you to make you a more stable investor or trader."
+        />
+        <DetailCard
+        icon={{ src: "/images/rocket.svg", alt: "Rocket icon" }}
+        heading="Motivating"
+        description="I listen, understand, adapt the coaching and support you in your plans to become a successful investor or trader."
+      />
+      </div>
+    </div>
+  </section>
+
+<!-- Price of Coaching --> 
+<section>
+    <div class="box--blue-background">
+      <div class="wrapper-content">
+        <h2 class="box__heading--white">A coaching with 12 weekly sessions</h2>
+       
+          <PriceCard
+            title="1-to-1 Coaching"
+            price="3500 € incl. VAT"
+            description="You get 12 sessions of 90 minutes each. There will be small tasks after each session. You will learn a new strategy or we will adapt your strategy. You learn to scale your account. We work on your mindset and you strengthen your self-confidence as a trader or investor."
+            button={{
+              text: "Book a Zoom Call",
+              href: "https://calendly.com/philipp-kozalla-call/30min",
+              target: "_blank",
+            }}
+          />
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section>
+    <BackgroundImage
+      title="Don't stop learning"
+      description="I only take on coachees who are 100% confident in their trading or investing. I only support 3 coachees at a time because I want to remain a full-time trader and investor. But I would be happy to pass on my knowledge as a trader and investor."
+      backgroundImageClass="secondary-teaser__image-at-work"
+      button={{
+        text: "Book a Zoom Call",
+        href: "https://calendly.com/philipp-kozalla-call/30min",
+      }}
+      textColorClass="dark"
+    />
+  </section>
+
+    
+  <!-- QUALIFICATIONS -->
+  <section>
+    <div class="row row--no-background">
+      <div class="wrapper-content">
+        <QualiCard
+          icon={{
+            src: "/images/books.svg",
+            alt: "Book Icon",
+          }}
+          title="Stock market experience"
+          description="You are looking for an experienced trader. I have been active on the stock market since 2008 and initially traded CFDs, later stocks, warrants on trending stocks and options. Today I trade futures according to COT data, seasonality and weather analysis and invest strategically based on the stock market traffic light with the S&P 500 ETF strategy."
+        />
+        <QualiCard
+          icon={{ src: "/images/hat.svg", alt: "Hat icon" }}
+          title="Proven success"
+          description="Do you need security? I participated in the Global Cup Championship of Futures Trading™ 2021-2022 using the Futures Swing Trading strategy. This is the trading world championship. With <a href='/images/wcc.pdf' target='_blank' title='PDF proof' class='link'>64.1% profit per year</a> I took 5th place. This year I'm taking part again."
+        />
+        <QualiCard
+          icon={{ src: "/images/data.svg", alt: "Data and charts icon" }}
+          title="Analytical mindset"
+          description="You want to follow someone who thinks strategically. I do my analyzes precisely and carefully. I make my decisions rationally and based on data."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT FAQ SECTION -->
+ 
+
+
+
+  <!-- Register Custom Elements -->
+  <!-- Load Dynamic Chart Skript -->
+  <script is:inline src="/scripts/dynamic-chart.js"></script>
+  <!-- JavaScript -->
+  <script is:inline src="/scripts/faq.js"></script>
+
+  <style>
+    .chart__subheading {
+      font-size: 1.25rem;
+      text-align: center;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+    }
+  </style>
+</MainLayout>
