@@ -7,6 +7,7 @@ import BlogFeedback from "../../../components/BlogFeedback.astro";
 import { contentfulClient, renderOptionsAndVideos, type Post } from "../../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import StructuredData from "../../../components/StructuredData.astro";
+import Banner from "../../../components/Banner.astro";
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<Post>({

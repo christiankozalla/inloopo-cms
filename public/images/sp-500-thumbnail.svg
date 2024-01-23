@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 790">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Unbenannter_Verlauf_10-2);
+      }
+
+      .cls-2 {
+        fill: url(#Unbenannter_Verlauf_4-7);
+      }
+
+      .cls-3 {
+        fill: url(#Unbenannter_Verlauf_16-6);
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26 {
+        mix-blend-mode: color-dodge;
+      }
+
+      .cls-27 {
+        fill: url(#Unbenannter_Verlauf_4-5);
+      }
+
+      .cls-4 {
+        fill: url(#Unbenannter_Verlauf_16-21);
+      }
+
+      .cls-5 {
+        fill: url(#Unbenannter_Verlauf_16-22);
+      }
+
+      .cls-28 {
+        fill: url(#Unbenannter_Verlauf_10-3);
+      }
+
+      .cls-29 {
+        stroke: #ff6b35;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-29, .cls-30 {
+        fill: none;
+      }
+
+      .cls-6 {
+        fill: url(#Unbenannter_Verlauf_16-14);
+      }
+
+      .cls-31 {
+        fill: url(#Unbenannter_Verlauf_4);
+      }
+
+      .cls-32 {
+        fill: #253c78;
+      }
+
+      .cls-33 {
+        fill: url(#Unbenannter_Verlauf_4-6);
+      }
+
+      .cls-7 {
+        fill: url(#Unbenannter_Verlauf_16);
+      }
+
+      .cls-34 {
+        isolation: isolate;
+      }
+
+      .cls-35 {
+        fill: url(#Unbenannter_Verlauf_4-8);
+      }
+
+      .cls-8 {
+        fill: url(#Unbenannter_Verlauf_16-20);
+      }
+
+      .cls-36 {
+        fill: url(#Unbenannter_Verlauf_18-3);
+      }
+
+      .cls-9 {
+        fill: url(#Unbenannter_Verlauf_16-5);
+      }
+
+      .cls-37 {
+        fill: url(#Unbenannter_Verlauf_10-5);
+      }
+
+      .cls-10 {
+        fill: url(#Unbenannter_Verlauf_16-24);
+      }
+
+      .cls-11 {
+        fill: url(#Unbenannter_Verlauf_16-19);
+      }
+
+      .cls-38 {
+        fill: url(#Unbenannter_Verlauf_18);
+      }
+
+      .cls-12 {
+        fill: url(#Unbenannter_Verlauf_16-12);
+      }
+
+      .cls-39 {
+        fill: url(#Unbenannter_Verlauf_10-6);
+      }
+
+      .cls-13 {
+        fill: url(#Unbenannter_Verlauf_16-4);
+      }
+
+      .cls-40 {
+        fill: url(#Unbenannter_Verlauf_10-8);
+      }
+
+      .cls-14 {
+        fill: url(#Unbenannter_Verlauf_16-11);
+      }
+
+      .cls-41 {
+        fill: url(#Unbenannter_Verlauf_4-4);
+      }
+
+      .cls-15 {
+        fill: url(#Unbenannter_Verlauf_16-16);
+      }
+
+      .cls-42 {
+        fill: url(#Unbenannter_Verlauf_65-2);
+      }
+
+      .cls-43 {
+        fill: url(#Unbenannter_Verlauf_4-9);
+      }
+
+      .cls-44 {
+        fill: url(#Unbenannter_Verlauf_10-4);
+      }
+
+      .cls-16 {
+        fill: url(#Unbenannter_Verlauf_16-8);
+      }
+
+      .cls-45 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-17 {
+        fill: url(#Unbenannter_Verlauf_16-10);
+      }
+
+      .cls-18 {
+        fill: url(#Unbenannter_Verlauf_16-17);
+      }
+
+      .cls-19 {
+        fill: url(#Unbenannter_Verlauf_16-2);
+      }
+
+      .cls-20 {
+        fill: url(#Unbenannter_Verlauf_16-9);
+      }
+
+      .cls-21 {
+        fill: url(#Unbenannter_Verlauf_16-7);
+      }
+
+      .cls-22 {
+        fill: url(#Unbenannter_Verlauf_16-18);
+      }
+
+      .cls-46 {
+        fill: url(#Unbenannter_Verlauf_4-3);
+      }
+
+      .cls-23 {
+        fill: url(#Unbenannter_Verlauf_16-3);
+      }
+
+      .cls-24 {
+        fill: url(#Unbenannter_Verlauf_16-13);
+      }
+
+      .cls-47 {
+        fill: url(#Unbenannter_Verlauf_10-7);
+      }
+
+      .cls-25 {
+        fill: url(#Unbenannter_Verlauf_16-23);
+      }
+
+      .cls-26 {
+        fill: url(#Unbenannter_Verlauf_16-15);
+      }
+
+      .cls-48 {
+        fill: url(#Unbenannter_Verlauf_10-9);
+      }
+
+      .cls-49 {
+        fill: url(#Unbenannter_Verlauf_18-2);
+      }
+
+      .cls-50 {
+        fill: url(#Unbenannter_Verlauf_65);
+      }
+
+      .cls-51 {
+        fill: url(#Unbenannter_Verlauf_4-2);
+      }
+
+      .cls-52 {
+        fill: url(#Unbenannter_Verlauf_65-3);
+      }
+
+      .cls-53 {
+        fill: url(#Unbenannter_Verlauf_10);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-30" width="1200" height="790"/>
+    </clipPath>
+    <linearGradient id="Unbenannter_Verlauf_4" data-name="Unbenannter Verlauf 4" x1="142.99" y1="471.43" x2="154.16" y2="471.43" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2f3c77"/>
+      <stop offset="1" stop-color="#242c58"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_10" data-name="Unbenannter Verlauf 10" x1="123.09" y1="473.67" x2="174.06" y2="473.67" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2f3c77"/>
+      <stop offset="1" stop-color="#25284b"/>
+    </linearGradient>
+    <radialGradient id="Unbenannter_Verlauf_16" data-name="Unbenannter Verlauf 16" cx="-13736.39" cy="1046.83" fx="-13736.39" fy="1046.83" r="57.65" gradientTransform="translate(741.5 -545.63) scale(.04 1.02)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0" stop-color="#f5f5f5"/>
+      <stop offset=".05" stop-color="#c7c7c7"/>
+      <stop offset=".09" stop-color="#9c9c9c"/>
+      <stop offset=".14" stop-color="#777"/>
+      <stop offset=".2" stop-color="#565656"/>
+      <stop offset=".25" stop-color="#3b3b3b"/>
+      <stop offset=".32" stop-color="#252525"/>
+      <stop offset=".4" stop-color="#141414"/>
+      <stop offset=".49" stop-color="#080808"/>
+      <stop offset=".63" stop-color="#010101"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <radialGradient id="Unbenannter_Verlauf_16-2" data-name="Unbenannter Verlauf 16" cx="-8921" cy="58.44" fx="-8921" fy="58.44" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+    <linearGradient id="Unbenannter_Verlauf_4-2" data-name="Unbenannter Verlauf 4" x1="221.53" y1="436.15" x2="232.7" y2="436.15" xlink:href="#Unbenannter_Verlauf_4"/>
+    <linearGradient id="Unbenannter_Verlauf_10-2" data-name="Unbenannter Verlauf 10" x1="201.63" y1="438.38" x2="252.6" y2="438.38" xlink:href="#Unbenannter_Verlauf_10"/>
+    <radialGradient id="Unbenannter_Verlauf_16-3" data-name="Unbenannter Verlauf 16" cx="-11991.11" cy="1012.08" fx="-11991.11" fy="1012.08" xlink:href="#Unbenannter_Verlauf_16"/>
+    <radialGradient id="Unbenannter_Verlauf_16-4" data-name="Unbenannter Verlauf 16" cx="-7541.42" cy="21.35" fx="-7541.42" fy="21.35" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+    <linearGradient id="Unbenannter_Verlauf_65" data-name="Unbenannter Verlauf 65" x1="300.54" y1="379.81" x2="311.71" y2="379.81" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff6b35"/>
+      <stop offset="1" stop-color="#944523"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_18" data-name="Unbenannter Verlauf 18" x1="280.64" y1="382.05" x2="331.61" y2="382.05" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff6b35"/>
+      <stop offset="1" stop-color="#964624"/>
+    </linearGradient>
+    <radialGradient id="Unbenannter_Verlauf_16-5" data-name="Unbenannter Verlauf 16" cx="-10235.31" cy="956.59" fx="-10235.31" fy="956.59" xlink:href="#Unbenannter_Verlauf_16"/>
+    <radialGradient id="Unbenannter_Verlauf_16-6" data-name="Unbenannter Verlauf 16" cx="-6153.51" cy="-37.86" fx="-6153.51" fy="-37.86" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+    <linearGradient id="Unbenannter_Verlauf_4-3" data-name="Unbenannter Verlauf 4" x1="379.55" y1="282.97" x2="390.72" y2="282.97" xlink:href="#Unbenannter_Verlauf_4"/>
+    <linearGradient id="Unbenannter_Verlauf_10-3" data-name="Unbenannter Verlauf 10" x1="359.65" y1="285.21" x2="410.62" y2="285.21" xlink:href="#Unbenannter_Verlauf_10"/>
+    <radialGradient id="Unbenannter_Verlauf_16-7" data-name="Unbenannter Verlauf 16" cx="-8479.5" cy="861.21" fx="-8479.5" fy="861.21" r="57.65" xlink:href="#Unbenannter_Verlauf_16"/>
+    <radialGradient id="Unbenannter_Verlauf_16-8" data-name="Unbenannter Verlauf 16" cx="-4765.61" cy="-139.64" fx="-4765.61" fy="-139.64" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+    <linearGradient id="Unbenannter_Verlauf_4-4" data-name="Unbenannter Verlauf 4" x1="457.39" y1="357.24" x2="468.56" y2="357.24" xlink:href="#Unbenannter_Verlauf_4"/>
+    <linearGradient id="Unbenannter_Verlauf_10-4" data-name="Unbenannter Verlauf 10" x1="437.49" y1="359.47" x2="488.46" y2="359.47" xlink:href="#Unbenannter_Verlauf_10"/>
+    <radialGradient id="Unbenannter_Verlauf_16-9" data-name="Unbenannter Verlauf 16" cx="-6749.8" cy="934.36" fx="-6749.8" fy="934.36" xlink:href="#Unbenannter_Verlauf_16"/>
+    <radialGradient id="Unbenannter_Verlauf_16-10" data-name="Unbenannter Verlauf 16" cx="-3398.34" cy="-61.58" fx="-3398.34" fy="-61.58" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+    <linearGradient id="Unbenannter_Verlauf_4-5" data-name="Unbenannter Verlauf 4" x1="541.89" y1="409.99" x2="553.06" y2="409.99" xlink:href="#Unbenannter_Verlauf_4"/>
+    <linearGradient id="Unbenannter_Verlauf_10-5" data-name="Unbenannter Verlauf 10" x1="521.99" y1="412.22" x2="572.96" y2="412.22" xlink:href="#Unbenannter_Verlauf_10"/>
+    <radialGradient id="Unbenannter_Verlauf_16-11" data-name="Unbenannter Verlauf 16" cx="-4871.98" cy="986.31" fx="-4871.98" fy="986.31" r="57.65" xlink:href="#Unbenannter_Verlauf_16"/>
+    <radialGradient id="Unbenannter_Verlauf_16-12" data-name="Unbenannter Verlauf 16" cx="-1913.99" cy="-6.14" fx="-1913.99" fy="-6.14" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+    <linearGradient id="Unbenannter_Verlauf_4-6" data-name="Unbenannter Verlauf 4" x1="625.03" y1="322.78" x2="636.21" y2="322.78" xlink:href="#Unbenannter_Verlauf_4"/>
+    <linearGradient id="Unbenannter_Verlauf_10-6" data-name="Unbenannter Verlauf 10" x1="605.14" y1="325.02" x2="656.11" y2="325.02" xlink:href="#Unbenannter_Verlauf_10"/>
+    <radialGradient id="Unbenannter_Verlauf_16-13" data-name="Unbenannter Verlauf 16" cx="-3024.32" cy="900.42" fx="-3024.32" fy="900.42" xlink:href="#Unbenannter_Verlauf_16"/>
+    <radialGradient id="Unbenannter_Verlauf_16-14" data-name="Unbenannter Verlauf 16" cx="-453.48" cy="-97.8" fx="-453.48" fy="-97.8" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+    <linearGradient id="Unbenannter_Verlauf_4-7" data-name="Unbenannter Verlauf 4" x1="788.07" y1="238.76" x2="799.24" y2="238.76" xlink:href="#Unbenannter_Verlauf_4"/>
+    <linearGradient id="Unbenannter_Verlauf_10-7" data-name="Unbenannter Verlauf 10" x1="768.17" y1="241" x2="819.14" y2="241" xlink:href="#Unbenannter_Verlauf_10"/>
+    <radialGradient id="Unbenannter_Verlauf_16-15" data-name="Unbenannter Verlauf 16" cx="598.66" cy="817.67" fx="598.66" fy="817.67" r="57.65" xlink:href="#Unbenannter_Verlauf_16"/>
+    <radialGradient id="Unbenannter_Verlauf_16-16" data-name="Unbenannter Verlauf 16" cx="2410.36" cy="-186.1" fx="2410.36" fy="-186.1" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+    <linearGradient id="Unbenannter_Verlauf_4-8" data-name="Unbenannter Verlauf 4" x1="867.05" y1="179.61" x2="878.22" y2="179.61" xlink:href="#Unbenannter_Verlauf_4"/>
+    <linearGradient id="Unbenannter_Verlauf_10-8" data-name="Unbenannter Verlauf 10" x1="847.15" y1="181.85" x2="898.12" y2="181.85" xlink:href="#Unbenannter_Verlauf_10"/>
+    <radialGradient id="Unbenannter_Verlauf_16-17" data-name="Unbenannter Verlauf 16" cx="2353.68" cy="759.41" fx="2353.68" fy="759.41" r="57.65" xlink:href="#Unbenannter_Verlauf_16"/>
+    <radialGradient id="Unbenannter_Verlauf_16-18" data-name="Unbenannter Verlauf 16" cx="3797.64" cy="-248.27" fx="3797.64" fy="-248.27" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+    <linearGradient id="Unbenannter_Verlauf_4-9" data-name="Unbenannter Verlauf 4" x1="939.36" y1="209.79" x2="950.53" y2="209.79" xlink:href="#Unbenannter_Verlauf_4"/>
+    <linearGradient id="Unbenannter_Verlauf_10-9" data-name="Unbenannter Verlauf 10" x1="919.46" y1="212.02" x2="970.43" y2="212.02" xlink:href="#Unbenannter_Verlauf_10"/>
+    <radialGradient id="Unbenannter_Verlauf_16-19" data-name="Unbenannter Verlauf 16" cx="3960.71" cy="789.13" fx="3960.71" fy="789.13" xlink:href="#Unbenannter_Verlauf_16"/>
+    <radialGradient id="Unbenannter_Verlauf_16-20" data-name="Unbenannter Verlauf 16" cx="5067.94" cy="-216.56" fx="5067.94" fy="-216.56" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+    <linearGradient id="Unbenannter_Verlauf_65-2" data-name="Unbenannter Verlauf 65" x1="706.55" y1="277.03" x2="717.72" y2="277.03" xlink:href="#Unbenannter_Verlauf_65"/>
+    <linearGradient id="Unbenannter_Verlauf_18-2" data-name="Unbenannter Verlauf 18" x1="686.65" y1="279.27" x2="737.62" y2="279.27" xlink:href="#Unbenannter_Verlauf_18"/>
+    <radialGradient id="Unbenannter_Verlauf_16-21" data-name="Unbenannter Verlauf 16" cx="-1212.83" cy="855.36" fx="-1212.83" fy="855.36" r="57.65" xlink:href="#Unbenannter_Verlauf_16"/>
+    <radialGradient id="Unbenannter_Verlauf_16-22" data-name="Unbenannter Verlauf 16" cx="978.44" cy="-145.88" fx="978.44" fy="-145.88" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+    <linearGradient id="Unbenannter_Verlauf_65-3" data-name="Unbenannter Verlauf 65" x1="1020.11" y1="140.63" x2="1031.28" y2="140.63" xlink:href="#Unbenannter_Verlauf_65"/>
+    <linearGradient id="Unbenannter_Verlauf_18-3" data-name="Unbenannter Verlauf 18" x1="1000.21" y1="142.87" x2="1051.18" y2="142.87" xlink:href="#Unbenannter_Verlauf_18"/>
+    <radialGradient id="Unbenannter_Verlauf_16-23" data-name="Unbenannter Verlauf 16" cx="5755.04" cy="721.02" fx="5755.04" fy="721.02" r="57.65" xlink:href="#Unbenannter_Verlauf_16"/>
+    <radialGradient id="Unbenannter_Verlauf_16-24" data-name="Unbenannter Verlauf 16" cx="6486.29" cy="-289.24" fx="6486.29" fy="-289.24" r="57.65" gradientTransform="translate(681.89 382.42) scale(.06 .95)" xlink:href="#Unbenannter_Verlauf_16"/>
+  </defs>
+  <g class="cls-34">
+    <g id="Ebene_2" data-name="Ebene 2">
+      <g id="Ebene_1-2" data-name="Ebene 1">
+        <g class="cls-45">
+          <rect class="cls-32" width="1200" height="790"/>
+          <g>
+            <g>
+              <rect class="cls-31" x="142.99" y="365.41" width="11.17" height="212.04"/>
+              <rect class="cls-53" x="123.09" y="402.41" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-7" x="121.97" y="440.64" width="2.78" height="153.17"/>
+            <rect class="cls-19" x="172.27" y="366.25" width="3.52" height="143.54"/>
+          </g>
+          <g>
+            <g>
+              <rect class="cls-51" x="221.53" y="330.13" width="11.17" height="212.04"/>
+              <rect class="cls-1" x="201.63" y="367.12" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-23" x="200.51" y="405.35" width="2.78" height="153.17"/>
+            <rect class="cls-13" x="250.81" y="330.96" width="3.52" height="143.54"/>
+          </g>
+          <g>
+            <g>
+              <rect class="cls-50" x="300.54" y="273.79" width="11.17" height="212.04"/>
+              <rect class="cls-38" x="280.64" y="310.79" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-9" x="279.52" y="349.01" width="2.78" height="153.17"/>
+            <rect class="cls-3" x="329.82" y="274.63" width="3.52" height="143.54"/>
+          </g>
+          <g>
+            <g>
+              <rect class="cls-46" x="379.55" y="176.95" width="11.17" height="212.04"/>
+              <rect class="cls-28" x="359.65" y="213.95" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-21" x="358.53" y="252.18" width="2.78" height="153.17"/>
+            <rect class="cls-16" x="408.83" y="177.79" width="3.52" height="143.54"/>
+          </g>
+          <g>
+            <g>
+              <rect class="cls-41" x="457.39" y="251.22" width="11.17" height="212.04"/>
+              <rect class="cls-44" x="437.49" y="288.21" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-20" x="436.37" y="326.44" width="2.78" height="153.17"/>
+            <rect class="cls-17" x="486.67" y="252.05" width="3.52" height="143.54"/>
+          </g>
+          <g>
+            <g>
+              <rect class="cls-27" x="541.89" y="303.97" width="11.17" height="212.04"/>
+              <rect class="cls-37" x="521.99" y="340.96" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-14" x="520.87" y="379.19" width="2.78" height="153.17"/>
+            <rect class="cls-12" x="571.17" y="304.8" width="3.52" height="143.54"/>
+          </g>
+          <g>
+            <g>
+              <rect class="cls-33" x="625.03" y="216.76" width="11.17" height="212.04"/>
+              <rect class="cls-39" x="605.14" y="253.76" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-24" x="604.01" y="291.99" width="2.78" height="153.17"/>
+            <rect class="cls-6" x="654.32" y="217.6" width="3.52" height="143.54"/>
+          </g>
+          <g>
+            <g>
+              <rect class="cls-2" x="788.07" y="132.74" width="11.17" height="212.04"/>
+              <rect class="cls-47" x="768.17" y="169.74" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-26" x="767.05" y="207.97" width="2.78" height="153.17"/>
+            <rect class="cls-15" x="817.35" y="133.58" width="3.52" height="143.54"/>
+          </g>
+          <g>
+            <g>
+              <rect class="cls-35" x="867.05" y="73.59" width="11.17" height="212.04"/>
+              <rect class="cls-40" x="847.15" y="110.59" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-18" x="846.03" y="148.81" width="2.78" height="153.17"/>
+            <rect class="cls-22" x="896.33" y="74.43" width="3.52" height="143.54"/>
+          </g>
+          <path class="cls-29" d="M29.94,790.6c3.08-25.99,11.47-51.34,24.52-74.04,7.24,16.86,18.93,31.79,33.55,42.87,5.04-8.33,10.09-16.65,15.13-24.98,5.58,6.48,11.17,12.96,16.75,19.44,14.38-27.33,25.08-56.6,31.71-86.77,4.71,36.63,22.29,71.47,48.95,97.03,4.97-14.62,12.45-28.38,22.01-40.51l10.07,20.31c2.49-8.08,6.79-15.59,12.49-21.83,6.13,6.1,12.27,12.2,18.4,18.3,2.33-3.48,4.66-6.95,7-10.43,6.05,3.74,12.09,7.48,18.14,11.22,20.07-45.93,36.19-93.58,48.14-142.25,8.64,49.43,19.78,98.43,33.36,146.74,.99-25.54,3.91-51,8.71-76.11,6.98,8.14,12.78,17.28,17.18,27.06,.53-6.94,2.54-13.76,5.85-19.87,5.56,6.34,11.11,12.69,16.67,19.03,4.16-42.76,10.51-85.3,19.02-127.4,9.59,27.27,19.19,54.54,28.78,81.8,6.5-41.84,16.14-83.19,28.81-123.59,11.69,61.45,25.45,122.5,41.26,183.03-.46-16.57,2.37-33.22,8.27-48.71,8.32,11.33,14.49,24.23,18.1,37.82,.97-12.03,1.95-24.06,2.92-36.09,7.04,10.12,14.08,20.24,21.12,30.35,7.36-19.01,14.73-38.03,22.09-57.04,18.17,37.07,36.34,74.14,54.51,111.21,19.16-44.16,38.32-88.32,57.48-132.48,19.04,34.8,33.54,72.07,43.03,110.58,5.47-44.79,15.5-89.02,29.88-131.78,9.46,11.02,16.86,23.8,21.71,37.49-2.83-19.78-2.04-40.07,2.31-59.57,11.16,23.58,22.33,47.16,33.49,70.74,3.71-26.98,11.42-53.41,22.78-78.17,9.69,26.19,19.38,52.39,29.08,78.58-1.84-13.09-.6-26.6,3.6-39.14,6.79,5.53,9.79,15.3,7.27,23.68,25.6-81.11,51.2-162.22,76.79-243.33,7.32,40.63,14.65,81.25,21.97,121.88-4.19-17.69-5.34-36.1-3.38-54.18,5.63,13.66,11.26,27.31,16.89,40.97-4.22-1.62,1.27-8.58,5.19-6.34s4.35,7.59,4.82,12.08,2.53,9.94,7.03,10.25c15.87-50.59,31.74-101.18,47.61-151.77,10.61,38.45,21.22,76.91,31.82,115.36-3.53-20.55,.15-42.27,10.23-60.52,13.26,19.9,21.75,42.95,24.58,66.69-2.57-17.85-1.44-36.23,3.3-53.63,18.5,45.24,28.82,93.8,30.31,142.65-1.39-26.05,.41-52.26,5.36-77.88"/>
+          <g>
+            <g>
+              <rect class="cls-43" x="939.36" y="103.77" width="11.17" height="212.04"/>
+              <rect class="cls-48" x="919.46" y="140.76" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-11" x="918.34" y="178.99" width="2.78" height="153.17"/>
+            <rect class="cls-8" x="968.64" y="104.6" width="3.52" height="143.54"/>
+          </g>
+          <g>
+            <g>
+              <rect class="cls-42" x="706.55" y="171.01" width="11.17" height="212.04"/>
+              <rect class="cls-49" x="686.65" y="208.01" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-4" x="685.53" y="246.23" width="2.78" height="153.17"/>
+            <rect class="cls-5" x="735.83" y="171.85" width="3.52" height="143.54"/>
+          </g>
+          <g>
+            <g>
+              <rect class="cls-52" x="1020.11" y="34.62" width="11.17" height="212.04"/>
+              <rect class="cls-36" x="1000.21" y="71.61" width="50.97" height="142.52"/>
+            </g>
+            <rect class="cls-25" x="999.09" y="109.84" width="2.78" height="153.17"/>
+            <rect class="cls-10" x="1049.39" y="35.45" width="3.52" height="143.54"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

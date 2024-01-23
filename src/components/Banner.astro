@@ -1,17 +1,23 @@
 ---
-const { heading, description, listItems } = Astro.props;
+const { heading, description, listItems, href, linkText, marginClass } = Astro.props;
 interface Props {
   heading: string;
   description: string;
   listItems: string[];
+  href: string[];
+  linkText: string[];
+  marginClass: string[];
 }
 ---
 
-<div class="banner__container">
+<div class={`
+banner__container
+${marginClass}
+`}>
   <div class="banner__text-container">
     <div>
       <h2 class="banner__heading">{heading}</h2>
-      <p class="banner__text">{description}</p>
+      <p class="banner__text" set:html={description} />
     </div>
     <div class="banner__details">
       <h4>Deine Vorteile</h4>
@@ -26,9 +32,7 @@ interface Props {
         }
       </ul>
       <div class="button__container">
-        <a href="https://calendly.com/philipp-kozalla-call/30min" target="_blanket" class="button"
-          >Buche einen Zoom Call</a
-        >
+        <a href={href} target="_blanket" class="button">{linkText}</a>
       </div>
     </div>
   </div>
@@ -39,6 +43,9 @@ interface Props {
   .banner__container {
     background: linear-gradient(to right, var(--accent-color), #6a0800);
     padding: 4em 2em;
+  }
+
+  .margin-top {
     margin-top: 6em;
     margin-bottom: -90px;
   }
