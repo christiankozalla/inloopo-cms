@@ -512,7 +512,7 @@ const courseVideos = [
 
 
 <script>
-  // Code for FAQ
+  // Code for Inhaltsverzeichnis
   const items = document.querySelectorAll(".toc-course__accordion");
 
   function toggleAccordion() {
@@ -520,6 +520,10 @@ const courseVideos = [
     this.classList.toggle("active");
     // @ts-ignore
     this.nextElementSibling.classList.toggle("active");
+  }
+
+  if (window.innerWidth > 400) {
+    items.forEach((item) => toggleAccordion.call(item));
   }
 
   items.forEach((item) => item.addEventListener("click", toggleAccordion));
