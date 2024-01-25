@@ -26,7 +26,6 @@ export async function memberSpaceReady() {
   const MAX_INTERVALS = 100;
   return new Promise((resolve, reject) => {
     const interval = setInterval(() => {
-      console.log("interval");
       if (!memberSpaceInitialized) {
         memberSpaceInitialized = Object.prototype.hasOwnProperty.call(window.MemberSpace, "getMemberMetadata");
 
