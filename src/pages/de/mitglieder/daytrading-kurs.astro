@@ -1,6 +1,7 @@
 ---
 import MemberLayout from "../../../layouts/MemberLayout.astro";
 import CourseVideo from "../../../components/CourseVideo.astro";
+import Banner from "../../../components/Banner.astro";
 
 const courseVideos = [
   {
@@ -224,11 +225,14 @@ const courseVideos = [
 ---
 
 <MemberLayout title="Day Trading Kurs" description="#" lang="de">
+ 
   <div class="course__grid">
     <div>
+      
       <aside>
         <div id="toc" class="toc-course">
-          <a class="toc-course__accordion"><h6 class="toc-course__heading">Inhaltsverzeichnis</h6></a>
+          <div class="link__container"><a href="/de/mitglieder/live-trading-webinar/" class="link">Live Trading Webinar</a></div>
+          <a class="toc-course__accordion"><h6 class="toc-course__heading">Kursvideos</h6></a>
           <div class="toc-course__accordion-content">
             <ol class="toc-course__nav">
               <li>
@@ -263,7 +267,22 @@ const courseVideos = [
         </div>
       </aside>
     </div>
+   
     <div>
+      <div>
+        <Banner 
+        heading="Discord Community"
+        description="Bevor du direkt mit dem Kurs startest komm in meine Discord Community."
+        listItems={[
+          "Mache Fortschritte durch besseren Austausch",
+          "Finde Antworten auf deine Frage",
+          "Sei Teil einer Community",
+        ]}
+        href="https://discord.gg/TRhBe43e"
+        linkText="Jetzt beitreten"
+        marginClass="margin-adjusted"
+        />
+      </div>
       {
         courseVideos.map((data) => (
           <>
@@ -276,6 +295,7 @@ const courseVideos = [
         ))
       }
     </div>
+ 
   </div>
   <script>
     import { memberSpaceReady, updateVideoTracker } from "../../../lib/memberspace.ts";

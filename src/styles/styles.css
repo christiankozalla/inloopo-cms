@@ -176,6 +176,15 @@ section {
   gap: 1.6em;
 }
 
+.grid-4fr {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.6em;
+}
+
+.grid-margin-bottom {
+  margin-bottom: 6em;
+}
+
 @media only screen and (max-width: 759px) {
   .grid-2fr,
   .grid-3fr {
@@ -352,6 +361,13 @@ p {
 }
 
 /* #Links */
+
+.link__container {
+  padding: 1rem 3rem 1rem 1rem;
+  color: var(--black-color);
+  font-size: 1.15rem;
+  font-weight: bold;
+}
 
 .link,
 .secondary-teaser__link {
