@@ -42,12 +42,16 @@ ${marginClass}
 <style>
   .banner__container {
     background: linear-gradient(to right, var(--accent-color), #6a0800);
-    padding: 4em 2em;
+    padding: 1em;
+    margin-bottom: -90px;
   }
 
-  .margin-top {
-    margin-top: 6em;
-    margin-bottom: -90px;
+  .margin-adjusted {
+    margin: 3em 2em 90px 2em;
+  }
+
+  .margin-null {
+    margin: 0;
   }
 
   .banner__text-container {
@@ -109,6 +113,11 @@ ${marginClass}
     .banner__container {
       padding: 4em 6em;
     }
+
+    .margin-adjusted {
+    margin: 3em 2em 90px 2em;
+    padding: 2em 4em;
+  }
 
     .banner__text-container {
       gap: 6em;
