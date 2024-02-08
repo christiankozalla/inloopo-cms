@@ -4,16 +4,13 @@ interface Props {
   heading: string;
   description: string;
   listItems: string[];
-  href: string[];
-  linkText: string[];
-  marginClass: string[];
+  href: string;
+  linkText: string;
+  marginClass: string;
 }
 ---
 
-<div class={`
-banner__container
-${marginClass}
-`}>
+<div class={`banner__container ${marginClass}`}>
   <div class="banner__text-container">
     <div>
       <h2 class="banner__heading">{heading}</h2>
@@ -115,9 +112,9 @@ ${marginClass}
     }
 
     .margin-adjusted {
-    margin: 3em 2em 90px 2em;
-    padding: 2em 4em;
-  }
+      margin: 3em 2em 90px 2em;
+      padding: 2em 4em;
+    }
 
     .banner__text-container {
       gap: 6em;
