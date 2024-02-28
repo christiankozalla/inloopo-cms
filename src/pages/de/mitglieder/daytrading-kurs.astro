@@ -211,11 +211,21 @@ const courseVideos = [
     poster: "/images/daytrading-kurs-trading-setup.webp",
   },
   {
+    videoLarge: "/videos/06-1-volumenkerzen-1080.mp4",
+    videoMedium: "/videos/06-1-volumenkerzen-720.mp4",
+    videoSmall: "/videos/06-1-volumenkerzen-576.mp4",
+    videoId: "volumenkerzen",
+    heading: "6.1 Volumenkerzen",
+    text: "",
+    backgroundColorClass: "heading-container--dark",
+    poster: "",
+  },
+  {
     videoLarge: "/videos/06-1-vwap-1080.mp4",
     videoMedium: "/videos/06-1-vwap-720.mp4",
     videoSmall: "/videos/06-1-vwap-576.mp4",
     videoId: "vwap",
-    heading: "6.1 VWAP",
+    heading: "6.2 VWAP",
     text: "",
     backgroundColorClass: "heading-container--dark",
     poster: "/images/daytrading-kurs-vwap.webp",
@@ -225,7 +235,7 @@ const courseVideos = [
     videoMedium: "/videos/06-2-rhythmus-720.mp4",
     videoSmall: "/videos/06-2-rhythmus-576.mp4",
     videoId: "rhythmus",
-    heading: "6.2 Rhythmus",
+    heading: "6.3 Rhythmus",
     text: "",
     backgroundColorClass: "heading-container--dark",
     poster: "/images/daytrading-kurs-rhythmus.webp",
@@ -235,7 +245,7 @@ const courseVideos = [
     videoMedium: "/videos/06-3-hypothese-720.mp4",
     videoSmall: "/videos/06-3-hypothese-576.mp4",
     videoId: "hypothese",
-    heading: "6.3 Hypothese",
+    heading: "6.4 Hypothese",
     text: "",
     backgroundColorClass: "heading-container--dark",
     poster: "/images/daytrading-kurs-hypothese.webp",
@@ -259,6 +269,36 @@ const courseVideos = [
     text: "",
     backgroundColorClass: "heading-container--dark",
     poster: "/images/daytrading-kurs-cd-anwendung.webp",
+  },
+  {
+    videoLarge: "/videos/08-0-footprint-chart-1080.mp4",
+    videoMedium: "/videos/08-0-footprint-chart-720.mp4",
+    videoSmall: "/videos/08-0-footprint-chart-576.mp4",
+    videoId: "footprint",
+    heading: "8.0 Footprint Chart",
+    text: "",
+    backgroundColorClass: "heading-container--dark",
+    poster: "",
+  },
+  {
+    videoLarge: "/videos/08-1-footprint-chart-erklaert-1080.mp4",
+    videoMedium: "/videos/08-1-footprint-chart-erklaert-720.mp4",
+    videoSmall: "/videos/08-1-footprint-chart-erklaert-576.mp4",
+    videoId: "footprintchart",
+    heading: "8.1 Footprint Chart erklärt",
+    text: "",
+    backgroundColorClass: "heading-container--dark",
+    poster: "",
+  },
+  {
+    videoLarge: "/videos/09-0-alles-zusammenfuegen-1080.mp4",
+    videoMedium: "/videos/09-0-alles-zusammenfuegen-720.mp4",
+    videoSmall: "/videos/09-0-alles-zusammenfuegen-576.mp4",
+    videoId: "all",
+    heading: "9.0 Alles zusammenfügen",
+    text: "",
+    backgroundColorClass: "heading-container--dark",
+    poster: "",
   },
 ];
 ---
@@ -296,11 +336,15 @@ const courseVideos = [
               <li><a rel="nofollow" href="#pointcontrol" class="toc-course__link">5.4 Point of Control</a></li>
               <li><a rel="nofollow" href="#highlow" class="toc-course__link">5.5 High und Low</a></li>
               <li><a rel="nofollow" href="#kontext" class="toc-course__link"><strong>6. Trading Setup</strong></a></li>
-              <li><a rel="nofollow" href="#vwap" class="toc-course__link">6.1 VWAP</a></li>
-              <li><a rel="nofollow" href="#rhythmus" class="toc-course__link">6.2 Rhythmus</a></li>
-              <li><a rel="nofollow" href="#hypothese" class="toc-course__link">6.3 Hypothese</a></li>
+              <li><a rel="nofollow" href="#volumenkerzen" class="toc-course__link">6.1 Volumenkerzen</a></li>
+              <li><a rel="nofollow" href="#vwap" class="toc-course__link">6.2 VWAP</a></li>
+              <li><a rel="nofollow" href="#rhythmus" class="toc-course__link">6.3 Rhythmus</a></li>
+              <li><a rel="nofollow" href="#hypothese" class="toc-course__link">6.4 Hypothese</a></li>
               <li><a rel="nofollow" href="#delta" class="toc-course__link"><strong>7. Cumulative Delta</strong></a></li>
               <li><a rel="nofollow" href="#cd" class="toc-course__link">7.1 CD Anwendung</a></li>
+              <li><a rel="nofollow" href="#footprint" class="toc-course__link"><strong>8.0 Footprint Chart</strong></a></li>
+              <li><a rel="nofollow" href="#footprintchart" class="toc-course__link">8.1 Footprint Chart erklärt</a></li>
+              <li><a rel="nofollow" href="#all" class="toc-course__link"><strong>9.0 Alles zusammenfügen</strong></a></li>            
             </ol>
             <p style="margin-top: 24px; font-size: small">✔ = Video bereits angesehen</p><button
               id="reset-video-tracker-progress"
