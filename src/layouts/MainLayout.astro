@@ -78,18 +78,6 @@ const { title, description, opengraph = "", lang, canonical = "", noIndex = fals
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-    <script>
-      var MemberSpace = window.MemberSpace || { subdomain: "inloopo" };
-      (function (d) {
-        var s = d.createElement("script");
-        s.src = "https://cdn.memberspace.com/scripts/widgets.js";
-        var e = d.getElementsByTagName("script")[0];
-        e.parentNode?.insertBefore(s, e);
-        s.onload = () => {
-          document.body.dispatchEvent(new Event("finished-loading-memberspace"));
-        };
-      })(document);
-    </script>
   </head>
   <body>
     <Navbar lang={lang} />
