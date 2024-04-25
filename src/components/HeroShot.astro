@@ -1,5 +1,5 @@
 ---
-const { title, withIcon = false, description, button = "", backgroundImageClass = "" } = Astro.props;
+const { title, withIcon = false, description, button = "", backgroundImageClass = "", textColor = "" } = Astro.props;
 ---
 
 <div
@@ -7,8 +7,14 @@ const { title, withIcon = false, description, button = "", backgroundImageClass 
 main-teaser ${backgroundImageClass}
 `}>
   <div class="wrapper">
-    <h1 class="main-teaser__heading">{title}</h1>
-    <p class="main-teaser__text p--bigger">
+    <h1 class={`
+    main-teaser__heading
+    ${textColor}
+    `}>{title}</h1>
+    <p class={`
+    main-teaser__text p--bigger
+    ${textColor}
+    `}>
       {description}<br /><br />
       {
         button && (
@@ -21,7 +27,9 @@ main-teaser ${backgroundImageClass}
           </>
         )
       }
+        <slot></slot>
     </p>
+  
   </div>
 </div>
 
@@ -40,7 +48,7 @@ main-teaser ${backgroundImageClass}
 
   .main-teaser__text {
     width: 40%;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     line-height: 1.5;
   }
 
@@ -58,6 +66,11 @@ main-teaser ${backgroundImageClass}
     margin-top: -2em;
     padding: 0 0 4em 0;
   }
+
+  .text--dark {
+    color: var(--text-color);
+  }
+
   @media only screen and (max-width: 759px) {
     .main-teaser__text {
       width: 80%;

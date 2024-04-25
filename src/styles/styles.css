@@ -413,7 +413,7 @@ p {
 
 .main-teaser__icon {
   display: flex;
-  margin: 20px 0 20px 80px;
+  z-index: 1;
 }
 
 .mobile__below-header {
@@ -508,6 +508,14 @@ p {
   background-image: url("/images/image-teaser-wikifolio.jpg");
   background-position: center;
   padding-top: 1%;
+}
+
+.main-teaser__webinar {
+  background-image: url("/images/philipp-steht.webp");
+  background-position: right;
+  padding-top: 1%;
+  padding-bottom: 12%;
+  margin-bottom: 120px;
 }
 
 .main-teaser__heading--page-investieren {
