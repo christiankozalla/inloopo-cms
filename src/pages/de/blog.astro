@@ -1,4 +1,5 @@
 ---
+import CategoryButton from "../../components/CategoryButton.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { contentfulClient } from "../../lib/contentful.js";
 import type { Post } from "../../lib/contentful.js";
@@ -27,6 +28,21 @@ const entries = await contentfulClient.getEntries<Post>({
         In meinem Blog findest du Antworten, Anleitungen, Wissen und Erfahrung.
       </p>
     </div>
+  </div>
+
+  <div class="flex">
+    <CategoryButton 
+    text="Day Trading"
+    href="/de/daytrading/"/>
+    <CategoryButton 
+    text="Swing Trading"
+    href="/de/swing-trading/"/>
+    <CategoryButton 
+    text="Anlagestrategien"
+    href="/de/anlagestrategien/"/>
+    <CategoryButton 
+    text="Finanzwissen"
+    href="/de/finanzwissen/"/>
   </div>
   <div class="grid">
     {
@@ -78,7 +94,7 @@ const entries = await contentfulClient.getEntries<Post>({
     }
     @media screen and (min-width: 1200px) {
       .grid {
-        margin: 24px auto;
+        margin: 60px auto;
         max-width: 1200px;
       }
     }
