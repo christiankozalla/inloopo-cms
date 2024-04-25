@@ -1,0 +1,85 @@
+---
+//import layout
+import MainLayout from "../../layouts/MainLayout.astro";
+import HeroShot from "../../components/HeroShot.astro";
+import ProductCard from "../../components/ProductCard.astro";
+
+//import
+import "../../styles/styles.css";
+---
+
+<MainLayout
+  title="Webinaranmeldung"
+  description="Melde dich für ein kostenloses Webinar an."
+  lang="de"
+  canonical="https://www.inloopo.com/de/freies-webinar/"
+  opengraph={{
+    url: "https://www.inloopo.com/de/freies-webinar/",
+    image: "https://www.inloopo.com/images/kontakt-og.jpg",
+    type: "website",
+    description: "Komm zu einem freiem Webinar für mehr Information.",
+    locale: "de",
+  }}>
+  <!-- TEASER -->
+
+  <!-- TEASER -->
+    <!-- Teaser -->
+    <HeroShot
+    title="Komm zum freiem Webinar"
+    description="Zu jedem Produkt gibt es ein Webinar: Für den Börsenampelkurs für besseres Investieren, für den Day Trading Kurs für mehr Fertigkeiten im Day Trading und für das 1:1 Coaching für deine persönlichen Herausforderungen und Ziele. Lerne mich kennen und werde deine Fragen los."
+    backgroundImageClass="main-teaser__webinar"
+    textColor="text--dark">
+    <img class="main-teaser__icon" src="/images/long-arrow-down.svg" width="40" alt="Pfeil Icon" />
+    </HeroShot>
+    
+    <section>
+      <div class="wrapper-content">
+        <h2 class="box__main-heading">Für was interessierst du dich?</h2>
+        <div class="row">
+          <ProductCard
+          icon={{
+            src:'/images/star-circle.svg',
+            alt:'ein Ampel'
+          }}
+          type="Individuell"
+            title="1-zu-1 Coaching"
+            description="Ich gestalte das Coaching nach deinen Interessen, Fähigkeiten und Zielvorgaben."
+            backgroundColorClass="darker-color"
+            linkColorClass="darker-border"
+          >
+          <div class="tidycal-embed" data-path="m797r83/30min20240125073551-1kgwzyn"></div>
+          </ProductCard>
+          <ProductCard
+          icon={{
+            src:'/images/traffic-light-circle.svg',
+            alt:'ein Ampel'
+          }}
+          type="Investieren"
+            title="US-Börsenprognose Webinar"
+            description="In diesem Kurs lernst du fundamentale Analysen der Märkte durchzuführen und wirst Vertraut mit einer einfachen ETF Strategie."
+            backgroundColorClass="dark-color"
+            linkColorClass="dark-border"
+          >
+          <iframe width="540" height="465" src="https://24def4ce.sibforms.com/serve/MUIFAMmVz78l_xq2Kbb5KJUQ8pKvJ5rh45gM3fzAUc2mpz1GPYoD6hYD9XWSZU_8UJ8Wj_6q8F1lWmPNfbVhwsckugmev2AAUu-kfG9eLxQeNjnQlbf-6x8ZsXMQIJh9OniBHu4ZKQ5OZWpuldt7XDF8mJ72uVrgSQRfn4f6OhgiXLGnxiJCZtsWmDWJyFAdBSu-0QnctVmnb2vF" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto; margin-top: 2em; margin-right: auto;max-width: 100%;"></iframe>
+          </ProductCard>
+          <ProductCard
+          icon={{
+            src:'/images/pulse-circle.svg',
+            alt:'ein Bär und Stier'
+          }}
+          type="Trading"
+            title="Daytrading Kurs"
+            description="In diesem Kurs lernst Daytrading."
+            backgroundColorClass="accent-color"
+            linkColorClass="light-text-color"
+          >
+          <iframe width="540" height="465" src="https://24def4ce.sibforms.com/serve/MUIFAMQ999upIUo7kfr7Cvmlbf_xjMglZy-L030k270_Iv129uhrFaYiKaq46E2PDINBpi0QlM21hdO5EdEBtgJhzdia1R-_lvx4VgcV7SAgqSo6SJI_Fo7X4FjzOK7SpQyeBB0U8pmywGA2_v3sIIpfXNA16J385ZV-RaTK7aeAMjYdnRkZkrB7XhnjxmF3ZQVvVbvSenAQubO1" frameborder="0" scrolling="auto" allowfullscreen style="display: block; margin-top: 2em; margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+
+ 
+          </ProductCard>
+        </div>
+      </div>
+    </section>
+  
+  <script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
+</MainLayout>
