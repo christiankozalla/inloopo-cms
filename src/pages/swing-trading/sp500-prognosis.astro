@@ -35,17 +35,19 @@ async function translateDocument(richTextDocument: Document, targetLang: deepl.T
     return richTextDocument;
   }
 
-  const translatedCopy = richTextDocument.content.map(async (node) => {
-    if (node.nodeType === "heading-2") {
-      // handle all embedded-inline-entry types
-      node.content = await Promise.all(translateEmbeddedEntry(node));
+  const translatedCopy = Promise.all(
+    richTextDocument.content.map(async (node) => {
+      if (node.nodeType === "heading-2") {
+        // handle all embedded-inline-entry types
+        node.content = await translateEmbeddedEntry(node);
+        return node;
+      }
+      node.content = await translateNodes(node.content, targetLang);
       return node;
-    }
-    node.content = await Promise.all(translateNodes(node.content, targetLang));
-    return node;
-  });
+    })
+  );
 
-  richTextDocument.content = await Promise.all(translatedCopy);
+  richTextDocument.content = await translatedCopy;
 
   return richTextDocument;
 }
@@ -53,15 +55,17 @@ async function translateDocument(richTextDocument: Document, targetLang: deepl.T
 function translateNodes(
   nodes: (Text | Block | Inline)[],
   targetLang: deepl.TargetLanguageCode
-): Promise<Text | Block | Inline>[] {
-  return nodes.map(async (node) => {
-    if (helpers.isText(node)) {
-      return await translateTextNode(node, targetLang);
-    } else {
-      node.content = await Promise.all(translateNodes(node.content, targetLang));
-      return node;
-    }
-  });
+): Promise<(Text | Block | Inline)[]> {
+  return Promise.all(
+    nodes.map(async (node) => {
+      if (helpers.isText(node)) {
+        return await translateTextNode(node, targetLang);
+      } else {
+        node.content = await translateNodes(node.content, targetLang);
+        return node;
+      }
+    })
+  );
 }
 
 async function translateTextNode(node: Text, targetLang: deepl.TargetLanguageCode) {
@@ -76,16 +80,18 @@ async function translateTextNode(node: Text, targetLang: deepl.TargetLanguageCod
 }
 
 function translateEmbeddedEntry(node: TopLevelBlock) {
-  return node.content.map(async (contentNode) => {
-    if (contentNode.nodeType === "embedded-entry-inline" && contentNode.data?.target?.fields?.text) {
-      if (!disableTranslation) {
-        contentNode.data.target.fields.text = (
-          await translator.translateText(contentNode.data.target.fields.text as string, "de", "en-US")
-        ).text;
+  return Promise.all(
+    node.content.map(async (contentNode) => {
+      if (contentNode.nodeType === "embedded-entry-inline" && contentNode.data?.target?.fields?.text) {
+        if (!disableTranslation) {
+          contentNode.data.target.fields.text = (
+            await translator.translateText(contentNode.data.target.fields.text as string, "de", "en-US")
+          ).text;
+        }
       }
-    }
-    return contentNode;
-  });
+      return contentNode;
+    })
+  );
 }
 ---
 
