@@ -1,8 +1,7 @@
 import contentful from "contentful";
 import type { EntryFieldTypes, Asset } from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
-import type { Document } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES, type Document } from "@contentful/rich-text-types";
 
 const contentfulClient = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE_ID,

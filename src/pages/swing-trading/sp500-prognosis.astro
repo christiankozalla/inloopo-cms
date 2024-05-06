@@ -1,0 +1,100 @@
+---
+import * as deepl from "deepl-node";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import { contentfulClient, renderOptionsAndVideos, type Post } from "../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import {
+  type Document,
+  type TopLevelBlock,
+  type Text,
+  type Block,
+  type Inline,
+  helpers,
+} from "@contentful/rich-text-types";
+
+const disableTranslation = true; // save deepl translate API calls (limited to 500k / month on the free plan)
+
+const translator = new deepl.Translator(import.meta.env.DEEPL_API_KEY);
+
+const {
+  items: [entry],
+} = await contentfulClient.getEntries<Post>({
+  content_type: "post",
+  "fields.category": "swing-trading",
+  "fields.slug": "sp500-prognose",
+});
+
+const translatedBody = await translateDocument(entry.fields.body, "en-US");
+
+const { renderOptions } = renderOptionsAndVideos();
+
+const translatedBodyHtml = documentToHtmlString(translatedBody, renderOptions);
+
+async function translateDocument(richTextDocument: Document, targetLang: deepl.TargetLanguageCode): Promise<Document> {
+  if (!richTextDocument || !richTextDocument.content) {
+    return richTextDocument;
+  }
+
+  const translatedCopy = Promise.all(
+    richTextDocument.content.map(async (node) => {
+      if (node.nodeType === "heading-2") {
+        // Todo: handle all other embedded-inline-entry types
+        node.content = await translateEmbeddedEntry(node);
+        return node;
+      }
+      node.content = await translateNodes(node.content, targetLang);
+      return node;
+    })
+  );
+
+  richTextDocument.content = await translatedCopy;
+
+  return richTextDocument;
+}
+
+function translateNodes(
+  nodes: (Text | Block | Inline)[],
+  targetLang: deepl.TargetLanguageCode
+): Promise<(Text | Block | Inline)[]> {
+  return Promise.all(
+    nodes.map(async (node) => {
+      if (helpers.isText(node)) {
+        return await translateTextNode(node, targetLang);
+      } else {
+        node.content = await translateNodes(node.content, targetLang);
+        return node;
+      }
+    })
+  );
+}
+
+async function translateTextNode(node: Text, targetLang: deepl.TargetLanguageCode) {
+  if (!node.value) {
+    return node;
+  }
+  if (!disableTranslation) {
+    const translated = await translator.translateText((node as Text).value, "de", targetLang);
+    node.value = translated.text;
+  }
+  return node;
+}
+
+function translateEmbeddedEntry(node: TopLevelBlock) {
+  return Promise.all(
+    node.content.map(async (contentNode) => {
+      if (contentNode.nodeType === "embedded-entry-inline" && contentNode.data?.target?.fields?.text) {
+        if (!disableTranslation) {
+          contentNode.data.target.fields.text = (
+            await translator.translateText(contentNode.data.target.fields.text as string, "de", "en-US")
+          ).text;
+        }
+      }
+      return contentNode;
+    })
+  );
+}
+---
+
+<BlogLayout title="S&P 500 Prognosis" locale="en">
+  <article set:html={translatedBodyHtml} />
+</BlogLayout>
