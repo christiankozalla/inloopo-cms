@@ -38,7 +38,7 @@ async function translateDocument(richTextDocument: Document, targetLang: deepl.T
   const translatedCopy = Promise.all(
     richTextDocument.content.map(async (node) => {
       if (node.nodeType === "heading-2") {
-        // handle all embedded-inline-entry types
+        // Todo: handle all other embedded-inline-entry types
         node.content = await translateEmbeddedEntry(node);
         return node;
       }
