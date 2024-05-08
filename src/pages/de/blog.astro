@@ -23,7 +23,9 @@ const entries = await contentfulClient.getEntries<Post>({
   }}>
   <div class="box--orange-background">
     <div class="wrapper-content">
-      <h1 class="main-teaser__heading--center main-teaser__heading-one--mobile">Traden und investieren lernen. So gehts.</h1>
+      <h1 class="main-teaser__heading--center main-teaser__heading-one--mobile">
+        Traden und investieren lernen. So gehts.
+      </h1>
       <p class="main-teaser__text--center p--bigger">
         In meinem Blog findest du Antworten, Anleitungen, Wissen und Erfahrung.
       </p>
@@ -31,18 +33,10 @@ const entries = await contentfulClient.getEntries<Post>({
   </div>
 
   <div class="flex">
-    <CategoryButton 
-    text="Day Trading"
-    href="/de/daytrading/"/>
-    <CategoryButton 
-    text="Swing Trading"
-    href="/de/swing-trading/"/>
-    <CategoryButton 
-    text="Anlagestrategien"
-    href="/de/anlagestrategien/"/>
-    <CategoryButton 
-    text="Finanzwissen"
-    href="/de/finanzwissen/"/>
+    <CategoryButton text="Day Trading" href="/de/daytrading/" />
+    <CategoryButton text="Swing Trading" href="/de/swing-trading/" />
+    <CategoryButton text="Anlagestrategien" href="/de/anlagestrategien/" />
+    <CategoryButton text="Finanzwissen" href="/de/finanzwissen/" />
   </div>
   <div class="grid">
     {

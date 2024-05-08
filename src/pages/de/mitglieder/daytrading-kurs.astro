@@ -344,13 +344,13 @@ const courseVideos = [
 ---
 
 <MemberLayout title="Day Trading Kurs" description="#" lang="de">
- 
   <div class="course__grid">
     <div>
-      
       <aside>
         <div id="toc" class="toc-course">
-          <div class="link__container"><a href="/de/mitglieder/live-trading-webinar/" class="link">Live Trading Webinar</a></div>
+          <div class="link__container">
+            <a href="/de/mitglieder/live-trading-webinar/" class="link">Live Trading Webinar</a>
+          </div>
           <a class="toc-course__accordion"><h6 class="toc-course__heading">Kursvideos</h6></a>
           <div class="toc-course__accordion-content">
             <ol class="toc-course__nav">
@@ -359,7 +359,10 @@ const courseVideos = [
               </li>
               <li><a rel="nofollow" href="#prof" class="toc-course__link">1.1 Professionelles Trading</a></li>
               <li><a rel="nofollow" href="#marktauswahl" class="toc-course__link">1.2 Marktauswahl</a></li>
-              <li><a rel="nofollow" href="#markttheorie" class="toc-course__link"><strong>2. Markttheorie und Rohdaten</strong></a></li>
+              <li>
+                <a rel="nofollow" href="#markttheorie" class="toc-course__link"
+                  ><strong>2. Markttheorie und Rohdaten</strong></a>
+              </li>
               <li><a rel="nofollow" href="#rohdaten" class="toc-course__link">2.1 Rohdaten</a></li>
               <li><a rel="nofollow" href="#sierra" class="toc-course__link"><strong>3. Sierra Chart</strong></a></li>
               <li><a rel="nofollow" href="#trial" class="toc-course__link">3.1 Trial Aktivierung und Daten</a></li>
@@ -369,12 +372,20 @@ const courseVideos = [
               <li><a rel="nofollow" href="#linie" class="toc-course__link">3.5 Vertikale Linie</a></li>
               <li><a rel="nofollow" href="#fills" class="toc-course__link">3.6 Order Fills</a></li>
               <li><a rel="nofollow" href="#nullen" class="toc-course__link">3.7 Nullen auf Footprint</a></li>
-              <li><a rel="nofollow" href="#plan" class="toc-course__link"><strong>4. Professioneller Trading Plan</strong></a></li>
+              <li>
+                <a rel="nofollow" href="#plan" class="toc-course__link"
+                  ><strong>4. Professioneller Trading Plan</strong></a>
+              </li>
               <li><a rel="nofollow" href="#profil" class="toc-course__link">4.1 Market Profile Einstellungen</a></li>
               <li><a rel="nofollow" href="#value" class="toc-course__link">4.2 Market Profile Value Area</a></li>
               <li><a rel="nofollow" href="#profilbsp" class="toc-course__link">4.3 Market Profile Beispiele</a></li>
-              <li><a rel="nofollow" href="#volumenprofil" class="toc-course__link"><strong>5. Volumenprofil</strong></a></li>
-              <li><a rel="nofollow" href="#volumenvsmarket" class="toc-course__link">5.1 Volumenprofil vs Market Profile</a></li>
+              <li>
+                <a rel="nofollow" href="#volumenprofil" class="toc-course__link"><strong>5. Volumenprofil</strong></a>
+              </li>
+              <li>
+                <a rel="nofollow" href="#volumenvsmarket" class="toc-course__link"
+                  >5.1 Volumenprofil vs Market Profile</a>
+              </li>
               <li><a rel="nofollow" href="#profilformen" class="toc-course__link">5.2 Profilformen</a></li>
               <li><a rel="nofollow" href="#statvalue" class="toc-course__link">5.3 Statistische Value</a></li>
               <li><a rel="nofollow" href="#pointcontrol" class="toc-course__link">5.4 Point of Control</a></li>
@@ -386,9 +397,13 @@ const courseVideos = [
               <li><a rel="nofollow" href="#hypothese" class="toc-course__link">6.4 Hypothese</a></li>
               <li><a rel="nofollow" href="#delta" class="toc-course__link"><strong>7. Cumulative Delta</strong></a></li>
               <li><a rel="nofollow" href="#cd" class="toc-course__link">7.1 CD Anwendung</a></li>
-              <li><a rel="nofollow" href="#footprint" class="toc-course__link"><strong>8.0 Footprint Chart</strong></a></li>
+              <li>
+                <a rel="nofollow" href="#footprint" class="toc-course__link"><strong>8.0 Footprint Chart</strong></a>
+              </li>
               <li><a rel="nofollow" href="#footprintchart" class="toc-course__link">8.1 Footprint Chart erklärt</a></li>
-              <li><a rel="nofollow" href="#all" class="toc-course__link"><strong>9.0 Alles zusammenfügen</strong></a></li>            
+              <li>
+                <a rel="nofollow" href="#all" class="toc-course__link"><strong>9.0 Alles zusammenfügen</strong></a>
+              </li>
             </ol>
             <p style="margin-top: 24px; font-size: small">✔ = Video bereits angesehen</p><button
               id="reset-video-tracker-progress"
@@ -398,20 +413,20 @@ const courseVideos = [
         </div>
       </aside>
     </div>
-   
+
     <div>
       <div>
-        <Banner 
-        heading="Discord Community"
-        description="Bevor du direkt mit dem Kurs startest komm in meine Discord Community."
-        listItems={[
-          "Mache Fortschritte durch besseren Austausch",
-          "Finde Antworten auf deine Frage",
-          "Sei Teil einer Community",
-        ]}
-        href="https://inloopo.com/discord"
-        linkText="Jetzt beitreten"
-        marginClass="margin-adjusted"
+        <Banner
+          heading="Discord Community"
+          description="Bevor du direkt mit dem Kurs startest komm in meine Discord Community."
+          listItems={[
+            "Mache Fortschritte durch besseren Austausch",
+            "Finde Antworten auf deine Frage",
+            "Sei Teil einer Community",
+          ]}
+          href="https://inloopo.com/discord"
+          linkText="Jetzt beitreten"
+          marginClass="margin-adjusted"
         />
       </div>
       {
@@ -426,7 +441,6 @@ const courseVideos = [
         ))
       }
     </div>
- 
   </div>
   <script>
     import { memberSpaceReady, updateVideoTracker } from "../../../lib/memberspace.ts";
@@ -556,7 +570,6 @@ const courseVideos = [
     border-bottom: 1px solid var(--first-color);
   }
 
-  
   .toc-course__accordion::after {
     content: "+";
     position: absolute;
@@ -568,7 +581,6 @@ const courseVideos = [
     color: var(--black-color);
     text-align: center;
   }
-
 
   .toc-course__accordion.active::after {
     content: "-";
@@ -659,7 +671,6 @@ const courseVideos = [
     }
   }
 </style>
-
 
 <script>
   // Code for Inhaltsverzeichnis

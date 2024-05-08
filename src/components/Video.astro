@@ -1,25 +1,26 @@
 ---
 const { videoLarge, videoMedium, videoSmall, poster } = Astro.props;
 ---
+
 <div class="video__container">
-<video
-class="lazy"
-preload="none"
-data-src={videoLarge}
-controls
-oncontextmenu="return false;"
-poster={poster}
-controlslist="nodownload">
-<source data-src={videoLarge} type="video/mp4" data-size="large" />
-<source data-src={videoMedium} type="video/mp4" data-size="medium" />
-<source data-src={videoSmall} type="video/mp4" data-size="small" />
- Your browser does not support the video tag.
-</video>
-<script src="./lazy-videos.js"></script>
+  <video
+    class="lazy"
+    preload="none"
+    data-src={videoLarge}
+    controls
+    oncontextmenu="return false;"
+    poster={poster}
+    controlslist="nodownload">
+    <source data-src={videoLarge} type="video/mp4" data-size="large" />
+    <source data-src={videoMedium} type="video/mp4" data-size="medium" />
+    <source data-src={videoSmall} type="video/mp4" data-size="small" />
+    Your browser does not support the video tag.
+  </video>
+  <script src="./lazy-videos.js"></script>
 </div>
 
 <style>
-    .video__container {
+  .video__container {
     display: flex;
     justify-content: center;
     margin: 3em auto;
@@ -27,5 +28,5 @@ controlslist="nodownload">
     box-shadow: 1px 1px 4px #d2d2d2;
     padding: 1em;
     max-width: 730px;
-    }
+  }
 </style>
