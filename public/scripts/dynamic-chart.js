@@ -193,7 +193,7 @@ class DynamicChart extends HTMLElement {
                   .then((jsonData) => {
                     window.dcIndices[indexName] = jsonData;
                   });
-              } catch(e) {
+              } catch (e) {
                 console.log("could not find data for index: ", indexName);
               }
             }

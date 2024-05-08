@@ -3,29 +3,26 @@ const { text, href } = Astro.props;
 ---
 
 <div class="category-button__container">
-<a href={href} class="category-button__link">
+  <a href={href} class="category-button__link">
     <p class="category-button__text">{text}</p>
-</a>
+  </a>
 </div>
 
 <style>
-
-.category-button__container {
+  .category-button__container {
     background-color: var(--dark-background-color);
     border-radius: 2em;
-}
+  }
 
-.category-button__link {
+  .category-button__link {
     color: #fff;
     text-align: center;
     font-weight: bold;
-}
+  }
 
-.category-button__text {
+  .category-button__text {
     margin: 0;
     padding: 0.1em 0.6em;
     font-size: 1rem;
-}
-
-
+  }
 </style>

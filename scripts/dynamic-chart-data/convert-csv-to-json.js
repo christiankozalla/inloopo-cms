@@ -19,10 +19,11 @@ fs.readFile(path.join(__dirname, pathToCsv), { encoding: "utf8" }, (err, data) =
     throw new Error("Error reading file", err);
   }
   const rows = data.split("\n");
-  const json = rows.map((row) => row.split(";"))
-    .map(([date, changeSP, invested]) => ([date, toNumber(changeSP), writeX(invested)]));
-    // .map((row) => row.filter(Boolean))
-    // .filter((row) => row.length > 0);
+  const json = rows
+    .map((row) => row.split(";"))
+    .map(([date, changeSP, invested]) => [date, toNumber(changeSP), writeX(invested)]);
+  // .map((row) => row.filter(Boolean))
+  // .filter((row) => row.length > 0);
 
   fs.writeFile(path.join(__dirname, pathToCsv.replace(".csv", ".json")), JSON.stringify(json), "utf8", (err) => {
     if (err) {
