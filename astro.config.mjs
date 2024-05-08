@@ -11,6 +11,13 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         page !== "https://www.inloopo.com/de/vielen-dank/" && page !== "https://www.inloopo.com/thank-you/",
+      i18n: {
+        defaultLocale: "en",
+        locales: {
+          en: "en-US",
+          de: "de",
+        },
+      },
     }),
     processCustomAssets,
   ],
