@@ -70,7 +70,7 @@ export function generateVideoSitemap({ sitemapFilename, filter = () => true }) {
 
                 await writeFile(
                     fileURLToPath(new URL(sitemapFilename, dir)),
-                    sitemapContent.replace(/\s{2,}/g, ""),
+                    sitemapContent.replace(/\s{2,}/g, "").replace(/&/g, "&amp;"),
                 );
             },
         },
