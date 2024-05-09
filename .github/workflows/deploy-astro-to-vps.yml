@@ -58,6 +58,7 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: |
+          GCP_YOUTUBE_DATA_API_KEY=${{ secrets.GCP_YOUTUBE_DATA_API_KEY }} \
           CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }} CONTENTFUL_API_KEY=${{ secrets.CONTENTFUL_API_KEY }} \
           ${{ steps.detect-package-manager.outputs.runner }} astro build
           chmod +x ${{ env.BUILD_PATH }}/scripts/after-build.sh
