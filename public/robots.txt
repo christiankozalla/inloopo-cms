@@ -4,3 +4,4 @@ Disallow: /mail-feedback/index.php
 Allow: /
 
 Sitemap: https://www.inloopo.com/sitemap.xml
+Sitemap: https://www.inloopo.com/video-sitemap.xml

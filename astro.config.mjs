@@ -1,6 +1,8 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { processCustomAssets } from "./scripts/process-custom-assets.mjs";
+import { generateVideoSitemap } from "./scripts/video-sitemap.mjs";
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,5 +22,10 @@ export default defineConfig({
       },
     }),
     processCustomAssets,
+    generateVideoSitemap({
+      sitemapFilename: "video-sitemap.xml",
+      filter: ({ pathname }) =>
+        pathname !== "de/vielen-dank/" && pathname !== "thank-you/",
+    })
   ],
 });
