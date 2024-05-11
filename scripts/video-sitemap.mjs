@@ -4,7 +4,7 @@ import { youtube } from "./youtube.mjs";
 
 export function generateVideoSitemap({ sitemapFilename, filter = () => true }) {
     if (!sitemapFilename) {
-        throw new Error(`Provide a filename for the video-sitemap - e.g. generateVideoSitemap({ sitemapFilename: "video-sitemap.xml" })`)
+        throw new Error(`Video-Sitemap Integration: Provide a filename for the video-sitemap - e.g. generateVideoSitemap({ sitemapFilename: "video-sitemap.xml" })`)
     }
     let baseUrl = "";
     return {
@@ -14,6 +14,11 @@ export function generateVideoSitemap({ sitemapFilename, filter = () => true }) {
                 baseUrl = config.site;
             },
             "astro:build:done": async ({ dir, pages }) => {
+
+                if (!process.env.GCP_YOUTUBE_DATA_API_KEY) {
+                    console.error("\n---------\nVideo-Sitemap Integration: process.env.GCP_YOUTUBE_DATA_API_KEY is not set! Aborting.\n---------\n")
+                    return;
+                }
 
                 pages = pages.filter(filter).map(({ pathname }) => ({
                     pathname,
