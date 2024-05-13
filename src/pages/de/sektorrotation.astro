@@ -406,15 +406,15 @@ import "../../styles/styles.css";
   <style>
     .sectorr__grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1em;
-      margin: 5em 7em;
+      grid-template-columns: 1fr;
+      gap: 2em;
+      margin: 1em;
     }
 
     .sectorr {
       display: flex;
       justify-content: center;
-      margin: 0 25px;
+      margin: 1em;
     }
 
     .sectorr,
@@ -508,12 +508,19 @@ import "../../styles/styles.css";
       background-color: #131e3c;
     }
 
-    @media only screen and (max-width: 979px) {
+    @media only screen and (min-width: 45em) {
       .grid {
         grid-template-columns: 1fr;
         gap: 3em;
         margin: 0;
       }
+
+      .sectorr__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1em;
+      margin: 5em 7em;
+    }
 
       .sectorr__img {
         margin-top: 2em;
@@ -524,8 +531,8 @@ import "../../styles/styles.css";
       }
 
       .sectorr {
-        margin-bottom: 24px;
-      }
+      margin: 0 25px;
     }
+      }
   </style>
 </MainLayout>
