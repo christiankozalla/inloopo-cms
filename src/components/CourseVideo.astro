@@ -23,7 +23,8 @@ const {
     `}>
   <h2 class="course-video__heading">{heading}</h2>
 </div>
-<div class={`
+<div
+  class={`
 course-video__container
 ${marginClass}
 `}>
@@ -40,13 +41,16 @@ ${marginClass}
       <source data-src={videoLarge} type="video/mp4" data-size="large" />
       <source data-src={videoMedium} type="video/mp4" data-size="medium" />
       <source data-src={videoSmall} type="video/mp4" data-size="small" />
-       Your browser does not support the video tag.
+      Your browser does not support the video tag.
     </video>
   </>
-  <p class={`
+  <p
+    class={`
   course-video__text
   ${paddingClass}
-  `} set:html={text} />
+  `}
+    set:html={text}
+  />
   <div class="course-video__download">
     {
       download && (
@@ -66,10 +70,13 @@ ${marginClass}
     }
     <slot name="videoTracker" />
   </div>
-  <p set:html={tip} class={`
+  <p
+    set:html={tip}
+    class={`
   course-video__tip
   ${paddingClass}
-  `} />
+  `}
+  />
   <script src="./lazy-videos.js"></script>
 </div>
 
@@ -91,7 +98,7 @@ ${marginClass}
   .course-video__heading {
     margin-bottom: 0;
   }
-  
+
   video {
     max-width: 100%;
   }
@@ -141,12 +148,12 @@ ${marginClass}
     }
 
     .video-container__margin--less {
-    margin: 0;
-  }
+      margin: 0;
+    }
 
-  .text__padding--less {
-    padding: 0;
-  }
+    .text__padding--less {
+      padding: 0;
+    }
 
     .course-video__heading-container {
       margin: 3em 2em 0 2em;

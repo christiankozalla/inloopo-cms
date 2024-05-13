@@ -40,18 +40,14 @@ import "../../styles/styles.css";
   />
 
   <Banner
-  heading="Discord Community"
-  description="Bevor du direkt mit dem Kurs startest komm in meine Discord Community. Dort poste ich meine Ergebnisse, du kannst Fragen stellen und dich mit anderen Kursteilnehmern austauschen."
-  listItems={[
-    "besserer Austausch",
-    "Antworten auf deine Frage",
-    "Teil einer Community",
-  ]}
-  href="https://inloopo.com/discord"
-  linkText="Jetzt beitreten"
-  marginClass="margin-null"
-/>
-  
+    heading="Discord Community"
+    description="Bevor du direkt mit dem Kurs startest komm in meine Discord Community. Dort poste ich meine Ergebnisse, du kannst Fragen stellen und dich mit anderen Kursteilnehmern austauschen."
+    listItems={["besserer Austausch", "Antworten auf deine Frage", "Teil einer Community"]}
+    href="https://inloopo.com/discord"
+    linkText="Jetzt beitreten"
+    marginClass="margin-null"
+  />
+
   <!-- PROBLEMS -->
   <section>
     <div class="row box--grey-background box--desktop">
@@ -104,11 +100,11 @@ import "../../styles/styles.css";
       </p>
     </div>
     <Video
-    videoLarge="/videos/00-daytrading-landingpage-1080.mp4"
-    videoMedium="/videos/00-daytrading-landingpage-720.mp4"
-    videoSmall="/videos/00-daytrading-landingpage-576.mp4"
-    poster="/images/daytrading-kurs-vorstellung.webp"
-  />
+      videoLarge="/videos/00-daytrading-landingpage-1080.mp4"
+      videoMedium="/videos/00-daytrading-landingpage-720.mp4"
+      videoSmall="/videos/00-daytrading-landingpage-576.mp4"
+      poster="/images/daytrading-kurs-vorstellung.webp"
+    />
   </div>
   <!-- FEATURES -->
   <div class="wrapper-content">
@@ -143,212 +139,230 @@ import "../../styles/styles.css";
 
   <section class="wrapper-content">
     <div class="add-margin-bottom">
-    <h2 class="column__heading">Ein Videokurs mit 13 Modulen</h2>
-    <div class="grid grid-3fr">
-      <ModuleCard
-        title="Deine professionelle Trading-Karriere beginnt"
-        icon={{
-          src: "/images/space-shuttle.svg",
-          alt: "Start icon",
-          width: "70",
-        }}
-        listItems={[
-          "Einführung",
-          "Wer sind die großen Marktteilnehmer?",
-          "Warum Futures und nicht FOREX oder CFD's traden?",
-          "Handelszeitplan und Zusammenfassung",
-        ]}
-      />
+      <h2 class="column__heading">Ein Videokurs mit 13 Modulen</h2>
+      <div class="grid grid-3fr">
+        <ModuleCard
+          title="Deine professionelle Trading-Karriere beginnt"
+          icon={{
+            src: "/images/space-shuttle.svg",
+            alt: "Start icon",
+            width: "70",
+          }}
+          listItems={[
+            "Einführung",
+            "Wer sind die großen Marktteilnehmer?",
+            "Warum Futures und nicht FOREX oder CFD's traden?",
+            "Handelszeitplan und Zusammenfassung",
+          ]}
+        />
 
-      <ModuleCard
-        title="Markttheorie und Rohdaten"
-        icon={{
-          src: "/images/inbox.svg",
-          alt: "Put data in icon",
-          width: "70",
-        }}
-        listItems={[
-          "Theorie des Marktes - Warum bewegt sich der Preis?",
-          "Orderbuch (DOM)",
-          "Live Beispiel",
-          "Aufgabe: Übertrage Angebot und Nachfrage auf dein reales Leben",
-          "Zusammenfassung und nächste Schritte",
-        ]}
-      />
+        <ModuleCard
+          title="Markttheorie und Rohdaten"
+          icon={{
+            src: "/images/inbox.svg",
+            alt: "Put data in icon",
+            width: "70",
+          }}
+          listItems={[
+            "Theorie des Marktes - Warum bewegt sich der Preis?",
+            "Orderbuch (DOM)",
+            "Live Beispiel",
+            "Aufgabe: Übertrage Angebot und Nachfrage auf dein reales Leben",
+            "Zusammenfassung und nächste Schritte",
+          ]}
+        />
 
-      <ModuleCard
-        title="Tools und Downloads"
-        icon={{
-          src: "/images/lunch.svg",
-          alt: "Put data in icon",
-          width: "120",
-        }}
-        listItems={[
-          "Sierra Chart Einrichtung",
-          "Sierra Chart Setup (im Wert von 2.000$)",
-          "Demo-Trading",
-          "Aufgabe: Handel mit dem DOM",
-          "Zusammenfassung und nächste Schritte",
-        ]}
-      />
+        <ModuleCard
+          title="Tools und Downloads"
+          icon={{
+            src: "/images/lunch.svg",
+            alt: "Put data in icon",
+            width: "120",
+          }}
+          listItems={[
+            "Sierra Chart Einrichtung",
+            "Sierra Chart Setup (im Wert von 2.000$)",
+            "Demo-Trading",
+            "Aufgabe: Handel mit dem DOM",
+            "Zusammenfassung und nächste Schritte",
+          ]}
+        />
 
-      <ModuleCard
-        title="Market-Profil (TPO Charts)"
-        icon={{
-          src: "/images/pixel.svg",
-          alt: "Put data in icon",
-          width: "70",
-        }}
-        listItems={[
-          "Was ist das Ziel des Market Profile?",
-          "Profilformen",
-          "Wann sollte man Profile zusammenführen?",
-          "Wann werden Profile geteilt?",
-          "Das ultimative Ziel",
-          "Aufgabe: Schaue dir den aktuellen Markt an und verschmelze oder teile die Volumenprofile der letzten 2 Monate",
-        ]}
-      />
+        <ModuleCard
+          title="Market-Profil (TPO Charts)"
+          icon={{
+            src: "/images/pixel.svg",
+            alt: "Put data in icon",
+            width: "70",
+          }}
+          listItems={[
+            "Was ist das Ziel des Market Profile?",
+            "Profilformen",
+            "Wann sollte man Profile zusammenführen?",
+            "Wann werden Profile geteilt?",
+            "Das ultimative Ziel",
+            "Aufgabe: Schaue dir den aktuellen Markt an und verschmelze oder teile die Volumenprofile der letzten 2 Monate",
+          ]}
+        />
 
-      <ModuleCard
-        title="Volumenprofil"
-        icon={{
-          src: "/images/candle-chart.svg",
-          alt: "Candle chart icon",
-          width: "70",
-        }}
-        listItems={["Volumen Profil vs. Market Profile", "Volumen Point of Control (VPOC)", "Volumenprofil Statisch vs. Dynamisch", "Aufgabe: Schaue dir die Unterschiede zwischen dem Market Profile und dem Volumenprofil der letzten 2 Monate an"]}
-      />
+        <ModuleCard
+          title="Volumenprofil"
+          icon={{
+            src: "/images/candle-chart.svg",
+            alt: "Candle chart icon",
+            width: "70",
+          }}
+          listItems={[
+            "Volumen Profil vs. Market Profile",
+            "Volumen Point of Control (VPOC)",
+            "Volumenprofil Statisch vs. Dynamisch",
+            "Aufgabe: Schaue dir die Unterschiede zwischen dem Market Profile und dem Volumenprofil der letzten 2 Monate an",
+          ]}
+        />
 
-      <ModuleCard
-        title="Kontext und Trading-Setup"
-        icon={{
-          src: "/images/laptop.svg",
-          alt: "Put data in icon",
-          width: "100",
-        }}
-        listItems={[
-          "Was ist Kontext und warum ist er so wichtig?",
-          "Marktprofil Bedingungen und Rhythmus (DVA)",
-          "Zusammengesetzter Wertbereich (CVA) / Linie im Sand (LIS)",
-          "Aufgabe: Profile zusammenführen und trainieren, um deine Hypothese zu definieren (mind. 2 Monate)",
-        ]}
-      />
+        <ModuleCard
+          title="Kontext und Trading-Setup"
+          icon={{
+            src: "/images/laptop.svg",
+            alt: "Put data in icon",
+            width: "100",
+          }}
+          listItems={[
+            "Was ist Kontext und warum ist er so wichtig?",
+            "Marktprofil Bedingungen und Rhythmus (DVA)",
+            "Zusammengesetzter Wertbereich (CVA) / Linie im Sand (LIS)",
+            "Aufgabe: Profile zusammenführen und trainieren, um deine Hypothese zu definieren (mind. 2 Monate)",
+          ]}
+        />
 
-      <ModuleCard
-        title="Footprint Chart"
-        icon={{
-          src: "/images/foot-print.svg",
-          alt: "Put data in icon",
-          width: "70",
-        }}
-        listItems={["Einführung", "Einstellungen und was du siehst", "Was ist am wichtigsten?", "Schlussfolgerung"]}
-      />
+        <ModuleCard
+          title="Footprint Chart"
+          icon={{
+            src: "/images/foot-print.svg",
+            alt: "Put data in icon",
+            width: "70",
+          }}
+          listItems={["Einführung", "Einstellungen und was du siehst", "Was ist am wichtigsten?", "Schlussfolgerung"]}
+        />
 
-      <ModuleCard
-        title="Cumulative Delta"
-        icon={{
-          src: "/images/calculator.svg",
-          alt: "Calculator icon",
-          width: "60",
-        }}
-        listItems={["Einführung - Was ist Cumulative Delta?", "Warum verwenden wir es?", "Was kannst du sehen?", "Schlussfolgerung"]}
-      />
+        <ModuleCard
+          title="Cumulative Delta"
+          icon={{
+            src: "/images/calculator.svg",
+            alt: "Calculator icon",
+            width: "60",
+          }}
+          listItems={[
+            "Einführung - Was ist Cumulative Delta?",
+            "Warum verwenden wir es?",
+            "Was kannst du sehen?",
+            "Schlussfolgerung",
+          ]}
+        />
 
-      <ModuleCard
-        title="Alles zusammenfügen"
-        icon={{
-          src: "/images/lego.svg",
-          alt: "Laptop icon",
-          width: "50",
-        }}
-        listItems={[
-          "Kontext und Trading-Setup - das ultimative Ziel",
-          "Aufgabe: Demo-Trading, bis du mindestens 20 Handelstage lang konstant erfolgreich bist",
-        ]}
-      />
+        <ModuleCard
+          title="Alles zusammenfügen"
+          icon={{
+            src: "/images/lego.svg",
+            alt: "Laptop icon",
+            width: "50",
+          }}
+          listItems={[
+            "Kontext und Trading-Setup - das ultimative Ziel",
+            "Aufgabe: Demo-Trading, bis du mindestens 20 Handelstage lang konstant erfolgreich bist",
+          ]}
+        />
 
-      <ModuleCard
-        title="Risiko- und Geldmanagement"
-        icon={{
-          src: "/images/monster.svg",
-          alt: "Put data in icon",
-          width: "70",
-        }}
-        listItems={[
-          "Regel Nummer eins! - Handle immer mit einem festen Stop-Loss!",
-          "Regel Nummer zwei! - Verschiebe niemals deinen ursprünglichen Stop-Loss!",
-          "Versuche immer, dein Risiko auf Break Even + 1 Tick zu reduzieren",
-          "Das Einzige, was du kontrollieren kannst, ist dein Risiko. - Die Performance kommt von selbst. 😊",
-        ]}
-      />
+        <ModuleCard
+          title="Risiko- und Geldmanagement"
+          icon={{
+            src: "/images/monster.svg",
+            alt: "Put data in icon",
+            width: "70",
+          }}
+          listItems={[
+            "Regel Nummer eins! - Handle immer mit einem festen Stop-Loss!",
+            "Regel Nummer zwei! - Verschiebe niemals deinen ursprünglichen Stop-Loss!",
+            "Versuche immer, dein Risiko auf Break Even + 1 Tick zu reduzieren",
+            "Das Einzige, was du kontrollieren kannst, ist dein Risiko. - Die Performance kommt von selbst. 😊",
+          ]}
+        />
 
-      <ModuleCard
-        title="Einstiegs- und Ausstiegsstrategie"
-        icon={{
-          src: "/images/drill.svg",
-          alt: "Drill icon",
-          width: "70",
-        }}
-        listItems={[
-          "Einführung - Was ist der Kontext",
-          "Mit dem Trend handeln",
-          "Wie handelt man Seitwärtsmärkte?",
-          "Zusammenfassung",
-        ]}
-      />
+        <ModuleCard
+          title="Einstiegs- und Ausstiegsstrategie"
+          icon={{
+            src: "/images/drill.svg",
+            alt: "Drill icon",
+            width: "70",
+          }}
+          listItems={[
+            "Einführung - Was ist der Kontext",
+            "Mit dem Trend handeln",
+            "Wie handelt man Seitwärtsmärkte?",
+            "Zusammenfassung",
+          ]}
+        />
 
-      <ModuleCard
-        title="Positionsmanagement"
-        icon={{
-          src: "/images/coins.svg",
-          alt: "Put data in icon",
-          width: "60",
-        }}
-        listItems={["Wann sollte man Gewinne mitnehmen?", "Wann sollte man seine Risiken reduzieren?", "Wann sollte man alle Positionen schließen?"]}
-      />
+        <ModuleCard
+          title="Positionsmanagement"
+          icon={{
+            src: "/images/coins.svg",
+            alt: "Put data in icon",
+            width: "60",
+          }}
+          listItems={[
+            "Wann sollte man Gewinne mitnehmen?",
+            "Wann sollte man seine Risiken reduzieren?",
+            "Wann sollte man alle Positionen schließen?",
+          ]}
+        />
 
-      <ModuleCard
-        title="Handelsstatistiken"
-        icon={{
-          src: "/images/presentation.svg",
-          alt: "Put data in icon",
-          width: "70",
-        }}
-        listItems={["Ich benutze und empfehle TradesViz.com", "Wie nutzt man die Handelsstatistiken?", "Wie verbessert man damit seine Handelsergebnisse?"]}
-      />
+        <ModuleCard
+          title="Handelsstatistiken"
+          icon={{
+            src: "/images/presentation.svg",
+            alt: "Put data in icon",
+            width: "70",
+          }}
+          listItems={[
+            "Ich benutze und empfehle TradesViz.com",
+            "Wie nutzt man die Handelsstatistiken?",
+            "Wie verbessert man damit seine Handelsergebnisse?",
+          ]}
+        />
 
-      <ModuleCard
-        title="Bonus Trading-Psychologie"
-        icon={{
-          src: "/images/law.svg",
-          alt: "Put data in icon",
-          width: "70",
-        }}
-        listItems={["Was ist die richtige Denkweise?", "Wie bekommt man sie?"]}
-      />
-    </div>
+        <ModuleCard
+          title="Bonus Trading-Psychologie"
+          icon={{
+            src: "/images/law.svg",
+            alt: "Put data in icon",
+            width: "70",
+          }}
+          listItems={["Was ist die richtige Denkweise?", "Wie bekommt man sie?"]}
+        />
+      </div>
     </div>
   </section>
 
-   <!-- Price of Coaching --> 
-<section>
-  <div class="box--blue-background">
-    <div class="wrapper-content">
-      <h2 class="box__heading--white"></h2>
-     
+  <!-- Price of Coaching -->
+  <section>
+    <div class="box--blue-background">
+      <div class="wrapper-content">
+        <h2 class="box__heading--white"></h2>
+
         <PriceCard
           title="Werde Day Trader"
           price="1900 € inkl. MwSt"
           description="Du bekommst 13 Lernmodule, Sierra Chart Book, Sierra Chart Settings und wöchentliche Live Trading Sessions."
           button={{
-          text: "Jetzt kaufen",
-        href: "https://my.inloopo.com/checkout/Course/24936",
-        target: "target__blank",
+            text: "Jetzt kaufen",
+            href: "https://my.inloopo.com/checkout/Course/24936",
+            target: "target__blank",
           }}
         />
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- HWY US -->
   <section>

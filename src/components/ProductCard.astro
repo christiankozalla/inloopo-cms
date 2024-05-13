@@ -1,33 +1,37 @@
 ---
-const { icon, type, title, description, link, backgroundColorClass, linkColorClass="" } = Astro.props;
+const { icon, type, title, description, link, backgroundColorClass, linkColorClass = "" } = Astro.props;
 ---
 
-<div class={`product-card__container
+<div
+  class={`product-card__container
 ${backgroundColorClass}
 `}>
-{icon && 
-<div class="product-card__icon-container">
-<img class="product-card__icon" src={icon.src} alt={icon.alt} width="40"/>
-</div>
-}
+  {
+    icon && (
+      <div class="product-card__icon-container">
+        <img class="product-card__icon" src={icon.src} alt={icon.alt} width="40" />
+      </div>
+    )
+  }
   <div class="h6">{type}</div>
-    <h2 class="product-card__heading">{title}</h2>
-    <p class="product-card__text">
-      {description}
-    </p>
-    {
-      link && (
-        <p>
-          <a class={`
+  <h2 class="product-card__heading">{title}</h2>
+  <p class="product-card__text">
+    {description}
+  </p>
+  {
+    link && (
+      <p>
+        <a
+          class={`
             link  bolder
-            ${linkColorClass}`} href={link.href}>
-            {link.text}
-          </a>
-        </p>
-      )
-    }
-    <slot></slot>
-  </div>
+            ${linkColorClass}`}
+          href={link.href}>
+          {link.text}
+        </a>
+      </p>
+    )
+  }
+  <slot />
 </div>
 
 <style>
@@ -96,7 +100,6 @@ ${backgroundColorClass}
   }
 
   @media only screen and (max-width: 759px) {
-
     .product-card__heading {
       font-size: 24px;
     }
