@@ -15,8 +15,8 @@
     "@types/node": "^20.6.2",
     "astro": "^4",
     "prettier": "^3.0.1",
-    "@googleapis/youtube": "^16.1.0",
-    "prettier-plugin-astro": "^0.13.0"
+    "@googleapis/youtube": "^18.0.0",
+    "prettier-plugin-astro": "^0.14.0"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^16.1.2",

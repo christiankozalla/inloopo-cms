@@ -77,6 +77,8 @@ export function generateVideoSitemap({ sitemapFilename, filter = () => true }) {
                     fileURLToPath(new URL(sitemapFilename, dir)),
                     sitemapContent.replace(/\s{2,}/g, "").replace(/&/g, "&amp;"),
                 );
+
+                console.log(`\n---------\nVideo-Sitemap Integration: Video-Sitemap generated successfully in ${fileURLToPath(new URL(sitemapFilename, dir))}\n---------\n`)
             },
         },
     };
