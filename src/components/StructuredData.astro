@@ -60,7 +60,7 @@ if (heroImage) {
     height: heroImage.height,
   };
 }
-if (videos) {
+if (Array.isArray(videos)) {
   // @ts-ignore
   template.videos = videos.map((v) => ({
     "@type": "VideoObject",
