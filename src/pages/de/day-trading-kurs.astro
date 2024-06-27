@@ -10,6 +10,7 @@ import Button from "../../components/Button.astro";
 import Video from "../../components/Video.astro";
 import PriceCard from "../../components/PriceCard.astro";
 import Banner from "../../components/Banner.astro";
+import Review from "../../components/Review.astro";
 
 //import styles
 import "../../styles/styles.css";
@@ -136,6 +137,24 @@ import "../../styles/styles.css";
       />
     </div>
   </div>
+
+    <!-- REVIEWS -->
+    <section>
+      <h2 class="product-details__heading">Das sagen meine Kunden</h2>
+      <div class="wrapper-content">
+        <div class="row column--no-background">
+         <Review
+         icon={{ src: "/images/franz.webp", alt: "Kunde" }}
+         name="Franz Hofmann"
+         description="Ich bin von Philipps Deinem Day Trading Kurs sehr begeistert. Für mich war Day Trading früher immer suspekt, und die Sierra Chart-Software nur etwas für Profi-Trader. Weil der Preis so günstig war und ich mir Erkenntnisse für mein Swing-Trading erhoffte, habe ich den Kurs gebucht. Ich bin sehr beeindruckt über das umfangreiche Wissen, das in den Videos vom Day Trading Kurs vermittelt wird. Auch die Live-Trading-Webinare bieten einen großen Mehrwert. Mit der Sierra Chart-Software komme ich mittlerweile auch schon klar, und ich staune über den Vorteil durch die unterschiedlichen Betrachtungen der Handelsvolumen. Deine offene Aussage, dass Day-Trading eine Fähigkeit ist, die man erst erlernen muss, und nicht einfach nur ein System, das man nachhandelt, war für mich ein „Augenöffner“. Vielen Dank auch für Deine rasche Hilfe bei Problemen oder Fragen. Ich habe mittlerweile 17 Tage im Demo-Trading gehandelt und bin zuversichtlich, dass meine Equity-Kurve nachhaltig ansteigt."
+         />
+         <Review
+         icon={{ src: "/images/denny.webp", alt: "Kunde" }}
+         name="Denny Guhlmann"
+         description="Mit viel Leidenschaft, Professionalität hat Philipp hier einen Kurs zusammengestellt, der absolut auch für Anfänger geeignet ist. Preis/Leistung passen hier echt zusammen. Der persönliche Support ist überragend, alle Fragen wurde entweder über Discord oder auch persönlich beantwortet. Für eine effiziente Erläuterung werden Screenshot und Video Nachrichten verwendet, sodass es wirklich jeder nachvollziehen kann. Der Kurs wird ständig erweitert und an die Bedürfnisse der Schüler angepasst. Es findet ein regelmäßiger Austausch zwischen Teilnehmer und Philipp statt. Seine sympathische, entspannte Art machen ihn zu einem perfekten Lehrmeister. Ich habe sehr viel an Hintergrundwissen dazugelernt, was auch in weiteren Strategien Anwendung findet."
+         />
+        </div>
+    </section>
 
   <section class="wrapper-content">
     <div class="add-margin-bottom">

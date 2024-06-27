@@ -1,0 +1,49 @@
+---
+const { name, description, icon } = Astro.props;
+---
+
+<div class="review__container">
+  {icon && <img src={icon.src} class="review__icon" width="70" height="70" alt={icon.alt} />}
+  <h5 class="review__heading">{name}</h5>
+  <p set:html={description} class="review__text" />
+</div>
+
+<style>
+  .review__container {
+    padding: 25px;
+    width: 50%;
+    float: left;
+  }
+
+  .review__icon {
+    text-align: left;
+    border-radius: 50%;
+  }
+
+  .review__heading {
+    text-align: left;
+    margin-top: .1em;
+  }
+
+  .review__text {
+    text-align: left;
+    width: 80%;
+  }
+
+  @media only screen and (min-width: 760px) and (max-width: 979px) {
+    .review__container {
+      width: 50%;
+    }
+  }
+
+  @media only screen and (max-width: 759px) {
+    .review__container {
+      width: 100%;
+    }
+
+    .review__text {
+      text-align: left;
+      width: 100%;
+    }
+  }
+</style>

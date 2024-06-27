@@ -8,6 +8,7 @@ import BackgroundImage from "../../components/BackgroundImage.astro";
 import QualiCard from "../../components/QualiCard.astro";
 import PriceCard from "../../components/PriceCard.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
+import Review from "../../components/Review.astro";
 ---
 
 <MainLayout
@@ -108,6 +109,36 @@ import MainLayout from "../../layouts/MainLayout.astro";
           description="Ich höre hin, verstehe, passe das Coaching an und unterstütze dich in deinem Vorhaben ein erfolgreicher Investor bzw. Trader zu werden."
         />
       </div>
+    </div>
+  </section>
+
+   <!-- REVIEWS -->
+   <section>
+    <h2 class="product-details__heading">Das sagen meine Kunden</h2>
+    <div class="wrapper-content">
+      <div class="row column--no-background">
+       <Review
+       icon={{ src: "/images/doreen.webp", alt: "Kundin" }}
+       name="Doreen Köhler"
+       description="Das 1:1 Coaching mit Philipp war einfach klasse und jeden Euro wert! Ich bin jetzt viel sicherer beim Planen und Umsetzen meiner Trades. Ich hatte so viele Fragen: Wie finde ich solide Trendaktien? Wie sichere ich mein Währungsrisiko ab? Wie setze ich eine Cash-Flow Strategie mit US- Optionen um? Philips Antworten übertrafen meine Erwartungen: Er versteht es, komplexe Zusammenhänge einfach und auf den Punkt zu erklären. Auch hat er mir sehr viele konkrete Tipps und Tricks an die Hand gegeben, die ich bei Interactive Brokers und Trading View sofort umsetzen konnte. Spannend für mich waren auch die Einblicke welche ETFs und Aktien er selbst handelt. Unsere Terminplanung war schnell und unkompliziert und zwischen den Coachingstunden hat er mich bei kurzfristigen Fragen einfach mit Text- und Sprachnachrichten unterstützt. Phillip ist ein echter Profi, der dafür brennt, andere erfolgreich zu machen. Super empfehlenswert!"
+       />
+       <Review
+       icon={{ src: "/images/franz.webp", alt: "Kunde" }}
+       name="Franz Hofmann"
+       description="Nach meinen positiven Erfahrungen mit dem Börsenampel-Kurs und dem Day Trading-Kurs bin ich auch vom 1-zu-1 Coaching für das Swing-Trading wirklich begeistert. Die Video-Aufzeichnungen sind sehr wertvoll, weil ich beim neuerlichen Ansehen das Gelernte noch besser einordnen kann. Es sind für mich nicht nur viele neue Erkenntnisse, sondern ich habe auch von vielen Dingen im Trading ein tieferes Verständnis gewonnen. Das 1-zu-1 Coaching bietet kein simples Kochrezept zum Nachmachen, sondern viel besser: es hat mir geholfen, die Trading-Strategie zu finden, die zu meinem Mindset passt, und das Vertrauen in diese Strategie zu stärken. Wie auch bei den anderen Kursen ist das Preis-Leistungsverhältnis enorm günstig, und ich bin froh, dass ich zu einem Zeitpunkt eingestiegen bin, zu dem der Preis noch nicht mit dem großen Wert gleichgezogen hat."
+       />
+      </div>
+      <div class="row column--no-background">
+       <Review
+       icon={{ src: "/images/michael.webp", alt: "Kunde" }}
+       name="Michael"
+       description="Die Zusammenarbeit mit Philipp hat bei uns bewirkt, dass wir einen entscheidenden Schritt nach vorne gemacht haben in der Chartanalyse und nun befähigt sind, selbständig Entscheidungen zu treffen, wann wir in den Aktien oder ETF Markt einsteigen und wann eben nicht. Dabei haben wir uns bewusst für ein 1:1 Coaching entschieden im Bereich der Sektorenrotation. Philipp hat uns dabei mit tiefem und fundamentalem Wissen versorgt. Die entscheidenden Fragen sind, wann kaufe ich, wie sicher ich mich ab und wann verkaufe ich wieder. Dazu liefert Philipp ganz konkrete Antworten, die sich auch sofort umsetzen lassen. Der Mehrwert ist sofort spürbar. Ein riesiger Vorteil ist zudem, dass die 1:1 Coachings aufgezeichnet werden und man sich diese im Nachgang jederzeit wieder anschauen kann. Uns hat das bei der Fülle der Informationen auf jeden Fall geholfen. Mit Philipp gewinnt man jemanden, der ganz konkrete Strategien benennt und hilft diese auch umzusetzen. Insgesamt blieben keine Fragen offen."
+       />
+       <Review
+       icon={{ src: "/images/sascha.webp", alt: "Kunde" }}
+       name="Sascha Henke"
+       description="Das 1:1 Coaching mit Philipp hat mir einen umfassenden Einblick in die COT-Daten gegeben. Ich weiß nun, wie ich die Daten interpretieren muss und kann dies in mein Trading einfließen lassen. Außerdem habe ich eine konkrete Swing Trading Strategie mit Einstiegsregeln, Risikoberechnung und Definition des Tradingziels gelernt. Philipp vermittelt in den Sessions super viel Wissen und ist ein echter Profi. Daher ist es sehr gut, dass man im Anschluss die Aufzeichnung als Video erhält, um die Inhalte auch später noch einmal vertiefen zu können."
+       />
     </div>
   </section>
 
