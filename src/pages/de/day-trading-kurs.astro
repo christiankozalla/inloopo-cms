@@ -39,7 +39,7 @@ import "../../styles/styles.css";
     }}
     backgroundImageClass="main-teaser__page-daytrading"
   />
-<!-- 
+  <!-- 
   <Banner
     heading="Discord Community"
     description="Bevor du direkt mit dem Kurs startest komm in meine Discord Community. Dort poste ich meine Ergebnisse, du kannst Fragen stellen und dich mit anderen Kursteilnehmern austauschen."
@@ -138,478 +138,479 @@ import "../../styles/styles.css";
     </div>
   </div>
 
-    <!-- REVIEWS -->
-    <section>
-      <h2 class="product-details__heading">Das sagen meine Kunden</h2>
-      <div class="wrapper-content">
-        <div class="row column--no-background">
-         <Review
-         icon={{ src: "/images/franz.webp", alt: "Kunde" }}
-         name="Franz Hofmann"
-         description="Ich bin von Philipps Deinem Day Trading Kurs sehr begeistert. Für mich war Day Trading früher immer suspekt, und die Sierra Chart-Software nur etwas für Profi-Trader. Weil der Preis so günstig war und ich mir Erkenntnisse für mein Swing-Trading erhoffte, habe ich den Kurs gebucht. Ich bin sehr beeindruckt über das umfangreiche Wissen, das in den Videos vom Day Trading Kurs vermittelt wird. Auch die Live-Trading-Webinare bieten einen großen Mehrwert. Mit der Sierra Chart-Software komme ich mittlerweile auch schon klar, und ich staune über den Vorteil durch die unterschiedlichen Betrachtungen der Handelsvolumen. Deine offene Aussage, dass Day-Trading eine Fähigkeit ist, die man erst erlernen muss, und nicht einfach nur ein System, das man nachhandelt, war für mich ein „Augenöffner“. Vielen Dank auch für Deine rasche Hilfe bei Problemen oder Fragen. Ich habe mittlerweile 17 Tage im Demo-Trading gehandelt und bin zuversichtlich, dass meine Equity-Kurve nachhaltig ansteigt."
-         />
-         <Review
-         icon={{ src: "/images/denny.webp", alt: "Kunde" }}
-         name="Denny Guhlmann"
-         description="Mit viel Leidenschaft, Professionalität hat Philipp hier einen Kurs zusammengestellt, der absolut auch für Anfänger geeignet ist. Preis/Leistung passen hier echt zusammen. Der persönliche Support ist überragend, alle Fragen wurde entweder über Discord oder auch persönlich beantwortet. Für eine effiziente Erläuterung werden Screenshot und Video Nachrichten verwendet, sodass es wirklich jeder nachvollziehen kann. Der Kurs wird ständig erweitert und an die Bedürfnisse der Schüler angepasst. Es findet ein regelmäßiger Austausch zwischen Teilnehmer und Philipp statt. Seine sympathische, entspannte Art machen ihn zu einem perfekten Lehrmeister. Ich habe sehr viel an Hintergrundwissen dazugelernt, was auch in weiteren Strategien Anwendung findet."
-         />
+  <!-- REVIEWS -->
+  <section>
+    <h2 class="product-details__heading">Das sagen meine Kunden</h2>
+    <div class="wrapper-content">
+      <div class="row column--no-background">
+        <Review
+          icon={{ src: "/images/franz.webp", alt: "Kunde" }}
+          name="Franz Hofmann"
+          description="Ich bin von Philipps Deinem Day Trading Kurs sehr begeistert. Für mich war Day Trading früher immer suspekt, und die Sierra Chart-Software nur etwas für Profi-Trader. Weil der Preis so günstig war und ich mir Erkenntnisse für mein Swing-Trading erhoffte, habe ich den Kurs gebucht. Ich bin sehr beeindruckt über das umfangreiche Wissen, das in den Videos vom Day Trading Kurs vermittelt wird. Auch die Live-Trading-Webinare bieten einen großen Mehrwert. Mit der Sierra Chart-Software komme ich mittlerweile auch schon klar, und ich staune über den Vorteil durch die unterschiedlichen Betrachtungen der Handelsvolumen. Deine offene Aussage, dass Day-Trading eine Fähigkeit ist, die man erst erlernen muss, und nicht einfach nur ein System, das man nachhandelt, war für mich ein „Augenöffner“. Vielen Dank auch für Deine rasche Hilfe bei Problemen oder Fragen. Ich habe mittlerweile 17 Tage im Demo-Trading gehandelt und bin zuversichtlich, dass meine Equity-Kurve nachhaltig ansteigt."
+        />
+        <Review
+          icon={{ src: "/images/denny.webp", alt: "Kunde" }}
+          name="Denny Guhlmann"
+          description="Mit viel Leidenschaft, Professionalität hat Philipp hier einen Kurs zusammengestellt, der absolut auch für Anfänger geeignet ist. Preis/Leistung passen hier echt zusammen. Der persönliche Support ist überragend, alle Fragen wurde entweder über Discord oder auch persönlich beantwortet. Für eine effiziente Erläuterung werden Screenshot und Video Nachrichten verwendet, sodass es wirklich jeder nachvollziehen kann. Der Kurs wird ständig erweitert und an die Bedürfnisse der Schüler angepasst. Es findet ein regelmäßiger Austausch zwischen Teilnehmer und Philipp statt. Seine sympathische, entspannte Art machen ihn zu einem perfekten Lehrmeister. Ich habe sehr viel an Hintergrundwissen dazugelernt, was auch in weiteren Strategien Anwendung findet."
+        />
+      </div>
+    </div>
+
+    <section class="wrapper-content">
+      <div class="add-margin-bottom">
+        <h2 class="column__heading">Ein Videokurs mit 13 Modulen</h2>
+        <div class="grid grid-3fr">
+          <ModuleCard
+            title="Deine professionelle Trading-Karriere beginnt"
+            icon={{
+              src: "/images/space-shuttle.svg",
+              alt: "Start icon",
+              width: "70",
+            }}
+            listItems={[
+              "Einführung",
+              "Wer sind die großen Marktteilnehmer?",
+              "Warum Futures und nicht FOREX oder CFD's traden?",
+              "Handelszeitplan und Zusammenfassung",
+            ]}
+          />
+
+          <ModuleCard
+            title="Markttheorie und Rohdaten"
+            icon={{
+              src: "/images/inbox.svg",
+              alt: "Put data in icon",
+              width: "70",
+            }}
+            listItems={[
+              "Theorie des Marktes - Warum bewegt sich der Preis?",
+              "Orderbuch (DOM)",
+              "Live Beispiel",
+              "Aufgabe: Übertrage Angebot und Nachfrage auf dein reales Leben",
+              "Zusammenfassung und nächste Schritte",
+            ]}
+          />
+
+          <ModuleCard
+            title="Tools und Downloads"
+            icon={{
+              src: "/images/lunch.svg",
+              alt: "Put data in icon",
+              width: "120",
+            }}
+            listItems={[
+              "Sierra Chart Einrichtung",
+              "Sierra Chart Setup (im Wert von 2.000$)",
+              "Demo-Trading",
+              "Aufgabe: Handel mit dem DOM",
+              "Zusammenfassung und nächste Schritte",
+            ]}
+          />
+
+          <ModuleCard
+            title="Market-Profil (TPO Charts)"
+            icon={{
+              src: "/images/pixel.svg",
+              alt: "Put data in icon",
+              width: "70",
+            }}
+            listItems={[
+              "Was ist das Ziel des Market Profile?",
+              "Profilformen",
+              "Wann sollte man Profile zusammenführen?",
+              "Wann werden Profile geteilt?",
+              "Das ultimative Ziel",
+              "Aufgabe: Schaue dir den aktuellen Markt an und verschmelze oder teile die Volumenprofile der letzten 2 Monate",
+            ]}
+          />
+
+          <ModuleCard
+            title="Volumenprofil"
+            icon={{
+              src: "/images/candle-chart.svg",
+              alt: "Candle chart icon",
+              width: "70",
+            }}
+            listItems={[
+              "Volumen Profil vs. Market Profile",
+              "Volumen Point of Control (VPOC)",
+              "Volumenprofil Statisch vs. Dynamisch",
+              "Aufgabe: Schaue dir die Unterschiede zwischen dem Market Profile und dem Volumenprofil der letzten 2 Monate an",
+            ]}
+          />
+
+          <ModuleCard
+            title="Kontext und Trading-Setup"
+            icon={{
+              src: "/images/laptop.svg",
+              alt: "Put data in icon",
+              width: "100",
+            }}
+            listItems={[
+              "Was ist Kontext und warum ist er so wichtig?",
+              "Marktprofil Bedingungen und Rhythmus (DVA)",
+              "Zusammengesetzter Wertbereich (CVA) / Linie im Sand (LIS)",
+              "Aufgabe: Profile zusammenführen und trainieren, um deine Hypothese zu definieren (mind. 2 Monate)",
+            ]}
+          />
+
+          <ModuleCard
+            title="Footprint Chart"
+            icon={{
+              src: "/images/foot-print.svg",
+              alt: "Put data in icon",
+              width: "70",
+            }}
+            listItems={["Einführung", "Einstellungen und was du siehst", "Was ist am wichtigsten?", "Schlussfolgerung"]}
+          />
+
+          <ModuleCard
+            title="Cumulative Delta"
+            icon={{
+              src: "/images/calculator.svg",
+              alt: "Calculator icon",
+              width: "60",
+            }}
+            listItems={[
+              "Einführung - Was ist Cumulative Delta?",
+              "Warum verwenden wir es?",
+              "Was kannst du sehen?",
+              "Schlussfolgerung",
+            ]}
+          />
+
+          <ModuleCard
+            title="Alles zusammenfügen"
+            icon={{
+              src: "/images/lego.svg",
+              alt: "Laptop icon",
+              width: "50",
+            }}
+            listItems={[
+              "Kontext und Trading-Setup - das ultimative Ziel",
+              "Aufgabe: Demo-Trading, bis du mindestens 20 Handelstage lang konstant erfolgreich bist",
+            ]}
+          />
+
+          <ModuleCard
+            title="Risiko- und Geldmanagement"
+            icon={{
+              src: "/images/monster.svg",
+              alt: "Put data in icon",
+              width: "70",
+            }}
+            listItems={[
+              "Regel Nummer eins! - Handle immer mit einem festen Stop-Loss!",
+              "Regel Nummer zwei! - Verschiebe niemals deinen ursprünglichen Stop-Loss!",
+              "Versuche immer, dein Risiko auf Break Even + 1 Tick zu reduzieren",
+              "Das Einzige, was du kontrollieren kannst, ist dein Risiko. - Die Performance kommt von selbst. 😊",
+            ]}
+          />
+
+          <ModuleCard
+            title="Einstiegs- und Ausstiegsstrategie"
+            icon={{
+              src: "/images/drill.svg",
+              alt: "Drill icon",
+              width: "70",
+            }}
+            listItems={[
+              "Einführung - Was ist der Kontext",
+              "Mit dem Trend handeln",
+              "Wie handelt man Seitwärtsmärkte?",
+              "Zusammenfassung",
+            ]}
+          />
+
+          <ModuleCard
+            title="Positionsmanagement"
+            icon={{
+              src: "/images/coins.svg",
+              alt: "Put data in icon",
+              width: "60",
+            }}
+            listItems={[
+              "Wann sollte man Gewinne mitnehmen?",
+              "Wann sollte man seine Risiken reduzieren?",
+              "Wann sollte man alle Positionen schließen?",
+            ]}
+          />
+
+          <ModuleCard
+            title="Handelsstatistiken"
+            icon={{
+              src: "/images/presentation.svg",
+              alt: "Put data in icon",
+              width: "70",
+            }}
+            listItems={[
+              "Ich benutze und empfehle TradesViz.com",
+              "Wie nutzt man die Handelsstatistiken?",
+              "Wie verbessert man damit seine Handelsergebnisse?",
+            ]}
+          />
+
+          <ModuleCard
+            title="Bonus Trading-Psychologie"
+            icon={{
+              src: "/images/law.svg",
+              alt: "Put data in icon",
+              width: "70",
+            }}
+            listItems={["Was ist die richtige Denkweise?", "Wie bekommt man sie?"]}
+          />
         </div>
+      </div>
     </section>
 
-  <section class="wrapper-content">
-    <div class="add-margin-bottom">
-      <h2 class="column__heading">Ein Videokurs mit 13 Modulen</h2>
-      <div class="grid grid-3fr">
-        <ModuleCard
-          title="Deine professionelle Trading-Karriere beginnt"
-          icon={{
-            src: "/images/space-shuttle.svg",
-            alt: "Start icon",
-            width: "70",
-          }}
-          listItems={[
-            "Einführung",
-            "Wer sind die großen Marktteilnehmer?",
-            "Warum Futures und nicht FOREX oder CFD's traden?",
-            "Handelszeitplan und Zusammenfassung",
-          ]}
-        />
-
-        <ModuleCard
-          title="Markttheorie und Rohdaten"
-          icon={{
-            src: "/images/inbox.svg",
-            alt: "Put data in icon",
-            width: "70",
-          }}
-          listItems={[
-            "Theorie des Marktes - Warum bewegt sich der Preis?",
-            "Orderbuch (DOM)",
-            "Live Beispiel",
-            "Aufgabe: Übertrage Angebot und Nachfrage auf dein reales Leben",
-            "Zusammenfassung und nächste Schritte",
-          ]}
-        />
-
-        <ModuleCard
-          title="Tools und Downloads"
-          icon={{
-            src: "/images/lunch.svg",
-            alt: "Put data in icon",
-            width: "120",
-          }}
-          listItems={[
-            "Sierra Chart Einrichtung",
-            "Sierra Chart Setup (im Wert von 2.000$)",
-            "Demo-Trading",
-            "Aufgabe: Handel mit dem DOM",
-            "Zusammenfassung und nächste Schritte",
-          ]}
-        />
-
-        <ModuleCard
-          title="Market-Profil (TPO Charts)"
-          icon={{
-            src: "/images/pixel.svg",
-            alt: "Put data in icon",
-            width: "70",
-          }}
-          listItems={[
-            "Was ist das Ziel des Market Profile?",
-            "Profilformen",
-            "Wann sollte man Profile zusammenführen?",
-            "Wann werden Profile geteilt?",
-            "Das ultimative Ziel",
-            "Aufgabe: Schaue dir den aktuellen Markt an und verschmelze oder teile die Volumenprofile der letzten 2 Monate",
-          ]}
-        />
-
-        <ModuleCard
-          title="Volumenprofil"
-          icon={{
-            src: "/images/candle-chart.svg",
-            alt: "Candle chart icon",
-            width: "70",
-          }}
-          listItems={[
-            "Volumen Profil vs. Market Profile",
-            "Volumen Point of Control (VPOC)",
-            "Volumenprofil Statisch vs. Dynamisch",
-            "Aufgabe: Schaue dir die Unterschiede zwischen dem Market Profile und dem Volumenprofil der letzten 2 Monate an",
-          ]}
-        />
-
-        <ModuleCard
-          title="Kontext und Trading-Setup"
-          icon={{
-            src: "/images/laptop.svg",
-            alt: "Put data in icon",
-            width: "100",
-          }}
-          listItems={[
-            "Was ist Kontext und warum ist er so wichtig?",
-            "Marktprofil Bedingungen und Rhythmus (DVA)",
-            "Zusammengesetzter Wertbereich (CVA) / Linie im Sand (LIS)",
-            "Aufgabe: Profile zusammenführen und trainieren, um deine Hypothese zu definieren (mind. 2 Monate)",
-          ]}
-        />
-
-        <ModuleCard
-          title="Footprint Chart"
-          icon={{
-            src: "/images/foot-print.svg",
-            alt: "Put data in icon",
-            width: "70",
-          }}
-          listItems={["Einführung", "Einstellungen und was du siehst", "Was ist am wichtigsten?", "Schlussfolgerung"]}
-        />
-
-        <ModuleCard
-          title="Cumulative Delta"
-          icon={{
-            src: "/images/calculator.svg",
-            alt: "Calculator icon",
-            width: "60",
-          }}
-          listItems={[
-            "Einführung - Was ist Cumulative Delta?",
-            "Warum verwenden wir es?",
-            "Was kannst du sehen?",
-            "Schlussfolgerung",
-          ]}
-        />
-
-        <ModuleCard
-          title="Alles zusammenfügen"
-          icon={{
-            src: "/images/lego.svg",
-            alt: "Laptop icon",
-            width: "50",
-          }}
-          listItems={[
-            "Kontext und Trading-Setup - das ultimative Ziel",
-            "Aufgabe: Demo-Trading, bis du mindestens 20 Handelstage lang konstant erfolgreich bist",
-          ]}
-        />
-
-        <ModuleCard
-          title="Risiko- und Geldmanagement"
-          icon={{
-            src: "/images/monster.svg",
-            alt: "Put data in icon",
-            width: "70",
-          }}
-          listItems={[
-            "Regel Nummer eins! - Handle immer mit einem festen Stop-Loss!",
-            "Regel Nummer zwei! - Verschiebe niemals deinen ursprünglichen Stop-Loss!",
-            "Versuche immer, dein Risiko auf Break Even + 1 Tick zu reduzieren",
-            "Das Einzige, was du kontrollieren kannst, ist dein Risiko. - Die Performance kommt von selbst. 😊",
-          ]}
-        />
-
-        <ModuleCard
-          title="Einstiegs- und Ausstiegsstrategie"
-          icon={{
-            src: "/images/drill.svg",
-            alt: "Drill icon",
-            width: "70",
-          }}
-          listItems={[
-            "Einführung - Was ist der Kontext",
-            "Mit dem Trend handeln",
-            "Wie handelt man Seitwärtsmärkte?",
-            "Zusammenfassung",
-          ]}
-        />
-
-        <ModuleCard
-          title="Positionsmanagement"
-          icon={{
-            src: "/images/coins.svg",
-            alt: "Put data in icon",
-            width: "60",
-          }}
-          listItems={[
-            "Wann sollte man Gewinne mitnehmen?",
-            "Wann sollte man seine Risiken reduzieren?",
-            "Wann sollte man alle Positionen schließen?",
-          ]}
-        />
-
-        <ModuleCard
-          title="Handelsstatistiken"
-          icon={{
-            src: "/images/presentation.svg",
-            alt: "Put data in icon",
-            width: "70",
-          }}
-          listItems={[
-            "Ich benutze und empfehle TradesViz.com",
-            "Wie nutzt man die Handelsstatistiken?",
-            "Wie verbessert man damit seine Handelsergebnisse?",
-          ]}
-        />
-
-        <ModuleCard
-          title="Bonus Trading-Psychologie"
-          icon={{
-            src: "/images/law.svg",
-            alt: "Put data in icon",
-            width: "70",
-          }}
-          listItems={["Was ist die richtige Denkweise?", "Wie bekommt man sie?"]}
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- Price of Coaching -->
-  <section>
-    <div class="box--blue-background">
-      <div class="wrapper-content">
-        <h2 class="box__heading--white"></h2>
-
-        <PriceCard
-          title="Werde Day Trader"
-          price="1900 € inkl. MwSt"
-          description="Du bekommst 13 Lernmodule, Sierra Chart Book, Sierra Chart Settings und wöchentliche Live Trading Sessions."
-          button={{
-            text: "Jetzt kaufen",
-            href: "https://my.inloopo.com/checkout/Course/24936",
-            target: "target__blank",
-          }}
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- HWY US -->
-  <section>
-    <BackgroundImage
-      title="Man lernt, wenn man scheitert, aufsteht und weitermacht"
-      description="Ich habe jahrelang mit den falschen Strategien und einer falschen Finanzausbildung gehandelt. Ich habe viele Fehler gemacht, aber auch eine Menge gelernt. Im Jahr 2020 habe ich meine zweijährige Ausbildung zum Futures Trader abgeschlossen. Seitdem sehe ich die Märkte aus einer professionellen Perspektive. Inzwischen handel ich 3 Strategien auf verschiedenen Konten. Die am besten funktionierende Strategie ist diese Daytrading Strategie, dich ich dir in diesem Kurs beibringe."
-      button={{
-        text: "Jetzt kaufen",
-        href: "https://my.inloopo.com/checkout/Course/24936",
-        target: "target__blank",
-      }}
-      backgroundImageClass="secondary-teaser__course"
-      textColorClass="light"
-    />
-  </section>
-
-  <!-- CONTENT FAQ SECTION -->
-  <div class="wrapper-content">
+    <!-- Price of Coaching -->
     <section>
-      <div class="faq__container">
-        <h2 class="faq__heading--center">FAQs</h2>
-        <div class="accordion">
-          <div class="accordion-item">
-            <a>Was unterscheidet mich von anderen?</a>
-            <div class="content">
-              <p>
-                Ich habe den Handel an den Finanzmärkten völlig falsch begonnen. Denn ich dachte, es sei einfach und
-                jeder könne es mit nur ein paar Minuten am Tag machen. Ich habe von 2008 bis 2021 gebaucht um meinen
-                Handelsansatz und auch in meinen Ergebnissen konsistent zu werden. Mit diesen Daytrading Kurs gebe ich
-                dir mein ganzes Wissen weiter und zeige dir Fallstricke, die du vermeiden solltest, um ein erfolgreicher
-                Trader zu werden.
-              </p>
-              <p>
-                Außerdem zeigen 99% der Trading-Coaches nicht ihre Live-Trading-Statistik und Ergebnisse über einen
-                langen Zeitraum. Aus diesem Grund habe ich an der Futures World Cup Trading Championship 2021-2022
-                teilgenommen und mit einer Performance von 64,1 % den 5. Platz belegt.
-              </p>
-              <p>
-                Sieh dir meinen <a class="link" href="https://www.youtube.com/@inloopo" target="_blank">YouTube Kanal</a
-                > an, um mehr über mich zu erfahren.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Ich habe wenig oder gar keine Erfahrung. Werde ich Schwierigkeiten haben?</a>
-            <div class="content">
-              <p>
-                Für diejenigen, die keine Handelserfahrung haben, wird es sehr intensiv sein. Denn du musst alles von
-                Grund auf lernen. Aber das ist auch eine Chance um alles von Anfang an richtig zu lernen.
-              </p>
-              <p>
-                Beispielsweise wird du den Handel mit Futures lernen und nicht durch CFDs oder Knockout-Zertifikate auf
-                den falschen Weg zum Erfolg geschickt.
-              </p>
-              <p>
-                Du wird alles lernen, was ein professioneller Trader wissen sollte und wie die großen Marktteilnehmer
-                die Aktienmärkte im Intraday Bereich sehen.
-              </p>
-              <p>
-                Wenn du keinerlei Handelserfahrung hast, aber begeistert und motiviert bist alles zu lernen, werde ich
-                dir meine ganze Unterstützung geben um erfolgreich zu werden. Aber du musst dir Zeit nehmen und viel
-                Geduld und Kraft haben um alles zu verinnerlichen und zu lernen.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Muss ich den ganzen Tag vor meinem Bildschirm sitzen?</a>
-            <div class="content">
-              <p>
-                Nein. Der Name „Daytrading“ bedeutet nicht, dass du den ganzen Tag vor dem Bildschirm sitzen musst. Wie
-                bereits erwähnt handel ich nur 2-3 Stunden am Abend, weil es perfekt in mein Leben passt. Andere
-                Menschen handeln lieber früher am Tag, was auch okay ist. Jeder sollte ein Zeitfenster von mindestens 2
-                Stunden in seinem Leben finden um das Trading durchzuführen.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Wie viel Zeit muss ich pro Tag für den Kurs aufwenden?</a>
-            <div class="content">
-              <p>
-                Du kannst den Kurs jederzeit und von jedem Ort der Welt aus absolvieren. Der Kurs ist auf einer weltweit
-                führenden Lernplattform aufgebaut, die völlig unabhängig von meiner Webseite ist. Du erhältst einen
-                privaten Login-Bereich mit einem Benutzernamen und einem Passwort und hast rund um die Uhr Zugang zum
-                Kursmaterial.
-              </p>
-              <p>
-                Ich empfehle mindestens eine Stunde pro Tag für den Kurs und das Training. Je mehr, desto besser, denke
-                ich. Es gibt viele Informationen, die vielleicht neu sind, und jeder sollte seinen eigenen Rhythmus und
-                sein Tempo finden um alles zu verinnerlichen.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Wie lange habe ich Zugriff auf das Kursmaterial?</a>
-            <div class="content">
-              <p>Du hast unbegrenzten Zugang zu dem Kursmaterial.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Wird der Kurs häufig aktualisiert werden?</a>
-            <div class="content">
-              <p>
-                Ja, der Kurs wird sich im Laufe der Zeit weiterentwickeln und wachsen. Ich werde weiterhin wertvolle
-                Inhalte ohne zusätzliche Kosten hinzufügen.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Bietest du außerhalb des Kurses Unterstützung an oder bin ich auf mich allein gestellt?</a>
-            <div class="content">
-              <p>
-                In den ersten 3 Monaten nach deinem Kauf hast du Zugang zu meinen wöchentlichen Live-Trading Webinaren.
-                Dor beantworte ich alle Fragen und du kannst mir beim Trading über die Schulter schauen. Du kannst mir
-                auch eine E-Mail schicken. Nach den ersten 3 Monaten kannst du führ einen geringen monatlichen Beitrag
-                meine Live-Webinare abonnieren.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Welche Märkte handelst du?</a>
-            <div class="content">
-              <p>
-                Ich Handel hauptsächlich die liquidesten Märkte wie den S&P 500 Indes [ES], den NASDQ Index [NQ], Rohöl
-                [CL] und andere.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Muss ich ein großes Konto haben, um den Kurs zu beginnen?</a>
-            <div class="content">
-              <p>
-                Ich empfehle eine Mindestkontogröße von 5000 US-Dollar. Je größer das Konto ist, desto einfach er ist
-                das Risiko- und Moneymanagement man kann flexibler traden.
-              </p>
-              <p>
-                Du kannst den Kurs aber auch ohne eigenes Trading-Konto beginnen und alles im Demohandel lernen. Sobald
-                du alles verinnerlicht hast und im Demohandel über mehrere Wochen profitabel bist kannst du dich bei
-                einer Prop-Trading-Firma für ein Fremdgeldkonto qualifizieren. Somit ist kein eigenes Trading-Konto mit
-                eigenem Geld notwendig.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Wie viel Geld muss ich für die Trading Software und die Live-Daten zahlen?</a>
-            <div class="content">
-              <p>
-                Um den Kurs zu beginnen empfehle ich Sierra Chart zu verwenden. Sierra Chart kann 15 Tage lang kostenlos
-                getestet werden. Danach benötigst du verzögerte Daten um alle Aufgaben zu erledigen und um den
-                simulierten Demohandel zu starten.
-              </p>
-              <p>
-                Um den Kurs zu beenden benötigst du das Sierra Cahrt Paket 3 – Base Standard für 26 US-Dollar im Monat.
-              </p>
-              <p>
-                Sobald du den simulierten Demohandel abgeschlossen hast und bereit bist mit echtem Geld zu traden musst
-                du ein Upgrade auf Paket 11 für 46 US-Dollar pro Monat + Live Daten Abo (15 US-Dollar pro Monat)
-                durchführen.
-              </p>
-              <p>
-                Bitte prüfe die aktuellen Preise auf der <a
-                  href="https://www.sierrachart.com/index.php?page=doc/Packages.php"
-                  class="link"
-                  target="_blank">Sierra Chart Webseite</a
-                >.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a>Auf welcher Zeitebene oder in welchen Stil trade ich?</a>
-            <div class="content">
-              <p>
-                Ich trade normalerweise nur abends, wenn meine Kinder schlafen. Das passt perfekt in meinen
-                Lebensrhythmus. Was das Trading angeht versuche ich die intraday Wellen zu erwichen, die die Märkte mir
-                am Abend bieten. Das bedeutet, dass ich versuche einen guten Einstieg zu finden une ein paar Minuten bis
-                eine Stunde im Trade bleibe. Auf meinem Chart trade ich Volumenkerzen, die zeitunabhängig sind. Mehr
-                darüber warum ich das mache lernst du im Kurs. 😉
-              </p>
-            </div>
+      <div class="box--blue-background">
+        <div class="wrapper-content">
+          <h2 class="box__heading--white"></h2>
 
+          <PriceCard
+            title="Werde Day Trader"
+            price="1900 € inkl. MwSt"
+            description="Du bekommst 13 Lernmodule, Sierra Chart Book, Sierra Chart Settings und wöchentliche Live Trading Sessions."
+            button={{
+              text: "Jetzt kaufen",
+              href: "https://my.inloopo.com/checkout/Course/24936",
+              target: "target__blank",
+            }}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- HWY US -->
+    <section>
+      <BackgroundImage
+        title="Man lernt, wenn man scheitert, aufsteht und weitermacht"
+        description="Ich habe jahrelang mit den falschen Strategien und einer falschen Finanzausbildung gehandelt. Ich habe viele Fehler gemacht, aber auch eine Menge gelernt. Im Jahr 2020 habe ich meine zweijährige Ausbildung zum Futures Trader abgeschlossen. Seitdem sehe ich die Märkte aus einer professionellen Perspektive. Inzwischen handel ich 3 Strategien auf verschiedenen Konten. Die am besten funktionierende Strategie ist diese Daytrading Strategie, dich ich dir in diesem Kurs beibringe."
+        button={{
+          text: "Jetzt kaufen",
+          href: "https://my.inloopo.com/checkout/Course/24936",
+          target: "target__blank",
+        }}
+        backgroundImageClass="secondary-teaser__course"
+        textColorClass="light"
+      />
+    </section>
+
+    <!-- CONTENT FAQ SECTION -->
+    <div class="wrapper-content">
+      <section>
+        <div class="faq__container">
+          <h2 class="faq__heading--center">FAQs</h2>
+          <div class="accordion">
             <div class="accordion-item">
-              <a>Welchen Broker empfiehlst du?</a>
+              <a>Was unterscheidet mich von anderen?</a>
               <div class="content">
                 <p>
-                  Ich empfehle prinzipielle keine Broker. Die Wahl sollst du selbst treffen. Ich selbst trade bei Dorman
-                  Trading, denn dort gibt es meiner Meinung nach die günstigsten Ordergebühren. In meinem freien <a
-                    href="https://discord.gg/7tHkT824"
-                    class="link"
-                    target="_blank">Discord Channel</a
-                  > findest du mehr Informationen über Ordergebühren und Dorman Trading.
+                  Ich habe den Handel an den Finanzmärkten völlig falsch begonnen. Denn ich dachte, es sei einfach und
+                  jeder könne es mit nur ein paar Minuten am Tag machen. Ich habe von 2008 bis 2021 gebaucht um meinen
+                  Handelsansatz und auch in meinen Ergebnissen konsistent zu werden. Mit diesen Daytrading Kurs gebe ich
+                  dir mein ganzes Wissen weiter und zeige dir Fallstricke, die du vermeiden solltest, um ein
+                  erfolgreicher Trader zu werden.
                 </p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <a>Wo kann ich deine aktuelle Trading Statistik einsehen?</a>
-              <div class="content">
                 <p>
-                  Du kannst meine aktuelle Trading Statistik auf meinem <a
-                    href="https://www.tradesviz.com/viewstats/inloopo"
-                    target="_blank"
-                    class="link">TradesViz</a
-                  > Konto oder auf meinem <a href="https://www.youtube.com/@inloopo" target="_blank" class="link"
+                  Außerdem zeigen 99% der Trading-Coaches nicht ihre Live-Trading-Statistik und Ergebnisse über einen
+                  langen Zeitraum. Aus diesem Grund habe ich an der Futures World Cup Trading Championship 2021-2022
+                  teilgenommen und mit einer Performance von 64,1 % den 5. Platz belegt.
+                </p>
+                <p>
+                  Sieh dir meinen <a class="link" href="https://www.youtube.com/@inloopo" target="_blank"
                     >YouTube Kanal</a
-                  > mitverfolgen.
+                  > an, um mehr über mich zu erfahren.
                 </p>
               </div>
             </div>
             <div class="accordion-item">
-              <a>Ich habe noch Fragen. Kann ich persönlich mit dir sprechen?</a>
+              <a>Ich habe wenig oder gar keine Erfahrung. Werde ich Schwierigkeiten haben?</a>
               <div class="content">
                 <p>
-                  Klar, schick mir einfach eine E-Mail an info@inloopo.com oder kontaktiere mich über Telegram unter
-                  +4915736977448.
+                  Für diejenigen, die keine Handelserfahrung haben, wird es sehr intensiv sein. Denn du musst alles von
+                  Grund auf lernen. Aber das ist auch eine Chance um alles von Anfang an richtig zu lernen.
                 </p>
+                <p>
+                  Beispielsweise wird du den Handel mit Futures lernen und nicht durch CFDs oder Knockout-Zertifikate
+                  auf den falschen Weg zum Erfolg geschickt.
+                </p>
+                <p>
+                  Du wird alles lernen, was ein professioneller Trader wissen sollte und wie die großen Marktteilnehmer
+                  die Aktienmärkte im Intraday Bereich sehen.
+                </p>
+                <p>
+                  Wenn du keinerlei Handelserfahrung hast, aber begeistert und motiviert bist alles zu lernen, werde ich
+                  dir meine ganze Unterstützung geben um erfolgreich zu werden. Aber du musst dir Zeit nehmen und viel
+                  Geduld und Kraft haben um alles zu verinnerlichen und zu lernen.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a>Muss ich den ganzen Tag vor meinem Bildschirm sitzen?</a>
+              <div class="content">
+                <p>
+                  Nein. Der Name „Daytrading“ bedeutet nicht, dass du den ganzen Tag vor dem Bildschirm sitzen musst.
+                  Wie bereits erwähnt handel ich nur 2-3 Stunden am Abend, weil es perfekt in mein Leben passt. Andere
+                  Menschen handeln lieber früher am Tag, was auch okay ist. Jeder sollte ein Zeitfenster von mindestens
+                  2 Stunden in seinem Leben finden um das Trading durchzuführen.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a>Wie viel Zeit muss ich pro Tag für den Kurs aufwenden?</a>
+              <div class="content">
+                <p>
+                  Du kannst den Kurs jederzeit und von jedem Ort der Welt aus absolvieren. Der Kurs ist auf einer
+                  weltweit führenden Lernplattform aufgebaut, die völlig unabhängig von meiner Webseite ist. Du erhältst
+                  einen privaten Login-Bereich mit einem Benutzernamen und einem Passwort und hast rund um die Uhr
+                  Zugang zum Kursmaterial.
+                </p>
+                <p>
+                  Ich empfehle mindestens eine Stunde pro Tag für den Kurs und das Training. Je mehr, desto besser,
+                  denke ich. Es gibt viele Informationen, die vielleicht neu sind, und jeder sollte seinen eigenen
+                  Rhythmus und sein Tempo finden um alles zu verinnerlichen.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a>Wie lange habe ich Zugriff auf das Kursmaterial?</a>
+              <div class="content">
+                <p>Du hast unbegrenzten Zugang zu dem Kursmaterial.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a>Wird der Kurs häufig aktualisiert werden?</a>
+              <div class="content">
+                <p>
+                  Ja, der Kurs wird sich im Laufe der Zeit weiterentwickeln und wachsen. Ich werde weiterhin wertvolle
+                  Inhalte ohne zusätzliche Kosten hinzufügen.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a>Bietest du außerhalb des Kurses Unterstützung an oder bin ich auf mich allein gestellt?</a>
+              <div class="content">
+                <p>
+                  In den ersten 3 Monaten nach deinem Kauf hast du Zugang zu meinen wöchentlichen Live-Trading
+                  Webinaren. Dor beantworte ich alle Fragen und du kannst mir beim Trading über die Schulter schauen. Du
+                  kannst mir auch eine E-Mail schicken. Nach den ersten 3 Monaten kannst du führ einen geringen
+                  monatlichen Beitrag meine Live-Webinare abonnieren.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a>Welche Märkte handelst du?</a>
+              <div class="content">
+                <p>
+                  Ich Handel hauptsächlich die liquidesten Märkte wie den S&P 500 Indes [ES], den NASDQ Index [NQ],
+                  Rohöl [CL] und andere.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a>Muss ich ein großes Konto haben, um den Kurs zu beginnen?</a>
+              <div class="content">
+                <p>
+                  Ich empfehle eine Mindestkontogröße von 5000 US-Dollar. Je größer das Konto ist, desto einfach er ist
+                  das Risiko- und Moneymanagement man kann flexibler traden.
+                </p>
+                <p>
+                  Du kannst den Kurs aber auch ohne eigenes Trading-Konto beginnen und alles im Demohandel lernen.
+                  Sobald du alles verinnerlicht hast und im Demohandel über mehrere Wochen profitabel bist kannst du
+                  dich bei einer Prop-Trading-Firma für ein Fremdgeldkonto qualifizieren. Somit ist kein eigenes
+                  Trading-Konto mit eigenem Geld notwendig.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a>Wie viel Geld muss ich für die Trading Software und die Live-Daten zahlen?</a>
+              <div class="content">
+                <p>
+                  Um den Kurs zu beginnen empfehle ich Sierra Chart zu verwenden. Sierra Chart kann 15 Tage lang
+                  kostenlos getestet werden. Danach benötigst du verzögerte Daten um alle Aufgaben zu erledigen und um
+                  den simulierten Demohandel zu starten.
+                </p>
+                <p>
+                  Um den Kurs zu beenden benötigst du das Sierra Cahrt Paket 3 – Base Standard für 26 US-Dollar im
+                  Monat.
+                </p>
+                <p>
+                  Sobald du den simulierten Demohandel abgeschlossen hast und bereit bist mit echtem Geld zu traden
+                  musst du ein Upgrade auf Paket 11 für 46 US-Dollar pro Monat + Live Daten Abo (15 US-Dollar pro Monat)
+                  durchführen.
+                </p>
+                <p>
+                  Bitte prüfe die aktuellen Preise auf der <a
+                    href="https://www.sierrachart.com/index.php?page=doc/Packages.php"
+                    class="link"
+                    target="_blank">Sierra Chart Webseite</a
+                  >.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <a>Auf welcher Zeitebene oder in welchen Stil trade ich?</a>
+              <div class="content">
+                <p>
+                  Ich trade normalerweise nur abends, wenn meine Kinder schlafen. Das passt perfekt in meinen
+                  Lebensrhythmus. Was das Trading angeht versuche ich die intraday Wellen zu erwichen, die die Märkte
+                  mir am Abend bieten. Das bedeutet, dass ich versuche einen guten Einstieg zu finden une ein paar
+                  Minuten bis eine Stunde im Trade bleibe. Auf meinem Chart trade ich Volumenkerzen, die zeitunabhängig
+                  sind. Mehr darüber warum ich das mache lernst du im Kurs. 😉
+                </p>
+              </div>
+
+              <div class="accordion-item">
+                <a>Welchen Broker empfiehlst du?</a>
+                <div class="content">
+                  <p>
+                    Ich empfehle prinzipielle keine Broker. Die Wahl sollst du selbst treffen. Ich selbst trade bei
+                    Dorman Trading, denn dort gibt es meiner Meinung nach die günstigsten Ordergebühren. In meinem
+                    freien <a href="https://discord.gg/7tHkT824" class="link" target="_blank">Discord Channel</a> findest
+                    du mehr Informationen über Ordergebühren und Dorman Trading.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <a>Wo kann ich deine aktuelle Trading Statistik einsehen?</a>
+                <div class="content">
+                  <p>
+                    Du kannst meine aktuelle Trading Statistik auf meinem <a
+                      href="https://www.tradesviz.com/viewstats/inloopo"
+                      target="_blank"
+                      class="link">TradesViz</a
+                    > Konto oder auf meinem <a href="https://www.youtube.com/@inloopo" target="_blank" class="link"
+                      >YouTube Kanal</a
+                    > mitverfolgen.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <a>Ich habe noch Fragen. Kann ich persönlich mit dir sprechen?</a>
+                <div class="content">
+                  <p>
+                    Klar, schick mir einfach eine E-Mail an info@inloopo.com oder kontaktiere mich über Telegram unter
+                    +4915736977448.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <Button
-      link="https://my.inloopo.com/checkout/Course/24936"
-      text="Jetzt kaufen"
-      alignClass="button--align-center"
-      target="target__blank"
-    />
+      <Button
+        link="https://my.inloopo.com/checkout/Course/24936"
+        text="Jetzt kaufen"
+        alignClass="button--align-center"
+        target="target__blank"
+      />
 
-    <!-- SCRIPTS -->
-    <script src="/scripts/faq.js" defer></script>
-  </div>
+      <!-- SCRIPTS -->
+      <script src="/scripts/faq.js" defer></script>
+    </div>
+  </section>
 </MainLayout>
