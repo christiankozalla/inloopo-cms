@@ -89,6 +89,45 @@ const { title, opengraph, locale, canonical = new URL(Astro.url.pathname, Astro.
     <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <slot name="head" />
+
+    <script>
+      // Load lite-youtube-embend JS & CSS lazily (https://www.npmjs.com/package/lite-youtube-embed)
+      // Copied to public dir with 'cp node_modules/lite-youtube-embed/src/lite-yt-embed.js public/lite-youtube-embed/lite-yt-embed.js' (CSS respectively)
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Add stylesheet link to the head
+                const stylesheet = document.createElement("link");
+                stylesheet.rel = "stylesheet";
+                stylesheet.href = "/lite-youtube-embed/lite-yt-embed.css";
+                document.head.appendChild(stylesheet);
+
+                // Add script to the head
+                const script = document.createElement("script");
+                script.src = "/lite-youtube-embed/lite-yt-embed.js";
+                document.head.appendChild(script);
+
+                // Unobserve all observed elements
+                observer.disconnect();
+              }
+            });
+          },
+          {
+            root: null, // Use the viewport as the root
+            rootMargin: "0px 0px -80px 0px", // Trigger 80px before the element is in view
+            threshold: 0, // Trigger as soon as any part of the element is in view
+          },
+        );
+
+        // Observe all lite-youtube elements
+        const liteYouTubeElements = document.querySelectorAll("lite-youtube");
+        liteYouTubeElements.forEach((element) => {
+          observer.observe(element);
+        });
+      });
+    </script>
   </head>
   <body>
     <ReadingProgress />

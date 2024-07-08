@@ -29,11 +29,9 @@ export function generateVideoSitemap({ sitemapFilename, filter = () => true }) {
                 const xmlForEachPage = [];
                 for (const page of pages) {
                     const content = await readFile(fileURLToPath(page.indexFileUrl), { encoding: "utf-8" });
-                    page.iframes = extractIframes(content);
                     const videos = {};
-                    const videoIds = page.iframes.map((iframe) => extractVideoId(iframe.src));
-                    for (let i = 0; i < videoIds.length; i++) {
-                        const videoId = videoIds[i];
+                    const videosMeta = extractVideoMetaData(content);
+                    for (const { videoId, src } of videosMeta) {
                         try {
                             const res = await youtube.videos.list({
                                 part: "snippet",
@@ -43,7 +41,7 @@ export function generateVideoSitemap({ sitemapFilename, filter = () => true }) {
                             if (res.data.items.length && res.data.items[0]?.snippet) {
                                 videos[videoId] = { ...res.data.items[0] };
                                 videos[videoId].videoXml = videoXmlSnippet({
-                                    playerLoc: page.iframes[i].src,
+                                    playerLoc: src,
                                     ...res.data.items[0].snippet,
                                 });
                             }
@@ -100,27 +98,18 @@ function videoXmlSnippet({ title, playerLoc, publishedAt, channelId, description
     `;
 }
 
-// Function to extract video ID from YouTube iframe src URL
-function extractVideoId(iframeSrc) {
-    const match = iframeSrc.match(/\/embed\/([a-zA-Z0-9_-]+)/);
-    if (match && match.length >= 2) {
-        return match[1];
-    } else {
-        return null;
-    }
-}
-
-function extractIframes(htmlString) {
-    const iframeRegex = /<iframe[^>]+src=["']([^"']+)["'][^>]*>/gi;
-    const iframes = [];
+function extractVideoMetaData(htmlString) {
+    const ytPlayerElementRegex = /<lite-youtube[\s\S]*?videoid=["']([^"']+)["'][\s\S]*?>/gi;
+    const result = [];
     let match;
 
-    while ((match = iframeRegex.exec(htmlString)) !== null) {
-        const src = match[1];
-        iframes.push({ src });
+    while ((match = ytPlayerElementRegex.exec(htmlString)) !== null) {
+        const videoId = match[1];
+        const src = `https://youtube.com/watch?v=${videoId}`;
+        result.push({ videoId, src });
     }
 
-    return iframes;
+    return result;
 }
 
 //
