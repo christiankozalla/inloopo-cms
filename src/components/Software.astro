@@ -12,16 +12,17 @@ const { heading } = Astro.props;
   >
   <img src="/images/Logo_Tradesviz.png" alt="Logo Tradesviz" />
   <img src="/images/Logo_TradingView.png" alt="Logo TradingView" />
-  <img src="/images/Logo_Aktienfinder.png" alt="Logo Aktienfinder" />
 </div>
 
 <style>
   .grid__tools {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 70px 70px;
     justify-content: center;
     align-items: center;
-    gap: 0.8em;
+    gap: 1em;
+    margin: 0 24px;
   }
 
   .tools__heading {
@@ -32,6 +33,8 @@ const { heading } = Astro.props;
   @media only screen and (min-width: 40em) {
     .grid__tools {
       gap: 2em;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 100%;
     }
   }
 </style>
