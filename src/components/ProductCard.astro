@@ -3,9 +3,7 @@ const { icon, type, title, description, link, backgroundColorClass, linkColorCla
 ---
 
 <div
-  class={`product-card__container
-${backgroundColorClass}
-`}>
+  class={`product-card__container ${backgroundColorClass}`}>
   {
     icon && (
       <div class="product-card__icon-container">
@@ -13,9 +11,9 @@ ${backgroundColorClass}
       </div>
     )
   }
-  <div class="h6">{type}</div>
+  <div class="h6 mb-2">{type}</div>
   <h2 class="product-card__heading">{title}</h2>
-  <p class="product-card__text">
+  <p class="product-card__text mb-2">
     {description}
   </p>
   {
@@ -42,13 +40,13 @@ ${backgroundColorClass}
   }
 
   .product-card__container {
-    padding: 25px;
+    padding: 48px 48px 48px 25px;
     width: 50%;
     margin: 0 0.2em;
   }
 
   .product-card__heading {
-    margin-bottom: 0;
+    margin-bottom: 12px;
     text-align: left;
     line-height: 1.2;
   }
@@ -95,8 +93,8 @@ ${backgroundColorClass}
     border-bottom: 1px solid var(--text-color);
   }
 
-  .bolder {
-    font-weight: bolder;
+  .mb-2 {
+    margin-bottom: 8px;
   }
 
   @media only screen and (max-width: 759px) {
@@ -106,6 +104,8 @@ ${backgroundColorClass}
 
     .product-card__text {
       font-size: 18px;
+      margin-top: 28px;
+      margin-bottom: 28px;
     }
 
     .product-card__container {

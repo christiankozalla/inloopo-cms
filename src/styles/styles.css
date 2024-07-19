@@ -1276,6 +1276,10 @@ td {
   margin-top: 28px;
 }
 
+.bolder {
+  font-weight: bolder;
+}
+
 /* #Slider */
 
 .slider__container {

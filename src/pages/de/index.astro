@@ -24,12 +24,12 @@ import "../../styles/styles.css";
   canonical="https://www.inloopo.com/de/">
   <!-- Teaser -->
   <HeroShot
-    title="Mist, wieder Geld verloren!"
-    description="In meinen Kursen (Börsenampelkurs & Day Trading Kurs) und im 1:1 Coaching lernst du richtig zu investieren bzw. zu traden. Erfahre mehr darüber in meinen nächsten freien Webinaren."
+    title="Lerne Trading und Investieren"
+    description="Verwirkliche deine finanziellen Träume, indem du eine vernünftige Trading Strategie lernst und eine stabile Rendite erzielst."
     button={{
       href: "https://calendly.com/philipp-kozalla-call/30min",
       target: "_blank",
-      text: "Buche ein Zoom Call",
+      text: "Buche einen Zoom Call",
     }}
     backgroundImageClass="main-teaser__homepage"
     withIcon={false}
@@ -37,32 +37,14 @@ import "../../styles/styles.css";
 
   <!-- BENEFITS -->
   <BenefitCard
-    title="Vermehre dein Geld mit einer Strategie"
-    description="Mit meinem Angebot investierst du strategisch. Damit legst du dein Geld nicht nur erfolgreich an, sondern schlägst den Markt."
+    title="Wähle eine Strategie, die zu dir passt"
+    description="Ich selbst trade drei Strategien mit unterschiedlichem Zeitaufwand, Risiko und Rendite."
     icon={{
-      src: "/images/clock.svg",
-      alt: "Uhr Icon",
+      src: "/images/light-bulb.svg",
+      alt: "Glühlampe Icon",
       width: "280",
     }}
     columnReverseClass="img-left"
-  />
-  <BenefitCard
-    title="Lerne nur das nötigste, um profitabel zu sein"
-    description="Schluss mit Blabla. In meinen Produkten lernst du das, was du wirklich brauchst, um meine Strategien umzusetzen."
-    icon={{
-      src: "/images/light-bulb.svg",
-      alt: "Glühbirne Icon",
-      width: "280",
-    }}
-  />
-  <BenefitCard
-    title="Wähle eine Strategie, die zu dir passt"
-    description="Ich biete dir vier Strategien an. Sie unterscheiden sich im Zeitaufwand, Risiko und in der Rendite."
-    icon={{
-      src: "/images/strategie-dreieck.svg",
-      alt: "Ein Dreieck mit allen Strategien von inloopo",
-      width: "440",
-    }}
   />
 
   <!-- PRODUCTS -->
@@ -71,15 +53,30 @@ import "../../styles/styles.css";
       <div class="row">
         <ProductCard
           icon={{
+            src: "/images/pulse-circle.svg",
+            alt: "ein Bär und Stier",
+          }}
+          type="Trading 1-2 Std/Tag"
+          title="Daytrading Kurs"
+          description="In diesem Kurs lernst du professionelles Daytrading mit Futures. Hier lernst du, wie du Fremdwährungskonten kapitalisierst und konstante Gewinne erzielst."
+          link={{
+            href: "day-trading-kurs/",
+            text: "Zum Kurs",
+          }}
+          backgroundColorClass="accent-color"
+          linkColorClass="light-text-color"
+        />
+        <ProductCard
+          icon={{
             src: "/images/star-circle.svg",
             alt: "ein Ampel",
           }}
-          type="Individuell"
+          type="Swing-Trading 30 min/Tag"
           title="1-zu-1 Coaching"
-          description="Ich gestalte das Coaching nach deinen Interessen, Fähigkeiten und Zielvorgaben."
+          description="Im 1-zu-1 Coaching bringe ich dir meine Futures Swing-Trading Strategie bei. Natürlich kannst du auch individuell viel mehr über Trading und erfolgreiches Investieren lernen."
           link={{
             href: "coaching/",
-            text: "Geh zu Coachingprogramm",
+            text: "Zum Coachingprogramm",
           }}
           backgroundColorClass="darker-color"
           linkColorClass="darker-border"
@@ -87,48 +84,21 @@ import "../../styles/styles.css";
         <ProductCard
           icon={{
             src: "/images/traffic-light-circle.svg",
-            alt: "ein Ampel",
+            alt: "eine Ampel",
           }}
-          type="Investieren"
-          title="Börsenampelkurs"
-          description="In diesem Kurs lernst du fundamentale Analysen der Märkte durchzuführen und wirst Vertraut mit einer einfachen ETF Strategie."
+          type="ETF-Strategie 30 min/Woche"
+          title="Börsenampelkurs + Strategie"
+          description="Auch mit ETFs lässt sich eine konstante Rendite erzielen. Hier lernst du die Börsen selbst einzuschätzen und wann die richtige Zeit ist, in ETFs zu investieren."
           link={{
             href: "boersenampelkurs/",
-            text: "Geh zum Kurs",
+            text: "Zum Kurs",
           }}
           backgroundColorClass="dark-color"
-          linkColorClass="dark-border"
-        />
-        <ProductCard
-          icon={{
-            src: "/images/direction-sign-circle.svg",
-            alt: "ein Richtungsschild",
-          }}
-          type="Investieren"
-          title="ETF Signaldienst"
-          description="In diesem Kurs lernst du fundamentale Analysen der Märkte durchzuführen und wirst Vertraut mit einer einfachen ETF Strategie."
-          link={{
-            href: "investieren/",
-            text: "Geh zum Kurs",
-          }}
-          backgroundColorClass="dark-color"
-          linkColorClass="dark-border"
-        />
-        <ProductCard
-          icon={{
-            src: "/images/pulse-circle.svg",
-            alt: "ein Bär und Stier",
-          }}
-          type="Trading"
-          title="Daytrading Kurs"
-          description="In diesem Kurs lernst Daytrading."
-          link={{
-            href: "day-trading-kurs/",
-            text: "Geh zum Kurs",
-          }}
-          backgroundColorClass="accent-color"
-          linkColorClass="light-text-color"
-        />
+          linkColorClass="dark-border">
+          <p>
+            <a class="link bolder" style="border-bottom: none" href="/de/investieren/">Zum Signaldienst</a>
+          </p>
+        </ProductCard>
       </div>
     </div>
   </section>

@@ -25,8 +25,8 @@ import "../styles/styles.css";
   }}>
   <!-- Teaser -->
   <HeroShot
-    title="Damn, lost money again!"
-    description="In my courses and 1:1 coaching you will learn how to invest and trade properly. Find out more about it in my next free webinars."
+    title="Learn trading and investing"
+    description="Realize your financial dreams by learning a proper trading strategy and achieving a stable return."
     button={{
       href: "https://calendly.com/philipp-kozalla-call/30min",
       target: "_blank",
@@ -37,35 +37,67 @@ import "../styles/styles.css";
 
   <!-- BENEFITS -->
   <BenefitCard
-    title="Better manage your capital with a strategy"
-    description="With my offer you invest strategically. I can build your skillset to help you gain consistency in your trading."
-    icon={{
-      src: "/images/clock.svg",
-      alt: "Clock Icon",
-      width: "280",
-    }}
-    columnReverseClass="img-left"
-  />
-
-  <BenefitCard
-    title="Invest efficiently without prior knowledge"
-    description="No more blah blah. In my products you learn what you really need to implement my strategies."
+    title="Choose a strategy that suits you"
+    description="I personally trade three strategies with different time requirements, risk and returns."
     icon={{
       src: "/images/light-bulb.svg",
       alt: "Light Bulb Icon",
       width: "280",
     }}
+    columnReverseClass="img-left"
   />
 
-  <BenefitCard
-    title="Choose a strategy that suits you"
-    description="I offer you four strategies. They differ in time, risk and return."
-    icon={{
-      src: "/images/strategy-pyramid.svg",
-      alt: "All strategies displayed in a pyramid",
-      width: "440",
-    }}
-  />
+  <!-- PRODUCTS -->
+  <section>
+    <div class="wrapper">
+      <div class="row">
+        <ProductCard
+          icon={{
+            src: "/images/pulse-circle.svg",
+            alt: "ein Bär und Stier",
+          }}
+          type="Trading 1-2 hrs/day"
+          title="Day trading Course"
+          description="In this course you will learn professional day trading with futures. Here you will learn how to capitalize foreign currency accounts and achieve constant profits."
+          link={{
+            href: "coaching/",
+            text: "To the coaching program",
+          }}
+          backgroundColorClass="accent-color"
+          linkColorClass="light-text-color"
+        />
+        <ProductCard
+          icon={{
+            src: "/images/star-circle.svg",
+            alt: "ein Ampel",
+          }}
+          type="Swing trading 30 min/day"
+          title="1-on-1 coaching"
+          description="In my 1-to-1 coaching I will teach you my swing or day trading strategy with futures. Of course, you can also learn a lot more about trading and successful investing individually."
+          link={{
+            href: "coaching/",
+            text: "To the coaching program",
+          }}
+          backgroundColorClass="darker-color"
+          linkColorClass="darker-border"
+        />
+        <ProductCard
+          icon={{
+            src: "/images/traffic-light-circle.svg",
+            alt: "eine Ampel",
+          }}
+          type="ETF strategy 30 min/week"
+          title="ETF strategy"
+          description="A steady return can also be achieved with ETFs. In my ETF Signal Service, I send you a message when I manage my positions."
+          link={{
+            href: "/investment/",
+            text: "To the ETF Signal Service",
+          }}
+          backgroundColorClass="dark-color"
+          linkColorClass="dark-border" />
+      </div>
+    </div>
+  </section>
 
   <!-- BACKGROUND IMAGE WITH TEXT -->
   <BackgroundImage
