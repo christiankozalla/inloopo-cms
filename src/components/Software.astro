@@ -28,9 +28,19 @@ const { heading } = Astro.props;
   .tools__heading {
     text-align: center;
     margin-top: 90px;
+    margin-bottom: 36px;
+  }
+
+  .grid__tools img {
+    position: relative;
+    z-index: -1;
   }
 
   @media only screen and (min-width: 40em) {
+    .tools__heading {
+      margin-bottom: 0;
+    }
+
     .grid__tools {
       gap: 2em;
       grid-template-columns: repeat(6, 1fr);
