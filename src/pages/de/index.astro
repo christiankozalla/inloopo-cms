@@ -56,23 +56,23 @@ import "../../styles/styles.css";
             src: "/images/pulse-circle.svg",
             alt: "ein Bär und Stier",
           }}
-          type="Trading 1-2 Std/Tag"
-          title="Daytrading Kurs"
+          type="Daytrading Kurs"
+          title="Daytrading 1-2 Std/Tag"
           description="In diesem Kurs lernst du professionelles Daytrading mit Futures. Hier lernst du, wie du Fremdwährungskonten kapitalisierst und konstante Gewinne erzielst."
           link={{
             href: "day-trading-kurs/",
             text: "Zum Kurs",
           }}
-          backgroundColorClass="accent-color"
-          linkColorClass="light-text-color"
+          backgroundColorClass="dark-color"
+          linkColorClass="dark-border"
         />
         <ProductCard
           icon={{
             src: "/images/star-circle.svg",
             alt: "ein Ampel",
           }}
-          type="Swing-Trading 30 min/Tag"
-          title="1-zu-1 Coaching"
+          type="1-zu-1 Coaching"
+          title="Swing-Trading 30 min/Tag"
           description="Im 1-zu-1 Coaching bringe ich dir meine Futures Swing-Trading Strategie bei. Natürlich kannst du auch individuell viel mehr über Trading und erfolgreiches Investieren lernen."
           link={{
             href: "coaching/",
@@ -86,8 +86,8 @@ import "../../styles/styles.css";
             src: "/images/traffic-light-circle.svg",
             alt: "eine Ampel",
           }}
-          type="ETF-Strategie 30 min/Woche"
-          title="Börsenampelkurs + Strategie"
+          type="Börsenampelkurs + Strategie"
+          title="ETF-Strategie 30 min/Woche"
           description="Auch mit ETFs lässt sich eine konstante Rendite erzielen. Hier lernst du die Börsen selbst einzuschätzen und wann die richtige Zeit ist, in ETFs zu investieren."
           link={{
             href: "boersenampelkurs/",
@@ -96,7 +96,7 @@ import "../../styles/styles.css";
           backgroundColorClass="dark-color"
           linkColorClass="dark-border">
           <p>
-            <a class="link bolder" style="border-bottom: none" href="/de/investieren/">Zum Signaldienst</a>
+            <a class="link dark-border bolder" href="/de/investieren/">Zum Signaldienst</a>
           </p>
         </ProductCard>
       </div>
@@ -193,3 +193,9 @@ import "../../styles/styles.css";
     </section>
   </div>
 </MainLayout>
+
+<style>
+  .link:not(:hover) {
+    border-bottom: none;
+  }
+</style>
