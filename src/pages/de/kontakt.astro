@@ -1,7 +1,6 @@
 ---
 //import layout
 import MainLayout from "../../layouts/MainLayout.astro";
-import Button from "../../components/Button.astro";
 
 //import
 import "../../styles/styles.css";
@@ -33,7 +32,7 @@ import "../../styles/styles.css";
           </p>
           <img class="main-teaser__icon" src="/images/long-arrow-down.svg" width="40" alt="Pfeil Icon" />
           <a href="mailto:info@inloopo.com" class="main-teaser__link link">info@inloopo.com</a>
-          <div class="tidycal-embed" data-path="m797r83"></div>
+          <div class="tidycal-embed" data-path="inloopo"></div>
         </div>
         <div class="column half">
           <div class="main-teaser__container">
@@ -48,5 +47,5 @@ import "../../styles/styles.css";
       </div>
     </section>
   </div>
-  <script src="https://assets.tidycal.com/js/embed.js" async></script>
+  <script is:inline src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
 </MainLayout>
