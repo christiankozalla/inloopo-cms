@@ -86,6 +86,18 @@ const { title, opengraph, locale, canonical = new URL(Astro.url.pathname, Astro.
       )
     }
 
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-20XTP80H4M"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-20XTP80H4M");
+    </script>
+
     <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <slot name="head" />
@@ -118,7 +130,7 @@ const { title, opengraph, locale, canonical = new URL(Astro.url.pathname, Astro.
             root: null, // Use the viewport as the root
             rootMargin: "0px 0px -80px 0px", // Trigger 80px before the element is in view
             threshold: 0, // Trigger as soon as any part of the element is in view
-          },
+          }
         );
 
         // Observe all lite-youtube elements
