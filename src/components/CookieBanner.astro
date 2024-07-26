@@ -1,0 +1,121 @@
+---
+type Props = {
+  lang: "de" | "en";
+};
+
+const { lang } = Astro.props;
+const text: Record<"en" | "de", string> = {
+  en: "This website uses cookies to ensure you get the best experience.",
+  de: "Diese Website verwendet Cookies, um Ihnen das beste Erlebnis zu bieten.",
+};
+---
+
+<div class="inloopo-cookie-banner" id="inloopo-cookie-banner">
+  {text[lang]}
+  <div>
+    <button type="button" class="accept">Accept</button>
+    <button type="button" class="decline">Decline</button>
+  </div>
+  <style>
+    .inloopo-cookie-banner {
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .inloopo-cookie-banner button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      min-width: 150px;
+      max-width: 400px;
+    }
+
+    .inloopo-cookie-banner button.decline {
+      background-color: #f44336;
+    }
+  </style>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    function acceptCookies() {
+      allConsentGranted();
+      setCookie("cookies_accepted", "true", 365);
+      hideCookieBanner();
+    }
+
+    function declineCookies() {
+      hideCookieBanner();
+      deleteCookie("cookies_accepted");
+    }
+
+    function allConsentGranted() {
+      gtag("consent", "update", {
+        ad_user_data: "granted",
+        ad_personalization: "granted",
+        ad_storage: "granted",
+        analytics_storage: "granted",
+      });
+    }
+
+    function hideCookieBanner() {
+      document.getElementById("inloopo-cookie-banner").style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const acceptButton = document.querySelector("button.accept");
+      const declineButton = document.querySelector("button.decline");
+      acceptButton.addEventListener("click", acceptCookies);
+      declineButton.addEventListener("click", declineCookies);
+      checkCookieConsent();
+    });
+
+    function setCookie(name, value, days) {
+      const date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(";");
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == " ") c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+
+    function checkCookieConsent() {
+      const cookiesAccepted = getCookie("cookies_accepted");
+      if (cookiesAccepted === "true") {
+        allConsentGranted(); // Ensure consent is granted if cookies were accepted before
+        hideCookieBanner();
+      } else {
+        document.getElementById("inloopo-cookie-banner").style.display = "fixed";
+      }
+    }
+    function deleteCookie(name) {
+      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+  </script>
+</div>

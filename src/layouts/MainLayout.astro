@@ -4,6 +4,7 @@ import { ViewTransitions } from "astro:transitions";
 import "../styles/styles.css";
 
 // component import
+import CookieBanner from "../components/CookieBanner.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 
@@ -77,7 +78,6 @@ const { title, description, opengraph = "", lang, canonical = "", noIndex = fals
     }
 
     <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-20XTP80H4M"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -90,10 +90,26 @@ const { title, description, opengraph = "", lang, canonical = "", noIndex = fals
         ad_personalization: "denied",
         analytics_storage: "denied",
       });
+    </script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-20XTP80H4M"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
       gtag("js", new Date());
 
       gtag("config", "G-20XTP80H4M");
+
+      function allConsentGranted() {
+        gtag("consent", "update", {
+          ad_user_data: "granted",
+          ad_personalization: "granted",
+          ad_storage: "granted",
+          analytics_storage: "granted",
+        });
+      }
     </script>
 
     <!-- FAVICON -->
@@ -107,5 +123,6 @@ const { title, description, opengraph = "", lang, canonical = "", noIndex = fals
     <slot />
 
     <Footer lang={lang} />
+    <CookieBanner lang={lang} />
   </body>
 </html>
