@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 // styles import
 import "../styles/styles.css";
 
@@ -91,6 +92,7 @@ const { title, description, opengraph = "", lang, canonical = "", noIndex = fals
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <ViewTransitions />
   </head>
   <body>
     <Navbar lang={lang} />
