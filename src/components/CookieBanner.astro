@@ -79,7 +79,8 @@ const text: Record<"en" | "de", string> = {
       document.getElementById("inloopo-cookie-banner").style.display = "none";
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
+    // astro:page-load emitted by Astro's <ViewTransitions />, use DOMContentLoaded if <ViewTransitions /> are removed
+    document.addEventListener("astro:page-load", function () {
       const acceptButton = document.querySelector("button.accept");
       const declineButton = document.querySelector("button.decline");
       acceptButton.addEventListener("click", acceptCookies);
