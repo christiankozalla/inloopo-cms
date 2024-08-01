@@ -168,12 +168,12 @@ const text: Record<"en" | "de", Texts> = {
     const advertisement = "advertisement";
 
     function acceptCookies() {
-      setCookie("cookies_accepted", [advertisement, analytical].join(), 365);
+      setCookie("cookies_accepted", [necessary, advertisement, analytical].join(), 365);
       checkCookieConsent();
     }
 
     function declineCookies() {
-      deleteCookie("cookies_accepted");
+      setCookie("cookies_accepted", "declined", 7);
       checkCookieConsent();
     }
 
@@ -197,10 +197,6 @@ const text: Record<"en" | "de", Texts> = {
 
     function showSettings() {
       document.getElementById("cookie-settings-modal").style.display = "block";
-    }
-
-    function deleteCookie(name) {
-      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     }
 
     function setCookie(name, value, days) {
