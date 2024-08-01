@@ -9,6 +9,7 @@ export default defineConfig({
   site: "https://www.inloopo.com",
   output: "static",
   scopedStyleStrategy: "where",
+  devToolbar: { enabled: false },
   integrations: [
     sitemap({
       filter: (page) =>
