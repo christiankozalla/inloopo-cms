@@ -3,21 +3,118 @@ type Props = {
   lang: "de" | "en";
 };
 
+type InputSection = { label: string; description: string };
+
+type Texts = {
+  message: string;
+  details: string;
+  accept: string;
+  decline: string;
+  settings: {
+    headline: string;
+    description: string;
+    open: string;
+    save: string;
+    nc: InputSection;
+    anc: InputSection;
+    advertc: InputSection;
+  };
+};
+
 const { lang } = Astro.props;
-const text: Record<"en" | "de", string> = {
-  en: "This website uses cookies to ensure you get the best experience.",
-  de: "Diese Website verwendet Cookies, um Ihnen das beste Erlebnis zu bieten.",
+const text: Record<"en" | "de", Texts> = {
+  en: {
+    message: "This website uses cookies to ensure you get the best experience.",
+    details:
+      "We use cookies for ad personalization, analytics, and storage. You can manage your preferences by clicking 'Settings'.",
+    accept: "Accept",
+    decline: "Decline",
+    settings: {
+      headline: "Cookie Preferences",
+      description: "Manage your cookie preferences below:",
+      open: "Settings",
+      save: "Save preferences",
+      nc: {
+        label: "Necessary Cookies (always active)",
+        description: "These cookies are essential for the website to function and cannot be turned off.",
+      },
+      anc: {
+        label: "Analytics Cookies",
+        description: "These cookies help us understand how visitors interact with our website.",
+      },
+      advertc: {
+        label: "Advertising Cookies",
+        description: "These cookies are used to display personalized ads based on your preferences.",
+      },
+    },
+  },
+  de: {
+    message: "Diese Website verwendet Cookies, um Ihnen das beste Erlebnis zu bieten.",
+    details:
+      "Wir verwenden Cookies zur Personalisierung von Anzeigen, zur Analyse und zur Speicherung. Sie können Ihre Einstellungen unter 'Einstellungen' verwalten.",
+    accept: "Annehmen",
+    decline: "Ablehnen",
+    settings: {
+      headline: "Cookie-Einstellungen",
+      description: "Verwalten Sie Ihre Cookie-Einstellungen hier:",
+      open: "Einstellungen",
+      save: "Speichern",
+      nc: {
+        label: "Erforderliche Cookies (immer aktiv)",
+        description:
+          "Diese Cookies sind für das Funktionieren der Website unerlässlich und können nicht ausgeschaltet werden.",
+      },
+      anc: {
+        label: "Analytische Cookies",
+        description: "Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren.",
+      },
+      advertc: {
+        label: "Werbe-Cookies",
+        description:
+          "Diese Cookies werden verwendet, um personalisierte Werbung auf der Grundlage Ihrer Präferenzen anzuzeigen.",
+      },
+    },
+  },
 };
 ---
 
 <div class="inloopo-cookie-banner" id="inloopo-cookie-banner">
-  {text[lang]}
+  {text[lang].message}
+  <br />
+  {text[lang].details}
   <div>
-    <button type="button" class="accept">Accept</button>
-    <button type="button" class="decline">Decline</button>
+    <button type="button" class="accept">{text[lang].accept}</button>
+    <button type="button" class="decline">{text[lang].decline}</button>
+    <button type="button" class="settings">{text[lang].settings.open}</button>
   </div>
+  <div id="cookie-settings-modal" style="display: none;">
+    <h2>{text[lang].settings.headline}</h2>
+    <p>{text[lang].settings.description}</p>
+
+    <div>
+      <input type="checkbox" id="necessary-cookies" checked disabled />
+      <label for="necessary-cookies">{text[lang].settings.nc.label}</label>
+      <p>{text[lang].settings.nc.description}</p>
+    </div>
+
+    <div>
+      <input type="checkbox" id="analytics-cookies" />
+      <label for="analytics-cookies">{text[lang].settings.anc.label}</label>
+      <p>{text[lang].settings.anc.description}</p>
+    </div>
+
+    <div>
+      <input type="checkbox" id="advertising-cookies" />
+      <label for="advertising-cookies">{text[lang].settings.advertc.label}</label>
+      <p>{text[lang].settings.advertc.description}</p>
+    </div>
+
+    <button type="button" class="save-settings">{text[lang].settings.save}</button>
+  </div>
+
   <style>
     .inloopo-cookie-banner {
+      display: none;
       position: fixed;
       bottom: 0;
       width: 100vw;
@@ -27,7 +124,6 @@ const text: Record<"en" | "de", string> = {
       padding: 10px;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
       z-index: 1000;
-      display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
       align-items: center;
@@ -43,10 +139,22 @@ const text: Record<"en" | "de", string> = {
       border-radius: 5px;
       min-width: 150px;
       max-width: 400px;
+      font-weight: bold;
     }
 
     .inloopo-cookie-banner button.decline {
       background-color: #f44336;
+    }
+
+    .inloopo-cookie-banner button.settings {
+      background-color: transparent;
+      border: 1px solid white;
+    }
+
+    #cookie-settings-modal h2 {
+      margin-top: 24px;
+      margin-bottom: 8px;
+      text-align: center;
     }
   </style>
   <script is:inline>
@@ -55,23 +163,31 @@ const text: Record<"en" | "de", string> = {
       dataLayer.push(arguments);
     }
 
+    const necessary = "necessary";
+    const analytical = "analytical";
+    const advertisement = "advertisement";
+
     function acceptCookies() {
-      allConsentGranted();
-      setCookie("cookies_accepted", "true", 365);
-      hideCookieBanner();
+      setCookie("cookies_accepted", [necessary, advertisement, analytical].join(), 365);
+      checkCookieConsent();
     }
 
     function declineCookies() {
-      hideCookieBanner();
-      deleteCookie("cookies_accepted");
+      setCookie("cookies_accepted", "declined", 7);
+      checkCookieConsent();
     }
 
-    function allConsentGranted() {
+    function acceptAnalytical() {
+      gtag("consent", "update", {
+        analytics_storage: "granted",
+      });
+    }
+
+    function acceptAdvertisement() {
       gtag("consent", "update", {
         ad_user_data: "granted",
         ad_personalization: "granted",
         ad_storage: "granted",
-        analytics_storage: "granted",
       });
     }
 
@@ -79,14 +195,9 @@ const text: Record<"en" | "de", string> = {
       document.getElementById("inloopo-cookie-banner").style.display = "none";
     }
 
-    // astro:page-load emitted by Astro's <ViewTransitions />, use DOMContentLoaded if <ViewTransitions /> are removed
-    document.addEventListener("astro:page-load", function () {
-      const acceptButton = document.querySelector("button.accept");
-      const declineButton = document.querySelector("button.decline");
-      acceptButton.addEventListener("click", acceptCookies);
-      declineButton.addEventListener("click", declineCookies);
-      checkCookieConsent();
-    });
+    function showSettings() {
+      document.getElementById("cookie-settings-modal").style.display = "block";
+    }
 
     function setCookie(name, value, days) {
       const date = new Date();
@@ -106,17 +217,44 @@ const text: Record<"en" | "de", string> = {
       return null;
     }
 
+    document.addEventListener("astro:page-load", function () {
+      const acceptButton = document.querySelector("button.accept");
+      const declineButton = document.querySelector("button.decline");
+      const settingsButton = document.querySelector("button.settings");
+      const saveSettingsButton = document.querySelector("button.save-settings");
+      acceptButton.addEventListener("click", acceptCookies);
+      declineButton.addEventListener("click", declineCookies);
+      settingsButton.addEventListener("click", showSettings);
+      saveSettingsButton.addEventListener("click", saveCookiePreferences);
+      checkCookieConsent();
+    });
+
     function checkCookieConsent() {
       const cookiesAccepted = getCookie("cookies_accepted");
-      if (cookiesAccepted === "true") {
-        allConsentGranted(); // Ensure consent is granted if cookies were accepted before
+      if (!cookiesAccepted) document.getElementById("inloopo-cookie-banner").style.display = "flex";
+      else {
+        if (cookiesAccepted.includes(analytical)) {
+          acceptAnalytical();
+        }
+        if (cookiesAccepted.includes(advertisement)) {
+          acceptAdvertisement();
+        }
         hideCookieBanner();
-      } else {
-        document.getElementById("inloopo-cookie-banner").style.display = "fixed";
       }
     }
-    function deleteCookie(name) {
-      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    function saveCookiePreferences() {
+      const advertisingInput = document.getElementById("advertising-cookies");
+      const analyticsInput = document.getElementById("analytics-cookies");
+      const cookieValue = [
+        necessary,
+        advertisingInput.checked ? advertisement : "",
+        analyticsInput.checked ? analytical : "",
+      ]
+        .filter(Boolean)
+        .join();
+      setCookie("cookies_accepted", cookieValue, 365);
+      checkCookieConsent();
     }
   </script>
 </div>
