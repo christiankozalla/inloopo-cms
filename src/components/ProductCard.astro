@@ -2,8 +2,7 @@
 const { icon, type, title, description, link, backgroundColorClass, linkColorClass = "" } = Astro.props;
 ---
 
-<div
-  class={`product-card__container ${backgroundColorClass}`}>
+<div class={`product-card__container ${backgroundColorClass}`}>
   {
     icon && (
       <div class="product-card__icon-container">

@@ -1,5 +1,5 @@
 ---
-const { title, withIcon = false, description, button = "", backgroundImageClass = "", textColor = "" } = Astro.props;
+const { title, withIcon = false, description, button, backgroundImageClass = "", textColor = "" } = Astro.props;
 ---
 
 <div
@@ -21,15 +21,26 @@ main-teaser ${backgroundImageClass}
     `}>
       {description}<br /><br />
       {
-        button && (
-          <>
-            <a href={button.href} target={button.target} class="button">
-              {withIcon && <img class="button__img" src="/images/telegram.svg" width="20" alt="Telegram Icon" />}
-              {button.text}
-            </a>
-            <br />
-          </>
-        )
+        button ? (
+          !button.html ? (
+            <>
+              <a href={button.href} target={button.target} class="button">
+                {withIcon && <img class="button__img" src="/images/telegram.svg" width="20" alt="Telegram Icon" />}
+                {button.text}
+              </a>
+              <br />
+            </>
+          ) : (
+            // with html
+            <a
+              href={button.href}
+              target={button.target}
+              class={["button", button.class || ""].join(" ")}
+              set:html={button.text}
+              style={button.style || ""}
+            />
+          )
+        ) : null
       }
       <slot />
     </p>
@@ -72,6 +83,22 @@ main-teaser ${backgroundImageClass}
 
   .text--dark {
     color: var(--text-color);
+  }
+
+  .button {
+    color: #fff;
+    background: #ff6b35;
+    border: 2px solid #ff6b35;
+    padding: 15px 20px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
   }
 
   @media only screen and (max-width: 759px) {

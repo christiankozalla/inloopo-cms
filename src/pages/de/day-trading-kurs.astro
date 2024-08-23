@@ -9,7 +9,6 @@ import BackgroundImage from "../../components/BackgroundImage.astro";
 import Button from "../../components/Button.astro";
 import Video from "../../components/Video.astro";
 import PriceCard from "../../components/PriceCard.astro";
-import Banner from "../../components/Banner.astro";
 import Review from "../../components/Review.astro";
 
 //import styles
@@ -35,7 +34,10 @@ import "../../styles/styles.css";
     button={{
       href: "https://tidycal.com/inloopo/30min-meeting-mit-philipp",
       target: "_blank",
-      text: "Buche ein Zoom Call",
+      text: "Vereinbare ein kostenloses Strategiegespräch mit mir!",
+      class: "text-center",
+      html: true,
+      style: "max-width: 400px",
     }}
     backgroundImageClass="main-teaser__page-daytrading"
   />
@@ -371,12 +373,12 @@ import "../../styles/styles.css";
 
           <PriceCard
             title="Werde Day Trader"
-            price="1900 € inkl. MwSt"
             description="Du bekommst 13 Lernmodule, Sierra Chart Book, Sierra Chart Settings und wöchentliche Live Trading Sessions."
             button={{
-              text: "Jetzt kaufen",
-              href: "https://my.inloopo.com/checkout/Course/24936",
+              text: "Vereinbare ein kostenloses<br>Strategiegespräch mit mir!",
+              href: "https://tidycal.com/inloopo/30min-meeting-mit-philipp",
               target: "target__blank",
+              class: "text-center",
             }}
           />
         </div>
@@ -389,9 +391,12 @@ import "../../styles/styles.css";
         title="Man lernt, wenn man scheitert, aufsteht und weitermacht"
         description="Ich habe jahrelang mit den falschen Strategien und einer falschen Finanzausbildung gehandelt. Ich habe viele Fehler gemacht, aber auch eine Menge gelernt. Im Jahr 2020 habe ich meine zweijährige Ausbildung zum Futures Trader abgeschlossen. Seitdem sehe ich die Märkte aus einer professionellen Perspektive. Inzwischen handel ich 3 Strategien auf verschiedenen Konten. Die am besten funktionierende Strategie ist diese Daytrading Strategie, dich ich dir in diesem Kurs beibringe."
         button={{
-          text: "Jetzt kaufen",
-          href: "https://my.inloopo.com/checkout/Course/24936",
-          target: "target__blank",
+          href: "https://tidycal.com/inloopo/30min-meeting-mit-philipp",
+          target: "_blank",
+          text: "Vereinbare ein kostenloses Strategiegespräch mit mir!",
+          class: "text-center",
+          html: true,
+          style: "max-width: 400px",
         }}
         backgroundImageClass="secondary-teaser__course"
         textColorClass="light"
@@ -603,8 +608,8 @@ import "../../styles/styles.css";
       </section>
 
       <Button
-        link="https://my.inloopo.com/checkout/Course/24936"
-        text="Jetzt kaufen"
+        link="https://tidycal.com/inloopo/30min-meeting-mit-philipp"
+        text="Vereinbare ein kostenloses Strategiegespräch mit mir!"
         alignClass="button--align-center"
         target="target__blank"
       />

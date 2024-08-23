@@ -25,7 +25,10 @@ const { title, description, button, backgroundImageClass, textColorClass } = Ast
         {
           button && (
             <p>
-              <a href={button.href} target={button.target} class="backgroundimage__button">
+              <a
+                href={button.href}
+                target={button.target}
+                class={["backgroundimage__button", button.class || ""].join(" ")}>
                 {button.text}
               </a>
             </p>
@@ -67,6 +70,7 @@ const { title, description, button, backgroundImageClass, textColorClass } = Ast
   }
 
   .backgroundimage__button {
+    display: inline-block;
     color: #fff;
     background: #ff6b35;
     border: 2px solid #ff6b35;
@@ -77,6 +81,8 @@ const { title, description, button, backgroundImageClass, textColorClass } = Ast
     font-size: 18px;
     font-size: 1.25rem;
     font-weight: bold;
+    margin-right: 24px;
+    max-width: 400px;
   }
 
   @media only screen and (min-width: 760px) and (max-width: 979px) {

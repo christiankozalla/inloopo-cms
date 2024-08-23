@@ -4,7 +4,7 @@ const { title, price, description, button } = Astro.props;
 
 <div class="price-card__container">
   <h3 class="price-card__heading">{title}</h3>
-  <p class="price-card__text">{price}</p>
+  {price ? <p class="price-card__text">{price}</p> : null}
   <p>
     {description}
   </p>
@@ -12,9 +12,12 @@ const { title, price, description, button } = Astro.props;
   {
     button && (
       <p class="button__container">
-        <a href={button.href} target={button.target} class="button">
-          {button.text}
-        </a>
+        <a
+          href={button.href}
+          target={button.target}
+          class={["button", button.class || ""].join(" ")}
+          set:html={button.text}
+        />
       </p>
     )
   }
