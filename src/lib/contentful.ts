@@ -18,9 +18,8 @@ function renderOptionsAndVideos() {
   const renderOptions = {
     renderNode: {
       [INLINES.HYPERLINK]: (node: any, next: any) => {
-        return `<a href="${node.data.uri}"${
-          node.data.uri.includes("inloopo.com") || node.data.uri.startsWith("/") ? "" : ' target="_blank"'
-        }>${next(node.content)}</a>`;
+        return `<a href="${node.data.uri}"${node.data.uri.includes("inloopo.com") || node.data.uri.startsWith("/") ? "" : ' target="_blank"'
+          }>${next(node.content)}</a>`;
       },
       [BLOCKS.TABLE]: (node: any, children: any) =>
         `<div class="article__table"><table>${children(node.content)}</table></div>`,
@@ -49,11 +48,10 @@ function renderOptionsAndVideos() {
             src='https:${node.data.target.fields.file.url}'
             alt='${node.data.target.fields.description?.replace("[caption]", "") || ""}'
             loading='lazy'>
-        ${
-          node.data.target.fields.description?.startsWith("[caption]")
+        ${node.data.target.fields.description?.startsWith("[caption]")
             ? figcaptionWithParsedMarkdownLink(node.data.target.fields.description?.replace("[caption]", ""))
             : ""
-        }
+          }
         </figure>
       `;
       },
@@ -70,6 +68,8 @@ function renderOptionsAndVideos() {
             return renderYoutubeVideo(node);
           case "inlineHtml":
             return node.data.target.fields.code;
+          case "imageLink":
+            return renderImageLink(node as Node<ImageLink>);
           default:
             console.log("Unknown content type: " + node.data.target.sys.contentType.sys.id);
             return "";
@@ -134,6 +134,17 @@ function renderYoutubeVideo(node: Node<YoutubeVideo>) {
           <span class="lyt-visually-hidden">Play video: ${node.data.target.fields.title}</span>
         </a>
     </lite-youtube>
+  `;
+}
+
+function renderImageLink(node: Node<ImageLink>) {
+  // calling stopPropagation for click events to prevent img going into fullscreen - ref: src/components/fullscreen-images.ts
+  return `
+  <figure class="article__figure" onclick="event.stopPropagation()">
+    <a href="${node.data.target.fields.url}" target="_blank" style="border: none">
+      <img src="${node.data.target.fields.image.fields.file?.url || "#"}" alt="${node.data.target.fields.image.fields.description}" />
+    </a>
+  </figure>
   `;
 }
 
@@ -214,6 +225,11 @@ interface TocHeadline {
 interface YoutubeVideo {
   videoId: string;
   title: string;
+}
+
+interface ImageLink {
+  url: string;
+  image: Asset;
 }
 
 export { contentfulClient, renderOptionsAndVideos };
