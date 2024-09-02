@@ -12,7 +12,6 @@ const contentfulClient = contentful.createClient({
       : import.meta.env.CONTENTFUL_PREVIEW_KEY,
   host: import.meta.env.MODE !== "development" ? "cdn.contentful.com" : "preview.contentful.com",
 });
-
 function renderOptionsAndVideos() {
   const videos: VideoNode[] = [];
   const renderOptions = {
@@ -30,14 +29,12 @@ function renderOptionsAndVideos() {
         if (typeof inlineEntry !== "undefined") {
           if (inlineEntry.data.target.sys.contentType.sys.id === "tocHeadline")
             return renderTocHeadline(inlineEntry as Node<TocHeadline>);
-          else {
-            console.log("Unknown content type: " + inlineEntry.data.target.sys.contentType.sys.id);
-            return "";
-          }
+          console.log(`Unknown content type: ${inlineEntry.data.target.sys.contentType.sys.id}`);
+          return "";
         }
         const text = node.content.find((data: any) => data.nodeType === "text").value;
         return `
-        <h2 class="article__heading-two" id=${"point-" + encodeURIComponent(text.replace(" ", "-"))}>${text}</h2>
+        <h2 class="article__heading-two" id=${`point-${encodeURIComponent(text.replace(" ", "-"))}`}>${text}</h2>
       `;
       },
       [BLOCKS.EMBEDDED_ASSET]: (node: any, _children: any) => {
@@ -71,7 +68,7 @@ function renderOptionsAndVideos() {
           case "imageLink":
             return renderImageLink(node as Node<ImageLink>);
           default:
-            console.log("Unknown content type: " + node.data.target.sys.contentType.sys.id);
+            console.log(`Unknown content type: ${node.data.target.sys.contentType.sys.id}`);
             return "";
         }
       },
@@ -88,9 +85,8 @@ function figcaptionWithParsedMarkdownLink(text: string) {
   const match = regex.exec(text);
   if (match) {
     return `<figcaption>${match[1]}<a href='${match[3]}'>${match[2]}</a>${match[4]}</figcaption>`;
-  } else {
-    return `<figcaption>${text}</figcaption>`;
   }
+  return `<figcaption>${text}</figcaption>`;
 }
 
 function renderPostInfoBox(node: Node<PostInfoBox>) {
@@ -106,9 +102,12 @@ function renderPostInfoBox(node: Node<PostInfoBox>) {
 }
 
 function renderWebComponent(node: Node<WebComponent>) {
+  // node.data.target.fields.htmlTag.split(" ")[0] <<<--- this is only the 
+  // example htmlTag === 'dynamic-chart attribute1=xyz'
+  const tag = node.data.target.fields.htmlTag.split(" ")[0];
   return `
   <script type="module" src="${node.data.target.fields.source}"></script>
-  <${node.data.target.fields.htmlTag}></${node.data.target.fields.htmlTag.split(" ")[0]}>
+  <${tag}></${tag}>
   `;
 }
 
@@ -117,7 +116,7 @@ function renderTocHeadline(node: Node<TocHeadline>) {
     <h2
       class="article__heading-two"
       data-toclink="${node.data.target.fields.tocLink}"
-      id=${"point-" + encodeURIComponent(node.data.target.fields.text.replace(" ", "-"))}
+      id=${`point-${encodeURIComponent(node.data.target.fields.text.replace(" ", "-"))}`}
     >
       ${node.data.target.fields.text}
     </h2>
@@ -129,8 +128,8 @@ function renderYoutubeVideo(node: Node<YoutubeVideo>) {
   // node.data.target.fields.title - e.g. "Sector Rotation explained with free Tool"
   // lite-youtube-embed is not listed as an npm dependency because have been copied into the public dir from here: https://github.com/paulirish/lite-youtube-embed/tree/master/src
   return `
-    <lite-youtube videoid="${node.data.target.fields.videoId}" playlabel="${node.data.target.fields.title}" style="background-image: url('https://i.ytimg.com/vi_webp/${node.data.target.fields.videoId}/sddefault.webp');">
-        <a href="https://youtube.com/watch?v=${node.data.target.fields.videoId}" class="lty-playbtn" title="Play Video">
+    <lite-youtube videoid="${node.data.target.fields.videoId}" playlabel="${node.data.target.fields.title}" title="${node.data.target.fields.title}">
+        <a href="https://youtube.com/watch?v=${node.data.target.fields.videoId}" class="lty-playbtn">
           <span class="lyt-visually-hidden">Play video: ${node.data.target.fields.title}</span>
         </a>
     </lite-youtube>
