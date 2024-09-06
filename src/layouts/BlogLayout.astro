@@ -118,7 +118,7 @@ const { title, opengraph, locale, canonical = new URL(Astro.url.pathname, Astro.
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <slot name="head" />
 
-    <script>
+    <script is:inline>
       // Load lite-youtube-embend JS & CSS lazily (https://www.npmjs.com/package/lite-youtube-embed)
       // Copied to public dir with 'cp node_modules/lite-youtube-embed/src/lite-yt-embed.js public/lite-youtube-embed/lite-yt-embed.js' (CSS respectively)
       document.addEventListener("DOMContentLoaded", () => {
