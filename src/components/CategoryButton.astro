@@ -1,8 +1,8 @@
 ---
-const { text, href } = Astro.props;
+const { text, href, highlighted = false } = Astro.props;
 ---
 
-<div class="category-button__container">
+<div class=`category-button__container ${highlighted ? "category-button__container--highlighted" : ""}`>
   <a href={href} class="category-button__link">
     <p class="category-button__text">{text}</p>
   </a>
@@ -12,6 +12,11 @@ const { text, href } = Astro.props;
   .category-button__container {
     background-color: var(--dark-background-color);
     border-radius: 2em;
+  }
+
+  .category-button__container--highlighted {
+    outline: 2px solid #ff6b35;
+    outline-offset: 2px;
   }
 
   .category-button__link {

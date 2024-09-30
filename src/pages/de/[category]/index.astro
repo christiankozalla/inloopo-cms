@@ -67,8 +67,10 @@ export async function getStaticPaths() {
     },
   ];
 }
+
 const items: Entry<Post>[] = Astro.props.items;
 const { headline, copy, title, description } = Astro.props;
+const { category } = Astro.params;
 const lang = "de";
 ---
 
@@ -85,12 +87,12 @@ const lang = "de";
     <div class="container">
       <Breadcrumbs category={Astro.params.category as string} lang={lang} />
     </div>
-    <div class="flex">
-      <CategoryButton text="Alle Artikel" href="/de/blog/" />
-      <CategoryButton text="Day Trading" href="/de/daytrading/" />
-      <CategoryButton text="Swing Trading" href="/de/swing-trading/" />
-      <CategoryButton text="Anlagestrategien" href="/de/anlagestrategien/" />
-      <CategoryButton text="Finanzwissen" href="/de/finanzwissen/" />
+    <div class="flex category-buttons">
+      <CategoryButton text="Alle Artikel" href="/de/blog/" highlighted={category === "blog"} />
+      <CategoryButton text="Day Trading" href="/de/daytrading/" highlighted={category === "daytrading"} />
+      <CategoryButton text="Swing Trading" href="/de/swing-trading/" highlighted={category === "swing-trading"} />
+      <CategoryButton text="Anlagestrategien" href="/de/anlagestrategien/" highlighted={category === "anlagestrategien"} />
+      <CategoryButton text="Finanzwissen" href="/de/finanzwissen/" highlighted={category === "finanzwissen"} />
     </div>
     <div class="grid container">
       {
@@ -189,6 +191,10 @@ const lang = "de";
         font-size: 24px;
         margin-bottom: 12px;
       }
-    </style>
+
+      .category-buttons {
+        gap: 10px;
+      }
+    </style> 
   </main>
 </MainLayout>
